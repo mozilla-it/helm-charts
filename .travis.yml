@@ -5,7 +5,7 @@ before_install:
   - curl -L https://git.io/get_helm.sh | bash
 
 script:
-  - mkdir realeases
+  - mkdir releases
   # TODO: Package only the modified charts
   - for i in $(find charts -maxdepth 1 -type d) ; do helm lint $i && helm package $i -d releases ; done
   - cd releases
