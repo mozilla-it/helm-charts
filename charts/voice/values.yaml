@@ -1,0 +1,17 @@
+namespace: voice-dev
+
+# Enables or Disabled using Kubernetes Horizontal Pod Autoscaler
+hpa_enabled: false
+hpa_max_replicas: 6
+hpa_min_replicas: 2
+
+# Required if "hpa_enabled =  false"
+replicas: 3
+
+# Requested resources
+requests_cpu: 500
+requests_memoty: 256Mib
+limits_cpu: 1000
+limits_memory: 1024Mib
+
+config_new_relic_enabled: false

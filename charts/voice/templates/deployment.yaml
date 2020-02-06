@@ -1,0 +1,57 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: voice
+  namespace: {{ .Values.namespace}}
+spec:
+  selector:
+    matchLabels:
+      app: voice
+  {{ if eq .Values.hpa_enabled false }}
+  replicas: {{ .Values.replicas }}
+  {{ end }}
+  template:
+    metadata:
+      labels:
+        app: voice
+    spec:
+      containers:
+      - name: web
+        command:
+          - yarn
+          - start:prod
+        image: itsre/voice-web:master-latest
+        ports:
+        - containerPort: 9000
+        livenessProbe:
+          httpGet:
+            port: 9000
+            path: /api/v1/metrics
+          periodSeconds: 10
+          initialDelaySeconds: 60
+          successThreshold: 1
+          failureThreshold: 3
+          timeoutSeconds: 1
+        resources:
+          limits:
+            cpu: {{ .Values.limits_cpu }}
+            memory: {{ .Values.limits_memory }}
+          requests:
+            cpu: {{ .Values.requests_cpu }}
+            memory: {{ .Values.requests_memory }}
+        volumeMounts:
+        - name: config
+          mountPath: /config
+        env:
+        - name: SERVER_CONFIG_PATH
+          value: /config/config.json
+        - name: NEW_RELIC_AGENT_ENABLED
+          value: {{ .Values.config_new_relic_enabled }}
+        {{ if eq .Values.config_new_relic_enabled true }}
+        - name: NEW_RELIC_LICENSE_KEY
+          valueFrom:
+            secretKeyRef:
+              name: voice
+              key: new_relic_license_key
+        {{ end }}

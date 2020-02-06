@@ -1,0 +1,15 @@
+apiVersion: v2
+name: mozilla-common-voice
+version: 0.0.1
+description: Deploy Mozilla Common Voice web application
+type: 
+keywords:
+  - Mozilla
+  - common-voice
+  - deepspeech
+home: https://voice.mozilla.org
+sources:
+  - https://github.com/mozilla/voice-web
+maintainers:
+  - name: Alberto del Barrio
+    email: alberto@mozilla.com

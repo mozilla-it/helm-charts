@@ -1,0 +1,15 @@
+{{ if eq .Values.hpa_enabled true }}
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: voice
+  namespace: {{ .Values.namespace}}
+spec:
+  maxReplicas: {{ .Values.hpa_max_replicas }}
+  minReplicas: {{ .Values.hpa_max_replicas }}
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: voice
+  targetCPUUtilizationPercentage: 80
+{{ end }}
