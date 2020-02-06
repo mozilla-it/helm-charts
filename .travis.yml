@@ -3,6 +3,7 @@ if: branch = master
 
 before_install:
   - curl -L https://git.io/get_helm.sh | bash
+  - helm version
 
 script:
   - mkdir releases
