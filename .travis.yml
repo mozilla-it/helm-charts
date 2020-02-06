@@ -5,13 +5,13 @@ before_install:
   - curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3
   - chmod 700 get_helm.sh
   - ./get_helm.sh
-  - helm version
 
 script:
   - mkdir releases
   # TODO: Package only the modified charts
-  - for i in $(find charts -maxdepth 1 -type d) ; do helm lint $i && helm package $i -d releases ; done
-  - cd releases
+  - cd charts
+  - for i in $(find . -maxdepth 1 -type d) ; do helm lint $i && helm package $i -d releases ; done
+  - cd ../releases
   - helm repo index .
 
 deploy:
