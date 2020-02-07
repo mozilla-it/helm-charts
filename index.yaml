@@ -2,9 +2,9 @@ apiVersion: v1
 entries:
   mozilla-common-voice:
   - apiVersion: v1
-    created: "2020-02-07T10:17:07.978029199Z"
+    created: "2020-02-07T10:20:21.500894324Z"
     description: Deploy Mozilla Common Voice web application
-    digest: f279da75dcb6085454f8469438047f38b114818885b1f87d53ef70d687dc845c
+    digest: 3eb3df86bd4a0e904bd215695706e88ea59064a66d1ebc487307b50d9f4e430a
     home: https://voice.mozilla.org
     icon: https://voice.mozilla.org/dist/f01895c77138837851f87c2e40acbd58.svg
     keywords:
@@ -18,6 +18,6 @@ entries:
     sources:
     - https://github.com/mozilla/voice-web
     urls:
-    - mozilla-common-voice-0.0.1.tgz
-    version: 0.0.1
-generated: "2020-02-07T10:17:07.976898244Z"
+    - mozilla-common-voice-0.0.2.tgz
+    version: 0.0.2
+generated: "2020-02-07T10:20:21.500265104Z"
