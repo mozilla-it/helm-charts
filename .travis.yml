@@ -8,7 +8,7 @@ script:
 - mkdir releases
 - cd charts
 - for i in $(find . -maxdepth 1 -mindepth 1 -type d) ; do helm lint $i && helm package
-  $i -d releases ; done
+  $i -d ../releases ; done
 - cd ../releases
 - helm repo index .
 deploy:
