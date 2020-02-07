@@ -9,16 +9,11 @@ script:
 - cd charts
 - for i in $(find . -maxdepth 1 -mindepth 1 -type d) ; do helm lint $i && helm package
   $i -d ../releases ; done
-  #- cd ../releases
 - cd ..
 - cp -r releases /tmp
-- ls
 - git checkout gh-pages
-- ls
-- cd releases
 - mv /tmp/releases/* .
-- ls
-- helm repo index --url https://mozilla-it.github.io/curated-helm-charts/ --merge ../index.yaml .
+- helm repo index --url https://mozilla-it.github.io/curated-helm-charts/ --merge index.yaml .
 deploy:
   provider: pages
   github_token: $GITHUB_TOKEN
