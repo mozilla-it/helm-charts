@@ -10,7 +10,9 @@ script:
 - for i in $(find . -maxdepth 1 -mindepth 1 -type d) ; do helm lint $i && helm package
   $i -d ../releases ; done
   #- cd ../releases
+- cd ..
 - cp -r releases /tmp
+- ls
 - git checkout gh-pages
 - ls
 - mv /tmp/releases .
