@@ -17,7 +17,7 @@ script:
 deploy:
   provider: pages
   github_token: $GITHUB_TOKEN
-  local_dir: releases
+  #local_dir: releases
   verbose: true
   keep_history: true
   skip_cleanup: true
