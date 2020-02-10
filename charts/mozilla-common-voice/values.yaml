@@ -14,4 +14,4 @@ requests_memory: 256Mib
 limits_cpu: 1000
 limits_memory: 1024Mib
 
-config_new_relic_enabled: false
+config_new_relic_enabled: "false"
