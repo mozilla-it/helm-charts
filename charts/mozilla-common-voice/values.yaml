@@ -10,7 +10,7 @@ replicas: 3
 
 # Requested resources
 requests_cpu: 500
-requests_memoty: 256Mib
+requests_memory: 256Mib
 limits_cpu: 1000
 limits_memory: 1024Mib
 
