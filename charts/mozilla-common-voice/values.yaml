@@ -10,8 +10,8 @@ replicas: 3
 
 # Requested resources
 requests_cpu: 500
-requests_memory: 256Mib
+requests_memory: 256Mb
 limits_cpu: 1000
-limits_memory: 1024Mib
+limits_memory: 1024Mb
 
 config_new_relic_enabled: "false"
