@@ -48,7 +48,7 @@ spec:
           value: /config/config.json
         - name: NEW_RELIC_AGENT_ENABLED
           value: {{ .Values.config_new_relic_enabled }}
-        {{ if eq .Values.config_new_relic_enabled true }}
+        {{ if eq .Values.config_new_relic_enabled "true" }}
         - name: NEW_RELIC_LICENSE_KEY
           valueFrom:
             secretKeyRef:
