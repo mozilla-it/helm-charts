@@ -2,7 +2,26 @@ apiVersion: v1
 entries:
   mozilla-common-voice:
   - apiVersion: v1
-    created: "2020-02-10T11:56:14.537322733Z"
+    created: "2020-02-10T12:01:49.745362473Z"
+    description: Deploy Mozilla Common Voice web application
+    digest: 54cc54be667ac96ab4b7fabba531a9e2edd6234ca76defb99977ee298ebae29b
+    home: https://voice.mozilla.org
+    icon: https://voice.mozilla.org/dist/f01895c77138837851f87c2e40acbd58.svg
+    keywords:
+    - Mozilla
+    - common-voice
+    - deepspeech
+    maintainers:
+    - email: alberto@mozilla.com
+      name: Alberto del Barrio
+    name: mozilla-common-voice
+    sources:
+    - https://github.com/mozilla/voice-web
+    urls:
+    - https://mozilla-it.github.io/curated-helm-charts/mozilla-common-voice-0.0.13.tgz
+    version: 0.0.13
+  - apiVersion: v1
+    created: "2020-02-10T12:01:49.745069728Z"
     description: Deploy Mozilla Common Voice web application
     digest: ea1b16be649a79e13596cb0561a16d5ce3a19197e5fd9c7f7e5fc778eb9e2b1b
     home: https://voice.mozilla.org
@@ -21,7 +40,7 @@ entries:
     - https://mozilla-it.github.io/curated-helm-charts/mozilla-common-voice-0.0.12.tgz
     version: 0.0.12
   - apiVersion: v1
-    created: "2020-02-10T11:56:14.537042314Z"
+    created: "2020-02-10T12:01:49.744698957Z"
     description: Deploy Mozilla Common Voice web application
     digest: 6f1fdcbbcc302fd692b3b602bb841cffc0d69c9ab40aa40be723f706bcafdb84
     home: https://voice.mozilla.org
@@ -40,7 +59,7 @@ entries:
     - https://mozilla-it.github.io/curated-helm-charts/mozilla-common-voice-0.0.11.tgz
     version: 0.0.11
   - apiVersion: v1
-    created: "2020-02-10T11:56:14.536713474Z"
+    created: "2020-02-10T12:01:49.74440019Z"
     description: Deploy Mozilla Common Voice web application
     digest: e13e94f25c34bb34da800e670ed21aac2c07500b5f60c9d890f10531992755f7
     home: https://voice.mozilla.org
@@ -59,7 +78,7 @@ entries:
     - https://mozilla-it.github.io/curated-helm-charts/mozilla-common-voice-0.0.10.tgz
     version: 0.0.10
   - apiVersion: v1
-    created: "2020-02-10T11:56:14.538682254Z"
+    created: "2020-02-10T12:01:49.746718932Z"
     description: Deploy Mozilla Common Voice web application
     digest: 49bf04623b64611a90d1a2f497d28b83ba7c2aaa700eb66adef98f32aa94cd6e
     home: https://voice.mozilla.org
@@ -78,7 +97,7 @@ entries:
     - https://mozilla-it.github.io/curated-helm-charts/mozilla-common-voice-0.0.9.tgz
     version: 0.0.9
   - apiVersion: v1
-    created: "2020-02-10T11:56:14.538408655Z"
+    created: "2020-02-10T12:01:49.746466815Z"
     description: Deploy Mozilla Common Voice web application
     digest: 9283e851e3094134a4dea8cb66452944dfbc24ecd64946e981f505c501a0bfd0
     home: https://voice.mozilla.org
@@ -97,7 +116,7 @@ entries:
     - https://mozilla-it.github.io/curated-helm-charts/mozilla-common-voice-0.0.8.tgz
     version: 0.0.8
   - apiVersion: v1
-    created: "2020-02-10T11:56:14.538140981Z"
+    created: "2020-02-10T12:01:49.746198592Z"
     description: Deploy Mozilla Common Voice web application
     digest: 50f58fcf14ac88c35aed57cfa977c88283d0e76033753871155859cbbf15ae5d
     home: https://voice.mozilla.org
@@ -116,7 +135,7 @@ entries:
     - https://mozilla-it.github.io/curated-helm-charts/mozilla-common-voice-0.0.7.tgz
     version: 0.0.7
   - apiVersion: v1
-    created: "2020-02-10T11:56:14.537891119Z"
+    created: "2020-02-10T12:01:49.745946224Z"
     description: Deploy Mozilla Common Voice web application
     digest: fc174b4910d11a9157c8b1509cea4c050170b549edc8e96ce27dbab4391d59f4
     home: https://voice.mozilla.org
@@ -135,7 +154,7 @@ entries:
     - https://mozilla-it.github.io/curated-helm-charts/mozilla-common-voice-0.0.6.tgz
     version: 0.0.6
   - apiVersion: v1
-    created: "2020-02-10T11:56:14.537625659Z"
+    created: "2020-02-10T12:01:49.745672686Z"
     description: Deploy Mozilla Common Voice web application
     digest: 386651cfd03c7e9ded8920d31a88f55b8cb842ef6baca20af61b027bb8e27345
     home: https://voice.mozilla.org
@@ -153,4 +172,4 @@ entries:
     urls:
     - https://mozilla-it.github.io/curated-helm-charts/mozilla-common-voice-0.0.5.tgz
     version: 0.0.5
-generated: "2020-02-10T11:56:14.535632688Z"
+generated: "2020-02-10T12:01:49.743609971Z"
