@@ -46,12 +46,3 @@ spec:
         env:
         - name: SERVER_CONFIG_PATH
           value: /config/config.json
-        - name: NEW_RELIC_AGENT_ENABLED
-          value: {{ .Values.config_new_relic_enabled }}
-        {{ if eq .Values.config_new_relic_enabled "true" }}
-        - name: NEW_RELIC_LICENSE_KEY
-          valueFrom:
-            secretKeyRef:
-              name: voice
-              key: new_relic_license_key
-        {{ end }}
