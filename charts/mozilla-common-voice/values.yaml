@@ -9,9 +9,9 @@ hpa_min_replicas: 2
 replicas: 3
 
 # Requested resources
-requests_cpu: 500
+requests_cpu: 500m
 requests_memory: 256Mi
-limits_cpu: 1000
+limits_cpu: 1
 limits_memory: 1024Mi
 
 config_new_relic_enabled: "false"
