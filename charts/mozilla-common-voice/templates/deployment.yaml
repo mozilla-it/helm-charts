@@ -43,6 +43,12 @@ spec:
         volumeMounts:
         - name: config
           mountPath: /config
+          readOnly: true
         env:
         - name: SERVER_CONFIG_PATH
           value: /config/config.json
+      volumes:
+      - name: config
+        secret:
+          secretName: voice-config-template
+
