@@ -2,7 +2,26 @@ apiVersion: v1
 entries:
   mozilla-common-voice:
   - apiVersion: v1
-    created: "2020-02-07T14:03:02.683080689Z"
+    created: "2020-02-10T10:39:39.218757069Z"
+    description: Deploy Mozilla Common Voice web application
+    digest: 9283e851e3094134a4dea8cb66452944dfbc24ecd64946e981f505c501a0bfd0
+    home: https://voice.mozilla.org
+    icon: https://voice.mozilla.org/dist/f01895c77138837851f87c2e40acbd58.svg
+    keywords:
+    - Mozilla
+    - common-voice
+    - deepspeech
+    maintainers:
+    - email: alberto@mozilla.com
+      name: Alberto del Barrio
+    name: mozilla-common-voice
+    sources:
+    - https://github.com/mozilla/voice-web
+    urls:
+    - https://mozilla-it.github.io/curated-helm-charts/mozilla-common-voice-0.0.8.tgz
+    version: 0.0.8
+  - apiVersion: v1
+    created: "2020-02-10T10:39:39.218470706Z"
     description: Deploy Mozilla Common Voice web application
     digest: 50f58fcf14ac88c35aed57cfa977c88283d0e76033753871155859cbbf15ae5d
     home: https://voice.mozilla.org
@@ -21,7 +40,7 @@ entries:
     - https://mozilla-it.github.io/curated-helm-charts/mozilla-common-voice-0.0.7.tgz
     version: 0.0.7
   - apiVersion: v1
-    created: "2020-02-07T14:03:02.682820594Z"
+    created: "2020-02-10T10:39:39.218169166Z"
     description: Deploy Mozilla Common Voice web application
     digest: fc174b4910d11a9157c8b1509cea4c050170b549edc8e96ce27dbab4391d59f4
     home: https://voice.mozilla.org
@@ -40,7 +59,7 @@ entries:
     - https://mozilla-it.github.io/curated-helm-charts/mozilla-common-voice-0.0.6.tgz
     version: 0.0.6
   - apiVersion: v1
-    created: "2020-02-07T14:03:02.682520888Z"
+    created: "2020-02-10T10:39:39.217786169Z"
     description: Deploy Mozilla Common Voice web application
     digest: 386651cfd03c7e9ded8920d31a88f55b8cb842ef6baca20af61b027bb8e27345
     home: https://voice.mozilla.org
@@ -58,4 +77,4 @@ entries:
     urls:
     - https://mozilla-it.github.io/curated-helm-charts/mozilla-common-voice-0.0.5.tgz
     version: 0.0.5
-generated: "2020-02-07T14:03:02.682026265Z"
+generated: "2020-02-10T10:39:39.216881149Z"
