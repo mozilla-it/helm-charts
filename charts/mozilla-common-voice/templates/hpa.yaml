@@ -1,12 +1,12 @@
-{{ if eq .Values.hpa_enabled true }}
+{{ if eq .Values.voice_web.hpa.enabled true }}
 apiVersion: autoscaling/v1
 kind: HorizontalPodAutoscaler
 metadata:
   name: voice
   namespace: {{ .Values.namespace}}
 spec:
-  maxReplicas: {{ .Values.hpa_max_replicas }}
-  minReplicas: {{ .Values.hpa_max_replicas }}
+  maxReplicas: {{ .Values.voice_web.hpa.max_replicas }}
+  minReplicas: {{ .Values.voice_web.hpa.min_replicas }}
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment

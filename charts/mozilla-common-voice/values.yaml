@@ -1,20 +1,23 @@
 namespace: voice-dev
 
-# Enables or Disabled using Kubernetes Horizontal Pod Autoscaler
-hpa_enabled: false
-hpa_max_replicas: 6
-hpa_min_replicas: 2
+# Parameters for voice-web container 
+voice_web:
+  hpa:
+    enabled: false
+    max_replicas: 6
+    min_replicas: 2
 
-# Required if "hpa_enabled =  false"
-replicas: 3
+  replicas: 3 # Required if "hpa_enabled =  false"
 
-# Requested resources
-requests_cpu: 500m
-requests_memory: 256Mi
-limits_cpu: 1
-limits_memory: 1024Mi
+  requests:
+    cpu: 500m
+    memory: 256Mi
+  limits:
+    cpu: 1
+    memory: 1024Mi
 
-config_new_relic_enabled: "false"
+  config:
+    new_relic_enabled: "false"
 
 redis:
   enabled: true

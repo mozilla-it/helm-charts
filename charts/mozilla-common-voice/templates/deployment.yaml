@@ -8,8 +8,8 @@ spec:
   selector:
     matchLabels:
       app: voice
-  {{ if eq .Values.hpa_enabled false }}
-  replicas: {{ .Values.replicas }}
+  {{ if eq .Values.voice_web.hpa.enabled false }}
+  replicas: {{ .Values.voice_web.replicas }}
   {{ end }}
   template:
     metadata:
@@ -35,11 +35,11 @@ spec:
           timeoutSeconds: 1
         resources:
           limits:
-            cpu: {{ .Values.limits_cpu }}
-            memory: {{ .Values.limits_memory }}
+            cpu: {{ .Values.voice_web.limits.cpu }}
+            memory: {{ .Values.voice_web.limits.memory }}
           requests:
-            cpu: {{ .Values.requests_cpu }}
-            memory: {{ .Values.requests_memory }}
+            cpu: {{ .Values.voice_web.requests.cpu }}
+            memory: {{ .Values.voice_web.requests.memory }}
         volumeMounts:
         - name: config
           mountPath: /config
