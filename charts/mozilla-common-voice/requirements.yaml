@@ -1,0 +1,5 @@
+dependencies:
+- name: redis
+  version: ~10.4.1
+  condition: redis.enabled
+
