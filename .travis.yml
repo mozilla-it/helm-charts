@@ -7,14 +7,12 @@ before_install:
 script:
 - mkdir releases
 - cd charts
-- for i in $(find . -maxdepth 1 -mindepth 1 -type d) ; do helm lint $i && helm package
-  $i -d ../releases ; done
+- for i in $(find . -maxdepth 1 -mindepth 1 -type d) ; do helm lint $i && helm dependency update $i 
+  && helm package $i -d ../releases ; done
 - cd ..
-#- cp -r releases /tmp
 - git checkout gh-pages
 - mv *.tgz releases/
 - cd releases
-#- mv /tmp/releases/* .
 - helm repo index --url https://mozilla-it.github.io/curated-helm-charts/ --merge ../index.yaml .
 deploy:
   provider: pages
