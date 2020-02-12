@@ -8,3 +8,8 @@ dependencies:
   version: ~7.6.0
   condition: elasticsearch.enabled
   repository: https://helm.elastic.co
+
+- name: kibana
+  version: ~7.6.0
+  condition: kibana.enabled
+  repository: https://helm.elastic.co

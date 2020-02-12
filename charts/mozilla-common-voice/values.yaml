@@ -32,3 +32,6 @@ elasticsearch:
     limits:
       cpu: 1000m
       memory: 1024Mi
+
+kibana:
+  enabled: true
