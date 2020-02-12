@@ -19,6 +19,11 @@ voice_web:
   config:
     new_relic_enabled: "false"
 
+mysql:
+  enabled: true
+  mysqlUser: voice
+  mysqlDatabase: voice
+
 redis:
   enabled: true
 

@@ -1,4 +1,9 @@
 dependencies:
+- name: mysql
+  version: ~1.6.2
+  condition: mysql.enabled
+  repository: https://kubernetes-charts.storage.googleapis.com
+
 - name: redis
   version: ~10.4.1
   condition: redis.enabled
