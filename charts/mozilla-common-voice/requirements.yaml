@@ -3,3 +3,8 @@ dependencies:
   version: ~10.4.1
   condition: redis.enabled
   repository: https://kubernetes-charts.storage.googleapis.com
+
+- name: elasticsearch
+  version: ~7.6.0
+  condition: elasticsearch.enabled
+  repository: https://helm.elastic.co
