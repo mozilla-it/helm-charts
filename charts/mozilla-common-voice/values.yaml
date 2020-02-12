@@ -23,6 +23,8 @@ mysql:
   enabled: true
   mysqlUser: voice
   mysqlDatabase: voice
+  mysqlPassword: default-non-secure-password
+  mysqlRootPassword: default-non-secure-root-password
 
 redis:
   enabled: true
