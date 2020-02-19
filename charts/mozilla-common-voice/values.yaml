@@ -22,14 +22,14 @@ voice_web:
   config:
     environment: "default"
     new_relic_enabled: "false"
-    server_port: "9000"
+    server_port: \"9000\"
     prod: "false"
     version: "test"
     mysql:
       root_user: "root"
       user: "voice"
       db_name: "voice"
-      port: "3306"
+      port: \"3306\"
     s3:
       bucket_name: "common-voice-bucket"
       location: "us-west-2"
