@@ -2,6 +2,7 @@ namespace: voice-dev
 
 # Parameters for voice-web container 
 voice_web:
+  use_secrets_file: true
   hpa:
     enabled: false
     max_replicas: 6
@@ -16,8 +17,43 @@ voice_web:
     cpu: 1
     memory: 1024Mi
 
+  image: "itsre/voice-web:master-latest"
+
   config:
+    environment: "default"
     new_relic_enabled: "false"
+    server_port: "9000"
+    prod: "false"
+    version: "test"
+    mysql:
+      root_user: "root"
+      user: "voice"
+      db_name: "voice"
+      port: "3306"
+    s3:
+      bucket_name: "common-voice-bucket"
+      location: ""
+      config: "{}"
+    admins_emails: ""
+    kibana_admins: ""
+    redis_url: "redis://voice-dev-redis-master.voice-dev.svc.cluster.local/"
+    kibana:
+      url: "http://voice-dev-kibana.voice-dev.svc.cluster.local:5601/"
+      prefix: "/app/kibana"
+    last_dataset: ""
+
+  # This are default non-production base64'd values
+  secrets:
+    mysql:
+      root_pw: "ZGVmYXVsdC1ub24tc2VjdXJlLXJvb3QtcGFzc3dvcmQK"
+      user_pw: "ZGVmYXVsdC1ub24tc2VjdXJlLXBhc3N3b3JkCg=="
+      host: "bXlzcWwudm9pY2UtZGV2LnN2Yy5jbHVzdGVyLmxvY2FsCg=="
+    app_secret: "bXktdG9wLXNlY3JldC1zZWNyZXQK"
+    auth0:
+      domain: "YXV0aC5hdXRoMC5jb20K"
+      client_id: "ZmFrZS1jbGllbnQtaWQK"
+      client_secret: "ZmFrZS1jbGllbnQtc2VjcmV0Cg=="
+    basket_api_key: "MDEyMzQ1Njc4OQo="
 
 mysql:
   enabled: true

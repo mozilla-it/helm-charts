@@ -21,7 +21,7 @@ spec:
         command:
           - yarn
           - start:prod
-        image: itsre/voice-web:master-latest
+        image: {{ .Values.voice_web.image }}
         ports:
         - containerPort: 9000
         livenessProbe:
@@ -40,14 +40,10 @@ spec:
           requests:
             cpu: {{ .Values.voice_web.requests.cpu }}
             memory: {{ .Values.voice_web.requests.memory }}
-        volumeMounts:
-        - name: config
-          mountPath: /config
-          readOnly: true
-        env:
-        - name: SERVER_CONFIG_PATH
-          value: /config/config.json
-      volumes:
-      - name: config
-        secret:
-          secretName: voice-config
+        envFrom:
+        - configMapRef:
+            name: voice-config
+        {{ if eq .Values.voice_web.use_secrets_file true }}
+        - secretRef:
+            name: voice-secrets
+        {{ end }}
