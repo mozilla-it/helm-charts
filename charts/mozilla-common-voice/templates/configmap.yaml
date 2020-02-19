@@ -6,7 +6,7 @@ metadata:
 data:
   CV_SERVER_PORT: {{ .Values.voice_web.config.server_port }}
   CV_PROD: {{ .Values.voice_web.config.prod }}
-  CV_VERSION: {{ .Values.config.version }}
+  CV_VERSION: {{ .Values.voice_web.config.version }}
   CV_DB_ROOT_USER: {{ .Values.voice_web.config.mysql.root_user }}
   CV_MYSQLUSER: {{ .Values.voice_web.config.mysql.user }}
   CV_MYSQLDBNAME: {{ .Values.voice_web.config.mysql.db_name }}
