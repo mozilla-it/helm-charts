@@ -32,10 +32,9 @@ voice_web:
       port: "3306"
     s3:
       bucket_name: "common-voice-bucket"
-      location: ""
-      config: "{}"
-    admins_emails: ""
-    kibana_admins: ""
+      location: "us-west-2"
+    admins_emails: "admin@organization.com"
+    kibana_admins: "admin@organization.com"
     redis_url: "redis://voice-dev-redis-master.voice-dev.svc.cluster.local/"
     kibana:
       url: "http://voice-dev-kibana.voice-dev.svc.cluster.local:5601/"
