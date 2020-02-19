@@ -9,7 +9,7 @@ data:
   CV_VERSION: {{ .Values.config.version }}
   CV_DB_ROOT_USER: {{ .Values.voice_web.config.mysql.root_user }}
   CV_MYSQLUSER: {{ .Values.voice_web.config.mysql.user }}
-  CV_MYSQLDBNAME: {{ .Values.voice_web.config.mysql.db-name }}
+  CV_MYSQLDBNAME: {{ .Values.voice_web.config.mysql.db_name }}
   CV_MYSQLPORT:  {{ .Values.voice_web.config.mysql.port }}
   CV_BUCKET_NAME: {{ .Values.voice_web.config.s3.bucket_name }}
   CV_BUCKET_LOCATION: {{ .Values.voice_web.config.s3.location }}
