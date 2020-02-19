@@ -14,7 +14,7 @@ data:
   CV_BUCKET_NAME: {{ .Values.voice_web.config.s3.bucket_name }}
   CV_BUCKET_LOCATION: {{ .Values.voice_web.config.s3.location }}
   CV_S3_CONFIG: {{ .Values.voice_web.config.s3.config }}
-  CV_ENVIRONMENT: {{ .Value.voice_web.config.environment }}
+  CV_ENVIRONMENT: {{ .Values.voice_web.config.environment }}
   CV_ADMIN_EMAILS: {{ .Values.voice_web.config.admin_emails }}
   CV_KIBANA_ADMINS: {{ .Values.voice_web.config.kibana_admins }}
   CV_REDIS_URL: {{ .Values.voice_web.config.redis_url }} 
