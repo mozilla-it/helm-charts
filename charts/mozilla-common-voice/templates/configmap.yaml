@@ -4,19 +4,19 @@ metadata:
   name: voice-config
   namespace: {{ .Values.namespace}}
 data:
-  CV_SERVER_PORT: {{ .Values.voice_web.config.server_port }}
-  CV_PROD: {{ .Values.voice_web.config.prod }}
-  CV_VERSION: {{ .Values.voice_web.config.version }}
-  CV_DB_ROOT_USER: {{ .Values.voice_web.config.mysql.root_user }}
-  CV_MYSQLUSER: {{ .Values.voice_web.config.mysql.user }}
-  CV_MYSQLDBNAME: {{ .Values.voice_web.config.mysql.db_name }}
-  CV_MYSQLPORT:  {{ .Values.voice_web.config.mysql.port }}
-  CV_BUCKET_NAME: {{ .Values.voice_web.config.s3.bucket_name }}
-  CV_BUCKET_LOCATION: {{ .Values.voice_web.config.s3.location }}
-  CV_ENVIRONMENT: {{ .Values.voice_web.config.environment }}
-  CV_ADMIN_EMAILS: {{ .Values.voice_web.config.admin_emails }}
-  CV_KIBANA_ADMINS: {{ .Values.voice_web.config.kibana_admins }}
-  CV_REDIS_URL: {{ .Values.voice_web.config.redis_url }} 
-  CV_KIBANA_URL: {{ .Values.voice_web.config.kibana.url }} 
-  CV_KIBANA_PREFIX: {{ .Values.voice_web.config.kibana.prefix }}
-  CV_LAST_DATASET: {{ .Values.voice_web.config.last_dataset }}
+  CV_SERVER_PORT: "{{ .Values.voice_web.config.server_port }}"
+  CV_PROD: "{{ .Values.voice_web.config.prod }}"
+  CV_VERSION: "{{ .Values.voice_web.config.version }}"
+  CV_DB_ROOT_USER: "{{ .Values.voice_web.config.mysql.root_user }}"
+  CV_MYSQLUSER: "{{ .Values.voice_web.config.mysql.user }}"
+  CV_MYSQLDBNAME: "{{ .Values.voice_web.config.mysql.db_name }}"
+  CV_MYSQLPORT:  "{{ .Values.voice_web.config.mysql.port }}"
+  CV_BUCKET_NAME: "{{ .Values.voice_web.config.s3.bucket_name }}"
+  CV_BUCKET_LOCATION: "{{ .Values.voice_web.config.s3.location }}"
+  CV_ENVIRONMENT: "{{ .Values.voice_web.config.environment }}"
+  CV_ADMIN_EMAILS: "{{ .Values.voice_web.config.admin_emails }}"
+  CV_KIBANA_ADMINS: "{{ .Values.voice_web.config.kibana_admins }}"
+  CV_REDIS_URL: "{{ .Values.voice_web.config.redis_url }} "
+  CV_KIBANA_URL: "{{ .Values.voice_web.config.kibana.url }} "
+  CV_KIBANA_PREFIX: "{{ .Values.voice_web.config.kibana.prefix }}"
+  CV_LAST_DATASET: "{{ .Values.voice_web.config.last_dataset }}"
