@@ -16,6 +16,7 @@ spec:
       labels:
         app: voice
     spec:
+      serviceAccountName: {{ .Values.namespace }}
       containers:
       - name: web
         command:

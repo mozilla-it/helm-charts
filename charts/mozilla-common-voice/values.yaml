@@ -19,6 +19,9 @@ voice_web:
 
   image: "itsre/voice-web:master-latest"
 
+  service_account:
+    annotations: {}
+
   config:
     environment: "default"
     new_relic_enabled: "false"
