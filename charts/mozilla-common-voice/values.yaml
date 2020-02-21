@@ -25,7 +25,7 @@ voice_web:
   config:
     environment: "default"
     new_relic_enabled: "false"
-    server_port: \"9000\"
+    server_port: 9000
     prod: "false"
     version: "test"
     mysql:
