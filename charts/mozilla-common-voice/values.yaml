@@ -33,6 +33,7 @@ voice_web:
       user: "voice"
       db_name: "voice"
       port: \"3306\"
+      host: "localhost"
     s3:
       bucket_name: "common-voice-bucket"
       location: "us-west-2"
