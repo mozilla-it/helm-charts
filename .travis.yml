@@ -13,7 +13,7 @@ script:
 - git checkout gh-pages
 - mv *.tgz releases/
 - cd releases
-- helm repo index --url https://mozilla-it.github.io/curated-helm-charts/ --merge ../index.yaml .
+- helm repo index --url https://mozilla-it.github.io/helm-charts/ --merge ../index.yaml .
 deploy:
   provider: pages
   github_token: $GITHUB_TOKEN
