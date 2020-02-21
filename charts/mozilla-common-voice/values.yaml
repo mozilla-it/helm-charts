@@ -3,6 +3,7 @@ namespace: voice-dev
 # Parameters for voice-web container 
 voice_web:
   use_secrets_file: true
+  use_default_secrets_file: true
   hpa:
     enabled: false
     max_replicas: 6
