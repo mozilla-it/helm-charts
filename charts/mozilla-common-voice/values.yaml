@@ -4,6 +4,10 @@ namespace: voice-dev
 voice_web:
   use_secrets_file: true
   use_default_secrets_file: true
+  ingress:
+    enabled: false
+    class: voice-dev
+    host: voice.mozilla.org
   hpa:
     enabled: false
     max_replicas: 6
