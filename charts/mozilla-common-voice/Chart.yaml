@@ -7,6 +7,7 @@ type:
 keywords:
   - Mozilla
   - common-voice
+  - voice
   - deepspeech
 home: https://voice.mozilla.org
 sources:
