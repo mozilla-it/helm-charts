@@ -21,5 +21,3 @@ data:
   CV_KIBANA_URL: "{{ .Values.voice_web.config.kibana.url }} "
   CV_KIBANA_PREFIX: "{{ .Values.voice_web.config.kibana.prefix }}"
   CV_LAST_DATASET: "{{ .Values.voice_web.config.last_dataset }}"
-  CV_NEW_RELIC_AGENT_ENABLED: "{{ .Values.voice_web.config.new_relic.enabled }}"
-  CV_NEW_RELIC_APP_NAME: "{{ .Values.voice_web.config.new_relic.app_name }}"

@@ -49,9 +49,6 @@ voice_web:
       url: "http://voice-dev-kibana.voice-dev.svc.cluster.local:5601/"
       prefix: "/app/kibana"
     last_dataset: "default"
-    new_relic:
-      enabled: false
-      app_name: voice
 
   # This are default non-production base64'd values
   secrets:
@@ -65,6 +62,10 @@ voice_web:
       client_id: "ZmFrZS1jbGllbnQtaWQK"
       client_secret: "ZmFrZS1jbGllbnQtc2VjcmV0Cg=="
     basket_api_key: "MDEyMzQ1Njc4OQo="
+
+new_relic:
+  enabled: false
+  app_name: voice
 
 mysql:
   enabled: true

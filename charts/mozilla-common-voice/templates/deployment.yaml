@@ -48,3 +48,8 @@ spec:
         - secretRef:
             name: voice-secrets
         {{ end }}
+        env:
+        - name: NEW_RELIC_AGENT_ENABLED
+          value: "{{ .Values.new_relic.enabled }}"
+        - name: NEW_RELIC_APP_NAME
+          value:  "{{ .Values.new_relic.app_name }}"
