@@ -28,6 +28,7 @@ voice_web:
     annotations: {}
 
   extra_containers: []
+  extra_volumes: []
   
   config:
     environment: "default"

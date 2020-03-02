@@ -56,3 +56,7 @@ spec:
 {{- if .Values.voice_web.extra_containers }}
       {{- toYaml .Values.voice_web.extra_containers | nindent 6 }}
 {{- end }}
+{{- if .Values.voice_web.extra_volumes }}
+      volumes:
+      {{- toYaml .Values.voice_web.extra_volumes | nindent 6 }}
+{{- end }}
