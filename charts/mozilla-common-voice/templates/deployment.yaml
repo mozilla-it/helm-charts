@@ -53,3 +53,6 @@ spec:
           value: "{{ .Values.new_relic.enabled }}"
         - name: NEW_RELIC_APP_NAME
           value:  "{{ .Values.new_relic.app_name }}"
+{{- if .Values.extraContainers }}
+      {{- toYaml .Values.extraContainers | nindent 6 }}
+{{- end }}

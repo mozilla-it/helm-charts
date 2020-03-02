@@ -1,7 +1,7 @@
 apiVersion: v1
 name: mozilla-common-voice
 icon: https://voice.mozilla.org/dist/f01895c77138837851f87c2e40acbd58.svg
-version: 0.0.40
+version: 0.0.41
 description: Deploy Mozilla Common Voice web application
 type: 
 keywords:
