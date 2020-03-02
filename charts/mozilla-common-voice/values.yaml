@@ -27,6 +27,8 @@ voice_web:
   service_account:
     annotations: {}
 
+  extraContainers: []
+  
   config:
     environment: "default"
     new_relic_enabled: "false"
