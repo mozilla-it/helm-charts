@@ -53,6 +53,6 @@ spec:
           value: "{{ .Values.new_relic.enabled }}"
         - name: NEW_RELIC_APP_NAME
           value:  "{{ .Values.new_relic.app_name }}"
-{{- if .Values.voice_web.extraContainers }}
-      {{- toYaml .Values.voice_web.extraContainers | nindent 6 }}
+{{- if .Values.voice_web.extra_containers }}
+      {{- toYaml .Values.voice_web.extra_containers | nindent 6 }}
 {{- end }}

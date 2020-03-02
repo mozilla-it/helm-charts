@@ -27,7 +27,7 @@ voice_web:
   service_account:
     annotations: {}
 
-  extraContainers: []
+  extra_containers: []
   
   config:
     environment: "default"
