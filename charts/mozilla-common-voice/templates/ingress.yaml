@@ -15,5 +15,15 @@ spec:
         backend:
           serviceName: voice
           servicePort: 9000
+{{- if .Values.voice_web.ingress.additional_host }}
+  - host: {{ .Values.voice_web.ingress.additional_host }}
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: voice
+          servicePort: 9000
+
+{{- end }}
 {{ end }}
 

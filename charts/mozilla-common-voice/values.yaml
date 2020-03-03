@@ -8,6 +8,7 @@ voice_web:
     enabled: false
     class: voice-dev
     host: voice.mozilla.org
+    additional_host: voice.mozilla.com
   hpa:
     enabled: false
     max_replicas: 6
