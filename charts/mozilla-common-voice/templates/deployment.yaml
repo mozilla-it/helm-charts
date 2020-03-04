@@ -19,11 +19,11 @@ spec:
       serviceAccountName: {{ .Values.namespace }}
       containers:
       - name: web
-      - args:
-       - /bin/sh
-       - -c
-       - |
-         yarn start:prod 2>&1 | tee /code/logs/voice-server.log
+        args:
+        - /bin/sh
+        - -c
+        - |
+          yarn start:prod 2>&1 | tee /code/logs/voice-server.log
         image: {{ .Values.voice_web.image }}
         ports:
         - containerPort: 9000
