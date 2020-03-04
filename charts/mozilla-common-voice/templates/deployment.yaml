@@ -55,10 +55,15 @@ spec:
           value: "{{ .Values.new_relic.enabled }}"
         - name: NEW_RELIC_APP_NAME
           value:  "{{ .Values.new_relic.app_name }}"
+        volumeMounts:
+        - name: logs
+          mountPath: /code/logs
 {{- if .Values.voice_web.extra_containers }}
       {{- toYaml .Values.voice_web.extra_containers | nindent 6 }}
 {{- end }}
-{{- if .Values.voice_web.extra_volumes }}
       volumes:
+      - name: logs
+        emptyDir: {}
+{{- if .Values.voice_web.extra_volumes }}
       {{- toYaml .Values.voice_web.extra_volumes | nindent 6 }}
 {{- end }}
