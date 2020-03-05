@@ -2,7 +2,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: voice
+  name: {{ .Values.voice_web.deployment_name }}
   namespace: {{ .Values.namespace}}
 spec:
   selector:

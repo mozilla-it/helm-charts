@@ -4,6 +4,7 @@ namespace: voice-dev
 voice_web:
   use_secrets_file: true
   use_default_secrets_file: true
+  deployment_name: voice
   ingress:
     enabled: false
     class: voice-dev
@@ -28,7 +29,13 @@ voice_web:
   service_account:
     annotations: {}
 
-  extra_containers: []
+  extra_containers:
+    - image:              itsre/remote_syslog2:0.2
+      name:               logs-to-papertrail
+      volumeMounts:
+        mountPath:  /logs
+        name:        logs
+
   extra_volumes: []
   
   config:
