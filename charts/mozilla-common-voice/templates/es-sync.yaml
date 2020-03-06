@@ -1,0 +1,53 @@
+{{ if eq .Values.voice_web.es_sync.enabled true }}
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  labels:
+    app: es-sync
+  name: es-sync-state
+spec:
+  accessModes:
+  - ReadWriteOnce
+  resources:
+    requests:
+      storage: 128Mi
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: es-sync
+  namespace: {{ .Values.namespace }}
+spec:
+  selector:
+    matchLabels:
+      app: es-sync
+  replicas: 1
+  strategy:
+    type: "Recreate"
+  template:
+    metadata:
+      labels:
+        app: es-sync
+    spec:
+      containers:
+      - name: go-mysql-elasticsearch
+        args:
+        - -config
+        - /config/river.toml
+        image: itsre/go-mysql-elasticsearch:v0.0.4
+        resources:
+          limits:
+            cpu: 200m
+            memory: 128Mi
+          requests:
+            cpu: 50m
+            memory: 64Mi
+        volumeMounts:
+        - name: es_sync_conf
+            mountPath: /config/river.toml
+      volumes:
+      - name: es_sync_conf
+        secret:
+          secretName: es_sync
+{{ end }}
