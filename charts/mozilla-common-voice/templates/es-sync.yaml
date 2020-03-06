@@ -49,5 +49,5 @@ spec:
       volumes:
       - name: es-sync-conf
         secret:
-          secretName: es_sync
+          secretName: es-sync
 {{ end }}
