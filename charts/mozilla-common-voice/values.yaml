@@ -54,6 +54,9 @@ voice_web:
       prefix: "/app/kibana"
     last_dataset: "default"
 
+  es_sync:
+    enabled: false
+
   # This are default non-production base64'd values
   secrets:
     mysql:
