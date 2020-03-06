@@ -44,10 +44,10 @@ spec:
             cpu: 50m
             memory: 64Mi
         volumeMounts:
-        - name: es_sync_conf
+        - name: es-sync-conf
           mountPath: /config/river.toml
       volumes:
-      - name: es_sync_conf
+      - name: es-sync-conf
         secret:
           secretName: es_sync
 {{ end }}
