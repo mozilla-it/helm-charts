@@ -60,6 +60,7 @@ voice_web:
       url: "http://voice-dev-kibana.voice-dev.svc.cluster.local:5601/"
       prefix: "/app/kibana"
     last_dataset: "default"
+    sentry_dsn: ""
 
   es_sync:
     enabled: false
