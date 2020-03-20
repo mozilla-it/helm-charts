@@ -48,6 +48,8 @@ deployment:
     app: refractr
   selectorLabels:
     app: refractr
+    app.kubernetes.io/instance: refractr
+    app.kubernetes.io/name: refractr
 
 ingress:
   enabled: true
