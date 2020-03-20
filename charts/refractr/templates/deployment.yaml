@@ -10,11 +10,15 @@ spec:
   replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
-      app: refractr
+      {{- if .Values.deployment.selectorLabels }}
+      {{ toYaml .Values.deployment.selectorLabels | nindent 6 }}
+      {{- end }}
   template:
     metadata:
       labels:
-        app: refractr
+        {{- if .Values.deployment.labels }}
+        {{ toYaml .Values.deployment.labels | nindent 8 }}
+        {{- end }}
     spec:
     {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
