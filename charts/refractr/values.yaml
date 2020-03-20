@@ -1,0 +1,101 @@
+# Default values for refractr.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+replicaCount: 3
+
+image:
+  repository: itsre
+  pullPolicy: IfNotPresent
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+labels: app=refractr
+selectorLabels: app=refractr
+
+serviceAccount:
+  create: true
+  name: refractr
+  #name: refractr-nginx-ingress
+
+podSecurityContext: {}
+  # fsGroup: 2000
+
+securityContext: {}
+  # capabilities:
+  #   drop:
+  #   - ALL
+  # readOnlyRootFilesystem: true
+  # runAsNonRoot: true
+  # runAsUser: 1000
+
+service:
+  type: NodePort
+  port: 30592
+  # TODO: These labels aren't getting picked up by the service
+  labels:
+    app: "refractr"
+  selectorLabels:
+    app: "refractr"
+
+deployment:
+  port: 80
+  annotations: {
+    fluxcd.io/automated: "true",
+    fluxcd.io/tag.refractr-web: glob:dev-*
+  }
+  labels:
+    app: "refractr"
+  selectorLabels:
+    app: "refractr"
+
+ingress:
+  enabled: true
+  # TODO: determine how to handle separate ingress controllers for stage and prod
+  annotations: {
+    kubernetes.io/tls-acme: "true",
+    nginx.ingress.kubernetes.io/rewrite-target: /,
+    nginx.ingress.kubernetes.io/ssl-redirect: "true",
+    nginx.org/server-snippets: "server_name ~^.*$;",     # Catch all server names
+  }
+  labels:
+    app: refractr
+  selectorLabels:
+    app: refractr
+
+resources: {}
+  # We usually recommend not to specify default resources and to leave this as a conscious
+  # choice for the user. This also increases chances charts run on environments with little
+  # resources, such as Minikube. If you do want to specify resources, uncomment the following
+  # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+  # limits:
+  #   cpu: 100m
+  #   memory: 128Mi
+  # requests:
+  #   cpu: 100m
+  #   memory: 128Mi
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
+
+# Nginx Ingress Controller value overrides
+nginx-ingress:
+  controller:
+    #    ingressClass: refractr
+    useIngressClassOnly: true
+    #    watchNamespace: |-
+      #  {{ .Release.Namespace }}
+    enableCustomResources: false
+    scope:
+      enabled: true
+    config:
+      entries:
+        use-proxy-protocol: "false"
+        use-forwarded-headers: "true"
+        proxy-real-ip-cidr: "0.0.0.0/0" # restrict this to the IP addresses of ELB
+  rbac:
+    create: true
+    scope: true
