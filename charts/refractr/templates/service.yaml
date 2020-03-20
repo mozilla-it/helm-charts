@@ -4,11 +4,13 @@ metadata:
   name: {{ include "refractr.fullname" . }}
   labels:
     {{- include "refractr.labels" . | nindent 4 }}
+    app: refractr
 spec:
   type: {{ .Values.service.type }}
   ports:
     - port: {{ .Values.service.port }}
-      targetPort: 80
+      targetPort: {{ .Values.deployment.port }}
       protocol: TCP
   selector:
+    app: refractr
     {{- include "refractr.selectorLabels" . | nindent 4 }}
