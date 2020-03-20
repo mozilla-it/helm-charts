@@ -3,8 +3,9 @@ kind: Service
 metadata:
   name: {{ include "refractr.fullname" . }}
   labels:
-    {{- include "refractr.labels" . | nindent 4 }}
-    app: refractr
+    {{- if .Values.service.labels }}
+    {{ toYaml .Values.service.labels }}
+    {{- end }}
 spec:
   type: {{ .Values.service.type }}
   ports:
@@ -12,5 +13,6 @@ spec:
       targetPort: {{ .Values.deployment.port }}
       protocol: TCP
   selector:
-    app: refractr
-    {{- include "refractr.selectorLabels" . | nindent 4 }}
+    {{- if .Values.service.selectorLabels }}
+    {{ toYaml .Values.service.selectorLabels }}
+    {{- end }}
