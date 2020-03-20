@@ -6,6 +6,10 @@ metadata:
   annotations:
     {{- toYaml . | nindent 4 }}
   {{- end }}
+  labels:
+  {{- if .Values.deployment.labels }}
+  {{ toYaml .Values.deployment.labels | indent 4 }}
+  {{- end }}
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
@@ -16,8 +20,8 @@ spec:
   template:
     metadata:
       labels:
-        {{- if .Values.deployment.labels }}
-        {{ toYaml .Values.deployment.labels | nindent 8 }}
+        {{- if .Values.deployment.selectorLabels }}
+        {{ toYaml .Values.deployment.selectorLabels | nindent 8 }}
         {{- end }}
     spec:
     {{- with .Values.imagePullSecrets }}

@@ -46,7 +46,14 @@ deployment:
   }
   labels:
     app: refractr
-  selectorLabels:
+  selectorLabels: {
+    app: refractr,
+    app.kubernetes.io/instance: refractr,
+    app.kubernetes.io/name: refractr
+    }
+
+pod:
+  labels:
     app: refractr
     app.kubernetes.io/instance: refractr
     app.kubernetes.io/name: refractr
