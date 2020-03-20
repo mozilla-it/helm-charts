@@ -15,7 +15,8 @@ selectorLabels: app=refractr
 
 serviceAccount:
   create: true
-  name: refractr-stage-helm
+  name: refractr
+  #name: refractr-nginx-ingress
 
 podSecurityContext: {}
   # fsGroup: 2000
@@ -30,13 +31,23 @@ securityContext: {}
 
 service:
   type: NodePort
-  port: 50023
+  port: 30592
+  # TODO: These labels aren't getting picked up by the service
+  labels:
+    app: "refractr"
+  selectorLabels:
+    app: "refractr"
 
 deployment:
+  port: 80
   annotations: {
     fluxcd.io/automated: "true",
     fluxcd.io/tag.refractr-web: glob:dev-*
   }
+  labels:
+    app: "refractr"
+  selectorLabels:
+    app: "refractr"
 
 ingress:
   enabled: true
@@ -46,17 +57,11 @@ ingress:
     nginx.ingress.kubernetes.io/rewrite-target: /,
     nginx.ingress.kubernetes.io/ssl-redirect: "true",
     nginx.org/server-snippets: "server_name ~^.*$;",     # Catch all server names
-    #    nginx.ingress.kubernetes.io/configuration-snippet:|
-    #      more_set_headers "X-Frame-Options: SAMEORIGIN";
-    #  more_set_headers "Content-Security-Policy: frame-ancestors 'none'";
   }
-  #  hosts:
-    #    - host: refractr2.allizom.org
-    #  paths: [/]
-    #  tls:
-      #- secretName: cert-refractr2-allizom-org
-      #hosts:
-        #  - refractr2.allizom.org
+  labels:
+    app: refractr
+  selectorLabels:
+    app: refractr
 
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
@@ -75,3 +80,22 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+
+# Nginx Ingress Controller value overrides
+nginx-ingress:
+  controller:
+    #    ingressClass: refractr
+    useIngressClassOnly: true
+    #    watchNamespace: |-
+      #  {{ .Release.Namespace }}
+    enableCustomResources: false
+    scope:
+      enabled: true
+    config:
+      entries:
+        use-proxy-protocol: "false"
+        use-forwarded-headers: "true"
+        proxy-real-ip-cidr: "0.0.0.0/0" # restrict this to the IP addresses of ELB
+  rbac:
+    create: true
+    scope: true
