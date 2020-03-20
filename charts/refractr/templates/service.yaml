@@ -10,8 +10,12 @@ spec:
   type: {{ .Values.service.type }}
   ports:
     - name: http
-      port: {{ .Values.service.port }}
-      targetPort: {{ .Values.deployment.port }}
+      port: 80
+      targetPort: 80
+      protocol: TCP
+    - name: https
+      port: 443
+      targetPort: 80
       protocol: TCP
   selector:
     {{- if .Values.service.selectorLabels }}
