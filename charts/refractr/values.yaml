@@ -10,13 +10,14 @@ image:
 imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
-labels: app=refractr
-selectorLabels: app=refractr
+labels:
+  app: refractr
+selectorLabels:
+  app: refractr
 
 serviceAccount:
   create: true
   name: refractr
-  #name: refractr-nginx-ingress
 
 podSecurityContext: {}
   # fsGroup: 2000
@@ -30,13 +31,12 @@ securityContext: {}
   # runAsUser: 1000
 
 service:
-  type: NodePort
-  port: 30592
-  # TODO: These labels aren't getting picked up by the service
+  type: ClusterIP
+  port: 30511
   labels:
-    app: "refractr"
+    app: refractr
   selectorLabels:
-    app: "refractr"
+    app: refractr
 
 deployment:
   port: 80
@@ -45,9 +45,9 @@ deployment:
     fluxcd.io/tag.refractr-web: glob:dev-*
   }
   labels:
-    app: "refractr"
+    app: refractr
   selectorLabels:
-    app: "refractr"
+    app: refractr
 
 ingress:
   enabled: true
