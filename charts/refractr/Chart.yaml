@@ -3,7 +3,7 @@ name: refractr
 description: A Helm chart for the refractr redirect application
 type: application
 # Chart version, bump for any changes
-version: 0.1.7
+version: 0.1.8
 # appVersion specifies the docker image to pull
 appVersion: dev-1.2.3
 #dependencies:

@@ -10,6 +10,7 @@ image:
 imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
+issuer: stage
 labels:
   app: refractr
 selectorLabels:
@@ -32,7 +33,6 @@ securityContext: {}
 
 service:
   type: ClusterIP
-  port: 30511
   labels:
     app: refractr
   selectorLabels:
