@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    service.beta.kubernetes.io/aws-load-balancer-backend-protocol: tcp
+    service.beta.kubernetes.io/aws-load-balancer-connection-idle-timeout: "60"
+  labels:
+    app.kubernetes.io/name: nginx
+    app.kubernetes.io/part-of: nginx
+  name: nginx
+spec:
+  externalTrafficPolicy: Cluster
+  ports:
+    - name: http
+      port: 80
+      protocol: TCP
+      targetPort: 80
+    - name: https
+      port: 443
+      protocol: TCP
+      targetPort: 443
+  selector:
+    app.kubernetes.io/name: nginx
+    app.kubernetes.io/part-of: nginx
+  sessionAffinity: None
+  type: LoadBalancer
