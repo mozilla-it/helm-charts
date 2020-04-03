@@ -8,3 +8,4 @@ failedJobsHistoryLimit: 1
 successfulJobsHistoryLimit: 3
 concurrencyPolicy: Forbid
 restartPolicy: OnFailure
+serviceAccountName: default

@@ -1,7 +1,7 @@
 apiVersion: v2
 name: data-alert-sender
 description: Helm Chart for data-alert-sender, a cron job which sends data alerts from stackdriver metrics
-version: 0.0.1
+version: 0.0.2
 appVersion: 0.0.1
 keywords:
   - cron
