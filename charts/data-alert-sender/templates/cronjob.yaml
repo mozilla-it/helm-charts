@@ -20,6 +20,8 @@ spec:
             app: {{ $release_name }}
             cron: {{ .Values.name }}
         spec:
+          serviceAccountName: {{ .Values.serviceAccountName }}
+          automountServiceAccountToken: true
           containers:
           - image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
             imagePullPolicy: {{ .Values.image.imagePullPolicy }}
