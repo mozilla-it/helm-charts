@@ -1,0 +1,10 @@
+name: data-alert-sender
+image:
+  repository: gcr.io/dp2-admin/github.com/mozilla-it/data-alert-sender
+  tag: latest
+  imagePullPolicy: IfNotPresent
+schedule: "*/3 * * * *"
+failedJobsHistoryLimit: 1
+successfulJobsHistoryLimit: 3
+concurrencyPolicy: Forbid
+restartPolicy: OnFailure
