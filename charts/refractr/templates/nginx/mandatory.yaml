@@ -1,4 +1,3 @@
----
 kind: ConfigMap
 apiVersion: v1
 metadata:
@@ -6,6 +5,10 @@ metadata:
   labels:
     app.kubernetes.io/name: nginx
     app.kubernetes.io/part-of: nginx
+data:
+  use-proxy-protocol: "false"
+  use-forwarded-headers: "true"
+  proxy-real-ip-cidr: "0.0.0.0/0" # restrict this to the IP addresses of ELB
 
 ---
 kind: ConfigMap
