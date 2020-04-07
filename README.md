@@ -1,4 +1,7 @@
 # helm-charts
+
+[![Build Status](https://travis-ci.com/mozilla-it/helm-charts.svg?branch=master)](https://travis-ci.com/mozilla-it/helm-charts)
+
 This repository contains a collection of Helm charts curated by Mozilla's Service Engineering team
 
 ## Adding more charts
