@@ -54,11 +54,11 @@ voice_web:
       bucket_name: "common-voice-bucket"
       location: "us-west-2"
     admin_emails: "admin@organization.com"
-    kibana_admins: "admin@organization.com"
     redis_url: "redis://voice-dev-redis-master.voice-dev.svc.cluster.local/"
     kibana:
       url: "http://voice-dev-kibana.voice-dev.svc.cluster.local:5601/"
       prefix: "/app/kibana"
+      admins: "admin@organization.com"
     last_dataset: "default"
 
   es_sync:

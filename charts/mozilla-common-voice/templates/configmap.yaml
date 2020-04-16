@@ -16,10 +16,10 @@ data:
   CV_BUCKET_LOCATION: "{{ .Values.voice_web.config.s3.location }}"
   CV_ENVIRONMENT: "{{ .Values.voice_web.config.environment }}"
   CV_ADMIN_EMAILS: "{{ .Values.voice_web.config.admin_emails }}"
-  CV_KIBANA_ADMINS: "{{ .Values.voice_web.config.kibana_admins }}"
   CV_REDIS_URL: "{{ .Values.voice_web.config.redis_url }}"
   CV_KIBANA_URL: "{{ .Values.voice_web.config.kibana.url }}"
   CV_KIBANA_PREFIX: "{{ .Values.voice_web.config.kibana.prefix }}"
+  CV_KIBANA_ADMINS: "{{ .Values.voice_web.config.kibana.admins }}"
   CV_LAST_DATASET: "{{ .Values.voice_web.config.last_dataset }}"
 {{- if .Values.voice_web.config.extra_vars }}
       {{- toYaml .Values.voice_web.config.extra_vars | nindent 2 }}
