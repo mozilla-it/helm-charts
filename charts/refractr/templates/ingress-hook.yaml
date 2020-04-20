@@ -1,5 +1,5 @@
 ---
-# run a helm pre-install hook, the refractr-cd container to create an Ingress dynamically from the list of domains since we need certs for all of them
+# run a helm pre-install hook, calling the refractr container with an argument to create an Ingress dynamically from the list of domains since we need certs for all of them
 apiVersion: batch/v1
 kind: Job
 metadata:
@@ -24,4 +24,6 @@ spec:
       restartPolicy: Never
       containers:
         - name: pre-install-job
-          image: "itsre/refractr-cd:latest"
+          image: "itsre/refractr:latest"
+          command: ["./bin/refractr"]
+          args: ["-i"]
