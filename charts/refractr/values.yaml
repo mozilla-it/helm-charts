@@ -5,9 +5,14 @@
 replicaCount: 3
 
 image:
-  repository: itsre
+  repository: 783633885093.dkr.ecr.us-west-2.amazonaws.com/refractr
+  tag: v0.0.1-83-gd2b4a46
   pullPolicy: IfNotPresent
-imagePullSecrets: []
+  #imageCredentials:
+    #  registry: <repo>
+    #  username: <username>
+    #  password: <pw>
+
 nameOverride: ""
 fullnameOverride: ""
 issuer: stage
