@@ -1,0 +1,14 @@
+apiVersion: v2
+name: fluentd-papertrail
+description: A Helm chart to deploy fluentd to send to papertrail
+type: application
+version: 0.1.0
+appVersion: 1.2
+
+sources:
+  - https://github.com/papertrail
+  - https://github.com/fluent/fluentd
+
+maintainers:
+  - name: limed
+    email: limed@mozilla.com
