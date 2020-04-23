@@ -5,8 +5,6 @@
 replicaCount: 3
 
 image:
-  repository: 783633885093.dkr.ecr.us-west-2.amazonaws.com/refractr
-  tag: v0.0.1-83-gd2b4a46
   pullPolicy: IfNotPresent
   #imageCredentials:
     #  registry: <repo>
