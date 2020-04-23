@@ -2,7 +2,20 @@ apiVersion: v2
 name: refractr
 description: A Helm chart for the refractr redirect application
 type: application
+
 # Chart version, bump for any changes
-version: 0.2.9
+version: 0.2.10
 # appVersion specifies the docker image to pull
 appVersion: dev-1.2.3
+
+keywords:
+  - Mozilla
+  - refractr
+
+home: https://github.com/mozilla-it/refractr
+sources:
+  - https://github.com/mozilla-it/refractr
+
+maintainers:
+  - name: ericz
+    email: ericz@mozilla.com

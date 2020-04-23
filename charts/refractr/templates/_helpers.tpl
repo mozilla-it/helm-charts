@@ -35,6 +35,7 @@ Create chart name and version as used by the chart label.
 Common labels
 */}}
 {{- define "refractr.labels" -}}
+app: {{ include "refractr.fullname" . }}
 helm.sh/chart: {{ include "refractr.chart" . }}
 {{ include "refractr.selectorLabels" . }}
 {{- if .Chart.AppVersion }}

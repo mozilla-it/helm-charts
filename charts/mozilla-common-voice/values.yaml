@@ -1,6 +1,6 @@
 namespace: voice-dev
 
-# Parameters for voice-web container 
+# Parameters for voice-web container
 voice_web:
   use_secrets_file: true
   use_default_secrets_file: true
@@ -15,7 +15,7 @@ voice_web:
     max_replicas: 6
     min_replicas: 2
 
-  replicas: 3 # Required if "hpa_enabled =  false"
+  replicas: 3   # Required if "hpa_enabled =  false"
 
   requests:
     cpu: 500m
@@ -30,14 +30,14 @@ voice_web:
     annotations: {}
 
   extra_containers:
-    - image:              itsre/remote_syslog2:0.2
-      name:               logs-to-papertrail
+    - image: itsre/remote_syslog2:0.2
+      name: logs-to-papertrail
       volumeMounts:
-        mountPath:  /logs
-        name:        logs
+        mountPath: /logs
+        name: logs
 
   extra_volumes: []
-  
+
   config:
     environment: "default"
     new_relic_enabled: "false"

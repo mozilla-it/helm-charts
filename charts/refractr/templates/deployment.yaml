@@ -1,28 +1,23 @@
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: {{ include "refractr.fullname" . }}
-  {{- with .Values.deployment.annotations }}
+  {{- if .Values.deployment.annotations }}
   annotations:
-    {{- toYaml . | nindent 4 }}
+{{ toYaml .Values.deployment.annotations | indent 4 }}
   {{- end }}
   labels:
-  {{- if .Values.deployment.labels }}
-  {{ toYaml .Values.deployment.labels | indent 4 }}
-  {{- end }}
+    {{- include "refractr.labels" . | nindent 4 }}
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
-      {{- if .Values.deployment.selectorLabels }}
-      {{ toYaml .Values.deployment.selectorLabels | nindent 6 }}
-      {{- end }}
+      {{- include "refractr.selectorLabels" . | nindent 6 }}
   template:
     metadata:
       labels:
-        {{- if .Values.deployment.selectorLabels }}
-        {{ toYaml .Values.deployment.selectorLabels | nindent 8 }}
-        {{- end }}
+        {{- include "refractr.selectorLabels" .  | nindent 8 }}
     spec:
     {{- with .Values.imagePullSecrets }}
       imagePullSecrets:

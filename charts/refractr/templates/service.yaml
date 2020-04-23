@@ -1,23 +1,20 @@
+---
 apiVersion: v1
 kind: Service
 metadata:
   name: {{ include "refractr.fullname" . }}
   labels:
-    {{- if .Values.service.labels }}
-    {{ toYaml .Values.service.labels }}
-    {{- end }}
+    {{- include "refractr.labels" . | nindent 4 }}
 spec:
   type: {{ .Values.service.type }}
   ports:
-    - name: http
-      port: 80
-      targetPort: 80
-      protocol: TCP
-    - name: https
-      port: 443
-      targetPort: 80
-      protocol: TCP
+  - name: http
+    port: 80
+    targetPort: 80
+    protocol: TCP
+  - name: https
+    port: 443
+    targetPort: 80
+    protocol: TCP
   selector:
-    {{- if .Values.service.selectorLabels }}
-    {{ toYaml .Values.service.selectorLabels }}
-    {{- end }}
+    {{- include "refractr.selectorLabels" . | nindent 4 }}

@@ -2,8 +2,14 @@ apiVersion: v2
 name: fluentd-papertrail
 description: A Helm chart to deploy fluentd to send to papertrail
 type: application
-version: 0.1.0
+version: 0.1.1
 appVersion: 1.2
+
+keywords:
+  - fluentd
+  - papertrail
+
+home: "https://github.com/mozilla-it/helm-charts"
 
 sources:
   - https://github.com/papertrail
