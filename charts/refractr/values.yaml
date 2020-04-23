@@ -6,18 +6,14 @@ replicaCount: 3
 
 image:
   pullPolicy: IfNotPresent
-  #imageCredentials:
-    #  registry: <repo>
-    #  username: <username>
-    #  password: <pw>
+  # imageCredentials:
+  #   registry: <repo>
+  #   username: <username>
+  #   password: <pw>
 
 nameOverride: ""
 fullnameOverride: ""
 issuer: stage
-labels:
-  app: refractr
-selectorLabels:
-  app: refractr
 
 serviceAccount:
   create: true
@@ -36,30 +32,13 @@ securityContext: {}
 
 service:
   type: ClusterIP
-  labels:
-    app: refractr
-  selectorLabels:
-    app: refractr
 
 deployment:
   port: 80
-  annotations: {
-    fluxcd.io/automated: "true",
+  annotations:
+    fluxcd.io/automated: "true"
     fluxcd.io/tag.refractr-web: glob:dev-*
-  }
-  labels:
-    app: refractr
-  selectorLabels: {
-    app: refractr,
-    app.kubernetes.io/instance: refractr,
-    app.kubernetes.io/name: refractr
-    }
 
-pod:
-  labels:
-    app: refractr
-    app.kubernetes.io/instance: refractr
-    app.kubernetes.io/name: refractr
 
 ingress:
   enabled: true
@@ -70,10 +49,6 @@ ingress:
     nginx.ingress.kubernetes.io/ssl-redirect: "true",
     nginx.org/server-snippets: "server_name ~^.*$;",     # Catch all server names
   }
-  labels:
-    app: refractr
-  selectorLabels:
-    app: refractr
 
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
@@ -96,10 +71,7 @@ affinity: {}
 # Nginx Ingress Controller value overrides
 nginx-ingress:
   controller:
-    #    ingressClass: refractr
     useIngressClassOnly: true
-    #    watchNamespace: |-
-      #  {{ .Release.Namespace }}
     enableCustomResources: false
     scope:
       enabled: true
@@ -107,7 +79,7 @@ nginx-ingress:
       entries:
         use-proxy-protocol: "false"
         use-forwarded-headers: "true"
-        proxy-real-ip-cidr: "0.0.0.0/0" # restrict this to the IP addresses of ELB
+        proxy-real-ip-cidr: "0.0.0.0/0"   # restrict this to the IP addresses of ELB
   rbac:
     create: true
     scope: true

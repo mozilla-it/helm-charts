@@ -1,0 +1,11 @@
+remote: origin
+helm-extra-args: --timeout 600
+check-version-increment: true
+validate-yaml: true
+
+chart-dirs:
+  - charts
+
+chart-repos:
+  - elastic=https://helm.elastic.co
+  - kubernetes-charts=https://kubernetes-charts.storage.googleapis.com
