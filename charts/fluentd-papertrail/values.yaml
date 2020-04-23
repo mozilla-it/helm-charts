@@ -1,0 +1,57 @@
+# Configuration settings for fluentd-papertrail
+
+nameOverride: ""
+fullnameOverride: ""
+
+clusterName: ""
+
+image:
+  repository: quay.io/solarwinds/fluentd-kubernetes
+  tag: v1.2-debian-papertrail-0.2.7-bugfix
+  pullPolicy: IfNotPresent
+
+updateStrategy:
+  type: RollingUpdate
+
+serviceAccount:
+  create: true
+  annotations: {}
+  name:
+
+rbac:
+  create: true
+
+# name of kubernetes secrets to use
+secrets:
+  name:
+
+tolerations:
+  - key: "node-role.kubernetes.io/master"
+    effect: "NoSchedule"
+  - operator: "Exists"
+    effect: "NoSchedule"
+  - operator: "Exists"
+    effect: "NoExecute"
+
+resources:
+  limits:
+    cpu: 100m
+    memory: 400Mi
+  requests:
+    cpu: 50m
+    memory: 400Mi
+
+podSecurityContext: {}
+  # fsGroup: 2000
+
+securityContext: {}
+  # capabilities:
+  #   drop:
+  #   - ALL
+  # readOnlyRootFilesystem: true
+  # runAsNonRoot: true
+  # runAsUser: 1000
+
+nodeSelector: {}
+
+affinity: {}
