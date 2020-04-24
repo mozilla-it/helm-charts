@@ -2,7 +2,6 @@ apiVersion: v2
 name: mozilla-common-voice
 icon: https://voice.mozilla.org/dist/f01895c77138837851f87c2e40acbd58.svg
 version: 0.1.16
-appVersion: 1.25
 description: Deploy Mozilla Common Voice web application
 type: application
 keywords:
@@ -14,5 +13,5 @@ home: https://voice.mozilla.org
 sources:
   - https://github.com/mozilla/voice-web
 maintainers:
-  - name: alberto
+  - name: Alberto del Barrio
     email: alberto@mozilla.com
