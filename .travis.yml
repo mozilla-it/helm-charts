@@ -7,13 +7,16 @@ stages:
   - Lint and Validate
   - Deploy
 
-before_script:
+install:
   - ./ci/setup.sh
 
 jobs:
   - stage: Lint and Validate
     script:
       - ./ci/lint.sh
+  - stage: e2e
+    script:
+      - ./ci/e2e.sh
   - stage: Deploy
     if: type = push AND branch = master
     script:
