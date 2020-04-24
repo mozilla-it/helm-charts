@@ -1,0 +1,2072 @@
+apiVersion: v1
+entries:
+  data-alert-sender:
+  - apiVersion: v2
+    appVersion: 0.0.1
+    created: "2020-04-24T16:39:22.224486303Z"
+    description: Helm Chart for data-alert-sender, a cron job which sends data alerts
+      from stackdriver metrics
+    digest: f96076d63c549e04a31aae62d258268ec33756f6aa14d0439bddabfe40f57006
+    home: https://github.com/mozilla-it/data-alert-sender
+    keywords:
+    - cron
+    maintainers:
+    - email: afrank@mozilla.com
+      name: mozafrank
+    name: data-alert-sender
+    sources:
+    - https://github.com/mozilla-it/data-alert-sender
+    urls:
+    - https://mozilla-it.github.io/helm-charts/data-alert-sender-0.0.3.tgz
+    version: 0.0.3
+  - apiVersion: v2
+    appVersion: 0.0.1
+    created: "2020-04-24T16:39:22.224162162Z"
+    description: Helm Chart for data-alert-sender, a cron job which sends data alerts
+      from stackdriver metrics
+    digest: b5ba6776002752aea07b3c29f646b73e876c6955ca4657461dcf58dd7cb76f23
+    home: https://github.com/mozilla-it/data-alert-sender
+    keywords:
+    - cron
+    maintainers:
+    - email: afrank@mozilla.com
+      name: mozafrank
+    name: data-alert-sender
+    sources:
+    - https://github.com/mozilla-it/data-alert-sender
+    urls:
+    - https://mozilla-it.github.io/helm-charts/data-alert-sender-0.0.2.tgz
+    version: 0.0.2
+  - apiVersion: v2
+    appVersion: 0.0.1
+    created: "2020-04-24T16:39:22.223885795Z"
+    description: Helm Chart for data-alert-sender, a cron job which sends data alerts
+      from stackdriver metrics
+    digest: fe08854097054dcd1d1d29871af0e7b2f5a66caaa991476f36be72c104414d9b
+    home: https://github.com/mozilla-it/data-alert-sender
+    keywords:
+    - cron
+    maintainers:
+    - email: afrank@mozilla.com
+      name: mozafrank
+    name: data-alert-sender
+    sources:
+    - https://github.com/mozilla-it/data-alert-sender
+    urls:
+    - https://mozilla-it.github.io/helm-charts/data-alert-sender-0.0.1.tgz
+    version: 0.0.1
+  fluentd-papertrail:
+  - apiVersion: v2
+    appVersion: "1.2"
+    created: "2020-04-24T16:39:22.225326916Z"
+    description: A Helm chart to deploy fluentd to send to papertrail
+    digest: 9f3be0e0964774209c6fc98e2ccc53811cd47170039203a2c85e20382f683a17
+    home: https://github.com/mozilla-it/helm-charts
+    keywords:
+    - fluentd
+    - papertrail
+    maintainers:
+    - email: limed@mozilla.com
+      name: limed
+    name: fluentd-papertrail
+    sources:
+    - https://github.com/papertrail
+    - https://github.com/fluent/fluentd
+    type: application
+    urls:
+    - https://mozilla-it.github.io/helm-charts/fluentd-papertrail-0.1.1.tgz
+    version: 0.1.1
+  - apiVersion: v2
+    appVersion: "1.2"
+    created: "2020-04-24T16:39:22.224897187Z"
+    description: A Helm chart to deploy fluentd to send to papertrail
+    digest: 1544325946b82524efefd9135efea6fc9720823996fbc3d469006072d01a5379
+    maintainers:
+    - email: limed@mozilla.com
+      name: limed
+    name: fluentd-papertrail
+    sources:
+    - https://github.com/papertrail
+    - https://github.com/fluent/fluentd
+    type: application
+    urls:
+    - https://mozilla-it.github.io/helm-charts/fluentd-papertrail-0.1.0.tgz
+    version: 0.1.0
+  mozilla-common-voice:
+  - apiVersion: v2
+    created: "2020-04-24T16:39:22.47081077Z"
+    dependencies:
+    - condition: mysql.enabled
+      name: mysql
+      repository: https://kubernetes-charts.storage.googleapis.com
+      version: ~1.6.2
+    - condition: redis.enabled
+      name: redis
+      repository: https://kubernetes-charts.storage.googleapis.com
+      version: ~10.4.1
+    - condition: elasticsearch.enabled
+      name: elasticsearch
+      repository: https://helm.elastic.co
+      version: ~7.6.0
+    - condition: kibana.enabled
+      name: kibana
+      repository: https://helm.elastic.co
+      version: ~7.6.0
+    description: Deploy Mozilla Common Voice web application
+    digest: be4c2e20d17e0761664daa26c2e9d25534a48f50ef67ee98aec240db7e8c4663
+    home: https://voice.mozilla.org
+    icon: https://voice.mozilla.org/dist/f01895c77138837851f87c2e40acbd58.svg
+    keywords:
+    - Mozilla
+    - common-voice
+    - voice
+    - deepspeech
+    maintainers:
+    - email: alberto@mozilla.com
+      name: Alberto del Barrio
+    name: mozilla-common-voice
+    sources:
+    - https://github.com/mozilla/voice-web
+    type: application
+    urls:
+    - https://mozilla-it.github.io/helm-charts/mozilla-common-voice-0.1.16.tgz
+    version: 0.1.16
+  - apiVersion: v1
+    created: "2020-04-24T16:39:22.464583215Z"
+    dependencies:
+    - condition: mysql.enabled
+      name: mysql
+      repository: https://kubernetes-charts.storage.googleapis.com
+      version: ~1.6.2
+    - condition: redis.enabled
+      name: redis
+      repository: https://kubernetes-charts.storage.googleapis.com
+      version: ~10.4.1
+    - condition: elasticsearch.enabled
+      name: elasticsearch
+      repository: https://helm.elastic.co
+      version: ~7.6.0
+    - condition: kibana.enabled
+      name: kibana
+      repository: https://helm.elastic.co
+      version: ~7.6.0
+    description: Deploy Mozilla Common Voice web application
+    digest: bbbec3edd504d9f5fc4ddae1bd161567a8ead650014731ee78b05f70e1d1beec
+    home: https://voice.mozilla.org
+    icon: https://voice.mozilla.org/dist/f01895c77138837851f87c2e40acbd58.svg
+    keywords:
+    - Mozilla
+    - common-voice
+    - voice
+    - deepspeech
+    maintainers:
+    - email: alberto@mozilla.com
+      name: Alberto del Barrio
+    name: mozilla-common-voice
+    sources:
+    - https://github.com/mozilla/voice-web
+    urls:
+    - https://mozilla-it.github.io/helm-charts/mozilla-common-voice-0.1.15.tgz
+    version: 0.1.15
+  - apiVersion: v1
+    created: "2020-04-24T16:39:22.4558358Z"
+    dependencies:
+    - condition: mysql.enabled
+      name: mysql
+      repository: https://kubernetes-charts.storage.googleapis.com
+      version: ~1.6.2
+    - condition: redis.enabled
+      name: redis
+      repository: https://kubernetes-charts.storage.googleapis.com
+      version: ~10.4.1
+    - condition: elasticsearch.enabled
+      name: elasticsearch
+      repository: https://helm.elastic.co
+      version: ~7.6.0
+    - condition: kibana.enabled
+      name: kibana
+      repository: https://helm.elastic.co
+      version: ~7.6.0
+    description: Deploy Mozilla Common Voice web application
+    digest: d972da04bf6b7445eca228cd44b43d5ef8c8c9d59a8e5fc40c269f96c97b2271
+    home: https://voice.mozilla.org
+    icon: https://voice.mozilla.org/dist/f01895c77138837851f87c2e40acbd58.svg
+    keywords:
+    - Mozilla
+    - common-voice
+    - voice
+    - deepspeech
+    maintainers:
+    - email: alberto@mozilla.com
+      name: Alberto del Barrio
+    name: mozilla-common-voice
+    sources:
+    - https://github.com/mozilla/voice-web
+    urls:
+    - https://mozilla-it.github.io/helm-charts/mozilla-common-voice-0.1.14.tgz
+    version: 0.1.14
+  - apiVersion: v1
+    created: "2020-04-24T16:39:22.449655848Z"
+    dependencies:
+    - condition: mysql.enabled
+      name: mysql
+      repository: https://kubernetes-charts.storage.googleapis.com
+      version: ~1.6.2
+    - condition: redis.enabled
+      name: redis
+      repository: https://kubernetes-charts.storage.googleapis.com
+      version: ~10.4.1
+    - condition: elasticsearch.enabled
+      name: elasticsearch
+      repository: https://helm.elastic.co
+      version: ~7.6.0
+    - condition: kibana.enabled
+      name: kibana
+      repository: https://helm.elastic.co
+      version: ~7.6.0
+    description: Deploy Mozilla Common Voice web application
+    digest: 9e5c257fc0c6059e8a24786975c3b7fd9c77f1991e42e9abd98764bc3e4f1cfc
+    home: https://voice.mozilla.org
+    icon: https://voice.mozilla.org/dist/f01895c77138837851f87c2e40acbd58.svg
+    keywords:
+    - Mozilla
+    - common-voice
+    - voice
+    - deepspeech
+    maintainers:
+    - email: alberto@mozilla.com
+      name: Alberto del Barrio
+    name: mozilla-common-voice
+    sources:
+    - https://github.com/mozilla/voice-web
+    urls:
+    - https://mozilla-it.github.io/helm-charts/mozilla-common-voice-0.1.13.tgz
+    version: 0.1.13
+  - apiVersion: v1
+    created: "2020-04-24T16:39:22.441235587Z"
+    dependencies:
+    - condition: mysql.enabled
+      name: mysql
+      repository: https://kubernetes-charts.storage.googleapis.com
+      version: ~1.6.2
+    - condition: redis.enabled
+      name: redis
+      repository: https://kubernetes-charts.storage.googleapis.com
+      version: ~10.4.1
+    - condition: elasticsearch.enabled
+      name: elasticsearch
+      repository: https://helm.elastic.co
+      version: ~7.6.0
+    - condition: kibana.enabled
+      name: kibana
+      repository: https://helm.elastic.co
+      version: ~7.6.0
+    description: Deploy Mozilla Common Voice web application
+    digest: bbc548778b6cd8d185733db673ee00eb0ccc1c62df6f22416efd70542e017fc6
+    home: https://voice.mozilla.org
+    icon: https://voice.mozilla.org/dist/f01895c77138837851f87c2e40acbd58.svg
+    keywords:
+    - Mozilla
+    - common-voice
+    - voice
+    - deepspeech
+    maintainers:
+    - email: alberto@mozilla.com
+      name: Alberto del Barrio
+    name: mozilla-common-voice
+    sources:
+    - https://github.com/mozilla/voice-web
+    urls:
+    - https://mozilla-it.github.io/helm-charts/mozilla-common-voice-0.1.12.tgz
+    version: 0.1.12
+  - apiVersion: v1
+    created: "2020-04-24T16:39:22.435092625Z"
+    dependencies:
+    - condition: mysql.enabled
+      name: mysql
+      repository: https://kubernetes-charts.storage.googleapis.com
+      version: ~1.6.2
+    - condition: redis.enabled
+      name: redis
+      repository: https://kubernetes-charts.storage.googleapis.com
+      version: ~10.4.1
+    - condition: elasticsearch.enabled
+      name: elasticsearch
+      repository: https://helm.elastic.co
+      version: ~7.6.0
+    - condition: kibana.enabled
+      name: kibana
+      repository: https://helm.elastic.co
+      version: ~7.6.0
+    description: Deploy Mozilla Common Voice web application
+    digest: 02935b2068383cf7e0788c0e32ee42bea62be992182d5d41ad1886012fea9790
+    home: https://voice.mozilla.org
+    icon: https://voice.mozilla.org/dist/f01895c77138837851f87c2e40acbd58.svg
+    keywords:
+    - Mozilla
+    - common-voice
+    - voice
+    - deepspeech
+    maintainers:
+    - email: alberto@mozilla.com
+      name: Alberto del Barrio
+    name: mozilla-common-voice
+    sources:
+    - https://github.com/mozilla/voice-web
+    urls:
+    - https://mozilla-it.github.io/helm-charts/mozilla-common-voice-0.1.11.tgz
+    version: 0.1.11
+  - apiVersion: v1
+    created: "2020-04-24T16:39:22.427052022Z"
+    dependencies:
+    - condition: mysql.enabled
+      name: mysql
+      repository: https://kubernetes-charts.storage.googleapis.com
+      version: ~1.6.2
+    - condition: redis.enabled
+      name: redis
+      repository: https://kubernetes-charts.storage.googleapis.com
+      version: ~10.4.1
+    - condition: elasticsearch.enabled
+      name: elasticsearch
+      repository: https://helm.elastic.co
+      version: ~7.6.0
+    - condition: kibana.enabled
+      name: kibana
+      repository: https://helm.elastic.co
+      version: ~7.6.0
+    description: Deploy Mozilla Common Voice web application
+    digest: d1da53ae354b57118bf0dae5a51bc6a60aef1c5116d091a5873305cc91c20a4b
+    home: https://voice.mozilla.org
+    icon: https://voice.mozilla.org/dist/f01895c77138837851f87c2e40acbd58.svg
+    keywords:
+    - Mozilla
+    - common-voice
+    - voice
+    - deepspeech
+    maintainers:
+    - email: alberto@mozilla.com
+      name: Alberto del Barrio
+    name: mozilla-common-voice
+    sources:
+    - https://github.com/mozilla/voice-web
+    urls:
+    - https://mozilla-it.github.io/helm-charts/mozilla-common-voice-0.1.10.tgz
+    version: 0.1.10
+  - apiVersion: v1
+    created: "2020-04-24T16:39:22.529415608Z"
+    dependencies:
+    - condition: mysql.enabled
+      name: mysql
+      repository: https://kubernetes-charts.storage.googleapis.com
+      version: ~1.6.2
+    - condition: redis.enabled
+      name: redis
+      repository: https://kubernetes-charts.storage.googleapis.com
+      version: ~10.4.1
+    - condition: elasticsearch.enabled
+      name: elasticsearch
+      repository: https://helm.elastic.co
+      version: ~7.6.0
+    - condition: kibana.enabled
+      name: kibana
+      repository: https://helm.elastic.co
+      version: ~7.6.0
+    description: Deploy Mozilla Common Voice web application
+    digest: d9bf9ba9e3a5704c08030a3ce4bed070f40ea9987bdee7dc506356326b681606
+    home: https://voice.mozilla.org
+    icon: https://voice.mozilla.org/dist/f01895c77138837851f87c2e40acbd58.svg
+    keywords:
+    - Mozilla
+    - common-voice
+    - voice
+    - deepspeech
+    maintainers:
+    - email: alberto@mozilla.com
+      name: Alberto del Barrio
+    name: mozilla-common-voice
+    sources:
+    - https://github.com/mozilla/voice-web
+    urls:
+    - https://mozilla-it.github.io/helm-charts/mozilla-common-voice-0.1.9.tgz
+    version: 0.1.9
+  - apiVersion: v1
+    created: "2020-04-24T16:39:22.523286872Z"
+    dependencies:
+    - condition: mysql.enabled
+      name: mysql
+      repository: https://kubernetes-charts.storage.googleapis.com
+      version: ~1.6.2
+    - condition: redis.enabled
+      name: redis
+      repository: https://kubernetes-charts.storage.googleapis.com
+      version: ~10.4.1
+    - condition: elasticsearch.enabled
+      name: elasticsearch
+      repository: https://helm.elastic.co
+      version: ~7.6.0
+    - condition: kibana.enabled
+      name: kibana
+      repository: https://helm.elastic.co
+      version: ~7.6.0
+    description: Deploy Mozilla Common Voice web application
+    digest: 5a3a23e4ee56ea26bbc1d4c7a2f27b69f7fa73f75b357b940aba04952f4e0eac
+    home: https://voice.mozilla.org
+    icon: https://voice.mozilla.org/dist/f01895c77138837851f87c2e40acbd58.svg
+    keywords:
+    - Mozilla
+    - common-voice
+    - voice
+    - deepspeech
+    maintainers:
+    - email: alberto@mozilla.com
+      name: Alberto del Barrio
+    name: mozilla-common-voice
+    sources:
+    - https://github.com/mozilla/voice-web
+    urls:
+    - https://mozilla-it.github.io/helm-charts/mozilla-common-voice-0.1.8.tgz
+    version: 0.1.8
+  - apiVersion: v1
+    created: "2020-04-24T16:39:22.514751721Z"
+    dependencies:
+    - condition: mysql.enabled
+      name: mysql
+      repository: https://kubernetes-charts.storage.googleapis.com
+      version: ~1.6.2
+    - condition: redis.enabled
+      name: redis
+      repository: https://kubernetes-charts.storage.googleapis.com
+      version: ~10.4.1
+    - condition: elasticsearch.enabled
+      name: elasticsearch
+      repository: https://helm.elastic.co
+      version: ~7.6.0
+    - condition: kibana.enabled
+      name: kibana
+      repository: https://helm.elastic.co
+      version: ~7.6.0
+    description: Deploy Mozilla Common Voice web application
+    digest: d63a78b6ce45c98b809f229cfa58a93dd4c456b46f1da03650107d2543a1d1ad
+    home: https://voice.mozilla.org
+    icon: https://voice.mozilla.org/dist/f01895c77138837851f87c2e40acbd58.svg
+    keywords:
+    - Mozilla
+    - common-voice
+    - voice
+    - deepspeech
+    maintainers:
+    - email: alberto@mozilla.com
+      name: Alberto del Barrio
+    name: mozilla-common-voice
+    sources:
+    - https://github.com/mozilla/voice-web
+    urls:
+    - https://mozilla-it.github.io/helm-charts/mozilla-common-voice-0.1.7.tgz
+    version: 0.1.7
+  - apiVersion: v1
+    created: "2020-04-24T16:39:22.508361848Z"
+    dependencies:
+    - condition: mysql.enabled
+      name: mysql
+      repository: https://kubernetes-charts.storage.googleapis.com
+      version: ~1.6.2
+    - condition: redis.enabled
+      name: redis
+      repository: https://kubernetes-charts.storage.googleapis.com
+      version: ~10.4.1
+    - condition: elasticsearch.enabled
+      name: elasticsearch
+      repository: https://helm.elastic.co
+      version: ~7.6.0
+    - condition: kibana.enabled
+      name: kibana
+      repository: https://helm.elastic.co
+      version: ~7.6.0
+    description: Deploy Mozilla Common Voice web application
+    digest: cd0ca9e3a7d4cb9f93194f8bd5c8d4e942ea796024e21f42396c1d4dd181ed23
+    home: https://voice.mozilla.org
+    icon: https://voice.mozilla.org/dist/f01895c77138837851f87c2e40acbd58.svg
+    keywords:
+    - Mozilla
+    - common-voice
+    - voice
+    - deepspeech
+    maintainers:
+    - email: alberto@mozilla.com
+      name: Alberto del Barrio
+    name: mozilla-common-voice
+    sources:
+    - https://github.com/mozilla/voice-web
+    urls:
+    - https://mozilla-it.github.io/helm-charts/mozilla-common-voice-0.1.6.tgz
+    version: 0.1.6
+  - apiVersion: v1
+    created: "2020-04-24T16:39:22.499818444Z"
+    dependencies:
+    - condition: mysql.enabled
+      name: mysql
+      repository: https://kubernetes-charts.storage.googleapis.com
+      version: ~1.6.2
+    - condition: redis.enabled
+      name: redis
+      repository: https://kubernetes-charts.storage.googleapis.com
+      version: ~10.4.1
+    - condition: elasticsearch.enabled
+      name: elasticsearch
+      repository: https://helm.elastic.co
+      version: ~7.6.0
+    - condition: kibana.enabled
+      name: kibana
+      repository: https://helm.elastic.co
+      version: ~7.6.0
+    description: Deploy Mozilla Common Voice web application
+    digest: 98d468184189ebd5e3446c44fe0cc8bb4a9124ea5c8cdcfb37965a1af462221b
+    home: https://voice.mozilla.org
+    icon: https://voice.mozilla.org/dist/f01895c77138837851f87c2e40acbd58.svg
+    keywords:
+    - Mozilla
+    - common-voice
+    - voice
+    - deepspeech
+    maintainers:
+    - email: alberto@mozilla.com
+      name: Alberto del Barrio
+    name: mozilla-common-voice
+    sources:
+    - https://github.com/mozilla/voice-web
+    urls:
+    - https://mozilla-it.github.io/helm-charts/mozilla-common-voice-0.1.5.tgz
+    version: 0.1.5
+  - apiVersion: v1
+    created: "2020-04-24T16:39:22.493806453Z"
+    dependencies:
+    - condition: mysql.enabled
+      name: mysql
+      repository: https://kubernetes-charts.storage.googleapis.com
+      version: ~1.6.2
+    - condition: redis.enabled
+      name: redis
+      repository: https://kubernetes-charts.storage.googleapis.com
+      version: ~10.4.1
+    - condition: elasticsearch.enabled
+      name: elasticsearch
+      repository: https://helm.elastic.co
+      version: ~7.6.0
+    - condition: kibana.enabled
+      name: kibana
+      repository: https://helm.elastic.co
+      version: ~7.6.0
+    description: Deploy Mozilla Common Voice web application
+    digest: 5afd4eb1bbca4b2987e6a0807afa53e14977d086800a5c8938b9d6847e457fbf
+    home: https://voice.mozilla.org
+    icon: https://voice.mozilla.org/dist/f01895c77138837851f87c2e40acbd58.svg
+    keywords:
+    - Mozilla
+    - common-voice
+    - voice
+    - deepspeech
+    maintainers:
+    - email: alberto@mozilla.com
+      name: Alberto del Barrio
+    name: mozilla-common-voice
+    sources:
+    - https://github.com/mozilla/voice-web
+    urls:
+    - https://mozilla-it.github.io/helm-charts/mozilla-common-voice-0.1.4.tgz
+    version: 0.1.4
+  - apiVersion: v1
+    created: "2020-04-24T16:39:22.485295003Z"
+    dependencies:
+    - condition: mysql.enabled
+      name: mysql
+      repository: https://kubernetes-charts.storage.googleapis.com
+      version: ~1.6.2
+    - condition: redis.enabled
+      name: redis
+      repository: https://kubernetes-charts.storage.googleapis.com
+      version: ~10.4.1
+    - condition: elasticsearch.enabled
+      name: elasticsearch
+      repository: https://helm.elastic.co
+      version: ~7.6.0
+    - condition: kibana.enabled
+      name: kibana
+      repository: https://helm.elastic.co
+      version: ~7.6.0
+    description: Deploy Mozilla Common Voice web application
+    digest: 3c4397cd4eaddfbf58e8148e4de875faf60e9fecbc6dee4ebcfbe26b58d2c378
+    home: https://voice.mozilla.org
+    icon: https://voice.mozilla.org/dist/f01895c77138837851f87c2e40acbd58.svg
+    keywords:
+    - Mozilla
+    - common-voice
+    - voice
+    - deepspeech
+    maintainers:
+    - email: alberto@mozilla.com
+      name: Alberto del Barrio
+    name: mozilla-common-voice
+    sources:
+    - https://github.com/mozilla/voice-web
+    urls:
+    - https://mozilla-it.github.io/helm-charts/mozilla-common-voice-0.1.3.tgz
+    version: 0.1.3
+  - apiVersion: v1
+    created: "2020-04-24T16:39:22.479115404Z"
+    dependencies:
+    - condition: mysql.enabled
+      name: mysql
+      repository: https://kubernetes-charts.storage.googleapis.com
+      version: ~1.6.2
+    - condition: redis.enabled
+      name: redis
+      repository: https://kubernetes-charts.storage.googleapis.com
+      version: ~10.4.1
+    - condition: elasticsearch.enabled
+      name: elasticsearch
+      repository: https://helm.elastic.co
+      version: ~7.6.0
+    - condition: kibana.enabled
+      name: kibana
+      repository: https://helm.elastic.co
+      version: ~7.6.0
+    description: Deploy Mozilla Common Voice web application
+    digest: 85cbfcd26e17052f394a3c6bb3e48ac4f0c849e051a8f4834def65ff290c3ef0
+    home: https://voice.mozilla.org
+    icon: https://voice.mozilla.org/dist/f01895c77138837851f87c2e40acbd58.svg
+    keywords:
+    - Mozilla
+    - common-voice
+    - voice
+    - deepspeech
+    maintainers:
+    - email: alberto@mozilla.com
+      name: Alberto del Barrio
+    name: mozilla-common-voice
+    sources:
+    - https://github.com/mozilla/voice-web
+    urls:
+    - https://mozilla-it.github.io/helm-charts/mozilla-common-voice-0.1.2.tgz
+    version: 0.1.2
+  - apiVersion: v1
+    created: "2020-04-24T16:39:22.420864535Z"
+    dependencies:
+    - condition: mysql.enabled
+      name: mysql
+      repository: https://kubernetes-charts.storage.googleapis.com
+      version: ~1.6.2
+    - condition: redis.enabled
+      name: redis
+      repository: https://kubernetes-charts.storage.googleapis.com
+      version: ~10.4.1
+    - condition: elasticsearch.enabled
+      name: elasticsearch
+      repository: https://helm.elastic.co
+      version: ~7.6.0
+    - condition: kibana.enabled
+      name: kibana
+      repository: https://helm.elastic.co
+      version: ~7.6.0
+    description: Deploy Mozilla Common Voice web application
+    digest: f7194e95c643a7d1801ae8f33c844a78d537129a6faee179155bc601f49178dc
+    home: https://voice.mozilla.org
+    icon: https://voice.mozilla.org/dist/f01895c77138837851f87c2e40acbd58.svg
+    keywords:
+    - Mozilla
+    - common-voice
+    - voice
+    - deepspeech
+    maintainers:
+    - email: alberto@mozilla.com
+      name: Alberto del Barrio
+    name: mozilla-common-voice
+    sources:
+    - https://github.com/mozilla/voice-web
+    urls:
+    - https://mozilla-it.github.io/helm-charts/mozilla-common-voice-0.1.1.tgz
+    version: 0.1.1
+  - apiVersion: v1
+    created: "2020-04-24T16:39:22.412817514Z"
+    dependencies:
+    - condition: mysql.enabled
+      name: mysql
+      repository: https://kubernetes-charts.storage.googleapis.com
+      version: ~1.6.2
+    - condition: redis.enabled
+      name: redis
+      repository: https://kubernetes-charts.storage.googleapis.com
+      version: ~10.4.1
+    - condition: elasticsearch.enabled
+      name: elasticsearch
+      repository: https://helm.elastic.co
+      version: ~7.6.0
+    - condition: kibana.enabled
+      name: kibana
+      repository: https://helm.elastic.co
+      version: ~7.6.0
+    description: Deploy Mozilla Common Voice web application
+    digest: 4f578a5cdb2edaed1ec1a461c43643fb5ce01b5724363c4974603d4cd6a4105d
+    home: https://voice.mozilla.org
+    icon: https://voice.mozilla.org/dist/f01895c77138837851f87c2e40acbd58.svg
+    keywords:
+    - Mozilla
+    - common-voice
+    - voice
+    - deepspeech
+    maintainers:
+    - email: alberto@mozilla.com
+      name: Alberto del Barrio
+    name: mozilla-common-voice
+    sources:
+    - https://github.com/mozilla/voice-web
+    urls:
+    - https://mozilla-it.github.io/helm-charts/mozilla-common-voice-0.1.0.tgz
+    version: 0.1.0
+  - apiVersion: v1
+    created: "2020-04-24T16:39:22.405578004Z"
+    dependencies:
+    - condition: mysql.enabled
+      name: mysql
+      repository: https://kubernetes-charts.storage.googleapis.com
+      version: ~1.6.2
+    - condition: redis.enabled
+      name: redis
+      repository: https://kubernetes-charts.storage.googleapis.com
+      version: ~10.4.1
+    - condition: elasticsearch.enabled
+      name: elasticsearch
+      repository: https://helm.elastic.co
+      version: ~7.6.0
+    - condition: kibana.enabled
+      name: kibana
+      repository: https://helm.elastic.co
+      version: ~7.6.0
+    description: Deploy Mozilla Common Voice web application
+    digest: d8828fb45c46b07642731e3bdd06c7550899e82dcfea15526c57ba6dd217855a
+    home: https://voice.mozilla.org
+    icon: https://voice.mozilla.org/dist/f01895c77138837851f87c2e40acbd58.svg
+    keywords:
+    - Mozilla
+    - common-voice
+    - voice
+    - deepspeech
+    maintainers:
+    - email: alberto@mozilla.com
+      name: Alberto del Barrio
+    name: mozilla-common-voice
+    sources:
+    - https://github.com/mozilla/voice-web
+    urls:
+    - https://mozilla-it.github.io/helm-charts/mozilla-common-voice-0.0.44.tgz
+    version: 0.0.44
+  - apiVersion: v1
+    created: "2020-04-24T16:39:22.397036579Z"
+    dependencies:
+    - condition: mysql.enabled
+      name: mysql
+      repository: https://kubernetes-charts.storage.googleapis.com
+      version: ~1.6.2
+    - condition: redis.enabled
+      name: redis
+      repository: https://kubernetes-charts.storage.googleapis.com
+      version: ~10.4.1
+    - condition: elasticsearch.enabled
+      name: elasticsearch
+      repository: https://helm.elastic.co
+      version: ~7.6.0
+    - condition: kibana.enabled
+      name: kibana
+      repository: https://helm.elastic.co
+      version: ~7.6.0
+    description: Deploy Mozilla Common Voice web application
+    digest: d0fffc736354c4af784f69dffa3e335d6d4cb38b538845087be3f2d7b56fd83c
+    home: https://voice.mozilla.org
+    icon: https://voice.mozilla.org/dist/f01895c77138837851f87c2e40acbd58.svg
+    keywords:
+    - Mozilla
+    - common-voice
+    - voice
+    - deepspeech
+    maintainers:
+    - email: alberto@mozilla.com
+      name: Alberto del Barrio
+    name: mozilla-common-voice
+    sources:
+    - https://github.com/mozilla/voice-web
+    urls:
+    - https://mozilla-it.github.io/helm-charts/mozilla-common-voice-0.0.43.tgz
+    version: 0.0.43
+  - apiVersion: v1
+    created: "2020-04-24T16:39:22.390854692Z"
+    dependencies:
+    - condition: mysql.enabled
+      name: mysql
+      repository: https://kubernetes-charts.storage.googleapis.com
+      version: ~1.6.2
+    - condition: redis.enabled
+      name: redis
+      repository: https://kubernetes-charts.storage.googleapis.com
+      version: ~10.4.1
+    - condition: elasticsearch.enabled
+      name: elasticsearch
+      repository: https://helm.elastic.co
+      version: ~7.6.0
+    - condition: kibana.enabled
+      name: kibana
+      repository: https://helm.elastic.co
+      version: ~7.6.0
+    description: Deploy Mozilla Common Voice web application
+    digest: 3cfc7efc0e3861e7640794f37c6f218f863a306b57ef15ddb0217c5760e4de0d
+    home: https://voice.mozilla.org
+    icon: https://voice.mozilla.org/dist/f01895c77138837851f87c2e40acbd58.svg
+    keywords:
+    - Mozilla
+    - common-voice
+    - voice
+    - deepspeech
+    maintainers:
+    - email: alberto@mozilla.com
+      name: Alberto del Barrio
+    name: mozilla-common-voice
+    sources:
+    - https://github.com/mozilla/voice-web
+    urls:
+    - https://mozilla-it.github.io/helm-charts/mozilla-common-voice-0.0.42.tgz
+    version: 0.0.42
+  - apiVersion: v1
+    created: "2020-04-24T16:39:22.382291011Z"
+    dependencies:
+    - condition: mysql.enabled
+      name: mysql
+      repository: https://kubernetes-charts.storage.googleapis.com
+      version: ~1.6.2
+    - condition: redis.enabled
+      name: redis
+      repository: https://kubernetes-charts.storage.googleapis.com
+      version: ~10.4.1
+    - condition: elasticsearch.enabled
+      name: elasticsearch
+      repository: https://helm.elastic.co
+      version: ~7.6.0
+    - condition: kibana.enabled
+      name: kibana
+      repository: https://helm.elastic.co
+      version: ~7.6.0
+    description: Deploy Mozilla Common Voice web application
+    digest: 2554c681bbfb5e5c68d0e6f5672650cd08d3a8f7b31e03948e0f2fa11dfa49d6
+    home: https://voice.mozilla.org
+    icon: https://voice.mozilla.org/dist/f01895c77138837851f87c2e40acbd58.svg
+    keywords:
+    - Mozilla
+    - common-voice
+    - voice
+    - deepspeech
+    maintainers:
+    - email: alberto@mozilla.com
+      name: Alberto del Barrio
+    name: mozilla-common-voice
+    sources:
+    - https://github.com/mozilla/voice-web
+    urls:
+    - https://mozilla-it.github.io/helm-charts/mozilla-common-voice-0.0.41.tgz
+    version: 0.0.41
+  - apiVersion: v1
+    created: "2020-04-24T16:39:22.376257258Z"
+    dependencies:
+    - condition: mysql.enabled
+      name: mysql
+      repository: https://kubernetes-charts.storage.googleapis.com
+      version: ~1.6.2
+    - condition: redis.enabled
+      name: redis
+      repository: https://kubernetes-charts.storage.googleapis.com
+      version: ~10.4.1
+    - condition: elasticsearch.enabled
+      name: elasticsearch
+      repository: https://helm.elastic.co
+      version: ~7.6.0
+    - condition: kibana.enabled
+      name: kibana
+      repository: https://helm.elastic.co
+      version: ~7.6.0
+    description: Deploy Mozilla Common Voice web application
+    digest: ee288484aebfbdebed9bab8015bf6f9726407326d21bcaa708c8b8ece3d03a31
+    home: https://voice.mozilla.org
+    icon: https://voice.mozilla.org/dist/f01895c77138837851f87c2e40acbd58.svg
+    keywords:
+    - Mozilla
+    - common-voice
+    - voice
+    - deepspeech
+    maintainers:
+    - email: alberto@mozilla.com
+      name: Alberto del Barrio
+    name: mozilla-common-voice
+    sources:
+    - https://github.com/mozilla/voice-web
+    urls:
+    - https://mozilla-it.github.io/helm-charts/mozilla-common-voice-0.0.40.tgz
+    version: 0.0.40
+  - apiVersion: v1
+    created: "2020-04-24T16:39:22.367990526Z"
+    dependencies:
+    - condition: mysql.enabled
+      name: mysql
+      repository: https://kubernetes-charts.storage.googleapis.com
+      version: ~1.6.2
+    - condition: redis.enabled
+      name: redis
+      repository: https://kubernetes-charts.storage.googleapis.com
+      version: ~10.4.1
+    - condition: elasticsearch.enabled
+      name: elasticsearch
+      repository: https://helm.elastic.co
+      version: ~7.6.0
+    - condition: kibana.enabled
+      name: kibana
+      repository: https://helm.elastic.co
+      version: ~7.6.0
+    description: Deploy Mozilla Common Voice web application
+    digest: eeb40fbe0c706ba8790d459fbbc2175b89b638b2e4dc17beaed34a80656a567f
+    home: https://voice.mozilla.org
+    icon: https://voice.mozilla.org/dist/f01895c77138837851f87c2e40acbd58.svg
+    keywords:
+    - Mozilla
+    - common-voice
+    - deepspeech
+    maintainers:
+    - email: alberto@mozilla.com
+      name: Alberto del Barrio
+    name: mozilla-common-voice
+    sources:
+    - https://github.com/mozilla/voice-web
+    urls:
+    - https://mozilla-it.github.io/helm-charts/mozilla-common-voice-0.0.39.tgz
+    version: 0.0.39
+  - apiVersion: v1
+    created: "2020-04-24T16:39:22.361943141Z"
+    dependencies:
+    - condition: mysql.enabled
+      name: mysql
+      repository: https://kubernetes-charts.storage.googleapis.com
+      version: ~1.6.2
+    - condition: redis.enabled
+      name: redis
+      repository: https://kubernetes-charts.storage.googleapis.com
+      version: ~10.4.1
+    - condition: elasticsearch.enabled
+      name: elasticsearch
+      repository: https://helm.elastic.co
+      version: ~7.6.0
+    - condition: kibana.enabled
+      name: kibana
+      repository: https://helm.elastic.co
+      version: ~7.6.0
+    description: Deploy Mozilla Common Voice web application
+    digest: dabe9ca06ae5249d92e329c2abb0c6a3a0f6c4d5838cea2baa4e6dd3cb118ba4
+    home: https://voice.mozilla.org
+    icon: https://voice.mozilla.org/dist/f01895c77138837851f87c2e40acbd58.svg
+    keywords:
+    - Mozilla
+    - common-voice
+    - deepspeech
+    maintainers:
+    - email: alberto@mozilla.com
+      name: Alberto del Barrio
+    name: mozilla-common-voice
+    sources:
+    - https://github.com/mozilla/voice-web
+    urls:
+    - https://mozilla-it.github.io/helm-charts/mozilla-common-voice-0.0.38.tgz
+    version: 0.0.38
+  - apiVersion: v1
+    created: "2020-04-24T16:39:22.353790576Z"
+    dependencies:
+    - condition: mysql.enabled
+      name: mysql
+      repository: https://kubernetes-charts.storage.googleapis.com
+      version: ~1.6.2
+    - condition: redis.enabled
+      name: redis
+      repository: https://kubernetes-charts.storage.googleapis.com
+      version: ~10.4.1
+    - condition: elasticsearch.enabled
+      name: elasticsearch
+      repository: https://helm.elastic.co
+      version: ~7.6.0
+    - condition: kibana.enabled
+      name: kibana
+      repository: https://helm.elastic.co
+      version: ~7.6.0
+    description: Deploy Mozilla Common Voice web application
+    digest: 4e8113b548c87fe2125f0f39c0d16f8a88aec3b03e0271881b40351e41d9cbf2
+    home: https://voice.mozilla.org
+    icon: https://voice.mozilla.org/dist/f01895c77138837851f87c2e40acbd58.svg
+    keywords:
+    - Mozilla
+    - common-voice
+    - deepspeech
+    maintainers:
+    - email: alberto@mozilla.com
+      name: Alberto del Barrio
+    name: mozilla-common-voice
+    sources:
+    - https://github.com/mozilla/voice-web
+    urls:
+    - https://mozilla-it.github.io/helm-charts/mozilla-common-voice-0.0.37.tgz
+    version: 0.0.37
+  - apiVersion: v1
+    created: "2020-04-24T16:39:22.347679867Z"
+    dependencies:
+    - condition: mysql.enabled
+      name: mysql
+      repository: https://kubernetes-charts.storage.googleapis.com
+      version: ~1.6.2
+    - condition: redis.enabled
+      name: redis
+      repository: https://kubernetes-charts.storage.googleapis.com
+      version: ~10.4.1
+    - condition: elasticsearch.enabled
+      name: elasticsearch
+      repository: https://helm.elastic.co
+      version: ~7.6.0
+    - condition: kibana.enabled
+      name: kibana
+      repository: https://helm.elastic.co
+      version: ~7.6.0
+    description: Deploy Mozilla Common Voice web application
+    digest: f123b039592614cb770b9e8fb1a623cb5dff370504c86da6c6d9487207353eab
+    home: https://voice.mozilla.org
+    icon: https://voice.mozilla.org/dist/f01895c77138837851f87c2e40acbd58.svg
+    keywords:
+    - Mozilla
+    - common-voice
+    - deepspeech
+    maintainers:
+    - email: alberto@mozilla.com
+      name: Alberto del Barrio
+    name: mozilla-common-voice
+    sources:
+    - https://github.com/mozilla/voice-web
+    urls:
+    - https://mozilla-it.github.io/helm-charts/mozilla-common-voice-0.0.36.tgz
+    version: 0.0.36
+  - apiVersion: v1
+    created: "2020-04-24T16:39:22.33937707Z"
+    dependencies:
+    - condition: mysql.enabled
+      name: mysql
+      repository: https://kubernetes-charts.storage.googleapis.com
+      version: ~1.6.2
+    - condition: redis.enabled
+      name: redis
+      repository: https://kubernetes-charts.storage.googleapis.com
+      version: ~10.4.1
+    - condition: elasticsearch.enabled
+      name: elasticsearch
+      repository: https://helm.elastic.co
+      version: ~7.6.0
+    - condition: kibana.enabled
+      name: kibana
+      repository: https://helm.elastic.co
+      version: ~7.6.0
+    description: Deploy Mozilla Common Voice web application
+    digest: 1aa557fb9b7f07a50c3268d765cf69f5a40713df174d61a00f27a0c1cd1c440c
+    home: https://voice.mozilla.org
+    icon: https://voice.mozilla.org/dist/f01895c77138837851f87c2e40acbd58.svg
+    keywords:
+    - Mozilla
+    - common-voice
+    - deepspeech
+    maintainers:
+    - email: alberto@mozilla.com
+      name: Alberto del Barrio
+    name: mozilla-common-voice
+    sources:
+    - https://github.com/mozilla/voice-web
+    urls:
+    - https://mozilla-it.github.io/helm-charts/mozilla-common-voice-0.0.35.tgz
+    version: 0.0.35
+  - apiVersion: v1
+    created: "2020-04-24T16:39:22.333166962Z"
+    dependencies:
+    - condition: mysql.enabled
+      name: mysql
+      repository: https://kubernetes-charts.storage.googleapis.com
+      version: ~1.6.2
+    - condition: redis.enabled
+      name: redis
+      repository: https://kubernetes-charts.storage.googleapis.com
+      version: ~10.4.1
+    - condition: elasticsearch.enabled
+      name: elasticsearch
+      repository: https://helm.elastic.co
+      version: ~7.6.0
+    - condition: kibana.enabled
+      name: kibana
+      repository: https://helm.elastic.co
+      version: ~7.6.0
+    description: Deploy Mozilla Common Voice web application
+    digest: 1b045dc0a7a9343fb4d82bced0e6062028187001ce75b4730674d757619b8a52
+    home: https://voice.mozilla.org
+    icon: https://voice.mozilla.org/dist/f01895c77138837851f87c2e40acbd58.svg
+    keywords:
+    - Mozilla
+    - common-voice
+    - deepspeech
+    maintainers:
+    - email: alberto@mozilla.com
+      name: Alberto del Barrio
+    name: mozilla-common-voice
+    sources:
+    - https://github.com/mozilla/voice-web
+    urls:
+    - https://mozilla-it.github.io/helm-charts/mozilla-common-voice-0.0.34.tgz
+    version: 0.0.34
+  - apiVersion: v1
+    created: "2020-04-24T16:39:22.32477338Z"
+    dependencies:
+    - condition: mysql.enabled
+      name: mysql
+      repository: https://kubernetes-charts.storage.googleapis.com
+      version: ~1.6.2
+    - condition: redis.enabled
+      name: redis
+      repository: https://kubernetes-charts.storage.googleapis.com
+      version: ~10.4.1
+    - condition: elasticsearch.enabled
+      name: elasticsearch
+      repository: https://helm.elastic.co
+      version: ~7.6.0
+    - condition: kibana.enabled
+      name: kibana
+      repository: https://helm.elastic.co
+      version: ~7.6.0
+    description: Deploy Mozilla Common Voice web application
+    digest: 8cd14e7949b0cb38123a56eb937f74c52310dbf8c84eb4307fbf8df2a818bf19
+    home: https://voice.mozilla.org
+    icon: https://voice.mozilla.org/dist/f01895c77138837851f87c2e40acbd58.svg
+    keywords:
+    - Mozilla
+    - common-voice
+    - deepspeech
+    maintainers:
+    - email: alberto@mozilla.com
+      name: Alberto del Barrio
+    name: mozilla-common-voice
+    sources:
+    - https://github.com/mozilla/voice-web
+    urls:
+    - https://mozilla-it.github.io/helm-charts/mozilla-common-voice-0.0.33.tgz
+    version: 0.0.33
+  - apiVersion: v1
+    created: "2020-04-24T16:39:22.318747923Z"
+    dependencies:
+    - condition: mysql.enabled
+      name: mysql
+      repository: https://kubernetes-charts.storage.googleapis.com
+      version: ~1.6.2
+    - condition: redis.enabled
+      name: redis
+      repository: https://kubernetes-charts.storage.googleapis.com
+      version: ~10.4.1
+    - condition: elasticsearch.enabled
+      name: elasticsearch
+      repository: https://helm.elastic.co
+      version: ~7.6.0
+    - condition: kibana.enabled
+      name: kibana
+      repository: https://helm.elastic.co
+      version: ~7.6.0
+    description: Deploy Mozilla Common Voice web application
+    digest: 65f5654b36cd18773fa367ccec8e7375df8723ea514ea77194b4923d98b168bc
+    home: https://voice.mozilla.org
+    icon: https://voice.mozilla.org/dist/f01895c77138837851f87c2e40acbd58.svg
+    keywords:
+    - Mozilla
+    - common-voice
+    - deepspeech
+    maintainers:
+    - email: alberto@mozilla.com
+      name: Alberto del Barrio
+    name: mozilla-common-voice
+    sources:
+    - https://github.com/mozilla/voice-web
+    urls:
+    - https://mozilla-it.github.io/helm-charts/mozilla-common-voice-0.0.32.tgz
+    version: 0.0.32
+  - apiVersion: v1
+    created: "2020-04-24T16:39:22.31057819Z"
+    dependencies:
+    - condition: mysql.enabled
+      name: mysql
+      repository: https://kubernetes-charts.storage.googleapis.com
+      version: ~1.6.2
+    - condition: redis.enabled
+      name: redis
+      repository: https://kubernetes-charts.storage.googleapis.com
+      version: ~10.4.1
+    - condition: elasticsearch.enabled
+      name: elasticsearch
+      repository: https://helm.elastic.co
+      version: ~7.6.0
+    - condition: kibana.enabled
+      name: kibana
+      repository: https://helm.elastic.co
+      version: ~7.6.0
+    description: Deploy Mozilla Common Voice web application
+    digest: cfc02c633a5bfad01a08d70416bcf2e184f2cf547184a55b4d2c0f4ac1721633
+    home: https://voice.mozilla.org
+    icon: https://voice.mozilla.org/dist/f01895c77138837851f87c2e40acbd58.svg
+    keywords:
+    - Mozilla
+    - common-voice
+    - deepspeech
+    maintainers:
+    - email: alberto@mozilla.com
+      name: Alberto del Barrio
+    name: mozilla-common-voice
+    sources:
+    - https://github.com/mozilla/voice-web
+    urls:
+    - https://mozilla-it.github.io/helm-charts/mozilla-common-voice-0.0.31.tgz
+    version: 0.0.31
+  - apiVersion: v1
+    created: "2020-04-24T16:39:22.304624783Z"
+    dependencies:
+    - condition: mysql.enabled
+      name: mysql
+      repository: https://kubernetes-charts.storage.googleapis.com
+      version: ~1.6.2
+    - condition: redis.enabled
+      name: redis
+      repository: https://kubernetes-charts.storage.googleapis.com
+      version: ~10.4.1
+    - condition: elasticsearch.enabled
+      name: elasticsearch
+      repository: https://helm.elastic.co
+      version: ~7.6.0
+    - condition: kibana.enabled
+      name: kibana
+      repository: https://helm.elastic.co
+      version: ~7.6.0
+    description: Deploy Mozilla Common Voice web application
+    digest: 9bff1b3cfa8c44843741d35988538fdff01c91c210acaf87fc88a2b537cd965d
+    home: https://voice.mozilla.org
+    icon: https://voice.mozilla.org/dist/f01895c77138837851f87c2e40acbd58.svg
+    keywords:
+    - Mozilla
+    - common-voice
+    - deepspeech
+    maintainers:
+    - email: alberto@mozilla.com
+      name: Alberto del Barrio
+    name: mozilla-common-voice
+    sources:
+    - https://github.com/mozilla/voice-web
+    urls:
+    - https://mozilla-it.github.io/helm-charts/mozilla-common-voice-0.0.30.tgz
+    version: 0.0.30
+  - apiVersion: v1
+    created: "2020-04-24T16:39:22.296562985Z"
+    dependencies:
+    - condition: mysql.enabled
+      name: mysql
+      repository: https://kubernetes-charts.storage.googleapis.com
+      version: ~1.6.2
+    - condition: redis.enabled
+      name: redis
+      repository: https://kubernetes-charts.storage.googleapis.com
+      version: ~10.4.1
+    - condition: elasticsearch.enabled
+      name: elasticsearch
+      repository: https://helm.elastic.co
+      version: ~7.6.0
+    - condition: kibana.enabled
+      name: kibana
+      repository: https://helm.elastic.co
+      version: ~7.6.0
+    description: Deploy Mozilla Common Voice web application
+    digest: 55c71da0fc2060af771b65be0ac2742a5830ab8467cf6ac744ea958328432b95
+    home: https://voice.mozilla.org
+    icon: https://voice.mozilla.org/dist/f01895c77138837851f87c2e40acbd58.svg
+    keywords:
+    - Mozilla
+    - common-voice
+    - deepspeech
+    maintainers:
+    - email: alberto@mozilla.com
+      name: Alberto del Barrio
+    name: mozilla-common-voice
+    sources:
+    - https://github.com/mozilla/voice-web
+    urls:
+    - https://mozilla-it.github.io/helm-charts/mozilla-common-voice-0.0.29.tgz
+    version: 0.0.29
+  - apiVersion: v1
+    created: "2020-04-24T16:39:22.290595737Z"
+    dependencies:
+    - condition: mysql.enabled
+      name: mysql
+      repository: https://kubernetes-charts.storage.googleapis.com
+      version: ~1.6.2
+    - condition: redis.enabled
+      name: redis
+      repository: https://kubernetes-charts.storage.googleapis.com
+      version: ~10.4.1
+    - condition: elasticsearch.enabled
+      name: elasticsearch
+      repository: https://helm.elastic.co
+      version: ~7.6.0
+    - condition: kibana.enabled
+      name: kibana
+      repository: https://helm.elastic.co
+      version: ~7.6.0
+    description: Deploy Mozilla Common Voice web application
+    digest: 1bd9ad500d4461d3181c61415dbbbf7990863d8c31f95f92fc3840f6ff80c331
+    home: https://voice.mozilla.org
+    icon: https://voice.mozilla.org/dist/f01895c77138837851f87c2e40acbd58.svg
+    keywords:
+    - Mozilla
+    - common-voice
+    - deepspeech
+    maintainers:
+    - email: alberto@mozilla.com
+      name: Alberto del Barrio
+    name: mozilla-common-voice
+    sources:
+    - https://github.com/mozilla/voice-web
+    urls:
+    - https://mozilla-it.github.io/helm-charts/mozilla-common-voice-0.0.28.tgz
+    version: 0.0.28
+  - apiVersion: v1
+    created: "2020-04-24T16:39:22.282568196Z"
+    dependencies:
+    - condition: mysql.enabled
+      name: mysql
+      repository: https://kubernetes-charts.storage.googleapis.com
+      version: ~1.6.2
+    - condition: redis.enabled
+      name: redis
+      repository: https://kubernetes-charts.storage.googleapis.com
+      version: ~10.4.1
+    - condition: elasticsearch.enabled
+      name: elasticsearch
+      repository: https://helm.elastic.co
+      version: ~7.6.0
+    - condition: kibana.enabled
+      name: kibana
+      repository: https://helm.elastic.co
+      version: ~7.6.0
+    description: Deploy Mozilla Common Voice web application
+    digest: 568b74f90a2f6fe0fab39a7c483710347766848ab559720777a5f18388a49351
+    home: https://voice.mozilla.org
+    icon: https://voice.mozilla.org/dist/f01895c77138837851f87c2e40acbd58.svg
+    keywords:
+    - Mozilla
+    - common-voice
+    - deepspeech
+    maintainers:
+    - email: alberto@mozilla.com
+      name: Alberto del Barrio
+    name: mozilla-common-voice
+    sources:
+    - https://github.com/mozilla/voice-web
+    urls:
+    - https://mozilla-it.github.io/helm-charts/mozilla-common-voice-0.0.27.tgz
+    version: 0.0.27
+  - apiVersion: v1
+    created: "2020-04-24T16:39:22.276404446Z"
+    dependencies:
+    - condition: mysql.enabled
+      name: mysql
+      repository: https://kubernetes-charts.storage.googleapis.com
+      version: ~1.6.2
+    - condition: redis.enabled
+      name: redis
+      repository: https://kubernetes-charts.storage.googleapis.com
+      version: ~10.4.1
+    - condition: elasticsearch.enabled
+      name: elasticsearch
+      repository: https://helm.elastic.co
+      version: ~7.6.0
+    - condition: kibana.enabled
+      name: kibana
+      repository: https://helm.elastic.co
+      version: ~7.6.0
+    description: Deploy Mozilla Common Voice web application
+    digest: e61f1fe373a94c5d562a02ea8f95f1d9db4c8a2ed6fb9b01aad66f583180f6d2
+    home: https://voice.mozilla.org
+    icon: https://voice.mozilla.org/dist/f01895c77138837851f87c2e40acbd58.svg
+    keywords:
+    - Mozilla
+    - common-voice
+    - deepspeech
+    maintainers:
+    - email: alberto@mozilla.com
+      name: Alberto del Barrio
+    name: mozilla-common-voice
+    sources:
+    - https://github.com/mozilla/voice-web
+    urls:
+    - https://mozilla-it.github.io/helm-charts/mozilla-common-voice-0.0.26.tgz
+    version: 0.0.26
+  - apiVersion: v1
+    created: "2020-04-24T16:39:22.268193521Z"
+    dependencies:
+    - condition: mysql.enabled
+      name: mysql
+      repository: https://kubernetes-charts.storage.googleapis.com
+      version: ~1.6.2
+    - condition: redis.enabled
+      name: redis
+      repository: https://kubernetes-charts.storage.googleapis.com
+      version: ~10.4.1
+    - condition: elasticsearch.enabled
+      name: elasticsearch
+      repository: https://helm.elastic.co
+      version: ~7.6.0
+    - condition: kibana.enabled
+      name: kibana
+      repository: https://helm.elastic.co
+      version: ~7.6.0
+    description: Deploy Mozilla Common Voice web application
+    digest: 8dca1762b959c0c6c476f83dbcb56c9d29ea95d23bede267e6c9b01ab7ff827d
+    home: https://voice.mozilla.org
+    icon: https://voice.mozilla.org/dist/f01895c77138837851f87c2e40acbd58.svg
+    keywords:
+    - Mozilla
+    - common-voice
+    - deepspeech
+    maintainers:
+    - email: alberto@mozilla.com
+      name: Alberto del Barrio
+    name: mozilla-common-voice
+    sources:
+    - https://github.com/mozilla/voice-web
+    urls:
+    - https://mozilla-it.github.io/helm-charts/mozilla-common-voice-0.0.25.tgz
+    version: 0.0.25
+  - apiVersion: v1
+    created: "2020-04-24T16:39:22.262393932Z"
+    dependencies:
+    - condition: mysql.enabled
+      name: mysql
+      repository: https://kubernetes-charts.storage.googleapis.com
+      version: ~1.6.2
+    - condition: redis.enabled
+      name: redis
+      repository: https://kubernetes-charts.storage.googleapis.com
+      version: ~10.4.1
+    - condition: elasticsearch.enabled
+      name: elasticsearch
+      repository: https://helm.elastic.co
+      version: ~7.6.0
+    - condition: kibana.enabled
+      name: kibana
+      repository: https://helm.elastic.co
+      version: ~7.6.0
+    description: Deploy Mozilla Common Voice web application
+    digest: 9936b994848dbe84804ea544514b71aeafd9bd4630fe76b85cd03253ddcdfffd
+    home: https://voice.mozilla.org
+    icon: https://voice.mozilla.org/dist/f01895c77138837851f87c2e40acbd58.svg
+    keywords:
+    - Mozilla
+    - common-voice
+    - deepspeech
+    maintainers:
+    - email: alberto@mozilla.com
+      name: Alberto del Barrio
+    name: mozilla-common-voice
+    sources:
+    - https://github.com/mozilla/voice-web
+    urls:
+    - https://mozilla-it.github.io/helm-charts/mozilla-common-voice-0.0.24.tgz
+    version: 0.0.24
+  - apiVersion: v1
+    created: "2020-04-24T16:39:22.254067732Z"
+    dependencies:
+    - condition: mysql.enabled
+      name: mysql
+      repository: https://kubernetes-charts.storage.googleapis.com
+      version: ~1.6.2
+    - condition: redis.enabled
+      name: redis
+      repository: https://kubernetes-charts.storage.googleapis.com
+      version: ~10.4.1
+    - condition: elasticsearch.enabled
+      name: elasticsearch
+      repository: https://helm.elastic.co
+      version: ~7.6.0
+    - condition: kibana.enabled
+      name: kibana
+      repository: https://helm.elastic.co
+      version: ~7.6.0
+    description: Deploy Mozilla Common Voice web application
+    digest: 3473a5569e1aae04bf15b6c0c2f33097703f32e69defd0b8778b252cbbab75e3
+    home: https://voice.mozilla.org
+    icon: https://voice.mozilla.org/dist/f01895c77138837851f87c2e40acbd58.svg
+    keywords:
+    - Mozilla
+    - common-voice
+    - deepspeech
+    maintainers:
+    - email: alberto@mozilla.com
+      name: Alberto del Barrio
+    name: mozilla-common-voice
+    sources:
+    - https://github.com/mozilla/voice-web
+    urls:
+    - https://mozilla-it.github.io/helm-charts/mozilla-common-voice-0.0.23.tgz
+    version: 0.0.23
+  - apiVersion: v1
+    created: "2020-04-24T16:39:22.248024194Z"
+    dependencies:
+    - condition: redis.enabled
+      name: redis
+      repository: https://kubernetes-charts.storage.googleapis.com
+      version: ~10.4.1
+    - condition: elasticsearch.enabled
+      name: elasticsearch
+      repository: https://helm.elastic.co
+      version: ~7.6.0
+    - condition: kibana.enabled
+      name: kibana
+      repository: https://helm.elastic.co
+      version: ~7.6.0
+    description: Deploy Mozilla Common Voice web application
+    digest: 275a25b2e4e041a270bca7f33423560b04dc0ba88a096483b8d5aea68907d7fa
+    home: https://voice.mozilla.org
+    icon: https://voice.mozilla.org/dist/f01895c77138837851f87c2e40acbd58.svg
+    keywords:
+    - Mozilla
+    - common-voice
+    - deepspeech
+    maintainers:
+    - email: alberto@mozilla.com
+      name: Alberto del Barrio
+    name: mozilla-common-voice
+    sources:
+    - https://github.com/mozilla/voice-web
+    urls:
+    - https://mozilla-it.github.io/helm-charts/mozilla-common-voice-0.0.22.tgz
+    version: 0.0.22
+  - apiVersion: v1
+    created: "2020-04-24T16:39:22.240231802Z"
+    dependencies:
+    - condition: redis.enabled
+      name: redis
+      repository: https://kubernetes-charts.storage.googleapis.com
+      version: ~10.4.1
+    - condition: elasticsearch.enabled
+      name: elasticsearch
+      repository: https://helm.elastic.co
+      version: ~7.6.0
+    - condition: kibana.enabled
+      name: kibana
+      repository: https://helm.elastic.co
+      version: ~7.6.0
+    description: Deploy Mozilla Common Voice web application
+    digest: af8b0e690e17d913f0dbc17d74e40a217ce670543d45842e44ee6838b49cdb1a
+    home: https://voice.mozilla.org
+    icon: https://voice.mozilla.org/dist/f01895c77138837851f87c2e40acbd58.svg
+    keywords:
+    - Mozilla
+    - common-voice
+    - deepspeech
+    maintainers:
+    - email: alberto@mozilla.com
+      name: Alberto del Barrio
+    name: mozilla-common-voice
+    sources:
+    - https://github.com/mozilla/voice-web
+    urls:
+    - https://mozilla-it.github.io/helm-charts/mozilla-common-voice-0.0.21.tgz
+    version: 0.0.21
+  - apiVersion: v1
+    created: "2020-04-24T16:39:22.235115999Z"
+    dependencies:
+    - condition: redis.enabled
+      name: redis
+      repository: https://kubernetes-charts.storage.googleapis.com
+      version: ~10.4.1
+    description: Deploy Mozilla Common Voice web application
+    digest: fc0d4590323c1718ae5be5b2c9cfcbc5ec40a41e3dc14cc61c74b61796551393
+    home: https://voice.mozilla.org
+    icon: https://voice.mozilla.org/dist/f01895c77138837851f87c2e40acbd58.svg
+    keywords:
+    - Mozilla
+    - common-voice
+    - deepspeech
+    maintainers:
+    - email: alberto@mozilla.com
+      name: Alberto del Barrio
+    name: mozilla-common-voice
+    sources:
+    - https://github.com/mozilla/voice-web
+    urls:
+    - https://mozilla-it.github.io/helm-charts/mozilla-common-voice-0.0.20.tgz
+    version: 0.0.20
+  - apiVersion: v1
+    created: "2020-04-24T16:39:22.231347756Z"
+    dependencies:
+    - condition: redis.enabled
+      name: redis
+      repository: https://kubernetes-charts.storage.googleapis.com
+      version: ~10.4.1
+    description: Deploy Mozilla Common Voice web application
+    digest: ea622a9478263dc1dbac1b30925f0fc941262f6ebb1f7199f071df3caa466b67
+    home: https://voice.mozilla.org
+    icon: https://voice.mozilla.org/dist/f01895c77138837851f87c2e40acbd58.svg
+    keywords:
+    - Mozilla
+    - common-voice
+    - deepspeech
+    maintainers:
+    - email: alberto@mozilla.com
+      name: Alberto del Barrio
+    name: mozilla-common-voice
+    sources:
+    - https://github.com/mozilla/voice-web
+    urls:
+    - https://mozilla-it.github.io/helm-charts/mozilla-common-voice-0.0.19.tgz
+    version: 0.0.19
+  - apiVersion: v1
+    created: "2020-04-24T16:39:22.227491661Z"
+    description: Deploy Mozilla Common Voice web application
+    digest: 1787648f17951abedd1d946afcc445d28d662d65690b16635dda927abec7ccf2
+    home: https://voice.mozilla.org
+    icon: https://voice.mozilla.org/dist/f01895c77138837851f87c2e40acbd58.svg
+    keywords:
+    - Mozilla
+    - common-voice
+    - deepspeech
+    maintainers:
+    - email: alberto@mozilla.com
+      name: Alberto del Barrio
+    name: mozilla-common-voice
+    sources:
+    - https://github.com/mozilla/voice-web
+    urls:
+    - https://mozilla-it.github.io/helm-charts/mozilla-common-voice-0.0.17.tgz
+    version: 0.0.17
+  - apiVersion: v1
+    created: "2020-04-24T16:39:22.227207891Z"
+    description: Deploy Mozilla Common Voice web application
+    digest: 06b03b11859d1687ebf8f3d749fcd332e04ce21550994bcc399030b394feaaa4
+    home: https://voice.mozilla.org
+    icon: https://voice.mozilla.org/dist/f01895c77138837851f87c2e40acbd58.svg
+    keywords:
+    - Mozilla
+    - common-voice
+    - deepspeech
+    maintainers:
+    - email: alberto@mozilla.com
+      name: Alberto del Barrio
+    name: mozilla-common-voice
+    sources:
+    - https://github.com/mozilla/voice-web
+    urls:
+    - https://mozilla-it.github.io/helm-charts/mozilla-common-voice-0.0.16.tgz
+    version: 0.0.16
+  - apiVersion: v1
+    created: "2020-04-24T16:39:22.226902633Z"
+    description: Deploy Mozilla Common Voice web application
+    digest: 427b79343763692dccefad9eadb302adc096e348afd3f502b0936426ab4dc7ad
+    home: https://voice.mozilla.org
+    icon: https://voice.mozilla.org/dist/f01895c77138837851f87c2e40acbd58.svg
+    keywords:
+    - Mozilla
+    - common-voice
+    - deepspeech
+    maintainers:
+    - email: alberto@mozilla.com
+      name: Alberto del Barrio
+    name: mozilla-common-voice
+    sources:
+    - https://github.com/mozilla/voice-web
+    urls:
+    - https://mozilla-it.github.io/helm-charts/mozilla-common-voice-0.0.15.tgz
+    version: 0.0.15
+  - apiVersion: v1
+    created: "2020-04-24T16:39:22.226638769Z"
+    description: Deploy Mozilla Common Voice web application
+    digest: 0c71e4be3db11ec5a21baeb23048866626fc495c755175ee50dc679e0785d9c2
+    home: https://voice.mozilla.org
+    icon: https://voice.mozilla.org/dist/f01895c77138837851f87c2e40acbd58.svg
+    keywords:
+    - Mozilla
+    - common-voice
+    - deepspeech
+    maintainers:
+    - email: alberto@mozilla.com
+      name: Alberto del Barrio
+    name: mozilla-common-voice
+    sources:
+    - https://github.com/mozilla/voice-web
+    urls:
+    - https://mozilla-it.github.io/helm-charts/mozilla-common-voice-0.0.14.tgz
+    version: 0.0.14
+  - apiVersion: v1
+    created: "2020-04-24T16:39:22.2263397Z"
+    description: Deploy Mozilla Common Voice web application
+    digest: 54cc54be667ac96ab4b7fabba531a9e2edd6234ca76defb99977ee298ebae29b
+    home: https://voice.mozilla.org
+    icon: https://voice.mozilla.org/dist/f01895c77138837851f87c2e40acbd58.svg
+    keywords:
+    - Mozilla
+    - common-voice
+    - deepspeech
+    maintainers:
+    - email: alberto@mozilla.com
+      name: Alberto del Barrio
+    name: mozilla-common-voice
+    sources:
+    - https://github.com/mozilla/voice-web
+    urls:
+    - https://mozilla-it.github.io/helm-charts/mozilla-common-voice-0.0.13.tgz
+    version: 0.0.13
+  - apiVersion: v1
+    created: "2020-04-24T16:39:22.226099552Z"
+    description: Deploy Mozilla Common Voice web application
+    digest: ea1b16be649a79e13596cb0561a16d5ce3a19197e5fd9c7f7e5fc778eb9e2b1b
+    home: https://voice.mozilla.org
+    icon: https://voice.mozilla.org/dist/f01895c77138837851f87c2e40acbd58.svg
+    keywords:
+    - Mozilla
+    - common-voice
+    - deepspeech
+    maintainers:
+    - email: alberto@mozilla.com
+      name: Alberto del Barrio
+    name: mozilla-common-voice
+    sources:
+    - https://github.com/mozilla/voice-web
+    urls:
+    - https://mozilla-it.github.io/helm-charts/mozilla-common-voice-0.0.12.tgz
+    version: 0.0.12
+  - apiVersion: v1
+    created: "2020-04-24T16:39:22.225860347Z"
+    description: Deploy Mozilla Common Voice web application
+    digest: 6f1fdcbbcc302fd692b3b602bb841cffc0d69c9ab40aa40be723f706bcafdb84
+    home: https://voice.mozilla.org
+    icon: https://voice.mozilla.org/dist/f01895c77138837851f87c2e40acbd58.svg
+    keywords:
+    - Mozilla
+    - common-voice
+    - deepspeech
+    maintainers:
+    - email: alberto@mozilla.com
+      name: Alberto del Barrio
+    name: mozilla-common-voice
+    sources:
+    - https://github.com/mozilla/voice-web
+    urls:
+    - https://mozilla-it.github.io/helm-charts/mozilla-common-voice-0.0.11.tgz
+    version: 0.0.11
+  - apiVersion: v1
+    created: "2020-04-24T16:39:22.225603926Z"
+    description: Deploy Mozilla Common Voice web application
+    digest: e13e94f25c34bb34da800e670ed21aac2c07500b5f60c9d890f10531992755f7
+    home: https://voice.mozilla.org
+    icon: https://voice.mozilla.org/dist/f01895c77138837851f87c2e40acbd58.svg
+    keywords:
+    - Mozilla
+    - common-voice
+    - deepspeech
+    maintainers:
+    - email: alberto@mozilla.com
+      name: Alberto del Barrio
+    name: mozilla-common-voice
+    sources:
+    - https://github.com/mozilla/voice-web
+    urls:
+    - https://mozilla-it.github.io/helm-charts/mozilla-common-voice-0.0.10.tgz
+    version: 0.0.10
+  - apiVersion: v1
+    created: "2020-04-24T16:39:22.406836374Z"
+    description: Deploy Mozilla Common Voice web application
+    digest: 49bf04623b64611a90d1a2f497d28b83ba7c2aaa700eb66adef98f32aa94cd6e
+    home: https://voice.mozilla.org
+    icon: https://voice.mozilla.org/dist/f01895c77138837851f87c2e40acbd58.svg
+    keywords:
+    - Mozilla
+    - common-voice
+    - deepspeech
+    maintainers:
+    - email: alberto@mozilla.com
+      name: Alberto del Barrio
+    name: mozilla-common-voice
+    sources:
+    - https://github.com/mozilla/voice-web
+    urls:
+    - https://mozilla-it.github.io/helm-charts/mozilla-common-voice-0.0.9.tgz
+    version: 0.0.9
+  - apiVersion: v1
+    created: "2020-04-24T16:39:22.40657067Z"
+    description: Deploy Mozilla Common Voice web application
+    digest: 9283e851e3094134a4dea8cb66452944dfbc24ecd64946e981f505c501a0bfd0
+    home: https://voice.mozilla.org
+    icon: https://voice.mozilla.org/dist/f01895c77138837851f87c2e40acbd58.svg
+    keywords:
+    - Mozilla
+    - common-voice
+    - deepspeech
+    maintainers:
+    - email: alberto@mozilla.com
+      name: Alberto del Barrio
+    name: mozilla-common-voice
+    sources:
+    - https://github.com/mozilla/voice-web
+    urls:
+    - https://mozilla-it.github.io/helm-charts/mozilla-common-voice-0.0.8.tgz
+    version: 0.0.8
+  - apiVersion: v1
+    created: "2020-04-24T16:39:22.406337802Z"
+    description: Deploy Mozilla Common Voice web application
+    digest: 50f58fcf14ac88c35aed57cfa977c88283d0e76033753871155859cbbf15ae5d
+    home: https://voice.mozilla.org
+    icon: https://voice.mozilla.org/dist/f01895c77138837851f87c2e40acbd58.svg
+    keywords:
+    - Mozilla
+    - common-voice
+    - deepspeech
+    maintainers:
+    - email: alberto@mozilla.com
+      name: Alberto del Barrio
+    name: mozilla-common-voice
+    sources:
+    - https://github.com/mozilla/voice-web
+    urls:
+    - https://mozilla-it.github.io/helm-charts/mozilla-common-voice-0.0.7.tgz
+    version: 0.0.7
+  - apiVersion: v1
+    created: "2020-04-24T16:39:22.406097306Z"
+    description: Deploy Mozilla Common Voice web application
+    digest: fc174b4910d11a9157c8b1509cea4c050170b549edc8e96ce27dbab4391d59f4
+    home: https://voice.mozilla.org
+    icon: https://voice.mozilla.org/dist/f01895c77138837851f87c2e40acbd58.svg
+    keywords:
+    - Mozilla
+    - common-voice
+    - deepspeech
+    maintainers:
+    - email: alberto@mozilla.com
+      name: Alberto del Barrio
+    name: mozilla-common-voice
+    sources:
+    - https://github.com/mozilla/voice-web
+    urls:
+    - https://mozilla-it.github.io/helm-charts/mozilla-common-voice-0.0.6.tgz
+    version: 0.0.6
+  - apiVersion: v1
+    created: "2020-04-24T16:39:22.405850105Z"
+    description: Deploy Mozilla Common Voice web application
+    digest: 386651cfd03c7e9ded8920d31a88f55b8cb842ef6baca20af61b027bb8e27345
+    home: https://voice.mozilla.org
+    icon: https://voice.mozilla.org/dist/f01895c77138837851f87c2e40acbd58.svg
+    keywords:
+    - Mozilla
+    - common-voice
+    - deepspeech
+    maintainers:
+    - email: alberto@mozilla.com
+      name: Alberto del Barrio
+    name: mozilla-common-voice
+    sources:
+    - https://github.com/mozilla/voice-web
+    urls:
+    - https://mozilla-it.github.io/helm-charts/mozilla-common-voice-0.0.5.tgz
+    version: 0.0.5
+  refractr:
+  - apiVersion: v2
+    appVersion: dev-1.2.3
+    created: "2020-04-24T16:39:22.536961371Z"
+    description: A Helm chart for the refractr redirect application
+    digest: 57f6fcb38599e6d34411aa5d96da668798611e96e8e28b78016981e3095de6b8
+    home: https://github.com/mozilla-it/refractr
+    keywords:
+    - Mozilla
+    - refractr
+    maintainers:
+    - email: ericz@mozilla.com
+      name: ericz
+    name: refractr
+    sources:
+    - https://github.com/mozilla-it/refractr
+    type: application
+    urls:
+    - https://mozilla-it.github.io/helm-charts/refractr-0.2.10.tgz
+    version: 0.2.10
+  - apiVersion: v2
+    appVersion: dev-1.2.3
+    created: "2020-04-24T16:39:22.541440902Z"
+    description: A Helm chart for the refractr redirect application
+    digest: 6c1194dab4d8044310a8b1d6086ddc1e1a284baf32782e9571d1f74135a93b31
+    name: refractr
+    type: application
+    urls:
+    - https://mozilla-it.github.io/helm-charts/refractr-0.2.9.tgz
+    version: 0.2.9
+  - apiVersion: v2
+    appVersion: dev-1.2.3
+    created: "2020-04-24T16:39:22.540858647Z"
+    description: A Helm chart for the refractr redirect application
+    digest: 997e5a329cbc48d4effe1d7c82411e60cdb32fa8b7604f96c88a2a22905b76a2
+    name: refractr
+    type: application
+    urls:
+    - https://mozilla-it.github.io/helm-charts/refractr-0.2.8.tgz
+    version: 0.2.8
+  - apiVersion: v2
+    appVersion: dev-1.2.3
+    created: "2020-04-24T16:39:22.540316811Z"
+    description: A Helm chart for the refractr redirect application
+    digest: 44144af6b1aa61b543477198a3bf75750ab6a5285807e5c4ccdf9325ac106734
+    name: refractr
+    type: application
+    urls:
+    - https://mozilla-it.github.io/helm-charts/refractr-0.2.7.tgz
+    version: 0.2.7
+  - apiVersion: v2
+    appVersion: dev-1.2.3
+    created: "2020-04-24T16:39:22.539792499Z"
+    description: A Helm chart for the refractr redirect application
+    digest: def8f81d1afc4d3a1003690d096efe1d6bb4c6d0c9db52db7be37cc2be54fad8
+    name: refractr
+    type: application
+    urls:
+    - https://mozilla-it.github.io/helm-charts/refractr-0.2.6.tgz
+    version: 0.2.6
+  - apiVersion: v2
+    appVersion: dev-1.2.3
+    created: "2020-04-24T16:39:22.539259664Z"
+    description: A Helm chart for the refractr redirect application
+    digest: c29eae6d87e14d3b68b49da978f4e71cdc923431d423a9888fa3ff1ec5e3a2a7
+    name: refractr
+    type: application
+    urls:
+    - https://mozilla-it.github.io/helm-charts/refractr-0.2.5.tgz
+    version: 0.2.5
+  - apiVersion: v2
+    appVersion: dev-1.2.3
+    created: "2020-04-24T16:39:22.538684605Z"
+    description: A Helm chart for the refractr redirect application
+    digest: 966ce2d4b6af420199c28159afba61844b3e06ce6227a9a9f659c09402c6cdf0
+    name: refractr
+    type: application
+    urls:
+    - https://mozilla-it.github.io/helm-charts/refractr-0.2.4.tgz
+    version: 0.2.4
+  - apiVersion: v2
+    appVersion: dev-1.2.3
+    created: "2020-04-24T16:39:22.538164457Z"
+    description: A Helm chart for the refractr redirect application
+    digest: 9ac5850cea476263e1665fc5741a527733271e350e3fae1f83d6fc22f4a11c09
+    name: refractr
+    type: application
+    urls:
+    - https://mozilla-it.github.io/helm-charts/refractr-0.2.3.tgz
+    version: 0.2.3
+  - apiVersion: v2
+    appVersion: dev-1.2.3
+    created: "2020-04-24T16:39:22.537576252Z"
+    description: A Helm chart for the refractr redirect application
+    digest: df6065a360afc9d4aec688e4f40ebcd9fa811b9a9e37722294ad2ae8d679b9e7
+    name: refractr
+    type: application
+    urls:
+    - https://mozilla-it.github.io/helm-charts/refractr-0.2.2.tgz
+    version: 0.2.2
+  - apiVersion: v2
+    appVersion: dev-1.2.3
+    created: "2020-04-24T16:39:22.53630879Z"
+    description: A Helm chart for the refractr redirect application
+    digest: 7583fd27d3f0ebb86c0d038b9f3cd1194a3b6a86a510a75a65b21868259031d6
+    name: refractr
+    type: application
+    urls:
+    - https://mozilla-it.github.io/helm-charts/refractr-0.2.1.tgz
+    version: 0.2.1
+  - apiVersion: v2
+    appVersion: dev-1.2.3
+    created: "2020-04-24T16:39:22.535732869Z"
+    description: A Helm chart for the refractr redirect application
+    digest: 37125b84ed6986dbaf4d99da7eca841e279fc9fa79e25c6ac7afeadf0f1ee317
+    name: refractr
+    type: application
+    urls:
+    - https://mozilla-it.github.io/helm-charts/refractr-0.2.0.tgz
+    version: 0.2.0
+  - apiVersion: v2
+    appVersion: dev-1.2.3
+    created: "2020-04-24T16:39:22.535139709Z"
+    description: A Helm chart for the refractr redirect application
+    digest: 4a84354dd1ffa84a3b748d284785481283063d707ee2dddb51451a72689fd1a2
+    name: refractr
+    type: application
+    urls:
+    - https://mozilla-it.github.io/helm-charts/refractr-0.1.8.tgz
+    version: 0.1.8
+  - apiVersion: v2
+    appVersion: dev-1.2.3
+    created: "2020-04-24T16:39:22.53408072Z"
+    description: A Helm chart for the refractr redirect application
+    digest: 4fa162615a00f0fc8ba774e6c89e03b34d6803f24ab36ad38fd23e7c623f39f4
+    name: refractr
+    type: application
+    urls:
+    - https://mozilla-it.github.io/helm-charts/refractr-0.1.7.tgz
+    version: 0.1.7
+  - apiVersion: v2
+    appVersion: dev-1.2.3
+    created: "2020-04-24T16:39:22.532780542Z"
+    description: A Helm chart for the refractr redirect application
+    digest: dbdf65db5fe67f5f7576a2ea1b1ecbbf5f57cd3855434992e9d23f483be4f807
+    name: refractr
+    type: application
+    urls:
+    - https://mozilla-it.github.io/helm-charts/refractr-0.1.6.tgz
+    version: 0.1.6
+  - apiVersion: v2
+    appVersion: dev-1.2.8
+    created: "2020-04-24T16:39:22.531380237Z"
+    description: A Helm chart for the refractr redirect application
+    digest: 2d0fe25c42564444cde7b2959bdff615bf670ee0f37a72f166e2292b350e262d
+    name: refractr
+    type: application
+    urls:
+    - https://mozilla-it.github.io/helm-charts/refractr-0.1.5.tgz
+    version: 0.1.5
+  - apiVersion: v2
+    appVersion: dev-1.2.7
+    created: "2020-04-24T16:39:22.530886931Z"
+    description: A Helm chart for the refractr redirect application
+    digest: 1294ee4e4623843f17bf421d2c1cf75d9a987e8feafc92bb7aaf95e25d32b15b
+    name: refractr
+    type: application
+    urls:
+    - https://mozilla-it.github.io/helm-charts/refractr-0.1.4.tgz
+    version: 0.1.4
+  - apiVersion: v2
+    appVersion: dev-1.2.6
+    created: "2020-04-24T16:39:22.53038465Z"
+    description: A Helm chart for the refractr redirect application
+    digest: c366957192a6760905975ab0b43162b66acddffeed5a6a7a0c8c6b83e9981ec5
+    name: refractr
+    type: application
+    urls:
+    - https://mozilla-it.github.io/helm-charts/refractr-0.1.3.tgz
+    version: 0.1.3
+  - apiVersion: v2
+    appVersion: dev-1.2.3
+    created: "2020-04-24T16:39:22.529919397Z"
+    description: A Helm chart for the refractr redirect application
+    digest: 0ae2a74cc5be744ec2b612842c61bff9d6bd8c21e7289a2180653ac0f2e26bd5
+    name: refractr
+    type: application
+    urls:
+    - https://mozilla-it.github.io/helm-charts/refractr-0.1.1.tgz
+    version: 0.1.1
+generated: "2020-04-24T16:39:22.223441257Z"
