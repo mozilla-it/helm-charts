@@ -14,19 +14,10 @@ jobs:
   - stage: Lint and Validate
     script:
       - ./ci/lint.sh
-  # TODO: Move this over to a script
   - stage: Deploy
     if: type = push AND branch = master
     script:
-      - mkdir releases
-      - cd charts
-      - for i in $(find . -maxdepth 1 -mindepth 1 -type d) ; do helm lint $i && helm dependency update $i
-        && helm package $i -d ../releases ; done
-      - cd ..
-      - git checkout gh-pages
-      - mv *.tgz releases/
-      - cd releases
-      - helm repo index --url https://mozilla-it.github.io/helm-charts/ --merge ../index.yaml .
+      - ./ci/release.sh
     deploy:
       provider: pages
       github_token: $GITHUB_TOKEN
