@@ -38,6 +38,7 @@ deployment:
   annotations:
     fluxcd.io/automated: "true"
     fluxcd.io/tag.refractr-web: glob:dev-*
+  name: refractr
 
 
 ingress:
