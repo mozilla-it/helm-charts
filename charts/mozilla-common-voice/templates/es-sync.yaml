@@ -35,7 +35,7 @@ spec:
         args:
         - -config
         - /config/river.toml
-        image: itsre/go-mysql-elasticsearch:v0.0.4
+        image: 058419420086.dkr.ecr.us-west-2.amazonaws.com/go-mysql-elasticsearch:0.0.4
         resources:
           limits:
             cpu: 200m
