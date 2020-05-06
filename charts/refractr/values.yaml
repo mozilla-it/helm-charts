@@ -16,7 +16,7 @@ fullnameOverride: ""
 issuer: stage
 
 serviceAccount:
-  create: false
+  create: true
   name: refractr
 
 podSecurityContext: {}
