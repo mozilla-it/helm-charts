@@ -83,7 +83,7 @@ spec:
   chart:
     repository: https://helm.nginx.com/stable
     name: ingress-nginx
-    version: 1.7.0
+    version: 0.5.0
   values:
     controller:
       useIngressClassOnly: true
