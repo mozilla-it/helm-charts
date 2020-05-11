@@ -82,7 +82,7 @@ spec:
   releaseName: nginx-ingress
   chart:
     repository: https://helm.nginx.com/stable
-    name: ingress-nginx
+    name: nginx-ingress
     version: 0.5.0
   values:
     controller:
