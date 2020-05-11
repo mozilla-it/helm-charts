@@ -4,7 +4,7 @@ description: A Helm chart for the refractr redirect application
 type: application
 
 # Chart version, bump for any changes
-version: 0.8.5
+version: 0.8.6
 # appVersion specifies the docker image to pull
 appVersion: dev-1.2.3
 
@@ -19,8 +19,3 @@ sources:
 maintainers:
   - name: Eric Ziegenhorn
     email: eric@mozilla.com
-
-dependencies:
-  - name: "nginx-ingress"
-    version: "0.4.3"
-    repository: "https://helm.nginx.com/stable"
