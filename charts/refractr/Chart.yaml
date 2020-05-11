@@ -19,3 +19,8 @@ sources:
 maintainers:
   - name: Eric Ziegenhorn
     email: eric@mozilla.com
+
+dependencies:
+  - name: "nginx-ingress"
+    version: "0.4.3"
+    repository: "https://helm.nginx.com/stable"
