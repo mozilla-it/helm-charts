@@ -40,6 +40,7 @@ deployment:
     fluxcd.io/tag.refractr-web: glob:dev-*
   name: refractr
   extraContainers: []
+  extraVolumes: []
 
 ingress:
   enabled: true
