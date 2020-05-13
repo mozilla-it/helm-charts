@@ -39,7 +39,7 @@ deployment:
     fluxcd.io/automated: "true"
     fluxcd.io/tag.refractr-web: glob:dev-*
   name: refractr
-
+  extraContainers: []
 
 ingress:
   enabled: true

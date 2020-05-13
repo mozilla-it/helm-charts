@@ -46,3 +46,6 @@ spec:
               port: http
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
+{{- if .Values.deployment.extraContainers }}
+      {{- toYaml .Values.deployment.extraContainers | nindent 8 }}
+{{- end }}
