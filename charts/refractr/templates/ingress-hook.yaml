@@ -71,6 +71,34 @@ subjects:
     name: refractr
 ---
 
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: nginx-ingress
+  namespace: ez
+spec:
+  chart:
+    repository: https://kubernetes-charts.storage.googleapis.com
+    name: nginx-ingress
+    version: 1.31.0
+  values:
+    controller:
+      name: nginx-ingress
+      fullname: ez-nginx-ingress-nginx-ingress-admission
+      admissionWebhooks:
+        enabled: false
+      useIngressClassOnly: true
+      scope:
+        enabled: true
+      config:
+        use-proxy-protocol: "false"
+        use-forwarded-headers: "true"
+        proxy-real-ip-cidr: "0.0.0.0/0"
+    rbac:
+      create: true
+      scope: true
+---
+
 # run a helm pre-install hook, calling the refractr container with an argument to create an Ingress dynamically from the list of domains since we need certs for all of them
 apiVersion: batch/v1
 kind: Job
