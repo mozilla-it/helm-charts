@@ -27,6 +27,7 @@ rules:
       - ""
     resources:
       - configmaps
+      - ingresses
     verbs:
       - get
       - update
@@ -70,36 +71,6 @@ subjects:
     name: refractr
 ---
 
-apiVersion: helm.fluxcd.io/v1
-kind: HelmRelease
-metadata:
-  name: nginx-ingress
-  labels:
-    app: refractr
-  annotations:
-    "helm.sh/hook": pre-install,pre-upgrade
-spec:
-  releaseName: nginx-ingress
-  chart:
-    repository: https://helm.nginx.com/stable
-    name: nginx-ingress
-    version: 0.5.0
-  values:
-    controller:
-      useIngressClassOnly: true
-      enableCustomResources: false
-      scope:
-        enabled: true
-      config:
-        entries:
-          use-proxy-protocol: "false"
-          use-forwarded-headers: "true"
-          proxy-real-ip-cidr: "0.0.0.0/0"   # restrict this to the IP addresses of ELB
-    rbac:
-      create: true
-      scope: true
-
----
 # run a helm pre-install hook, calling the refractr container with an argument to create an Ingress dynamically from the list of domains since we need certs for all of them
 apiVersion: batch/v1
 kind: Job
