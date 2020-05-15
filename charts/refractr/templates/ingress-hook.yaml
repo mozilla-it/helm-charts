@@ -75,7 +75,6 @@ apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
   name: nginx-ingress
-  namespace: ez
 spec:
   chart:
     repository: https://kubernetes-charts.storage.googleapis.com
