@@ -4,7 +4,7 @@ description: A Helm chart for the refractr redirect application
 type: application
 
 # Chart version, bump for any changes
-version: 0.9.1
+version: 0.9.2
 # appVersion specifies the docker image to pull
 appVersion: dev-1.2.3
 

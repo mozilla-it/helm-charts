@@ -93,6 +93,9 @@ spec:
         use-proxy-protocol: "false"
         use-forwarded-headers: "true"
         proxy-real-ip-cidr: "0.0.0.0/0"
+      service:
+        annotations:
+          service.beta.kubernetes.io/aws-load-balancer-type: "nlb"
     rbac:
       create: true
       scope: true
