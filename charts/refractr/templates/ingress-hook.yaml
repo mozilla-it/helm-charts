@@ -105,18 +105,17 @@ spec:
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: "{{ .Release.Name }}"
+  name: "{{ .Release.Name }}-ingress-preinstall-hook"
   labels:
     app.kubernetes.io/managed-by: {{ .Release.Service | quote }}
     app.kubernetes.io/instance: {{ .Release.Name | quote }}
-    app.kubernetes.io/version: {{ .Chart.AppVersion }}
     helm.sh/chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
   annotations:
     "helm.sh/hook": pre-install,pre-upgrade
 spec:
   template:
     metadata:
-      name: "{{ .Release.Name }}"
+      name: "{{ .Release.Name }}-ingress-preinstall-hook"
       labels:
         app.kubernetes.io/managed-by: {{ .Release.Service | quote }}
         app.kubernetes.io/instance: {{ .Release.Name | quote }}
@@ -125,6 +124,6 @@ spec:
       serviceAccountName: {{ include "refractr.serviceAccountName" . }}
       restartPolicy: Never
       containers:
-        - name: pre-install-job
+        - name: "{{ .Release.Name }}-ingress-preinstall-hook"
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           args: ["ingress"]
