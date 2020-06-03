@@ -30,6 +30,7 @@ spec:
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           env:
+            {{- if .Values.secrets.name }}
             - name: FLUENT_PAPERTRAIL_HOST
               valueFrom:
                 secretKeyRef:
@@ -40,6 +41,7 @@ spec:
                 secretKeyRef:
                   name: {{ template "fluentd-papertrail.secrets" . }}
                   key: FLUENT_PAPERTRAIL_PORT
+            {{- end }}
             - name: FLUENT_HOSTNAME
               value: {{ template "fluentd-papertrail.clusterName" . }}
             - name: K8S_NODE_NAME

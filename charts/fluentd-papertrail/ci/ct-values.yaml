@@ -1,0 +1,3 @@
+clusterName: "test-cluster"
+secrets:
+  name: test-secret
