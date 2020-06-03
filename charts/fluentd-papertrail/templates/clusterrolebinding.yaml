@@ -9,6 +9,7 @@ metadata:
 subjects:
 - kind: ServiceAccount
   name: {{ include "fluentd-papertrail.serviceAccountName" . }}
+  namespace: {{ .Release.Namespace }}
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole

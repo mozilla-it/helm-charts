@@ -22,8 +22,8 @@ rbac:
   create: true
 
 # name of kubernetes secrets to use
-secrets:
-  name:
+secrets: {}
+  # name: papertrail
 
 tolerations:
   - key: "node-role.kubernetes.io/master"
