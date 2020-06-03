@@ -1,5 +1,5 @@
 apiVersion: apps/v1
-kind: Daemonsets
+kind: DaemonSet
 metadata:
   name: {{ include "fluentd-papertrail.fullname" . }}
   labels:
