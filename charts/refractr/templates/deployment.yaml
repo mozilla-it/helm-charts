@@ -44,6 +44,9 @@ spec:
             httpGet:
               path: /
               port: http
+          envFrom:
+          - secretRef:
+              name: {{ .Values.deployment.name }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
 {{- if .Values.deployment.extraContainers }}
