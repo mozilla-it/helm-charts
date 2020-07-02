@@ -1,10 +1,9 @@
-namespace: voice-dev
-
 # Parameters for voice-web container
 voice_web:
   use_secrets_file: true
   use_default_secrets_file: true
   deployment_name: voice
+  service_account_name: voice-dev
   ingress:
     enabled: false
     class: voice-dev
@@ -29,12 +28,7 @@ voice_web:
   service_account:
     annotations: {}
 
-  extra_containers:
-    - image: itsre/remote_syslog2:0.2
-      name: logs-to-papertrail
-      volumeMounts:
-        mountPath: /logs
-        name: logs
+  extra_containers: []
 
   extra_volumes: []
 
@@ -89,10 +83,10 @@ mysql:
   mysqlRootPassword: default-non-secure-root-password
 
 redis:
-  enabled: true
+  enabled: false
 
 elasticsearch:
-  enabled: true
+  enabled: false
   replicas: 1
   resources:
     requests:
@@ -103,4 +97,4 @@ elasticsearch:
       memory: 2Gi
 
 kibana:
-  enabled: true
+  enabled: false
