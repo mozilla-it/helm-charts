@@ -3,7 +3,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: {{ .Values.voice_web.deployment_name }}
-  namespace: {{ .Values.namespace}}
 spec:
   selector:
     matchLabels:
@@ -16,7 +15,7 @@ spec:
       labels:
         app: voice
     spec:
-      serviceAccountName: {{ .Values.namespace }}
+      serviceAccountName: {{ .Values.voice_web.service_account_name }}
       containers:
       - name: web
         args:
@@ -55,6 +54,10 @@ spec:
           value: "{{ .Values.new_relic.enabled }}"
         - name: NEW_RELIC_APP_NAME
           value:  "{{ .Values.new_relic.app_name }}"
+        - name: KUBERNETES_CURRENT_NAMESPACE
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.namespace
         volumeMounts:
         - name: logs
           mountPath: /code/logs

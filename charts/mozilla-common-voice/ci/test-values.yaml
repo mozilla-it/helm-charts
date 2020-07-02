@@ -1,4 +1,0 @@
-extra_volumes:
-  - name: papertrail-test
-    secret:
-      secretName: super-secret

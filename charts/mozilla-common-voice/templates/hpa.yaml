@@ -3,7 +3,6 @@ apiVersion: autoscaling/v1
 kind: HorizontalPodAutoscaler
 metadata:
   name: voice
-  namespace: {{ .Values.namespace}}
 spec:
   maxReplicas: {{ .Values.voice_web.hpa.max_replicas }}
   minReplicas: {{ .Values.voice_web.hpa.min_replicas }}

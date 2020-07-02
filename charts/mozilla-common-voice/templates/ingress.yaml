@@ -3,7 +3,6 @@ apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: voice-ingress
-  namespace: {{ .Values.namespace}}
   annotations:
     kubernetes.io/ingress.class: {{ .Values.voice_web.ingress.class }}
 {{- if .Values.voice_web.ingress.extra_annotations }}
