@@ -1,0 +1,15 @@
+dependencies:
+- name: mysql
+  repository: https://kubernetes-charts.storage.googleapis.com
+  version: 1.6.4
+- name: redis
+  repository: https://kubernetes-charts.storage.googleapis.com
+  version: 10.4.4
+- name: elasticsearch
+  repository: https://helm.elastic.co
+  version: ~7.6.0
+- name: kibana
+  repository: https://helm.elastic.co
+  version: ~7.6.0
+digest: sha256:647a8fcaf6ef969e8b8f7a7826bba75f048b7b0996ddff47d9104eede58052a5
+generated: "2020-06-18T13:53:04.291915779+02:00"

@@ -48,7 +48,7 @@ spec:
             name: voice-config
         {{ if eq .Values.voice_web.use_secrets_file true }}
         - secretRef:
-            name: voice-secrets
+            name: voice
         {{ end }}
         env:
         - name: NEW_RELIC_AGENT_ENABLED
