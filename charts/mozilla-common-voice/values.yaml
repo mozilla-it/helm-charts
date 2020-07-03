@@ -14,7 +14,7 @@ voice_web:
     max_replicas: 6
     min_replicas: 2
 
-  replicas: 3   # Required if "hpa_enabled =  false"
+  replicas: 1   # Required if "hpa_enabled =  false"
 
   requests:
     cpu: 500m
@@ -61,9 +61,9 @@ voice_web:
   # This are default non-production base64'd values
   secrets:
     mysql:
-      root_pw: "ZGVmYXVsdC1ub24tc2VjdXJlLXJvb3QtcGFzc3dvcmQK"
-      user_pw: "ZGVmYXVsdC1ub24tc2VjdXJlLXBhc3N3b3JkCg=="
-      host: "bXlzcWwudm9pY2UtZGV2LnN2Yy5jbHVzdGVyLmxvY2FsCg=="
+      root_pw: "ZGVmYXVsdC1ub24tc2VjdXJlLXJvb3QtcGFzc3dvcmQ="
+      user_pw: "ZGVmYXVsdC1ub24tc2VjdXJlLXBhc3N3b3Jk"
+      host: "bXlzcWwuJEtVQkVSTkVURVNfQ1VSUkVOVF9OQU1FU1BBQ0Uuc3ZjLmNsdXN0ZXIubG9jYWw="
     app_secret: "bXktdG9wLXNlY3JldC1zZWNyZXQK"
     auth0:
       domain: "YXV0aC5hdXRoMC5jb20K"
@@ -75,12 +75,31 @@ new_relic:
   enabled: false
   app_name: voice
 
+dependecies:
+  - name: mysql
+    version: 1.6.4
+    condition: mysql.enabled
+    repository: https://kubernetes-charts.storage.googleapis.com
+  - name: redis
+    version: ~10.4.1
+    condition: redis.enabled
+    repository: https://kubernetes-charts.storage.googleapis.com
+  - name: elasticsearch
+    version: ~7.6.0
+    condition: elasticsearch.enabled
+    repository: https://helm.elastic.co
+  - name: kibana
+    version: ~7.6.0
+    condition: kibana.enabled
+    repository: https://helm.elastic.co
+
 mysql:
   enabled: true
   mysqlUser: voice
   mysqlDatabase: voice
   mysqlPassword: default-non-secure-password
   mysqlRootPassword: default-non-secure-root-password
+  imageTag: 5.7.14
 
 redis:
   enabled: false

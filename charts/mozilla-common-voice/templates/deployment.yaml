@@ -47,13 +47,17 @@ spec:
             name: voice-config
         {{ if eq .Values.voice_web.use_secrets_file true }}
         - secretRef:
-            name: voice
+            name: voice-secrets
         {{ end }}
         env:
         - name: NEW_RELIC_AGENT_ENABLED
           value: "{{ .Values.new_relic.enabled }}"
         - name: NEW_RELIC_APP_NAME
           value:  "{{ .Values.new_relic.app_name }}"
+        - name: KUBERNETES_CURRENT_NAMESPACE
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.namespace
         volumeMounts:
         - name: logs
           mountPath: /code/logs
