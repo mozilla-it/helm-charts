@@ -63,7 +63,7 @@ voice_web:
     mysql:
       root_pw: "ZGVmYXVsdC1ub24tc2VjdXJlLXJvb3QtcGFzc3dvcmQ="
       user_pw: "ZGVmYXVsdC1ub24tc2VjdXJlLXBhc3N3b3Jk"
-      host: "bXlzcWwuJEtVQkVSTkVURVNfQ1VSUkVOVF9OQU1FU1BBQ0Uuc3ZjLmNsdXN0ZXIubG9jYWw="
+      host: "bXlzcWwtdm9pY2U="
     app_secret: "bXktdG9wLXNlY3JldC1zZWNyZXQK"
     auth0:
       domain: "YXV0aC5hdXRoMC5jb20K"
@@ -95,6 +95,7 @@ dependecies:
 
 mysql:
   enabled: true
+  fullnameOverride: mysql-voice
   mysqlUser: voice
   mysqlDatabase: voice
   mysqlPassword: default-non-secure-password
