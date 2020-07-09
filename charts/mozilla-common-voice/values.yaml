@@ -1,7 +1,7 @@
 # Parameters for voice-web container
 voice_web:
-  use_secrets_file: true
   use_default_secrets_file: true
+  use_external_secrets: false
   deployment_name: voice
   service_account_name: voice-dev
   ingress:
