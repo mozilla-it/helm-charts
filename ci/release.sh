@@ -19,7 +19,7 @@ for i in $(find . -maxdepth 1 -mindepth 1 -type d) ; do
 done
 cd ..
 
-git checkout gh-pages
+git checkout -f gh-pages
 mv ./*.tgz "${RELEASES_DIR}"
 cd "${RELEASES_DIR}"
 helm repo index --url https://mozilla-it.github.io/helm-charts/ --merge ../index.yaml .
