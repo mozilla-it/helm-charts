@@ -13,6 +13,7 @@ voice_web:
     enabled: false
     max_replicas: 6
     min_replicas: 2
+  extra_annotations: {}
 
   replicas: 1   # Required if "hpa_enabled =  false"
 
