@@ -1,7 +1,7 @@
 language: minimal
 sudo: required
 
-if: branch = master
+if: branch = main
 
 stages:
   - Lint and Validate
@@ -18,7 +18,7 @@ jobs:
     script:
       - ./ci/e2e.sh
   - stage: Deploy
-    if: type = push AND branch = master
+    if: type = push AND branch = main
     script:
       - ./ci/release.sh
     deploy:
@@ -30,7 +30,7 @@ jobs:
       skip_cleanup: true
       target_branch: gh-pages
       on:
-        branch: master
+        branch: main
 
 git:
   depth: false
