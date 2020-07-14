@@ -1,6 +1,6 @@
 # helm-charts
 
-[![Build Status](https://travis-ci.com/mozilla-it/helm-charts.svg?branch=master)](https://travis-ci.com/mozilla-it/helm-charts)
+[![Build Status](https://travis-ci.com/mozilla-it/helm-charts.svg?branch=main)](https://travis-ci.com/mozilla-it/helm-charts)
 
 This repository contains a collection of Helm charts curated by Mozilla's Service Engineering team
 
@@ -42,7 +42,7 @@ The same information found out above can be found in the logs of the 2 component
 Running `kubectl logs -l=app=flux -n fluxcd` you will get the logs of Flux where we can make sure that it correctly detected the change in the Chart and will try to apply it.
 ```
 kubectl logs -l=app=flux -n fluxcd
-ts=2020-04-17T09:24:41.796293402Z caller=loop.go:133 component=sync-loop event=refreshed url=ssh://git@github.com/mozilla-it/voice-infra branch=master HEAD=26626653ecca80f3d43f6e42aa3376af15755622
+ts=2020-04-17T09:24:41.796293402Z caller=loop.go:133 component=sync-loop event=refreshed url=ssh://git@github.com/mozilla-it/voice-infra branch=main HEAD=26626653ecca80f3d43f6e42aa3376af15755622
 ```
 Nothing wrong here, moving on and checking helm-operator logs
 
