@@ -3,10 +3,10 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: {{ .Values.voice_web.deployment_name }}
-  {{- if .Values.voice_web.extra_annotations }}
+{{- if .Values.voice_web.extra_annotations }}
   annotations:
-  {{ toYaml .Values.voice_web.extra_annotations | indent 4 }}
-  {{- end }}
+  {{ toYaml .Values.voice_web.extra_annotations | nindent 4 }}
+{{- end }}
 spec:
   selector:
     matchLabels:
