@@ -1,0 +1,47 @@
+replicaCount: 1
+environment: stage
+
+image:
+  repository: 783633885093.dkr.ecr.us-west-2.amazonaws.com/moderator
+  pullPolicy: IfNotPresent
+
+nameOverride: ""
+fullnameOverride: "moderator"
+
+podSecurityContext: {}
+
+securityContext:
+  readOnlyRootFilesystem: true
+  runAsNonRoot: true
+  runAsUser: 1000
+
+service:
+  type: ClusterIP
+  port: 80
+
+ingress:
+  enabled: true
+  annotations:
+    kubernetes.io/ingress.class: nginx-moderator
+  hosts:
+    - host: moderator.mozilla.org
+      paths:
+        - /
+      backend:
+        serviceName: moderator
+        servicePort: 80
+
+resources:
+  limits:
+    cpu: 500m
+    memory: 512Mi
+  requests:
+    cpu: 20m
+    memory: 64Mi
+
+configMap:
+  allowedHosts: "moderator.mozilla.org,moderator-prod.itsre-apps.mozit.cloud"
+  siteUrl: "https://moderator.mozilla.org"
+
+externalSecret:
+  create: false
