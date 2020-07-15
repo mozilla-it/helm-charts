@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mozalert-validator
+  annotations:
+    "helm.sh/hook": test-success
+spec:
+  restartPolicy: Never
+  containers:
+  - name: mozalert-validator
+    image: "{{ .Values.image.repository }}:{{ .Values.image.version }}"
+    command: [ "mozalert-validator" ]
+    args: [ "crd.k8s.afrank.local", "v1", "checks" ]
+
