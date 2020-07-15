@@ -1,0 +1,103 @@
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: checks.crd.k8s.afrank.local
+spec:
+  group: crd.k8s.afrank.local
+  scope: Namespaced
+  names:
+    plural: checks
+    singular: check
+    kind: Check
+    shortNames:
+     - ch
+     - che
+  versions:
+  - name: v1
+    served: true
+    storage: true
+    subresources:
+      status: {}
+    schema:
+      openAPIV3Schema:
+        type: object
+        properties:
+          spec:
+            type: object
+            properties:
+              template:
+                type: object
+                x-kubernetes-preserve-unknown-fields: true
+              check_interval:
+                x-kubernetes-int-or-string: true
+              retry_interval:
+                x-kubernetes-int-or-string: true
+              notification_interval:
+                x-kubernetes-int-or-string: true
+              max_attempts:
+                x-kubernetes-int-or-string: true
+              timeout:
+                x-kubernetes-int-or-string: true
+              escalations:
+                type: array
+                items:
+                  type: object
+                  x-kubernetes-preserve-unknown-fields: true
+              image:
+                type: string
+              secret_ref:
+                type: string
+              check_cm:
+                type: string
+              check_url:
+                type: string
+              args:
+                type: array
+                items:
+                  type: string
+          status:
+            type: object
+            properties:
+              attempt:
+                x-kubernetes-int-or-string: true
+              next_check:
+                type: string
+              last_check:
+                type: string
+              state:
+                type: string
+              status:
+                type: string
+              logs:
+                type: string
+              telemetry:
+                type: object
+                x-kubernetes-preserve-unknown-fields: true
+    additionalPrinterColumns:
+    - name: Status
+      type: string
+      description: Current Status
+      jsonPath: .status.status
+    - name: State
+      type: string
+      description: Current State
+      jsonPath: .status.state
+    - name: Attempt
+      type: string
+      description: Current Attempt Count
+      jsonPath: .status.attempt
+    - name: Max_Attempts
+      type: string
+      description: Maximum Attempts until escalation
+      jsonPath: .spec.max_attempts
+    - name: Last_Check
+      type: string
+      description: Last Check
+      jsonPath: .status.last_check
+    - name: Next_Check
+      type: string
+      description: Next Check
+      jsonPath: .status.next_check
+    - name: Age
+      type: date
+      jsonPath: .metadata.creationTimestamp
