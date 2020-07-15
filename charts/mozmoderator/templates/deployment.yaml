@@ -1,0 +1,61 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "mozmoderator.fullname" . }}
+  labels:
+    {{- include "mozmoderator.labels" . | nindent 4 }}
+spec:
+{{- if not .Values.autoscaling.enabled }}
+  replicas: {{ .Values.replicaCount }}
+{{- end }}
+  selector:
+    matchLabels:
+      {{- include "mozmoderator.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      labels:
+        {{- include "mozmoderator.selectorLabels" . | nindent 8 }}
+    spec:
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      securityContext:
+        {{- toYaml .Values.podSecurityContext | nindent 8 }}
+      containers:
+        - name: {{ .Chart.Name }}
+          securityContext:
+            {{- toYaml .Values.securityContext | nindent 12 }}
+          image: "{{ .Values.image.repository }}:{{ .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          ports:
+            - name: http
+              containerPort: 8000
+              protocol: TCP
+          livenessProbe:
+            httpGet:
+              path: /
+              port: http
+              # https://github.com/kubernetes/kubernetes/issues/14713
+              httpHeaders:
+              - name: X-Health
+                value:  "Kubernetes-Health"
+              - name: Host
+                value: "kube-internal.cluster.local"
+          readinessProbe:
+            httpGet:
+              path: /
+              port: http
+              # https://github.com/kubernetes/kubernetes/issues/14713
+              httpHeaders:
+              - name: X-Health
+                value:  "Kubernetes-Health"
+              - name: Host
+                value: "kube-internal.cluster.local"
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+          envFrom:
+          - configMapRef:
+              name: {{ include "mozmoderator.fullname" . }}
+          - secretRef:
+              name: {{ include "mozmoderator.fullname" . }}
