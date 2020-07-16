@@ -4,6 +4,7 @@ check-version-increment: true
 validate-yaml: true
 validate-chart-schema: false
 validate-maintainers: false
+target-branch: main
 
 chart-dirs:
   - charts
