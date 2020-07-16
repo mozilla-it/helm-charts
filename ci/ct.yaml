@@ -12,3 +12,4 @@ chart-dirs:
 chart-repos:
   - elastic=https://helm.elastic.co
   - kubernetes-charts=https://kubernetes-charts.storage.googleapis.com
+  - jetstack=https://charts.jetstack.io
