@@ -1,24 +1,17 @@
 language: minimal
 sudo: required
 
-if: branch = main
+if: branch = mozalert-bump-chart-version
 
 stages:
-  - Lint and Validate
   - Deploy
 
 install:
   - ./ci/setup.sh
 
 jobs:
-  - stage: Lint and Validate
-    script:
-      - ./ci/lint.sh
-  - stage: e2e
-    script:
-      - ./ci/e2e.sh
   - stage: Deploy
-    if: type = push AND branch = main
+    if: type = push AND branch = mozalert-bump-chart-version
     script:
       - ./ci/release.sh
     deploy:
