@@ -16,8 +16,7 @@ spec:
       {{- include "refractr.selectorLabels" . | nindent 6 }}
   template:
     metadata:
-      labels:
-        {{- include "refractr.selectorLabels" .  | nindent 8 }}
+      labels: {{- include "refractr.selectorLabels" . | nindent 8 }}
     spec:
     {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
@@ -52,6 +51,30 @@ spec:
 {{- if .Values.deployment.extraContainers }}
       {{- toYaml .Values.deployment.extraContainers | nindent 8 }}
 {{- end }}
+        {{- if .Values.metrics.enabled }}
+        - name: metrics
+          image: {{ template "nginx.metrics.image" . }}
+          imagePullPolicy: {{ .Values.metrics.image.pullPolicy | quote }}
+          command: ['/usr/bin/exporter', '-nginx.scrape-uri', 'http://127.0.0.1:80/status']
+          ports:
+            - name: metrics
+              containerPort: 9113
+          livenessProbe:
+            httpGet:
+              path: /metrics
+              port: metrics
+            initialDelaySeconds: 15
+            timeoutSeconds: 5
+          readinessProbe:
+            httpGet:
+              path: /metrics
+              port: metrics
+            initialDelaySeconds: 5
+            timeoutSeconds: 1
+          {{- if .Values.metrics.resources }}
+          resources: {{- toYaml .Values.metrics.resources | nindent 12 }}
+          {{- end }}
+        {{- end }}
 {{- if .Values.deployment.extraVolumes }}
       volumes:
       {{- toYaml .Values.deployment.extraVolumes | nindent 6 }}

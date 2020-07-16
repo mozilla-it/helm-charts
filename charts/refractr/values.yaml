@@ -6,14 +6,12 @@ replicaCount: 3
 
 image:
   pullPolicy: IfNotPresent
-  # imageCredentials:
-  #   registry: <repo>
-  #   username: <username>
-  #   password: <pw>
 
 nameOverride: ""
 fullnameOverride: ""
-issuer: stage
+issuer:
+  create: true
+  name: stage
 
 environment: stage
 
@@ -72,18 +70,108 @@ tolerations: []
 
 affinity: {}
 
+externalsecret:
+  create: false
+
+cert-manager:
+  install: false
+
 # Nginx Ingress Controller value overrides
 nginx-ingress:
   controller:
     useIngressClassOnly: true
     enableCustomResources: false
+    admissionWebhooks:
+      enable: false
     scope:
       enabled: true
     config:
-      entries:
-        use-proxy-protocol: "false"
-        use-forwarded-headers: "true"
-        proxy-real-ip-cidr: "0.0.0.0/0"   # restrict this to the IP addresses of ELB
+      use-proxy-protocol: "false"
+      use-forwarded-headers: "true"
+      proxy-real-ip-cidr: "0.0.0.0/0"   # restrict this to the IP addresses of ELB
+    service:
+      annotations:
+        service.beta.kubernetes.io/aws-load-balancer-type: "nlb"
+    metrics:
+      enabled: true
   rbac:
     create: true
     scope: true
+
+
+# copied from https://github.com/bitnami/charts/blob/master/bitnami/nginx/values.yaml#L419-L493
+metrics:
+  enabled: true
+
+  ## Bitnami NGINX Prometheus Exporter image
+  ## ref: https://hub.docker.com/r/bitnami/nginx-exporter/tags/
+  ##
+  image:
+    registry: docker.io
+    repository: bitnami/nginx-exporter
+    tag: 0.8.0-debian-10-r18
+    pullPolicy: IfNotPresent
+    ## Optionally specify an array of imagePullSecrets.
+    ## Secrets must be manually created in the namespace.
+    ## ref: https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/
+    ##
+    # pullSecrets:
+    #   - myRegistryKeySecretName
+
+  ## Prometheus exporter pods' annotation and labels
+  ## ref: https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/
+  ##
+  podAnnotations:
+    prometheus.io/scrape: "true"
+    prometheus.io/port: "9113"
+
+  ## Prometheus exporter service parameters
+  ##
+  service:
+    ## NGINX Prometheus exporter port
+    ##
+    port: 9113
+    ## Annotations for the Prometheus exporter service
+    ##
+    annotations:
+      prometheus.io/scrape: "true"
+      prometheus.io/port: "{{ .Values.metrics.service.port }}"
+
+  ## NGINX Prometheus exporter resource requests and limits
+  ## ref: http://kubernetes.io/docs/user-guide/compute-resources/
+  ##
+  resources:
+    # We usually recommend not to specify default resources and to leave this as a conscious
+    # choice for the user. This also increases chances charts run on environments with little
+    # resources, such as Minikube. If you do want to specify resources, uncomment the following
+    # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+    limits: {}
+    #   cpu: 100m
+    #   memory: 128Mi
+    requests: {}
+    #   cpu: 100m
+    #   memory: 128Mi
+
+  ## Prometheus Operator ServiceMonitor configuration
+  ##
+  serviceMonitor:
+    enabled: false
+    ## Namespace in which Prometheus is running
+    ##
+    # namespace: monitoring
+
+    ## Interval at which metrics should be scraped.
+    ## ref: https://github.com/coreos/prometheus-operator/blob/master/Documentation/api.md#endpoint
+    ##
+    # interval: 10s
+
+    ## Timeout after which the scrape is ended
+    ## ref: https://github.com/coreos/prometheus-operator/blob/master/Documentation/api.md#endpoint
+    ##
+    # scrapeTimeout: 10s
+
+    ## ServiceMonitor selector labels
+    ## ref: https://github.com/bitnami/charts/tree/master/bitnami/prometheus-operator#prometheus-configuration
+    ##
+    # selector:
+    #   prometheus: my-prometheus

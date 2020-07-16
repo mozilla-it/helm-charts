@@ -1,22 +1,27 @@
-installCRDs: false
-
-configuration:
-  provider: aws
-namespace: refractr-test
-issuer: stage
-refractr:
-  deployment_name: refractr
 image:
   repository: 783633885093.dkr.ecr.us-west-2.amazonaws.com/refractr
-  tag: v0.0.1-87-g2144ec9
+  tag: v0.0.7-4-gb1ff42b
 
-# Set a service account so that the CRD clean up job has proper permissions to delete CRDs
-serviceAccount:
-  server:
-    name: refractr
+imagePullSecrets:
+  - name: ecr-registry
 
-# Whether or not to clean up CustomResourceDefintions when deleting a release.
-# Cleaning up CRDs will delete the BackupStorageLocation and VolumeSnapshotLocation instances, which would have to be reconfigured.
-# Backup data in object storage will _not_ be deleted, however Backup instances in the Kubernetes API will.
-# Always clean up CRDs in CI.
-cleanUpCRDs: true
+issuer:
+  create: false
+
+deployment:
+  extraContainers:
+  - name: syslog
+    image: busybox
+    command: ['nc', '-l', '-u', '127.0.0.1', '5114']
+    ports:
+      - name: syslog
+        containerPort: 5114
+
+cert-manager:
+  install: true
+  installCRDs: true
+
+nginx-ingress:
+  controller:
+    service:
+      type: ClusterIP
