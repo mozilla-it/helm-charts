@@ -18,3 +18,6 @@ curl -L "https://get.helm.sh/helm-${HELM_VERSION}-linux-amd64.tar.gz" | tar xz &
 echo "=== Install kind ${KIND_VERSION}"
 curl -sSLo kind "https://github.com/kubernetes-sigs/kind/releases/download/${KIND_VERSION}/kind-linux-amd64" && chmod +x kind && sudo mv kind /usr/local/bin/kind
 
+echo "=== Install awscli"
+pip install --user awscli
+
