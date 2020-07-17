@@ -8,6 +8,17 @@ This repository contains a collection of Helm charts curated by Mozilla's Servic
 
 ## Compiling and publishing charts
 
+## Referencing images in ECR
+Charts referencing Docker Images stored in an ECR repo under `itsre-apps` subaccount can't be pulled without credentials.   
+Travis is configured to get Pull credentials for repositories inside that account.  
+In order to instruct the testing suite to
+use those credentials you have to create a folder named `ci` inside your chart, a file `test-values.yaml` inside it with the next content:
+```
+imagePullSecrets:
+  - name: ecr-registry
+```
+Check [here](https://github.com/mozilla-it/helm-charts/pull/39/commits/1a0fbfed5810a6d6875ca0172adac5065ee03b74#diff-245000fef8fab28267cb8040d6a3d7f6) for an example.
+
 ## Installing Helm Charts from this repository
 This repository is serving Helm Charts using the webserver provided by Github pages. In order to install Helm charts in your cluster
 add this repository to your helm repository list running `helm repo add mozilla-helm-charts https://mozilla-it.github.io/helm-charts/`
