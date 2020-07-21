@@ -5,10 +5,9 @@ voice_web:
   deployment_name: voice
   service_account_name: voice-dev
   ingress:
-    enabled: false
+    enabled: true
     class: voice-dev
-    host: voice.mozilla.org
-    additional_host: voice.mozilla.com
+    hosts: [voice.mozilla.org, commonvoice.mozilla.org]
   hpa:
     enabled: false
     max_replicas: 6
