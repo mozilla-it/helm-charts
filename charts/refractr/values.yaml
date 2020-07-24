@@ -10,7 +10,8 @@ image:
 nameOverride: ""
 fullnameOverride: ""
 
-issuer:
+# ugly name collision on 'issuer'; renamed to avoid
+my_issuer:
   create: true
   name: stage
 

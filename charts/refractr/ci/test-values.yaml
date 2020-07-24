@@ -5,7 +5,7 @@ image:
 imagePullSecrets:
   - name: ecr-registry
 
-issuer:
+my_issuer:
   create: false
 
 deployment:
