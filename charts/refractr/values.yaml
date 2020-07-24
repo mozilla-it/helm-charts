@@ -9,6 +9,7 @@ image:
 
 nameOverride: ""
 fullnameOverride: ""
+
 issuer:
   create: true
   name: stage
@@ -70,7 +71,7 @@ tolerations: []
 
 affinity: {}
 
-externalsecret:
+externalSecret:
   create: false
 
 cert-manager:
