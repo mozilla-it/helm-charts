@@ -1,7 +1,7 @@
-# refractr chart [![Build Status](https://travis-ci.com/mozilla-it/refractr.svg?branch=master)](https://travis-ci.com/mozilla-it/refractr)
+# refractr chart [![Build Status](https://travis-ci.com/mozilla-it/refractr.svg?branch=main)](https://travis-ci.com/mozilla-it/refractr)
 Helm chart for [refractr](https://github.com/mozilla-it/refractr/), containerized HTTP redirects and rewrites service.
 
-[![Build Status](https://travis-ci.com/mozilla-it/refractr.svg?branch=master)](https://travis-ci.com/mozilla-it/refractr)
+[![Build Status](https://travis-ci.com/mozilla-it/refractr.svg?branch=main)](https://travis-ci.com/mozilla-it/refractr)
 
 # Refractr at Mozilla
 Refractr at Mozilla runs in our itse-apps cluster and is installed via a HelmRelease in the it-sre-apps github repo.
