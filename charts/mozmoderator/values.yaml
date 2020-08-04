@@ -8,6 +8,7 @@ environment: stage
 
 image:
   repository: 783633885093.dkr.ecr.us-west-2.amazonaws.com/moderator
+  tag: c285426edacb3a1791bab84f64c16d00e6d865eb
   pullPolicy: IfNotPresent
 
 nameOverride: ""
