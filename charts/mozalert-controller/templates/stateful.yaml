@@ -19,7 +19,7 @@ spec:
     spec:
       serviceAccountName: {{ .Chart.Name }}
       containers:
-      - image: "{{ .Values.image.repository }}:{{ .Values.image.version }}"
+      - image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
         imagePullPolicy: {{ .Values.image.pullPolicy }}
         name: {{ .Chart.Name }}
         {{- if .Values.secretRef }}

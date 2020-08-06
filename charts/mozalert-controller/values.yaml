@@ -1,6 +1,6 @@
 ---
 image:
   repository: afrank/mozalert-controller
-  version: latest
+  tag: latest
   pullPolicy: Always
 secretRef: mozalert-secrets

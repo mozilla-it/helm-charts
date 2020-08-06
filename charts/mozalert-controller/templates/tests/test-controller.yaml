@@ -8,7 +8,7 @@ spec:
   restartPolicy: Never
   containers:
   - name: mozalert-validator
-    image: "{{ .Values.image.repository }}:{{ .Values.image.version }}"
+    image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
     command: [ "mozalert-validator" ]
     args: [ "crd.k8s.afrank.local", "v1", "checks" ]
 
