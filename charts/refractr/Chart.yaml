@@ -19,9 +19,6 @@ maintainers:
     email: alberto@mozilla.com
 
 dependencies:
-- name: nginx-ingress
-  version: 1.31.0
-  repository: https://kubernetes-charts.storage.googleapis.com
 - name: cert-manager
   version: v0.15.2
   condition: cert-manager.install

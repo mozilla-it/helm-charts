@@ -78,28 +78,6 @@ externalSecret:
 cert-manager:
   install: false
 
-# Nginx Ingress Controller value overrides
-nginx-ingress:
-  controller:
-    useIngressClassOnly: true
-    enableCustomResources: false
-    admissionWebhooks:
-      enable: false
-    scope:
-      enabled: true
-    config:
-      use-proxy-protocol: "false"
-      use-forwarded-headers: "true"
-      proxy-real-ip-cidr: "0.0.0.0/0"   # restrict this to the IP addresses of ELB
-    service:
-      annotations:
-        service.beta.kubernetes.io/aws-load-balancer-type: "nlb"
-    metrics:
-      enabled: true
-  rbac:
-    create: true
-    scope: true
-
 
 # copied from https://github.com/bitnami/charts/blob/master/bitnami/nginx/values.yaml#L419-L493
 metrics:
