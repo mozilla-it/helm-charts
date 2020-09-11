@@ -1,9 +1,6 @@
 dependencies:
-- name: nginx-ingress
-  repository: https://kubernetes-charts.storage.googleapis.com
-  version: 1.31.0
 - name: cert-manager
   repository: https://charts.jetstack.io
   version: v0.15.2
-digest: sha256:03729a5f591bbf62187cbb14a1d5de33dae87b47095674abb0d919effb5aaba6
-generated: "2020-07-22T09:54:39.82165822+02:00"
+digest: sha256:fdc4d369b985244a2dbe0878be5b515890bf6cfeba0ba3debb4a510919f9903b
+generated: "2020-09-11T21:59:53.863780553Z"
