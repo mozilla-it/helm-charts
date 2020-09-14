@@ -44,16 +44,6 @@ deployment:
   extraContainers: []
   extraVolumes: []
 
-ingress:
-  enabled: true
-  # TODO: determine how to handle separate ingress controllers for stage and prod
-  annotations: {
-    kubernetes.io/tls-acme: "true",
-    nginx.ingress.kubernetes.io/rewrite-target: /,
-    nginx.ingress.kubernetes.io/ssl-redirect: "true",
-    nginx.org/server-snippets: "server_name ~^.*$;",     # Catch all server names
-  }
-
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
   # choice for the user. This also increases chances charts run on environments with little
