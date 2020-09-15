@@ -17,9 +17,3 @@ sources:
 maintainers:
   - name: Alberto del Barrio
     email: alberto@mozilla.com
-
-dependencies:
-- name: cert-manager
-  version: v0.15.2
-  condition: cert-manager.install
-  repository: https://charts.jetstack.io
