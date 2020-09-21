@@ -1,0 +1,16 @@
+{{ if eq .Values.hpa.enabled true }}
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: {{ .Values.deployment.name }}
+  labels:
+    {{- include "refractr.labels" . | nindent 4 }}
+spec:
+  maxReplicas: {{ .Values.hpa.max_replicas }}
+  minReplicas: {{ .Values.hpa.min_replicas }}
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: {{ .Values.deployment.name }}
+  targetCPUUtilizationPercentage: {{ .Values.hpa.target_cpu_utilization }}
+{{ end }}
