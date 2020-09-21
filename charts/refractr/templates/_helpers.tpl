@@ -36,6 +36,7 @@ Common labels
 */}}
 {{- define "refractr.labels" -}}
 app: {{ include "refractr.fullname" . }}
+environment: {{ .Values.environment }}
 helm.sh/chart: {{ include "refractr.chart" . }}
 {{ include "refractr.selectorLabels" . }}
 {{- if .Chart.AppVersion }}
