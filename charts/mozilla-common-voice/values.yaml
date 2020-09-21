@@ -23,7 +23,7 @@ voice_web:
     cpu: 1
     memory: 1024Mi
 
-  image: "itsre/voice-web:master-latest"
+  image: "mozilla/commonvoice:stage-latest"
 
   service_account:
     annotations: {}
