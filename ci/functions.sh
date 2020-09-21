@@ -3,7 +3,7 @@ set -o errexit
 set -o nounset
 set -o pipefail
 
-readonly CT_VERSION=v3.0.0-rc.1
+readonly CT_VERSION=v3.0.0
 
 run_ct_container() {
     echo 'Running ct container...'

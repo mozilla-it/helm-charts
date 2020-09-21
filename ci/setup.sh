@@ -6,8 +6,8 @@ set -o errexit
 set -o nounset
 set -o pipefail
 
-KIND_VERSION=v0.7.0
-HELM_VERSION=v3.2.0
+KIND_VERSION=v0.8.0
+HELM_VERSION=v3.3.3
 
 echo "=== Install kubectl"
 sudo curl -L https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl -o /usr/local/bin/kubectl && sudo chmod +x /usr/local/bin/kubectl
