@@ -1,7 +1,7 @@
 apiVersion: v2
 name: mozilla-common-voice
 icon: https://voice.mozilla.org/dist/f01895c77138837851f87c2e40acbd58.svg
-version: 0.3.0
+version: 0.3.1
 description: Deploy Mozilla Common Voice web application
 type: application
 keywords:
@@ -27,7 +27,7 @@ dependencies:
   repository: https://kubernetes-charts.storage.googleapis.com
 
 - name: elasticsearch
-  version: ~7.6.0
+  version: 7.6.2
   condition: elasticsearch.enabled
   repository: https://helm.elastic.co
 
