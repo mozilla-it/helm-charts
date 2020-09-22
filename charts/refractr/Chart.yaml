@@ -4,7 +4,7 @@ description: A Helm chart for the refractr redirect application
 type: application
 
 # Chart version, bump for any changes
-version: 1.0.10
+version: 1.0.11
 
 keywords:
   - Mozilla

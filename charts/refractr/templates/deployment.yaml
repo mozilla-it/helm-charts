@@ -46,8 +46,10 @@ spec:
           envFrom:
           - secretRef:
               name: {{ .Values.deployment.name }}
+          {{- if .Values.resources }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
+          {{- end }}
 {{- if .Values.deployment.extraContainers }}
       {{- toYaml .Values.deployment.extraContainers | nindent 8 }}
 {{- end }}
