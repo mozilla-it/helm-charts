@@ -49,6 +49,7 @@ hpa:
   max_replicas: 6
   min_replicas: 3
   target_cpu_utilization: 80
+  target_memory_utilization: 80
 
 resources:
   # This value is taken ingress-nginx

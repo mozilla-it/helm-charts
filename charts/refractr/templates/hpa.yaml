@@ -12,5 +12,21 @@ spec:
     apiVersion: apps/v1
     kind: Deployment
     name: {{ .Values.deployment.name }}
-  targetCPUUtilizationPercentage: {{ .Values.hpa.target_cpu_utilization }}
+  metrics:
+    {{- with .Values.hpa.target_cpu_utilization }}
+    - type: Resource
+      resource:
+        name: cpu
+        target:
+          type: Utilization
+          averageUtilization: {{ . }}
+    {{- end }}
+    {{- with .Values.hpa.target_memory_utilization }}
+    - type: Resource
+      resource:
+        name: memory
+        target:
+          type: Utilization
+          averageUtilization: {{ . }}
+    {{- end }}
 {{ end }}
