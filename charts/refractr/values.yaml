@@ -59,6 +59,15 @@ resources:
     cpu: 200m
     memory: 256Mi
 
+preinstall-hook:
+  resources:
+    requests:
+      cpu: 100m
+      memory: 64Mi
+    limits:
+      cpu: 200m
+      memory: 512Mi
+
 nodeSelector: {}
 
 tolerations: []
