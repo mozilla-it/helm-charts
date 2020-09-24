@@ -59,7 +59,7 @@ resources:
     cpu: 200m
     memory: 256Mi
 
-preinstall-hook:
+preinstall_hook:
   resources:
     requests:
       cpu: 100m
