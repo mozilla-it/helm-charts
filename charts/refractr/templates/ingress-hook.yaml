@@ -104,7 +104,7 @@ spec:
         - name: "{{ .Release.Name }}-ingress-preinstall-hook"
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           args: ["ingress"]
-          {{- if .Values.preinstall-hook.resources }}
+          {{- if .Values.preinstall_hook.resources }}
           resources:
-            {{- toYaml .Values.preinstall-hook.resources | nindent 12 }}
+            {{- toYaml .Values.preinstall_hook.resources | nindent 12 }}
           {{- end }}
