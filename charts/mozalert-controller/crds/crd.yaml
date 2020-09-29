@@ -51,6 +51,9 @@ spec:
                 type: string
               check_url:
                 type: string
+              references:
+                type: object
+                x-kubernetes-preserve-unknown-fields: true
               args:
                 type: array
                 items:
