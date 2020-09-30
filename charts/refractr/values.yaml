@@ -85,13 +85,15 @@ cert-manager:
 metrics:
   enabled: true
 
+  port: 9113
+
   ## Bitnami NGINX Prometheus Exporter image
   ## ref: https://hub.docker.com/r/bitnami/nginx-exporter/tags/
   ##
   image:
     registry: docker.io
     repository: bitnami/nginx-exporter
-    tag: 0.8.0-debian-10-r18
+    tag: 0.8.0-debian-10-r91
     pullPolicy: IfNotPresent
     ## Optionally specify an array of imagePullSecrets.
     ## Secrets must be manually created in the namespace.
@@ -100,16 +102,11 @@ metrics:
     # pullSecrets:
     #   - myRegistryKeySecretName
 
-  ## Prometheus exporter pods' annotation and labels
-  ## ref: https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/
-  ##
-  podAnnotations:
-    prometheus.io/scrape: "true"
-    prometheus.io/port: "9113"
-
   ## Prometheus exporter service parameters
   ##
   service:
+    type: ClusterIP
+
     ## NGINX Prometheus exporter port
     ##
     port: 9113
@@ -117,7 +114,7 @@ metrics:
     ##
     annotations:
       prometheus.io/scrape: "true"
-      prometheus.io/port: "{{ .Values.metrics.service.port }}"
+      prometheus.io/port: "9113"
 
   ## NGINX Prometheus exporter resource requests and limits
   ## ref: http://kubernetes.io/docs/user-guide/compute-resources/
