@@ -60,7 +60,7 @@ spec:
           command: ['/usr/bin/exporter', '-nginx.scrape-uri', 'http://127.0.0.1:80/status']
           ports:
             - name: metrics
-              containerPort: 9113
+              containerPort: {{ .Values.metrics.port }}
           livenessProbe:
             httpGet:
               path: /metrics
