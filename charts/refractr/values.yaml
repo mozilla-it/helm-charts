@@ -40,6 +40,9 @@ deployment:
   annotations:
     fluxcd.io/automated: "true"
     fluxcd.io/tag.refractr-web: glob:dev-*
+    # Needs to be kept in sync with metrics settings down below
+    prometheus.io/port: "9113"
+    prometheus.io/scrape: "true"
   name: refractr
   extraContainers: []
   extraVolumes: []
@@ -84,7 +87,6 @@ cert-manager:
 # copied from https://github.com/bitnami/charts/blob/master/bitnami/nginx/values.yaml#L419-L493
 metrics:
   enabled: true
-
   port: 9113
 
   ## Bitnami NGINX Prometheus Exporter image
@@ -102,19 +104,6 @@ metrics:
     # pullSecrets:
     #   - myRegistryKeySecretName
 
-  ## Prometheus exporter service parameters
-  ##
-  service:
-    type: ClusterIP
-
-    ## NGINX Prometheus exporter port
-    ##
-    port: 9113
-    ## Annotations for the Prometheus exporter service
-    ##
-    annotations:
-      prometheus.io/scrape: "true"
-      prometheus.io/port: "9113"
 
   ## NGINX Prometheus exporter resource requests and limits
   ## ref: http://kubernetes.io/docs/user-guide/compute-resources/
