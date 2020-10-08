@@ -9,7 +9,7 @@ spec:
     # Let's Encrypt will use this to contact you about expiring
     # certificates, and issues related to your account.
     email: it-se@mozilla.com
-    server: {{ if eq .Values.my_issuer.name "prod" }}https://acme-v02.api.letsencrypt.org/directory{{ else }}https://acme-staging-v02.api.letsencrypt.org/directory{{ end }}
+    server: {{ if eq .Values.my_issuer.name "prod" }}{{ .Values.le.prod }}{{ else }}{{ .Values.le.stage }}{{ end }}
     privateKeySecretRef:
       # Secret resource used to store the account's private key.
       name: letsencrypt
@@ -18,4 +18,18 @@ spec:
       - http01:
           ingress:
             class: nginx
+      - dns01:
+        providers:
+        - name: prod-akamai
+          akamai:
+            serviceConsumerDomain: akab-tho6xie2aiteip8p-poith5aej0ughaba.luna.akamaiapis.net
+            clientTokenSecretRef:
+              name: akamai-dns
+              key: clientToken
+            clientSecretSecretRef:
+              name: akamai-dns
+              key: clientSecret
+            accessTokenSecretRef:
+              name: akamai-dns
+              key: accessToken
 {{- end }}
