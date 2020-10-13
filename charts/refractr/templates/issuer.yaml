@@ -18,5 +18,4 @@ spec:
       - http01:
           ingress:
             class: nginx
-      - dns01: {}
 {{- end }}
