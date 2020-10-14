@@ -25,6 +25,13 @@ rbac:
 secrets: {}
   # name: papertrail
 
+externalSecrets:
+  enabled: false
+  region: us-west-2
+  # provider value can be aws or gcp
+  provider:
+  secretsKey:
+
 tolerations:
   - key: "node-role.kubernetes.io/master"
     effect: "NoSchedule"
