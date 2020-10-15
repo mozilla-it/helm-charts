@@ -49,14 +49,7 @@ voice_web:
       location: "us-west-2"
     admin_emails: "[admin@organization.com]"
     redis_url: "redis://voice-dev-redis-master.voice-dev.svc.cluster.local/"
-    kibana:
-      url: "http://voice-dev-kibana.voice-dev.svc.cluster.local:5601/"
-      prefix: "/app/kibana"
-      admins: "[admin@organization.com]"
     last_dataset: "default"
-
-  es_sync:
-    enabled: false
 
   # This are default non-production base64'd values
   secrets:
@@ -84,14 +77,6 @@ dependecies:
     version: ~10.4.1
     condition: redis.enabled
     repository: https://kubernetes-charts.storage.googleapis.com
-  - name: elasticsearch
-    version: ~7.6.0
-    condition: elasticsearch.enabled
-    repository: https://helm.elastic.co
-  - name: kibana
-    version: ~7.6.0
-    condition: kibana.enabled
-    repository: https://helm.elastic.co
 
 mysql:
   enabled: true
@@ -103,18 +88,4 @@ mysql:
   imageTag: 5.7.14
 
 redis:
-  enabled: false
-
-elasticsearch:
-  enabled: false
-  replicas: 1
-  resources:
-    requests:
-      cpu: 200m
-      memory: 512Mi
-    limits:
-      cpu: 1000m
-      memory: 2Gi
-
-kibana:
   enabled: false
