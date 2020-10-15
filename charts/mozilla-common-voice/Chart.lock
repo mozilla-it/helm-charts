@@ -5,11 +5,5 @@ dependencies:
 - name: redis
   repository: https://kubernetes-charts.storage.googleapis.com
   version: 10.4.4
-- name: elasticsearch
-  repository: https://helm.elastic.co
-  version: 7.6.2
-- name: kibana
-  repository: https://helm.elastic.co
-  version: 7.6.2
-digest: sha256:ef52a0dac1cc9a506542fd45c9e381e5a36bfcb43d2a8e767b1df4945e50281a
-generated: "2020-09-22T08:11:34.651001162Z"
+digest: sha256:be38a2e0be450220ad703ed3b90da9a712b26df0babbe2ce120d2c828be66a1b
+generated: "2020-10-15T11:57:17.299939735+02:00"
