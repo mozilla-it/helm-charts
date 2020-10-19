@@ -24,6 +24,6 @@ spec:
             solverName: webhook
         selector:
           dnsNames:
-            - malware-error.mozilla.com
+            - az.malware-error.mozilla.com
 
 {{- end }}
