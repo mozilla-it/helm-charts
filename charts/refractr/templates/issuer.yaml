@@ -18,12 +18,4 @@ spec:
       - http01:
           ingress:
             class: nginx
-      - dns01:
-          webhook:
-            groupName: test
-            solverName: webhook
-        selector:
-          dnsNames:
-            - az.malware-error.mozilla.com
-
 {{- end }}
