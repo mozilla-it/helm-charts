@@ -29,7 +29,7 @@ spec:
         selector:
           dnsNames:
             {{- range $item := .Values.my_issuer.dns.dnsNames }}
-            - {{ $item }}
+            - {{ $item | quote }}
             {{- end }}
         {{- end }}
 {{- end }}
