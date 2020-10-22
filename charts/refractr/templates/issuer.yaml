@@ -18,4 +18,20 @@ spec:
       - http01:
           ingress:
             class: nginx
+      - dns01:
+          # This is so we can instruct LE to follow a CNAME on the target domain to
+          # a domain we control (refractr.mozit.cloud) in route53
+          cnameStrategy: Follow
+          route53:
+            region: us-west-2
+            hostedZoneID: Z06469063HC60S7SHF706
+            role: "arn:aws:iam:::role/itse-apps-stage-1-cert-manager-role"
+        selector:
+          dnsNames:
+            - '*.malware-error.mozilla.com'
+            - '*.phish-error.mozilla.com'
+            - '*.phish-report.mozilla.com'
+            # Test domain
+            - '*.malware-error.allizom.com'
+
 {{- end }}
