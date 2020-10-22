@@ -14,6 +14,10 @@ fullnameOverride: ""
 my_issuer:
   create: true
   name: stage
+  dns:
+    dnsNames: []
+    region: us-west-2
+    hostedZoneID: "this is a required argument"
 
 le:
   prod: https://acme-v02.api.letsencrypt.org/directory
