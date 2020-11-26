@@ -12,6 +12,8 @@ data:
   CV_MYSQLHOST: "{{ .Values.voice_web.config.mysql.host }}"
   CV_MYSQLPORT:  "{{ .Values.voice_web.config.mysql.port }}"
   CV_BUCKET_NAME: "{{ .Values.voice_web.config.s3.bucket_name }}"
+  CV_CLIP_BUCKET_NAME: "{{ .Values.voice_web.config.s3.clip_bucket_name }}"
+  CV_DATASET_BUCKET_NAME: "{{ .Values.voice_web.config.s3.dataset_bucket_name }}"
   CV_BUCKET_LOCATION: "{{ .Values.voice_web.config.s3.location }}"
   CV_ENVIRONMENT: "{{ .Values.voice_web.config.environment }}"
   CV_ADMIN_EMAILS: "{{ .Values.voice_web.config.admin_emails }}"
