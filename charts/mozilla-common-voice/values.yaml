@@ -46,6 +46,8 @@ voice_web:
       host: "localhost"
     s3:
       bucket_name: "common-voice-bucket"
+      clip_bucket_name: "common-voice-bucket-clips-bucket"
+      dataset_bucket_name: "common-voice-dataset-bucket"
       location: "us-west-2"
     admin_emails: "[admin@organization.com]"
     redis_url: "redis://voice-dev-redis-master.voice-dev.svc.cluster.local/"
