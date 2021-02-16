@@ -1,0 +1,69 @@
+# Default values for mentoring.
+replicaCount: 1
+
+image:
+  repository: 783633885093.dkr.ecr.us-west-2.amazonaws.com/mentoring
+  pullPolicy: IfNotPresent
+  tag: "0.0.1"
+
+fullnameOverride: "mentoring"
+
+serviceAccount:
+  create: true
+
+service:
+  type: ClusterIP
+  port: 80
+
+ingress:
+  enabled: true
+  annotations:
+    kubernetes.io/ingress.class: nginx-mentoring
+  hosts:
+    - host: mentoring.mozilla.com
+      paths:
+        - path: /
+      backend:
+        serviceName: mentoring
+        servicePort: 80
+
+resources:
+  limits:
+    cpu: 500m
+    memory: 1024Mi
+  requests:
+    cpu: 100m
+    memory: 128Mi
+
+autoscaling:
+  enabled: true
+  minReplicas: 1
+  maxReplicas: 3
+  targetCPUUtilizationPercentage: 80
+  targetMemoryUtilizationPercentage: 80
+
+configMap:
+  allowedHosts: '"*"'
+
+externalSecrets: false
+
+postgres:
+  enabled: true
+  fullnameOverride: postgres
+  mysqlUser: mentoring
+  mysqlDatabase: mentoring
+  mysqlPassword: defaultpassword
+  imageTag: 12
+
+imagePullSecrets: []
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
+
+podAnnotations: {}
+
+securityContext: {}
+nameOverride: ""
