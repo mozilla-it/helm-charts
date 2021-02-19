@@ -1,7 +1,7 @@
 apiVersion: v2
 name: mozilla-common-voice
 icon: https://voice.mozilla.org/dist/f01895c77138837851f87c2e40acbd58.svg
-version: 0.4.2
+version: 0.4.3
 description: Deploy Mozilla Common Voice web application
 type: application
 keywords:
@@ -17,11 +17,11 @@ maintainers:
     email: alberto@mozilla.com
 dependencies:
 - name: mysql
-  version: 1.6.4
+  version: 8.4.2
   condition: mysql.enabled
-  repository: https://kubernetes-charts.storage.googleapis.com
+  repository: https://charts.bitnami.com/bitnami
 
 - name: redis
-  version: ~10.4.1
+  version: 12.7.4
   condition: redis.enabled
-  repository: https://kubernetes-charts.storage.googleapis.com
+  repository: https://charts.bitnami.com/bitnami

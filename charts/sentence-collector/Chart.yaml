@@ -2,7 +2,7 @@ apiVersion: v2
 name: sentence-collector
 description: A Helm chart for Common Voice's Sentence Collector
 type: application
-version: 0.1.0
+version: 0.1.1
 keywords:
   - Mozilla
   - common-voice
@@ -17,6 +17,6 @@ maintainers:
 
 dependencies:
 - name: mysql
-  version: 1.6.4
+  version: 8.4.2
   condition: mysql.enabled
-  repository: https://kubernetes-charts.storage.googleapis.com
+  repository: https://charts.bitnami.com/bitnami
