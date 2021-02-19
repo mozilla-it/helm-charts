@@ -2,7 +2,7 @@ apiVersion: v2
 name: mozmoderator
 description: A Helm Chart for Mozilla's Moderator application
 type: application
-version: 0.1.1
+version: 0.1.2
 appVersion: c285426edacb3a1791bab84f64c16d00e6d865eb
 keywords:
   - Mozilla
@@ -15,6 +15,6 @@ maintainers:
 
 dependencies:
 - name: mysql
-  version: 1.6.4
+  version: 8.4.2
   condition: mysql.enabled
-  repository: https://kubernetes-charts.storage.googleapis.com
+  repository: https://charts.bitnami.com/bitnami

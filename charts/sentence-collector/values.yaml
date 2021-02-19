@@ -53,8 +53,8 @@ autoscaling:
 
 mysql:
   enabled: true
-  fullnameOverride: mysql
-  mysqlUser: sc
-  mysqlDatabase: sc
-  mysqlPassword: defaultpassword
-  imageTag: 5.7.14
+  fullnameOverride: mysql-sc
+  auth:
+    username: sc
+    database: sc
+    password: defaultpassword
