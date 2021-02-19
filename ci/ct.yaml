@@ -12,3 +12,4 @@ chart-dirs:
 chart-repos:
   - elastic=https://helm.elastic.co
   - jetstack=https://charts.jetstack.io
+  - bitnami=https://charts.bitnami.com/bitnami
