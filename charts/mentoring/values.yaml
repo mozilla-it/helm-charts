@@ -4,7 +4,7 @@ replicaCount: 1
 image:
   repository: 783633885093.dkr.ecr.us-west-2.amazonaws.com/mentoring
   pullPolicy: IfNotPresent
-  tag: "0.0.1"
+  tag: "0.0.4"
 
 fullnameOverride: "mentoring"
 
@@ -40,20 +40,20 @@ autoscaling:
   minReplicas: 1
   maxReplicas: 3
   targetCPUUtilizationPercentage: 80
-  targetMemoryUtilizationPercentage: 80
+  targetMemoryUtilizationPercentage: 70
 
 configMap:
   allowedHosts: '"*"'
+  staffGroups: "mozilliansorg_mentoring_staff"
 
 externalSecrets: false
 
-postgres:
+postgresql:
   enabled: true
   fullnameOverride: postgres
-  mysqlUser: mentoring
-  mysqlDatabase: mentoring
-  mysqlPassword: defaultpassword
-  imageTag: 12
+  postgresqlUsername: mentoring
+  postgresqlDatabase: mentoring
+  postgresqlPassword: defaultpassword
 
 imagePullSecrets: []
 

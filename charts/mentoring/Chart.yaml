@@ -5,3 +5,8 @@ description: A Helm chart for Mozilla's Mentoring app
 type: application
 
 version: 0.1.0
+dependencies:
+- name: postgresql
+  version: 10.3.2
+  condition: postgres.enabled
+  repository: https://charts.bitnami.com/bitnami

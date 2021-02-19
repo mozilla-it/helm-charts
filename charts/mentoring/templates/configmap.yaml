@@ -4,3 +4,4 @@ metadata:
   name: {{ include "mentoring.fullname" . }}
 data:
   DJANGO_ALLOWED_HOSTS: {{ .Values.configMap.allowedHosts }}
+  DJANGO_STAFF_GROUPS: {{ .Values.configMap.staffGroups }}
