@@ -12,7 +12,7 @@ jobs:
   - "./ci/lint.sh"
 - stage: e2e
   script:
-  - "./ci/e2e.sh"
+  - travis_wait 30 "./ci/e2e.sh"
 - stage: Deploy
   if: type = push AND branch = main
   script:
