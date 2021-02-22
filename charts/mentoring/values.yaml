@@ -46,7 +46,9 @@ configMap:
   allowedHosts: '"*"'
   staffGroups: "mozilliansorg_mentoring_staff"
 
-externalSecrets: false
+externalSecrets:
+  enabled: false
+  secretName: ""
 
 postgresql:
   enabled: true
