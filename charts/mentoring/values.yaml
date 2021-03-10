@@ -45,6 +45,8 @@ autoscaling:
 configMap:
   allowedHosts: '"*"'
   staffGroups: "mozilliansorg_mentoring_staff"
+  callbackUrl: "https://mentoring.mozilla.com/oidc/callback/"
+
 
 externalSecrets:
   enabled: false
