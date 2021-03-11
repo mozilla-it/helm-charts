@@ -1,6 +1,28 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
+  name: sleepten
+  labels:
+    {{- include "ctms.labels" . | nindent 4 }}
+  annotations:
+    "helm.sh/hook": pre-install,pre-upgrade
+    "helm.sh/hook-weight": "-7"
+    "helm.sh/hook-delete-policy": hook-succeeded
+spec:
+  template:
+    metadata:
+      name: sleepten
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: sleepten
+          image: busybox
+          imagePullPolicy: IfNotPresent
+          command: ['sh', '-c', 'echo post-install hook Pod is running && sleep 10']
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
   name: {{ include "ctms.fullname" . }}
   labels:
     {{- include "ctms.labels" . | nindent 4 }}
