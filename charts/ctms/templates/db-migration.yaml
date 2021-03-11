@@ -1,7 +1,7 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: sleepten
+  name: sleepsixty
   labels:
     {{- include "ctms.labels" . | nindent 4 }}
   annotations:
@@ -15,10 +15,10 @@ spec:
     spec:
       restartPolicy: Never
       containers:
-        - name: sleepten
+        - name: sleepsixty
           image: busybox
           imagePullPolicy: IfNotPresent
-          command: ['sh', '-c', 'echo post-install hook Pod is running && sleep 10']
+          command: ['sh', '-c', 'echo post-install hook Pod is running && sleep 60']
 ---
 apiVersion: batch/v1
 kind: Job
