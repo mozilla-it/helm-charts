@@ -1,0 +1,7 @@
+apiVersion: v2
+name: configmapsecrets
+description: A Helm chart for https://github.com/machinezone/configmapsecrets
+
+type: application
+
+version: 0.0.1
