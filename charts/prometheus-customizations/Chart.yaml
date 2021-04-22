@@ -1,7 +1,6 @@
 apiVersion: v2
 name: prometheus-customizations
-description: An opinionated helm chart to setup our prometheus instances. Requires externalsecrets, configmapsecrets,
-sets the prom config to a particular value.
+description: An opinionated helm chart to setup our prometheus instances. Requires externalsecrets, configmapsecrets, sets the prom config to a particular value.
 
 type: application
 
