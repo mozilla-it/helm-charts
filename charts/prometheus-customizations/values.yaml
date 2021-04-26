@@ -1,4 +1,9 @@
 prom:
   clustername: prom
-  influx_secret_key: "/prometheus/influx"
-  influx_secret_name: "influxurl"
+
+
+# Should we send the data to influxdb, our saas for monitoring?
+influxdb:
+  enabled: false
+  secret_key: "/prometheus/influx"
+  secret_name: "influxurl"

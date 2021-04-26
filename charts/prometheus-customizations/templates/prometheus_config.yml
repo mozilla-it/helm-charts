@@ -7,10 +7,14 @@ metadata:
     app: prometheus
 spec:
   vars:
+    {{- if .Values.influxdb.enabled }}
     - name: INFLUX_URL
       secretValue:
         name: influx-secret
         key: influxurl
+    {{- else }}
+    []
+    {{- end }}
   template:
     metadata:
       # optional: name defaults to same as ConfigMapSecret
@@ -23,6 +27,7 @@ spec:
           evaluation_interval: 1m
           scrape_interval: 1m
           scrape_timeout: 10s
+        {{- if .Values.influxdb.enabled }}
         remote_write:
           - url: $(INFLUX_URL)
             queue_config:
@@ -34,6 +39,7 @@ spec:
               - source_labels: [job]
                 target_label: "cluster"
                 replacement: "{{ .Values.prom.clustername | required "prom.clustername is required" }}"
+        {{- end }}
         rule_files:
         - /etc/config/recording_rules.yml
         - /etc/config/alerting_rules.yml
