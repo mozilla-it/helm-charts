@@ -1,3 +1,4 @@
 prom:
+  clustername: prom
   influx_secret_key: "/prometheus/influx"
   influx_secret_name: "influxurl"
