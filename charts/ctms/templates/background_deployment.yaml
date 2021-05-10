@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "ctms.fullname" . }}
+  name: {{ include "ctms.fullname" . }}-background
   labels:
     app.kubernetes.io/component: background
     {{- include "ctms.labels" . | nindent 4 }}
