@@ -2,7 +2,7 @@ apiVersion: v1
 entries:
   configmapsecrets:
   - apiVersion: v2
-    created: "2021-05-10T23:11:11.853852367Z"
+    created: "2021-05-10T23:18:18.58073231Z"
     description: A Helm chart for https://github.com/machinezone/configmapsecrets
     digest: fda1a3059d9d0c117c4e5eb168224320918f82bcbffa342f5f3320d8c4ff5ee4
     name: configmapsecrets
@@ -12,7 +12,16 @@ entries:
     version: 0.0.1
   ctms:
   - apiVersion: v2
-    created: "2021-05-10T23:11:11.855980579Z"
+    created: "2021-05-10T23:18:18.583239157Z"
+    description: A Helm chart for Mozilla's CTMS-API app
+    digest: 4b60085f90955540db2287d103da31aeb1d964aff6b8ef9b515e1dc71438a444
+    name: ctms
+    type: application
+    urls:
+    - https://mozilla-it.github.io/helm-charts/ctms-0.0.13.tgz
+    version: 0.0.13
+  - apiVersion: v2
+    created: "2021-05-10T23:18:18.582729731Z"
     description: A Helm chart for Mozilla's CTMS-API app
     digest: 67b43b4c2ea5014def31108e9df622db1e283d0d693533f35540edbb9cddd0f4
     name: ctms
@@ -21,7 +30,7 @@ entries:
     - https://mozilla-it.github.io/helm-charts/ctms-0.0.12.tgz
     version: 0.0.12
   - apiVersion: v2
-    created: "2021-05-10T23:11:11.855456706Z"
+    created: "2021-05-10T23:18:18.582253219Z"
     description: A Helm chart for Mozilla's CTMS-API app
     digest: 6e8edcecc2957180f84ccff55fe43fcdac4066415047a7947f8c7dc7800e191c
     name: ctms
@@ -30,7 +39,7 @@ entries:
     - https://mozilla-it.github.io/helm-charts/ctms-0.0.11.tgz
     version: 0.0.11
   - apiVersion: v2
-    created: "2021-05-10T23:11:11.854967432Z"
+    created: "2021-05-10T23:18:18.581719299Z"
     description: A Helm chart for Mozilla's CTMS-API app
     digest: a7617461c546fb211a0a3396c37add9e12463f2238ac20bf9b550c454e8002b4
     name: ctms
@@ -39,7 +48,7 @@ entries:
     - https://mozilla-it.github.io/helm-charts/ctms-0.0.10.tgz
     version: 0.0.10
   - apiVersion: v2
-    created: "2021-05-10T23:11:11.85995767Z"
+    created: "2021-05-10T23:18:18.587313593Z"
     description: A Helm chart for Mozilla's CTMS-API app
     digest: 537223694f7154a26cc77bbc3a75d6d6229920e61a4fde031d6bb83b17ff9202
     name: ctms
@@ -48,7 +57,7 @@ entries:
     - https://mozilla-it.github.io/helm-charts/ctms-0.0.9.tgz
     version: 0.0.9
   - apiVersion: v2
-    created: "2021-05-10T23:11:11.859442411Z"
+    created: "2021-05-10T23:18:18.586792897Z"
     description: A Helm chart for Mozilla's CTMS-API app
     digest: 82d091faf53b98471e855581e56362fdb8fb60be4f453b6476cf7a67f9f0a8f6
     name: ctms
@@ -57,7 +66,7 @@ entries:
     - https://mozilla-it.github.io/helm-charts/ctms-0.0.8.tgz
     version: 0.0.8
   - apiVersion: v2
-    created: "2021-05-10T23:11:11.858897457Z"
+    created: "2021-05-10T23:18:18.586253654Z"
     description: A Helm chart for Mozilla's CTMS-API app
     digest: 7ceac3aaf49b03a4816419047c09059391d1b61124f43d8b072537cab64bf402
     name: ctms
@@ -66,7 +75,7 @@ entries:
     - https://mozilla-it.github.io/helm-charts/ctms-0.0.7.tgz
     version: 0.0.7
   - apiVersion: v2
-    created: "2021-05-10T23:11:11.858371433Z"
+    created: "2021-05-10T23:18:18.585697097Z"
     description: A Helm chart for Mozilla's CTMS-API app
     digest: 0d38456c12e2983a8be75704315f3831e144588146055848030c6416ace6a9a1
     name: ctms
@@ -75,7 +84,7 @@ entries:
     - https://mozilla-it.github.io/helm-charts/ctms-0.0.6.tgz
     version: 0.0.6
   - apiVersion: v2
-    created: "2021-05-10T23:11:11.857854362Z"
+    created: "2021-05-10T23:18:18.585168277Z"
     description: A Helm chart for Mozilla's CTMS-API app
     digest: 5099aeb3e83b149fd699ccb539ff08b2e013b132222fa05a0d54ade7c9bac123
     name: ctms
@@ -84,7 +93,7 @@ entries:
     - https://mozilla-it.github.io/helm-charts/ctms-0.0.5.tgz
     version: 0.0.5
   - apiVersion: v2
-    created: "2021-05-10T23:11:11.857407856Z"
+    created: "2021-05-10T23:18:18.58468121Z"
     description: A Helm chart for Mozilla's CTMS-API app
     digest: 6e991ab36c5ec0c998810d7fc2f2ee08d14a4185f77a5bd91d5e7a1c9fa8b17e
     name: ctms
@@ -93,7 +102,7 @@ entries:
     - https://mozilla-it.github.io/helm-charts/ctms-0.0.4.tgz
     version: 0.0.4
   - apiVersion: v2
-    created: "2021-05-10T23:11:11.856950038Z"
+    created: "2021-05-10T23:18:18.58420825Z"
     description: A Helm chart for Mozilla's CTMS-API app
     digest: 0ba3ae856d2cd47ffd63069bd51735f974ee928833d424de9ca8c707711c6c36
     name: ctms
@@ -102,7 +111,7 @@ entries:
     - https://mozilla-it.github.io/helm-charts/ctms-0.0.3.tgz
     version: 0.0.3
   - apiVersion: v2
-    created: "2021-05-10T23:11:11.856475645Z"
+    created: "2021-05-10T23:18:18.583754314Z"
     description: A Helm chart for Mozilla's CTMS-API app
     digest: 5b1d9233d5f431281a6272e62879ff355607dfef6349dcd0117404a700d4919b
     name: ctms
@@ -111,7 +120,7 @@ entries:
     - https://mozilla-it.github.io/helm-charts/ctms-0.0.2.tgz
     version: 0.0.2
   - apiVersion: v2
-    created: "2021-05-10T23:11:11.854445891Z"
+    created: "2021-05-10T23:18:18.58121613Z"
     description: A Helm chart for Mozilla's CTMS-API app
     digest: 09c20211f647ca69b6e18fd2a42fe88297b2af3e402a6926784061e912bd9b80
     name: ctms
@@ -122,7 +131,7 @@ entries:
   data-alert-sender:
   - apiVersion: v2
     appVersion: 0.0.1
-    created: "2021-05-10T23:11:11.861076664Z"
+    created: "2021-05-10T23:18:18.588827648Z"
     description: Helm Chart for data-alert-sender, a cron job which sends data alerts
       from stackdriver metrics
     digest: f96076d63c549e04a31aae62d258268ec33756f6aa14d0439bddabfe40f57006
@@ -140,7 +149,7 @@ entries:
     version: 0.0.3
   - apiVersion: v2
     appVersion: 0.0.1
-    created: "2021-05-10T23:11:11.86051115Z"
+    created: "2021-05-10T23:18:18.588165729Z"
     description: Helm Chart for data-alert-sender, a cron job which sends data alerts
       from stackdriver metrics
     digest: b5ba6776002752aea07b3c29f646b73e876c6955ca4657461dcf58dd7cb76f23
@@ -158,7 +167,7 @@ entries:
     version: 0.0.2
   - apiVersion: v2
     appVersion: 0.0.1
-    created: "2021-05-10T23:11:11.860225271Z"
+    created: "2021-05-10T23:18:18.587587327Z"
     description: Helm Chart for data-alert-sender, a cron job which sends data alerts
       from stackdriver metrics
     digest: fe08854097054dcd1d1d29871af0e7b2f5a66caaa991476f36be72c104414d9b
@@ -177,7 +186,7 @@ entries:
   fluentd-papertrail:
   - apiVersion: v2
     appVersion: "1.2"
-    created: "2021-05-10T23:11:11.865961555Z"
+    created: "2021-05-10T23:18:18.593244236Z"
     description: A Helm chart to deploy fluentd to send to papertrail
     digest: 948941312063e20b71fc6a7dfe6cc4ba4586d306b1869ed95c34566bb1ece3bb
     home: https://github.com/mozilla-it/helm-charts
@@ -197,7 +206,7 @@ entries:
     version: 0.2.0
   - apiVersion: v2
     appVersion: "1.2"
-    created: "2021-05-10T23:11:11.865466604Z"
+    created: "2021-05-10T23:18:18.592743641Z"
     description: A Helm chart to deploy fluentd to send to papertrail
     digest: ba8d8ef84b56616f50c0c919d81fcdcd453fbe4f17ee3ed2cadce2def6f6736a
     home: https://github.com/mozilla-it/helm-charts
@@ -217,7 +226,7 @@ entries:
     version: 0.1.4
   - apiVersion: v2
     appVersion: "1.2"
-    created: "2021-05-10T23:11:11.864942207Z"
+    created: "2021-05-10T23:18:18.592262676Z"
     description: A Helm chart to deploy fluentd to send to papertrail
     digest: d12f1e3e83a95edda6e5b5804c93f70b5d1efde188c0abc0248f57595c940ef2
     home: https://github.com/mozilla-it/helm-charts
@@ -237,7 +246,7 @@ entries:
     version: 0.1.3
   - apiVersion: v2
     appVersion: "1.2"
-    created: "2021-05-10T23:11:11.864415694Z"
+    created: "2021-05-10T23:18:18.591809409Z"
     description: A Helm chart to deploy fluentd to send to papertrail
     digest: 8c9bbd14496e5d8b30880491ce740ad2205305cc6ade1ef59d5aee9d96c5e9c0
     home: https://github.com/mozilla-it/helm-charts
@@ -257,7 +266,7 @@ entries:
     version: 0.1.2
   - apiVersion: v2
     appVersion: "1.2"
-    created: "2021-05-10T23:11:11.863263739Z"
+    created: "2021-05-10T23:18:18.590967772Z"
     description: A Helm chart to deploy fluentd to send to papertrail
     digest: 9f3be0e0964774209c6fc98e2ccc53811cd47170039203a2c85e20382f683a17
     home: https://github.com/mozilla-it/helm-charts
@@ -277,7 +286,7 @@ entries:
     version: 0.1.1
   - apiVersion: v2
     appVersion: "1.2"
-    created: "2021-05-10T23:11:11.862149935Z"
+    created: "2021-05-10T23:18:18.589908933Z"
     description: A Helm chart to deploy fluentd to send to papertrail
     digest: 1544325946b82524efefd9135efea6fc9720823996fbc3d469006072d01a5379
     maintainers:
@@ -293,7 +302,7 @@ entries:
     version: 0.1.0
   mentoring:
   - apiVersion: v2
-    created: "2021-05-10T23:11:11.883453719Z"
+    created: "2021-05-10T23:18:18.611176213Z"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -307,7 +316,7 @@ entries:
     - https://mozilla-it.github.io/helm-charts/mentoring-0.2.0.tgz
     version: 0.2.0
   - apiVersion: v2
-    created: "2021-05-10T23:11:11.879641409Z"
+    created: "2021-05-10T23:18:18.607109287Z"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -321,7 +330,7 @@ entries:
     - https://mozilla-it.github.io/helm-charts/mentoring-0.1.2.tgz
     version: 0.1.2
   - apiVersion: v2
-    created: "2021-05-10T23:11:11.875860859Z"
+    created: "2021-05-10T23:18:18.603267656Z"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -335,7 +344,7 @@ entries:
     - https://mozilla-it.github.io/helm-charts/mentoring-0.1.1.tgz
     version: 0.1.1
   - apiVersion: v2
-    created: "2021-05-10T23:11:11.869701537Z"
+    created: "2021-05-10T23:18:18.596979417Z"
     dependencies:
     - condition: postgres.enabled
       name: postgresql
@@ -351,7 +360,7 @@ entries:
   mozalert-controller:
   - apiVersion: v2
     appVersion: 1.17.0
-    created: "2021-05-10T23:11:11.885450434Z"
+    created: "2021-05-10T23:18:18.613815748Z"
     description: General Purpose Monitoring tool meant to run in kubernetes
     digest: 7e0eb84b8a5e63cf87f7a0f15b10725a6e81c6ef0d1155bef8fa875b9bd15836
     name: mozalert-controller
@@ -361,7 +370,7 @@ entries:
     version: 0.4.0
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-05-10T23:11:11.884916966Z"
+    created: "2021-05-10T23:18:18.612636958Z"
     description: General Purpose Monitoring tool meant to run in kubernetes
     digest: 361b104a0431307a5c7448788c0e5d7604b9e7fe4ab3d13ef23fc5e417d9cd69
     name: mozalert-controller
@@ -371,7 +380,7 @@ entries:
     version: 0.3.0
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-05-10T23:11:11.884371428Z"
+    created: "2021-05-10T23:18:18.612035679Z"
     description: General Purpose Monitoring tool meant to run in kubernetes
     digest: 14e0fe6584a9a712d84dd14eb775348a9f18dbd744ad7052008733386e727a5c
     name: mozalert-controller
@@ -381,7 +390,7 @@ entries:
     version: 0.2.0
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-05-10T23:11:11.883727492Z"
+    created: "2021-05-10T23:18:18.611477604Z"
     description: General Purpose Monitoring tool meant to run in kubernetes
     digest: 8d5f11d34b0bf3e6e460e7b3c5869af2646c979c1ab6b9e4d17a3064ff28a241
     name: mozalert-controller
@@ -391,7 +400,7 @@ entries:
     version: 0.1.0
   mozilla-common-voice:
   - apiVersion: v2
-    created: "2021-05-10T23:11:12.265705188Z"
+    created: "2021-05-10T23:18:19.000143009Z"
     dependencies:
     - condition: mysql.enabled
       name: mysql
@@ -421,7 +430,7 @@ entries:
     - https://mozilla-it.github.io/helm-charts/mozilla-common-voice-0.4.3.tgz
     version: 0.4.3
   - apiVersion: v2
-    created: "2021-05-10T23:11:12.255536576Z"
+    created: "2021-05-10T23:18:18.992951321Z"
     dependencies:
     - condition: mysql.enabled
       name: mysql
@@ -451,7 +460,7 @@ entries:
     - https://mozilla-it.github.io/helm-charts/mozilla-common-voice-0.4.2.tgz
     version: 0.4.2
   - apiVersion: v2
-    created: "2021-05-10T23:11:12.251726019Z"
+    created: "2021-05-10T23:18:18.986815469Z"
     dependencies:
     - condition: mysql.enabled
       name: mysql
@@ -481,7 +490,7 @@ entries:
     - https://mozilla-it.github.io/helm-charts/mozilla-common-voice-0.4.1.tgz
     version: 0.4.1
   - apiVersion: v2
-    created: "2021-05-10T23:11:12.245575878Z"
+    created: "2021-05-10T23:18:18.983096704Z"
     dependencies:
     - condition: mysql.enabled
       name: mysql
@@ -511,7 +520,7 @@ entries:
     - https://mozilla-it.github.io/helm-charts/mozilla-common-voice-0.4.0.tgz
     version: 0.4.0
   - apiVersion: v2
-    created: "2021-05-10T23:11:12.241940464Z"
+    created: "2021-05-10T23:18:18.97938841Z"
     dependencies:
     - condition: mysql.enabled
       name: mysql
@@ -549,7 +558,7 @@ entries:
     - https://mozilla-it.github.io/helm-charts/mozilla-common-voice-0.3.1.tgz
     version: 0.3.1
   - apiVersion: v2
-    created: "2021-05-10T23:11:12.23587914Z"
+    created: "2021-05-10T23:18:18.970509886Z"
     dependencies:
     - condition: mysql.enabled
       name: mysql
@@ -587,7 +596,7 @@ entries:
     - https://mozilla-it.github.io/helm-charts/mozilla-common-voice-0.3.0.tgz
     version: 0.3.0
   - apiVersion: v2
-    created: "2021-05-10T23:11:12.226260232Z"
+    created: "2021-05-10T23:18:18.964391371Z"
     dependencies:
     - condition: mysql.enabled
       name: mysql
@@ -625,7 +634,7 @@ entries:
     - https://mozilla-it.github.io/helm-charts/mozilla-common-voice-0.2.4.tgz
     version: 0.2.4
   - apiVersion: v2
-    created: "2021-05-10T23:11:12.220259619Z"
+    created: "2021-05-10T23:18:18.955333695Z"
     dependencies:
     - condition: mysql.enabled
       name: mysql
@@ -663,7 +672,7 @@ entries:
     - https://mozilla-it.github.io/helm-charts/mozilla-common-voice-0.2.3.tgz
     version: 0.2.3
   - apiVersion: v2
-    created: "2021-05-10T23:11:12.211755382Z"
+    created: "2021-05-10T23:18:18.949170855Z"
     dependencies:
     - condition: mysql.enabled
       name: mysql
@@ -701,7 +710,7 @@ entries:
     - https://mozilla-it.github.io/helm-charts/mozilla-common-voice-0.2.2.tgz
     version: 0.2.2
   - apiVersion: v2
-    created: "2021-05-10T23:11:12.205525471Z"
+    created: "2021-05-10T23:18:18.940439963Z"
     dependencies:
     - condition: mysql.enabled
       name: mysql
@@ -739,7 +748,7 @@ entries:
     - https://mozilla-it.github.io/helm-charts/mozilla-common-voice-0.2.1.tgz
     version: 0.2.1
   - apiVersion: v2
-    created: "2021-05-10T23:11:12.139448247Z"
+    created: "2021-05-10T23:18:18.875109831Z"
     dependencies:
     - condition: mysql.enabled
       name: mysql
@@ -777,7 +786,7 @@ entries:
     - https://mozilla-it.github.io/helm-charts/mozilla-common-voice-0.1.17.tgz
     version: 0.1.17
   - apiVersion: v2
-    created: "2021-05-10T23:11:12.133510981Z"
+    created: "2021-05-10T23:18:18.86643074Z"
     dependencies:
     - condition: mysql.enabled
       name: mysql
@@ -815,7 +824,7 @@ entries:
     - https://mozilla-it.github.io/helm-charts/mozilla-common-voice-0.1.16.tgz
     version: 0.1.16
   - apiVersion: v1
-    created: "2021-05-10T23:11:12.124966802Z"
+    created: "2021-05-10T23:18:18.860192929Z"
     dependencies:
     - condition: mysql.enabled
       name: mysql
@@ -852,7 +861,7 @@ entries:
     - https://mozilla-it.github.io/helm-charts/mozilla-common-voice-0.1.15.tgz
     version: 0.1.15
   - apiVersion: v1
-    created: "2021-05-10T23:11:12.118846024Z"
+    created: "2021-05-10T23:18:18.851255155Z"
     dependencies:
     - condition: mysql.enabled
       name: mysql
@@ -889,7 +898,7 @@ entries:
     - https://mozilla-it.github.io/helm-charts/mozilla-common-voice-0.1.14.tgz
     version: 0.1.14
   - apiVersion: v1
-    created: "2021-05-10T23:11:12.109514444Z"
+    created: "2021-05-10T23:18:18.84498848Z"
     dependencies:
     - condition: mysql.enabled
       name: mysql
@@ -926,7 +935,7 @@ entries:
     - https://mozilla-it.github.io/helm-charts/mozilla-common-voice-0.1.13.tgz
     version: 0.1.13
   - apiVersion: v1
-    created: "2021-05-10T23:11:12.103277011Z"
+    created: "2021-05-10T23:18:18.836099627Z"
     dependencies:
     - condition: mysql.enabled
       name: mysql
@@ -963,7 +972,7 @@ entries:
     - https://mozilla-it.github.io/helm-charts/mozilla-common-voice-0.1.12.tgz
     version: 0.1.12
   - apiVersion: v1
-    created: "2021-05-10T23:11:12.093856018Z"
+    created: "2021-05-10T23:18:18.829397485Z"
     dependencies:
     - condition: mysql.enabled
       name: mysql
@@ -1000,7 +1009,7 @@ entries:
     - https://mozilla-it.github.io/helm-charts/mozilla-common-voice-0.1.11.tgz
     version: 0.1.11
   - apiVersion: v1
-    created: "2021-05-10T23:11:12.087825945Z"
+    created: "2021-05-10T23:18:18.821331503Z"
     dependencies:
     - condition: mysql.enabled
       name: mysql
@@ -1037,7 +1046,7 @@ entries:
     - https://mozilla-it.github.io/helm-charts/mozilla-common-voice-0.1.10.tgz
     version: 0.1.10
   - apiVersion: v1
-    created: "2021-05-10T23:11:12.197166079Z"
+    created: "2021-05-10T23:18:18.934091065Z"
     dependencies:
     - condition: mysql.enabled
       name: mysql
@@ -1074,7 +1083,7 @@ entries:
     - https://mozilla-it.github.io/helm-charts/mozilla-common-voice-0.1.9.tgz
     version: 0.1.9
   - apiVersion: v1
-    created: "2021-05-10T23:11:12.191093055Z"
+    created: "2021-05-10T23:18:18.925231025Z"
     dependencies:
     - condition: mysql.enabled
       name: mysql
@@ -1111,7 +1120,7 @@ entries:
     - https://mozilla-it.github.io/helm-charts/mozilla-common-voice-0.1.8.tgz
     version: 0.1.8
   - apiVersion: v1
-    created: "2021-05-10T23:11:12.182503934Z"
+    created: "2021-05-10T23:18:18.919055813Z"
     dependencies:
     - condition: mysql.enabled
       name: mysql
@@ -1148,7 +1157,7 @@ entries:
     - https://mozilla-it.github.io/helm-charts/mozilla-common-voice-0.1.7.tgz
     version: 0.1.7
   - apiVersion: v1
-    created: "2021-05-10T23:11:12.176462143Z"
+    created: "2021-05-10T23:18:18.910439993Z"
     dependencies:
     - condition: mysql.enabled
       name: mysql
@@ -1185,7 +1194,7 @@ entries:
     - https://mozilla-it.github.io/helm-charts/mozilla-common-voice-0.1.6.tgz
     version: 0.1.6
   - apiVersion: v1
-    created: "2021-05-10T23:11:12.167977083Z"
+    created: "2021-05-10T23:18:18.904050813Z"
     dependencies:
     - condition: mysql.enabled
       name: mysql
@@ -1222,7 +1231,7 @@ entries:
     - https://mozilla-it.github.io/helm-charts/mozilla-common-voice-0.1.5.tgz
     version: 0.1.5
   - apiVersion: v1
-    created: "2021-05-10T23:11:12.161943903Z"
+    created: "2021-05-10T23:18:18.895673713Z"
     dependencies:
     - condition: mysql.enabled
       name: mysql
@@ -1259,7 +1268,7 @@ entries:
     - https://mozilla-it.github.io/helm-charts/mozilla-common-voice-0.1.4.tgz
     version: 0.1.4
   - apiVersion: v1
-    created: "2021-05-10T23:11:12.153539923Z"
+    created: "2021-05-10T23:18:18.889522103Z"
     dependencies:
     - condition: mysql.enabled
       name: mysql
@@ -1296,7 +1305,7 @@ entries:
     - https://mozilla-it.github.io/helm-charts/mozilla-common-voice-0.1.3.tgz
     version: 0.1.3
   - apiVersion: v1
-    created: "2021-05-10T23:11:12.147706091Z"
+    created: "2021-05-10T23:18:18.881081548Z"
     dependencies:
     - condition: mysql.enabled
       name: mysql
@@ -1333,7 +1342,7 @@ entries:
     - https://mozilla-it.github.io/helm-charts/mozilla-common-voice-0.1.2.tgz
     version: 0.1.2
   - apiVersion: v1
-    created: "2021-05-10T23:11:12.079605099Z"
+    created: "2021-05-10T23:18:18.813846013Z"
     dependencies:
     - condition: mysql.enabled
       name: mysql
@@ -1370,7 +1379,7 @@ entries:
     - https://mozilla-it.github.io/helm-charts/mozilla-common-voice-0.1.1.tgz
     version: 0.1.1
   - apiVersion: v1
-    created: "2021-05-10T23:11:12.070848067Z"
+    created: "2021-05-10T23:18:18.806933563Z"
     dependencies:
     - condition: mysql.enabled
       name: mysql
@@ -1407,7 +1416,7 @@ entries:
     - https://mozilla-it.github.io/helm-charts/mozilla-common-voice-0.1.0.tgz
     version: 0.1.0
   - apiVersion: v1
-    created: "2021-05-10T23:11:12.061187024Z"
+    created: "2021-05-10T23:18:18.797312783Z"
     dependencies:
     - condition: mysql.enabled
       name: mysql
@@ -1444,7 +1453,7 @@ entries:
     - https://mozilla-it.github.io/helm-charts/mozilla-common-voice-0.0.44.tgz
     version: 0.0.44
   - apiVersion: v1
-    created: "2021-05-10T23:11:12.055228647Z"
+    created: "2021-05-10T23:18:18.791164617Z"
     dependencies:
     - condition: mysql.enabled
       name: mysql
@@ -1481,7 +1490,7 @@ entries:
     - https://mozilla-it.github.io/helm-charts/mozilla-common-voice-0.0.43.tgz
     version: 0.0.43
   - apiVersion: v1
-    created: "2021-05-10T23:11:12.04704013Z"
+    created: "2021-05-10T23:18:18.782759833Z"
     dependencies:
     - condition: mysql.enabled
       name: mysql
@@ -1518,7 +1527,7 @@ entries:
     - https://mozilla-it.github.io/helm-charts/mozilla-common-voice-0.0.42.tgz
     version: 0.0.42
   - apiVersion: v1
-    created: "2021-05-10T23:11:12.041077589Z"
+    created: "2021-05-10T23:18:18.776638933Z"
     dependencies:
     - condition: mysql.enabled
       name: mysql
@@ -1555,7 +1564,7 @@ entries:
     - https://mozilla-it.github.io/helm-charts/mozilla-common-voice-0.0.41.tgz
     version: 0.0.41
   - apiVersion: v1
-    created: "2021-05-10T23:11:12.032742727Z"
+    created: "2021-05-10T23:18:18.768317978Z"
     dependencies:
     - condition: mysql.enabled
       name: mysql
@@ -1592,7 +1601,7 @@ entries:
     - https://mozilla-it.github.io/helm-charts/mozilla-common-voice-0.0.40.tgz
     version: 0.0.40
   - apiVersion: v1
-    created: "2021-05-10T23:11:12.026773895Z"
+    created: "2021-05-10T23:18:18.762218598Z"
     dependencies:
     - condition: mysql.enabled
       name: mysql
@@ -1628,7 +1637,7 @@ entries:
     - https://mozilla-it.github.io/helm-charts/mozilla-common-voice-0.0.39.tgz
     version: 0.0.39
   - apiVersion: v1
-    created: "2021-05-10T23:11:12.018478356Z"
+    created: "2021-05-10T23:18:18.753334094Z"
     dependencies:
     - condition: mysql.enabled
       name: mysql
@@ -1664,7 +1673,7 @@ entries:
     - https://mozilla-it.github.io/helm-charts/mozilla-common-voice-0.0.38.tgz
     version: 0.0.38
   - apiVersion: v1
-    created: "2021-05-10T23:11:12.012493751Z"
+    created: "2021-05-10T23:18:18.747250583Z"
     dependencies:
     - condition: mysql.enabled
       name: mysql
@@ -1700,7 +1709,7 @@ entries:
     - https://mozilla-it.github.io/helm-charts/mozilla-common-voice-0.0.37.tgz
     version: 0.0.37
   - apiVersion: v1
-    created: "2021-05-10T23:11:12.004116327Z"
+    created: "2021-05-10T23:18:18.738615608Z"
     dependencies:
     - condition: mysql.enabled
       name: mysql
@@ -1736,7 +1745,7 @@ entries:
     - https://mozilla-it.github.io/helm-charts/mozilla-common-voice-0.0.36.tgz
     version: 0.0.36
   - apiVersion: v1
-    created: "2021-05-10T23:11:11.99813053Z"
+    created: "2021-05-10T23:18:18.73246714Z"
     dependencies:
     - condition: mysql.enabled
       name: mysql
@@ -1772,7 +1781,7 @@ entries:
     - https://mozilla-it.github.io/helm-charts/mozilla-common-voice-0.0.35.tgz
     version: 0.0.35
   - apiVersion: v1
-    created: "2021-05-10T23:11:11.989707078Z"
+    created: "2021-05-10T23:18:18.722806405Z"
     dependencies:
     - condition: mysql.enabled
       name: mysql
@@ -1808,7 +1817,7 @@ entries:
     - https://mozilla-it.github.io/helm-charts/mozilla-common-voice-0.0.34.tgz
     version: 0.0.34
   - apiVersion: v1
-    created: "2021-05-10T23:11:11.983760076Z"
+    created: "2021-05-10T23:18:18.716794324Z"
     dependencies:
     - condition: mysql.enabled
       name: mysql
@@ -1844,7 +1853,7 @@ entries:
     - https://mozilla-it.github.io/helm-charts/mozilla-common-voice-0.0.33.tgz
     version: 0.0.33
   - apiVersion: v1
-    created: "2021-05-10T23:11:11.975346729Z"
+    created: "2021-05-10T23:18:18.708167687Z"
     dependencies:
     - condition: mysql.enabled
       name: mysql
@@ -1880,7 +1889,7 @@ entries:
     - https://mozilla-it.github.io/helm-charts/mozilla-common-voice-0.0.32.tgz
     version: 0.0.32
   - apiVersion: v1
-    created: "2021-05-10T23:11:11.969448024Z"
+    created: "2021-05-10T23:18:18.702096565Z"
     dependencies:
     - condition: mysql.enabled
       name: mysql
@@ -1916,7 +1925,7 @@ entries:
     - https://mozilla-it.github.io/helm-charts/mozilla-common-voice-0.0.31.tgz
     version: 0.0.31
   - apiVersion: v1
-    created: "2021-05-10T23:11:11.960913212Z"
+    created: "2021-05-10T23:18:18.693437866Z"
     dependencies:
     - condition: mysql.enabled
       name: mysql
@@ -1952,7 +1961,7 @@ entries:
     - https://mozilla-it.github.io/helm-charts/mozilla-common-voice-0.0.30.tgz
     version: 0.0.30
   - apiVersion: v1
-    created: "2021-05-10T23:11:11.95492104Z"
+    created: "2021-05-10T23:18:18.687312511Z"
     dependencies:
     - condition: mysql.enabled
       name: mysql
@@ -1988,7 +1997,7 @@ entries:
     - https://mozilla-it.github.io/helm-charts/mozilla-common-voice-0.0.29.tgz
     version: 0.0.29
   - apiVersion: v1
-    created: "2021-05-10T23:11:11.946948663Z"
+    created: "2021-05-10T23:18:18.67859246Z"
     dependencies:
     - condition: mysql.enabled
       name: mysql
@@ -2024,7 +2033,7 @@ entries:
     - https://mozilla-it.github.io/helm-charts/mozilla-common-voice-0.0.28.tgz
     version: 0.0.28
   - apiVersion: v1
-    created: "2021-05-10T23:11:11.941164706Z"
+    created: "2021-05-10T23:18:18.672456125Z"
     dependencies:
     - condition: mysql.enabled
       name: mysql
@@ -2060,7 +2069,7 @@ entries:
     - https://mozilla-it.github.io/helm-charts/mozilla-common-voice-0.0.27.tgz
     version: 0.0.27
   - apiVersion: v1
-    created: "2021-05-10T23:11:11.932899104Z"
+    created: "2021-05-10T23:18:18.663907658Z"
     dependencies:
     - condition: mysql.enabled
       name: mysql
@@ -2096,7 +2105,7 @@ entries:
     - https://mozilla-it.github.io/helm-charts/mozilla-common-voice-0.0.26.tgz
     version: 0.0.26
   - apiVersion: v1
-    created: "2021-05-10T23:11:11.927031873Z"
+    created: "2021-05-10T23:18:18.657712555Z"
     dependencies:
     - condition: mysql.enabled
       name: mysql
@@ -2132,7 +2141,7 @@ entries:
     - https://mozilla-it.github.io/helm-charts/mozilla-common-voice-0.0.25.tgz
     version: 0.0.25
   - apiVersion: v1
-    created: "2021-05-10T23:11:11.91892265Z"
+    created: "2021-05-10T23:18:18.64918858Z"
     dependencies:
     - condition: mysql.enabled
       name: mysql
@@ -2168,7 +2177,7 @@ entries:
     - https://mozilla-it.github.io/helm-charts/mozilla-common-voice-0.0.24.tgz
     version: 0.0.24
   - apiVersion: v1
-    created: "2021-05-10T23:11:11.913234835Z"
+    created: "2021-05-10T23:18:18.643063437Z"
     dependencies:
     - condition: mysql.enabled
       name: mysql
@@ -2204,7 +2213,7 @@ entries:
     - https://mozilla-it.github.io/helm-charts/mozilla-common-voice-0.0.23.tgz
     version: 0.0.23
   - apiVersion: v1
-    created: "2021-05-10T23:11:11.90529473Z"
+    created: "2021-05-10T23:18:18.634277511Z"
     dependencies:
     - condition: redis.enabled
       name: redis
@@ -2236,7 +2245,7 @@ entries:
     - https://mozilla-it.github.io/helm-charts/mozilla-common-voice-0.0.22.tgz
     version: 0.0.22
   - apiVersion: v1
-    created: "2021-05-10T23:11:11.900572067Z"
+    created: "2021-05-10T23:18:18.62930458Z"
     dependencies:
     - condition: redis.enabled
       name: redis
@@ -2268,7 +2277,7 @@ entries:
     - https://mozilla-it.github.io/helm-charts/mozilla-common-voice-0.0.21.tgz
     version: 0.0.21
   - apiVersion: v1
-    created: "2021-05-10T23:11:11.893783257Z"
+    created: "2021-05-10T23:18:18.622119698Z"
     dependencies:
     - condition: redis.enabled
       name: redis
@@ -2292,7 +2301,7 @@ entries:
     - https://mozilla-it.github.io/helm-charts/mozilla-common-voice-0.0.20.tgz
     version: 0.0.20
   - apiVersion: v1
-    created: "2021-05-10T23:11:11.891269762Z"
+    created: "2021-05-10T23:18:18.619512582Z"
     dependencies:
     - condition: redis.enabled
       name: redis
@@ -2316,7 +2325,7 @@ entries:
     - https://mozilla-it.github.io/helm-charts/mozilla-common-voice-0.0.19.tgz
     version: 0.0.19
   - apiVersion: v1
-    created: "2021-05-10T23:11:11.888781363Z"
+    created: "2021-05-10T23:18:18.616972474Z"
     description: Deploy Mozilla Common Voice web application
     digest: 1787648f17951abedd1d946afcc445d28d662d65690b16635dda927abec7ccf2
     home: https://voice.mozilla.org
@@ -2335,7 +2344,7 @@ entries:
     - https://mozilla-it.github.io/helm-charts/mozilla-common-voice-0.0.17.tgz
     version: 0.0.17
   - apiVersion: v1
-    created: "2021-05-10T23:11:11.888535203Z"
+    created: "2021-05-10T23:18:18.616676196Z"
     description: Deploy Mozilla Common Voice web application
     digest: 06b03b11859d1687ebf8f3d749fcd332e04ce21550994bcc399030b394feaaa4
     home: https://voice.mozilla.org
@@ -2354,7 +2363,7 @@ entries:
     - https://mozilla-it.github.io/helm-charts/mozilla-common-voice-0.0.16.tgz
     version: 0.0.16
   - apiVersion: v1
-    created: "2021-05-10T23:11:11.888258189Z"
+    created: "2021-05-10T23:18:18.616431966Z"
     description: Deploy Mozilla Common Voice web application
     digest: 427b79343763692dccefad9eadb302adc096e348afd3f502b0936426ab4dc7ad
     home: https://voice.mozilla.org
@@ -2373,7 +2382,7 @@ entries:
     - https://mozilla-it.github.io/helm-charts/mozilla-common-voice-0.0.15.tgz
     version: 0.0.15
   - apiVersion: v1
-    created: "2021-05-10T23:11:11.888005871Z"
+    created: "2021-05-10T23:18:18.616183173Z"
     description: Deploy Mozilla Common Voice web application
     digest: 0c71e4be3db11ec5a21baeb23048866626fc495c755175ee50dc679e0785d9c2
     home: https://voice.mozilla.org
@@ -2392,7 +2401,7 @@ entries:
     - https://mozilla-it.github.io/helm-charts/mozilla-common-voice-0.0.14.tgz
     version: 0.0.14
   - apiVersion: v1
-    created: "2021-05-10T23:11:11.887751536Z"
+    created: "2021-05-10T23:18:18.615912655Z"
     description: Deploy Mozilla Common Voice web application
     digest: 54cc54be667ac96ab4b7fabba531a9e2edd6234ca76defb99977ee298ebae29b
     home: https://voice.mozilla.org
@@ -2411,7 +2420,7 @@ entries:
     - https://mozilla-it.github.io/helm-charts/mozilla-common-voice-0.0.13.tgz
     version: 0.0.13
   - apiVersion: v1
-    created: "2021-05-10T23:11:11.88751934Z"
+    created: "2021-05-10T23:18:18.615606475Z"
     description: Deploy Mozilla Common Voice web application
     digest: ea1b16be649a79e13596cb0561a16d5ce3a19197e5fd9c7f7e5fc778eb9e2b1b
     home: https://voice.mozilla.org
@@ -2430,7 +2439,7 @@ entries:
     - https://mozilla-it.github.io/helm-charts/mozilla-common-voice-0.0.12.tgz
     version: 0.0.12
   - apiVersion: v1
-    created: "2021-05-10T23:11:11.887237695Z"
+    created: "2021-05-10T23:18:18.615113446Z"
     description: Deploy Mozilla Common Voice web application
     digest: 6f1fdcbbcc302fd692b3b602bb841cffc0d69c9ab40aa40be723f706bcafdb84
     home: https://voice.mozilla.org
@@ -2449,7 +2458,7 @@ entries:
     - https://mozilla-it.github.io/helm-charts/mozilla-common-voice-0.0.11.tgz
     version: 0.0.11
   - apiVersion: v1
-    created: "2021-05-10T23:11:11.886857732Z"
+    created: "2021-05-10T23:18:18.614512583Z"
     description: Deploy Mozilla Common Voice web application
     digest: e13e94f25c34bb34da800e670ed21aac2c07500b5f60c9d890f10531992755f7
     home: https://voice.mozilla.org
@@ -2468,7 +2477,7 @@ entries:
     - https://mozilla-it.github.io/helm-charts/mozilla-common-voice-0.0.10.tgz
     version: 0.0.10
   - apiVersion: v1
-    created: "2021-05-10T23:11:12.062591546Z"
+    created: "2021-05-10T23:18:18.798654006Z"
     description: Deploy Mozilla Common Voice web application
     digest: 49bf04623b64611a90d1a2f497d28b83ba7c2aaa700eb66adef98f32aa94cd6e
     home: https://voice.mozilla.org
@@ -2487,7 +2496,7 @@ entries:
     - https://mozilla-it.github.io/helm-charts/mozilla-common-voice-0.0.9.tgz
     version: 0.0.9
   - apiVersion: v1
-    created: "2021-05-10T23:11:12.0621937Z"
+    created: "2021-05-10T23:18:18.798390358Z"
     description: Deploy Mozilla Common Voice web application
     digest: 9283e851e3094134a4dea8cb66452944dfbc24ecd64946e981f505c501a0bfd0
     home: https://voice.mozilla.org
@@ -2506,7 +2515,7 @@ entries:
     - https://mozilla-it.github.io/helm-charts/mozilla-common-voice-0.0.8.tgz
     version: 0.0.8
   - apiVersion: v1
-    created: "2021-05-10T23:11:12.061966739Z"
+    created: "2021-05-10T23:18:18.798112086Z"
     description: Deploy Mozilla Common Voice web application
     digest: 50f58fcf14ac88c35aed57cfa977c88283d0e76033753871155859cbbf15ae5d
     home: https://voice.mozilla.org
@@ -2525,7 +2534,7 @@ entries:
     - https://mozilla-it.github.io/helm-charts/mozilla-common-voice-0.0.7.tgz
     version: 0.0.7
   - apiVersion: v1
-    created: "2021-05-10T23:11:12.061727405Z"
+    created: "2021-05-10T23:18:18.797830811Z"
     description: Deploy Mozilla Common Voice web application
     digest: fc174b4910d11a9157c8b1509cea4c050170b549edc8e96ce27dbab4391d59f4
     home: https://voice.mozilla.org
@@ -2544,7 +2553,7 @@ entries:
     - https://mozilla-it.github.io/helm-charts/mozilla-common-voice-0.0.6.tgz
     version: 0.0.6
   - apiVersion: v1
-    created: "2021-05-10T23:11:12.06149097Z"
+    created: "2021-05-10T23:18:18.797594677Z"
     description: Deploy Mozilla Common Voice web application
     digest: 386651cfd03c7e9ded8920d31a88f55b8cb842ef6baca20af61b027bb8e27345
     home: https://voice.mozilla.org
@@ -2565,7 +2574,7 @@ entries:
   mozmoderator:
   - apiVersion: v2
     appVersion: c285426edacb3a1791bab84f64c16d00e6d865eb
-    created: "2021-05-10T23:11:12.272241867Z"
+    created: "2021-05-10T23:18:19.0090189Z"
     dependencies:
     - condition: mysql.enabled
       name: mysql
@@ -2588,7 +2597,7 @@ entries:
     version: 0.1.2
   - apiVersion: v2
     appVersion: c285426edacb3a1791bab84f64c16d00e6d865eb
-    created: "2021-05-10T23:11:12.268872345Z"
+    created: "2021-05-10T23:18:19.004491118Z"
     dependencies:
     - condition: mysql.enabled
       name: mysql
@@ -2611,7 +2620,7 @@ entries:
     version: 0.1.1
   - apiVersion: v2
     appVersion: c285426edacb3a1791bab84f64c16d00e6d865eb
-    created: "2021-05-10T23:11:12.267277454Z"
+    created: "2021-05-10T23:18:19.001642698Z"
     dependencies:
     - condition: mysql.enabled
       name: mysql
@@ -2634,7 +2643,7 @@ entries:
     version: 0.1.0
   prometheus-customizations:
   - apiVersion: v2
-    created: "2021-05-10T23:11:12.272653305Z"
+    created: "2021-05-10T23:18:19.009469514Z"
     description: An opinionated helm chart to setup our prometheus instances. Requires
       externalsecrets, configmapsecrets, sets the prom config to a particular value.
     digest: 88f16f83a5ce4962420597a68a0676ef604eb53ba4045e5a8e5912f6396e45a2
@@ -2644,7 +2653,7 @@ entries:
     - https://mozilla-it.github.io/helm-charts/prometheus-customizations-0.0.2.tgz
     version: 0.0.2
   - apiVersion: v2
-    created: "2021-05-10T23:11:12.272453394Z"
+    created: "2021-05-10T23:18:19.00925565Z"
     description: An opinionated helm chart to setup our prometheus instances. Requires
       externalsecrets, configmapsecrets, sets the prom config to a particular value.
     digest: 6b9a7e98e0c53e2f367de90f5bdff49e9479a3b977f102bea781224b54ae96a3
@@ -2655,7 +2664,7 @@ entries:
     version: 0.0.1
   refractr:
   - apiVersion: v2
-    created: "2021-05-10T23:11:12.386067502Z"
+    created: "2021-05-10T23:18:19.125987398Z"
     dependencies:
     - condition: cert-manager.install
       name: cert-manager
@@ -2679,7 +2688,7 @@ entries:
     - https://mozilla-it.github.io/helm-charts/refractr-1.0.25.tgz
     version: 1.0.25
   - apiVersion: v2
-    created: "2021-05-10T23:11:12.382006505Z"
+    created: "2021-05-10T23:18:19.121766057Z"
     dependencies:
     - condition: cert-manager.install
       name: cert-manager
@@ -2703,7 +2712,7 @@ entries:
     - https://mozilla-it.github.io/helm-charts/refractr-1.0.24.tgz
     version: 1.0.24
   - apiVersion: v2
-    created: "2021-05-10T23:11:12.375926873Z"
+    created: "2021-05-10T23:18:19.115361879Z"
     dependencies:
     - condition: cert-manager.install
       name: cert-manager
@@ -2727,7 +2736,7 @@ entries:
     - https://mozilla-it.github.io/helm-charts/refractr-1.0.23.tgz
     version: 1.0.23
   - apiVersion: v2
-    created: "2021-05-10T23:11:12.37190318Z"
+    created: "2021-05-10T23:18:19.11116449Z"
     dependencies:
     - condition: cert-manager.install
       name: cert-manager
@@ -2751,7 +2760,7 @@ entries:
     - https://mozilla-it.github.io/helm-charts/refractr-1.0.22.tgz
     version: 1.0.22
   - apiVersion: v2
-    created: "2021-05-10T23:11:12.36567804Z"
+    created: "2021-05-10T23:18:19.104732106Z"
     dependencies:
     - condition: cert-manager.install
       name: cert-manager
@@ -2775,7 +2784,7 @@ entries:
     - https://mozilla-it.github.io/helm-charts/refractr-1.0.21.tgz
     version: 1.0.21
   - apiVersion: v2
-    created: "2021-05-10T23:11:12.361575629Z"
+    created: "2021-05-10T23:18:19.100528121Z"
     dependencies:
     - condition: cert-manager.install
       name: cert-manager
@@ -2799,7 +2808,7 @@ entries:
     - https://mozilla-it.github.io/helm-charts/refractr-1.0.20.tgz
     version: 1.0.20
   - apiVersion: v2
-    created: "2021-05-10T23:11:12.348880814Z"
+    created: "2021-05-10T23:18:19.087897404Z"
     dependencies:
     - condition: cert-manager.install
       name: cert-manager
@@ -2823,7 +2832,7 @@ entries:
     - https://mozilla-it.github.io/helm-charts/refractr-1.0.19.tgz
     version: 1.0.19
   - apiVersion: v2
-    created: "2021-05-10T23:11:12.342544749Z"
+    created: "2021-05-10T23:18:19.081017501Z"
     dependencies:
     - condition: cert-manager.install
       name: cert-manager
@@ -2847,7 +2856,7 @@ entries:
     - https://mozilla-it.github.io/helm-charts/refractr-1.0.18.tgz
     version: 1.0.18
   - apiVersion: v2
-    created: "2021-05-10T23:11:12.338507283Z"
+    created: "2021-05-10T23:18:19.076697238Z"
     dependencies:
     - condition: cert-manager.install
       name: cert-manager
@@ -2871,7 +2880,7 @@ entries:
     - https://mozilla-it.github.io/helm-charts/refractr-1.0.17.tgz
     version: 1.0.17
   - apiVersion: v2
-    created: "2021-05-10T23:11:12.332088837Z"
+    created: "2021-05-10T23:18:19.069730111Z"
     dependencies:
     - condition: cert-manager.install
       name: cert-manager
@@ -2895,7 +2904,7 @@ entries:
     - https://mozilla-it.github.io/helm-charts/refractr-1.0.16.tgz
     version: 1.0.16
   - apiVersion: v2
-    created: "2021-05-10T23:11:12.327975091Z"
+    created: "2021-05-10T23:18:19.06558706Z"
     dependencies:
     - condition: cert-manager.install
       name: cert-manager
@@ -2919,7 +2928,7 @@ entries:
     - https://mozilla-it.github.io/helm-charts/refractr-1.0.15.tgz
     version: 1.0.15
   - apiVersion: v2
-    created: "2021-05-10T23:11:12.321437895Z"
+    created: "2021-05-10T23:18:19.058848844Z"
     dependencies:
     - condition: cert-manager.install
       name: cert-manager
@@ -2943,7 +2952,7 @@ entries:
     - https://mozilla-it.github.io/helm-charts/refractr-1.0.14.tgz
     version: 1.0.14
   - apiVersion: v2
-    created: "2021-05-10T23:11:12.31695113Z"
+    created: "2021-05-10T23:18:19.05459532Z"
     dependencies:
     - condition: cert-manager.install
       name: cert-manager
@@ -2966,7 +2975,7 @@ entries:
     - https://mozilla-it.github.io/helm-charts/refractr-1.0.12.tgz
     version: 1.0.12
   - apiVersion: v2
-    created: "2021-05-10T23:11:12.310401468Z"
+    created: "2021-05-10T23:18:19.04760612Z"
     dependencies:
     - condition: cert-manager.install
       name: cert-manager
@@ -2989,7 +2998,7 @@ entries:
     - https://mozilla-it.github.io/helm-charts/refractr-1.0.11.tgz
     version: 1.0.11
   - apiVersion: v2
-    created: "2021-05-10T23:11:12.305934674Z"
+    created: "2021-05-10T23:18:19.043237168Z"
     dependencies:
     - condition: cert-manager.install
       name: cert-manager
@@ -3012,7 +3021,7 @@ entries:
     - https://mozilla-it.github.io/helm-charts/refractr-1.0.10.tgz
     version: 1.0.10
   - apiVersion: v2
-    created: "2021-05-10T23:11:12.429923784Z"
+    created: "2021-05-10T23:18:19.169857276Z"
     dependencies:
     - condition: cert-manager.install
       name: cert-manager
@@ -3035,7 +3044,7 @@ entries:
     - https://mozilla-it.github.io/helm-charts/refractr-1.0.9.tgz
     version: 1.0.9
   - apiVersion: v2
-    created: "2021-05-10T23:11:12.425872558Z"
+    created: "2021-05-10T23:18:19.165720532Z"
     dependencies:
     - condition: cert-manager.install
       name: cert-manager
@@ -3058,7 +3067,7 @@ entries:
     - https://mozilla-it.github.io/helm-charts/refractr-1.0.8.tgz
     version: 1.0.8
   - apiVersion: v2
-    created: "2021-05-10T23:11:12.419767453Z"
+    created: "2021-05-10T23:18:19.15936559Z"
     dependencies:
     - condition: cert-manager.install
       name: cert-manager
@@ -3081,7 +3090,7 @@ entries:
     - https://mozilla-it.github.io/helm-charts/refractr-1.0.7.tgz
     version: 1.0.7
   - apiVersion: v2
-    created: "2021-05-10T23:11:12.415741439Z"
+    created: "2021-05-10T23:18:19.155026391Z"
     dependencies:
     - condition: cert-manager.install
       name: cert-manager
@@ -3104,7 +3113,7 @@ entries:
     - https://mozilla-it.github.io/helm-charts/refractr-1.0.6.tgz
     version: 1.0.6
   - apiVersion: v2
-    created: "2021-05-10T23:11:12.409586939Z"
+    created: "2021-05-10T23:18:19.148502158Z"
     dependencies:
     - name: nginx-ingress
       repository: https://kubernetes-charts.storage.googleapis.com
@@ -3130,7 +3139,7 @@ entries:
     - https://mozilla-it.github.io/helm-charts/refractr-1.0.5.tgz
     version: 1.0.5
   - apiVersion: v2
-    created: "2021-05-10T23:11:12.403486391Z"
+    created: "2021-05-10T23:18:19.14034725Z"
     dependencies:
     - name: nginx-ingress
       repository: https://kubernetes-charts.storage.googleapis.com
@@ -3156,7 +3165,7 @@ entries:
     - https://mozilla-it.github.io/helm-charts/refractr-1.0.4.tgz
     version: 1.0.4
   - apiVersion: v2
-    created: "2021-05-10T23:11:12.394327138Z"
+    created: "2021-05-10T23:18:19.134236845Z"
     dependencies:
     - name: nginx-ingress
       repository: https://kubernetes-charts.storage.googleapis.com
@@ -3182,7 +3191,7 @@ entries:
     - https://mozilla-it.github.io/helm-charts/refractr-1.0.3.tgz
     version: 1.0.3
   - apiVersion: v2
-    created: "2021-05-10T23:11:12.355463533Z"
+    created: "2021-05-10T23:18:19.094227892Z"
     dependencies:
     - name: nginx-ingress
       repository: https://kubernetes-charts.storage.googleapis.com
@@ -3208,7 +3217,7 @@ entries:
     - https://mozilla-it.github.io/helm-charts/refractr-1.0.2.tgz
     version: 1.0.2
   - apiVersion: v2
-    created: "2021-05-10T23:11:12.299416572Z"
+    created: "2021-05-10T23:18:19.036035982Z"
     description: A Helm chart for the refractr redirect application
     digest: bb21d198f364a2f9de2a9ac18141263ca661a13b9435a4da5edbdef4e4a8edd0
     home: https://github.com/mozilla-it/refractr
@@ -3226,7 +3235,7 @@ entries:
     - https://mozilla-it.github.io/helm-charts/refractr-1.0.1.tgz
     version: 1.0.1
   - apiVersion: v2
-    created: "2021-05-10T23:11:12.430452378Z"
+    created: "2021-05-10T23:18:19.170407943Z"
     description: A Helm chart for the refractr redirect application
     digest: 766b57a3a36fbbf0a4164b3e5bf1618d1b8c5783bb65e63d7463e62c3c16d713
     home: https://github.com/mozilla-it/refractr
@@ -3245,7 +3254,7 @@ entries:
     version: "1"
   - apiVersion: v2
     appVersion: dev-1.2.3
-    created: "2021-05-10T23:11:12.298897481Z"
+    created: "2021-05-10T23:18:19.035533927Z"
     description: A Helm chart for the refractr redirect application
     digest: 33c17a72cce0d7b98888d9a902957fee47f17f34d612c45d053f6a420bcf03e3
     home: https://github.com/mozilla-it/refractr
@@ -3264,7 +3273,7 @@ entries:
     version: 0.9.3
   - apiVersion: v2
     appVersion: dev-1.2.3
-    created: "2021-05-10T23:11:12.298358316Z"
+    created: "2021-05-10T23:18:19.035055027Z"
     description: A Helm chart for the refractr redirect application
     digest: 4be8d65f4e59b4769bdf39df7b678e554ad3fc8a9b09f689bacc18250aa8a1ee
     home: https://github.com/mozilla-it/refractr
@@ -3283,7 +3292,7 @@ entries:
     version: 0.9.2
   - apiVersion: v2
     appVersion: dev-1.2.3
-    created: "2021-05-10T23:11:12.297832236Z"
+    created: "2021-05-10T23:18:19.034573493Z"
     description: A Helm chart for the refractr redirect application
     digest: 8ed73b8c01df6ed336b79f6a41db6ed3e17aa0a57e90cc6cf459c741b492d2c4
     home: https://github.com/mozilla-it/refractr
@@ -3302,7 +3311,7 @@ entries:
     version: 0.9.1
   - apiVersion: v2
     appVersion: dev-1.2.3
-    created: "2021-05-10T23:11:12.297288536Z"
+    created: "2021-05-10T23:18:19.034088602Z"
     description: A Helm chart for the refractr redirect application
     digest: 284381d3fd0adc1a4ab8fa00b4a06a2dc92e24c0be5af092b382fa2faf7e178b
     home: https://github.com/mozilla-it/refractr
@@ -3321,7 +3330,7 @@ entries:
     version: 0.9.0
   - apiVersion: v2
     appVersion: dev-1.2.3
-    created: "2021-05-10T23:11:12.296792522Z"
+    created: "2021-05-10T23:18:19.033562031Z"
     description: A Helm chart for the refractr redirect application
     digest: 0b618db9832dd234d521ce32c5bca639d3a0fc3178c61165d3798b918114bee1
     home: https://github.com/mozilla-it/refractr
@@ -3340,7 +3349,7 @@ entries:
     version: 0.8.9
   - apiVersion: v2
     appVersion: dev-1.2.3
-    created: "2021-05-10T23:11:12.296255115Z"
+    created: "2021-05-10T23:18:19.033081699Z"
     description: A Helm chart for the refractr redirect application
     digest: 3606cb1952e886e6df391a27a9b098cc18140d571b4577ab53d7377b2bdb69f1
     home: https://github.com/mozilla-it/refractr
@@ -3359,7 +3368,7 @@ entries:
     version: 0.8.8
   - apiVersion: v2
     appVersion: dev-1.2.3
-    created: "2021-05-10T23:11:12.295759345Z"
+    created: "2021-05-10T23:18:19.032599907Z"
     description: A Helm chart for the refractr redirect application
     digest: 16cde56fe271e440b6acdbb9976e19c3732f7f8390a6269d91be0344121cd1fa
     home: https://github.com/mozilla-it/refractr
@@ -3378,7 +3387,7 @@ entries:
     version: 0.8.7
   - apiVersion: v2
     appVersion: dev-1.2.3
-    created: "2021-05-10T23:11:12.295238055Z"
+    created: "2021-05-10T23:18:19.032058628Z"
     description: A Helm chart for the refractr redirect application
     digest: cc61e7ef6626867b1a126c32e50ed5191fc60b3b9e6e58446b05b85bf96f4a60
     home: https://github.com/mozilla-it/refractr
@@ -3397,7 +3406,7 @@ entries:
     version: 0.8.6
   - apiVersion: v2
     appVersion: dev-1.2.3
-    created: "2021-05-10T23:11:12.29464757Z"
+    created: "2021-05-10T23:18:19.030904219Z"
     dependencies:
     - name: nginx-ingress
       repository: https://helm.nginx.com/stable
@@ -3420,7 +3429,7 @@ entries:
     version: 0.8.5
   - apiVersion: v2
     appVersion: dev-1.2.3
-    created: "2021-05-10T23:11:12.293085093Z"
+    created: "2021-05-10T23:18:19.027501952Z"
     dependencies:
     - name: nginx-ingress
       repository: https://helm.nginx.com/stable
@@ -3443,7 +3452,7 @@ entries:
     version: 0.8.4
   - apiVersion: v2
     appVersion: dev-1.2.3
-    created: "2021-05-10T23:11:12.290634127Z"
+    created: "2021-05-10T23:18:19.025933504Z"
     description: A Helm chart for the refractr redirect application
     digest: 5b46665cea9dfaf6061db78b15d97e347bd06b86cf0afe11a004999b73ffc992
     home: https://github.com/mozilla-it/refractr
@@ -3462,7 +3471,7 @@ entries:
     version: 0.8.3
   - apiVersion: v2
     appVersion: dev-1.2.3
-    created: "2021-05-10T23:11:12.289396915Z"
+    created: "2021-05-10T23:18:19.025373322Z"
     description: A Helm chart for the refractr redirect application
     digest: e9540ae33d2c3561fa5ec467b3751a9da74075b501fc39ade8ad602353ed574b
     home: https://github.com/mozilla-it/refractr
@@ -3481,7 +3490,7 @@ entries:
     version: 0.8.2
   - apiVersion: v2
     appVersion: dev-1.2.3
-    created: "2021-05-10T23:11:12.288057623Z"
+    created: "2021-05-10T23:18:19.024812201Z"
     description: A Helm chart for the refractr redirect application
     digest: 4e42fabcc5f7f050bf789ae4eccaf5e868954458c7b784510ac5761c48e985c2
     home: https://github.com/mozilla-it/refractr
@@ -3500,7 +3509,7 @@ entries:
     version: 0.8.0
   - apiVersion: v2
     appVersion: dev-1.2.3
-    created: "2021-05-10T23:11:12.28304543Z"
+    created: "2021-05-10T23:18:19.019850693Z"
     description: A Helm chart for the refractr redirect application
     digest: 55995b75b51fb9357cfadb49b3d45693eb8abd5a363669a9900ec3747d36d88b
     home: https://github.com/mozilla-it/refractr
@@ -3519,7 +3528,7 @@ entries:
     version: 0.2.17
   - apiVersion: v2
     appVersion: dev-1.2.3
-    created: "2021-05-10T23:11:12.282528246Z"
+    created: "2021-05-10T23:18:19.019187116Z"
     description: A Helm chart for the refractr redirect application
     digest: 641e3d49dc1375fb9d760771774222be03a9c3a73644f6d3959b0a75021bac19
     home: https://github.com/mozilla-it/refractr
@@ -3538,7 +3547,7 @@ entries:
     version: 0.2.16
   - apiVersion: v2
     appVersion: dev-1.2.3
-    created: "2021-05-10T23:11:12.281945254Z"
+    created: "2021-05-10T23:18:19.017857485Z"
     description: A Helm chart for the refractr redirect application
     digest: d947ac934fc2200a71cfb3da96b2ae66fdc9de26e41c37d59cd9e71fc6fbd877
     home: https://github.com/mozilla-it/refractr
@@ -3557,7 +3566,7 @@ entries:
     version: 0.2.15
   - apiVersion: v2
     appVersion: dev-1.2.3
-    created: "2021-05-10T23:11:12.28145168Z"
+    created: "2021-05-10T23:18:19.016093005Z"
     description: A Helm chart for the refractr redirect application
     digest: b9b58db10b39ea8acdca891aefdf8bd854bca4750b5c46c37d4aad57238175ff
     home: https://github.com/mozilla-it/refractr
@@ -3576,7 +3585,7 @@ entries:
     version: 0.2.14
   - apiVersion: v2
     appVersion: dev-1.2.3
-    created: "2021-05-10T23:11:12.28093287Z"
+    created: "2021-05-10T23:18:19.01515065Z"
     description: A Helm chart for the refractr redirect application
     digest: 1e7bcb5099368f440d3fd093d6d63bdab2693bb7b08114472f93e7bc3003853a
     home: https://github.com/mozilla-it/refractr
@@ -3595,7 +3604,7 @@ entries:
     version: 0.2.11
   - apiVersion: v2
     appVersion: dev-1.2.3
-    created: "2021-05-10T23:11:12.280467043Z"
+    created: "2021-05-10T23:18:19.014667786Z"
     description: A Helm chart for the refractr redirect application
     digest: 57f6fcb38599e6d34411aa5d96da668798611e96e8e28b78016981e3095de6b8
     home: https://github.com/mozilla-it/refractr
@@ -3614,7 +3623,7 @@ entries:
     version: 0.2.10
   - apiVersion: v2
     appVersion: dev-1.2.3
-    created: "2021-05-10T23:11:12.287513077Z"
+    created: "2021-05-10T23:18:19.024308771Z"
     description: A Helm chart for the refractr redirect application
     digest: 6c1194dab4d8044310a8b1d6086ddc1e1a284baf32782e9571d1f74135a93b31
     name: refractr
@@ -3624,7 +3633,7 @@ entries:
     version: 0.2.9
   - apiVersion: v2
     appVersion: dev-1.2.3
-    created: "2021-05-10T23:11:12.286981227Z"
+    created: "2021-05-10T23:18:19.023755105Z"
     description: A Helm chart for the refractr redirect application
     digest: 997e5a329cbc48d4effe1d7c82411e60cdb32fa8b7604f96c88a2a22905b76a2
     name: refractr
@@ -3634,7 +3643,7 @@ entries:
     version: 0.2.8
   - apiVersion: v2
     appVersion: dev-1.2.3
-    created: "2021-05-10T23:11:12.286416166Z"
+    created: "2021-05-10T23:18:19.023211317Z"
     description: A Helm chart for the refractr redirect application
     digest: 44144af6b1aa61b543477198a3bf75750ab6a5285807e5c4ccdf9325ac106734
     name: refractr
@@ -3644,7 +3653,7 @@ entries:
     version: 0.2.7
   - apiVersion: v2
     appVersion: dev-1.2.3
-    created: "2021-05-10T23:11:12.28585205Z"
+    created: "2021-05-10T23:18:19.022631672Z"
     description: A Helm chart for the refractr redirect application
     digest: def8f81d1afc4d3a1003690d096efe1d6bb4c6d0c9db52db7be37cc2be54fad8
     name: refractr
@@ -3654,7 +3663,7 @@ entries:
     version: 0.2.6
   - apiVersion: v2
     appVersion: dev-1.2.3
-    created: "2021-05-10T23:11:12.285301176Z"
+    created: "2021-05-10T23:18:19.022095551Z"
     description: A Helm chart for the refractr redirect application
     digest: c29eae6d87e14d3b68b49da978f4e71cdc923431d423a9888fa3ff1ec5e3a2a7
     name: refractr
@@ -3664,7 +3673,7 @@ entries:
     version: 0.2.5
   - apiVersion: v2
     appVersion: dev-1.2.3
-    created: "2021-05-10T23:11:12.284704564Z"
+    created: "2021-05-10T23:18:19.021498743Z"
     description: A Helm chart for the refractr redirect application
     digest: 966ce2d4b6af420199c28159afba61844b3e06ce6227a9a9f659c09402c6cdf0
     name: refractr
@@ -3674,7 +3683,7 @@ entries:
     version: 0.2.4
   - apiVersion: v2
     appVersion: dev-1.2.3
-    created: "2021-05-10T23:11:12.284121535Z"
+    created: "2021-05-10T23:18:19.020961194Z"
     description: A Helm chart for the refractr redirect application
     digest: 9ac5850cea476263e1665fc5741a527733271e350e3fae1f83d6fc22f4a11c09
     name: refractr
@@ -3684,7 +3693,7 @@ entries:
     version: 0.2.3
   - apiVersion: v2
     appVersion: dev-1.2.3
-    created: "2021-05-10T23:11:12.283589319Z"
+    created: "2021-05-10T23:18:19.020393641Z"
     description: A Helm chart for the refractr redirect application
     digest: df6065a360afc9d4aec688e4f40ebcd9fa811b9a9e37722294ad2ae8d679b9e7
     name: refractr
@@ -3694,7 +3703,7 @@ entries:
     version: 0.2.2
   - apiVersion: v2
     appVersion: dev-1.2.3
-    created: "2021-05-10T23:11:12.279974036Z"
+    created: "2021-05-10T23:18:19.014133119Z"
     description: A Helm chart for the refractr redirect application
     digest: 7583fd27d3f0ebb86c0d038b9f3cd1194a3b6a86a510a75a65b21868259031d6
     name: refractr
@@ -3704,7 +3713,7 @@ entries:
     version: 0.2.1
   - apiVersion: v2
     appVersion: dev-1.2.3
-    created: "2021-05-10T23:11:12.278677485Z"
+    created: "2021-05-10T23:18:19.013525364Z"
     description: A Helm chart for the refractr redirect application
     digest: 37125b84ed6986dbaf4d99da7eca841e279fc9fa79e25c6ac7afeadf0f1ee317
     name: refractr
@@ -3714,7 +3723,7 @@ entries:
     version: 0.2.0
   - apiVersion: v2
     appVersion: dev-1.2.3
-    created: "2021-05-10T23:11:12.277348797Z"
+    created: "2021-05-10T23:18:19.012912462Z"
     description: A Helm chart for the refractr redirect application
     digest: 4a84354dd1ffa84a3b748d284785481283063d707ee2dddb51451a72689fd1a2
     name: refractr
@@ -3724,7 +3733,7 @@ entries:
     version: 0.1.8
   - apiVersion: v2
     appVersion: dev-1.2.3
-    created: "2021-05-10T23:11:12.276115373Z"
+    created: "2021-05-10T23:18:19.012429178Z"
     description: A Helm chart for the refractr redirect application
     digest: 4fa162615a00f0fc8ba774e6c89e03b34d6803f24ab36ad38fd23e7c623f39f4
     name: refractr
@@ -3734,7 +3743,7 @@ entries:
     version: 0.1.7
   - apiVersion: v2
     appVersion: dev-1.2.3
-    created: "2021-05-10T23:11:12.275248831Z"
+    created: "2021-05-10T23:18:19.011926404Z"
     description: A Helm chart for the refractr redirect application
     digest: dbdf65db5fe67f5f7576a2ea1b1ecbbf5f57cd3855434992e9d23f483be4f807
     name: refractr
@@ -3744,7 +3753,7 @@ entries:
     version: 0.1.6
   - apiVersion: v2
     appVersion: dev-1.2.8
-    created: "2021-05-10T23:11:12.2746943Z"
+    created: "2021-05-10T23:18:19.011443262Z"
     description: A Helm chart for the refractr redirect application
     digest: 2d0fe25c42564444cde7b2959bdff615bf670ee0f37a72f166e2292b350e262d
     name: refractr
@@ -3754,7 +3763,7 @@ entries:
     version: 0.1.5
   - apiVersion: v2
     appVersion: dev-1.2.7
-    created: "2021-05-10T23:11:12.27413265Z"
+    created: "2021-05-10T23:18:19.010929249Z"
     description: A Helm chart for the refractr redirect application
     digest: 1294ee4e4623843f17bf421d2c1cf75d9a987e8feafc92bb7aaf95e25d32b15b
     name: refractr
@@ -3764,7 +3773,7 @@ entries:
     version: 0.1.4
   - apiVersion: v2
     appVersion: dev-1.2.6
-    created: "2021-05-10T23:11:12.273619498Z"
+    created: "2021-05-10T23:18:19.010470573Z"
     description: A Helm chart for the refractr redirect application
     digest: c366957192a6760905975ab0b43162b66acddffeed5a6a7a0c8c6b83e9981ec5
     name: refractr
@@ -3774,7 +3783,7 @@ entries:
     version: 0.1.3
   - apiVersion: v2
     appVersion: dev-1.2.3
-    created: "2021-05-10T23:11:12.273131063Z"
+    created: "2021-05-10T23:18:19.009965968Z"
     description: A Helm chart for the refractr redirect application
     digest: 0ae2a74cc5be744ec2b612842c61bff9d6bd8c21e7289a2180653ac0f2e26bd5
     name: refractr
@@ -3784,7 +3793,7 @@ entries:
     version: 0.1.1
   sentence-collector:
   - apiVersion: v2
-    created: "2021-05-10T23:11:12.437214619Z"
+    created: "2021-05-10T23:18:19.177883188Z"
     dependencies:
     - condition: mysql.enabled
       name: mysql
@@ -3809,7 +3818,7 @@ entries:
     - https://mozilla-it.github.io/helm-charts/sentence-collector-0.1.1.tgz
     version: 0.1.1
   - apiVersion: v2
-    created: "2021-05-10T23:11:12.432248216Z"
+    created: "2021-05-10T23:18:19.171903985Z"
     dependencies:
     - condition: mysql.enabled
       name: mysql
@@ -3833,4 +3842,4 @@ entries:
     urls:
     - https://mozilla-it.github.io/helm-charts/sentence-collector-0.1.0.tgz
     version: 0.1.0
-generated: "2021-05-10T23:11:11.852669347Z"
+generated: "2021-05-10T23:18:18.580011298Z"
