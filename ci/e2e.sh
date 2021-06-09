@@ -46,11 +46,18 @@ configure_kube() {
 
     echo 'Copying kubeconfig to container'
     docker_exec sh -c 'mkdir -p /root/.kube'
+    chmod 600 kind.config
     docker cp kind.config ct:/root/.kube/config
     echo
 }
 
-install_charts() {
+install_deps () {
+  echo 'Installing some dependencies for this pipeline...'
+
+  docker_exec ./ci/deps/install.sh
+}
+
+install_charts () {
     echo 'Installing charts...'
     docker_exec ct install --namespace $NAMESPACE
     echo
@@ -91,6 +98,7 @@ main() {
 
     configure_kind_cluster
     create_ecr_secret
+    install_deps
     install_charts
 }
 
