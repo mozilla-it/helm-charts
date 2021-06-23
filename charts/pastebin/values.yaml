@@ -1,0 +1,92 @@
+configMap:
+  annotations: {}
+  data:
+    VAL: "5"
+  labels: {}
+  name: pastebin
+
+deployment:
+  annotations: {}
+  image:
+    pullPolicy: Always
+    repository: 783633885093.dkr.ecr.us-west-2.amazonaws.com/pastebin
+    tag: v3.5.4
+  labels: {}
+  name: pastebin
+  port: 5000
+  replicaCount: 2
+  resources:
+    requests:
+      cpu: 500m
+      memory: 1Gi
+    limits:
+      cpu: 1
+      memory: 2Gi
+
+externalSecrets:
+  annotations: {}
+  enabled: true
+  labels: {}
+  name: pastebin
+  secrets:
+    - key: websre/pastebin/env/database_host
+      name: DB_HOST
+    - key: websre/pastebin/env/database_name
+      name: DB_NAME
+    - key: websre/pastebin/env/database_password
+      name: DB_PASS
+    - key: websre/pastebin/env/database_port
+      name: DB_PORT
+    - key: websre/pastebin/env/database_user
+      name: DB_USER
+    - key: websre/pastebin/env/session_key
+      name: SESSION_KEY
+
+ingress:
+  annotations:
+    cert-manager.io/issuer: letsencrypt
+    nginx.ingress.kubernetes.io/rewrite-target: /
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/configuration-snippet: |
+      more_set_headers "X-Frame-Options: SAMEORIGIN";
+      more_set_headers "Content-Security-Policy: frame-ancestors 'none'";
+  className: "nginx"
+  hosts:
+    - host: my.domain.name
+      paths:
+        - path: /
+          pathType: ImplementationSpecific
+          serviceName: pastebin
+          servicePort: http
+  image:
+    pullPolicy: Always
+    repository: 783633885093.dkr.ecr.us-west-2.amazonaws.com/pastebin
+    tag: v3.5.4
+  labels: {}
+  name: pastebin
+  tls:
+    - hosts:
+        - paste.allizom.com
+      secretName: chart-paste-allizom-org
+
+job:
+  annotations: {}
+  labels: {}
+  name: pastebin-manager
+  resources:
+    requests:
+      cpu: 500m
+      memory: 1Gi
+    limits:
+      cpu: 1
+      memory: 2Gi
+  schedule: "*/5 * * * *"
+  successfulJobsHistoryLimit: 5
+
+metrics:
+  enabled: false
+
+service:
+  name: pastebin
+  port: http
+  type: NodePort
