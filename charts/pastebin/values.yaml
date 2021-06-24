@@ -88,5 +88,5 @@ metrics:
 
 service:
   name: pastebin
-  port: http
+  port: 80
   type: NodePort
