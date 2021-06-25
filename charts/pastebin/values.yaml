@@ -10,7 +10,7 @@ deployment:
   image:
     pullPolicy: Always
     repository: 783633885093.dkr.ecr.us-west-2.amazonaws.com/pastebin
-    tag: v3.5.4
+    tag: 3.1.0
   labels: {}
   name: pastebin
   port: 5000
@@ -25,22 +25,13 @@ deployment:
 
 externalSecrets:
   annotations: {}
-  enabled: true
+  enabled: false
   labels: {}
   name: pastebin
-  secrets:
-    - key: websre/pastebin/env/database_host
-      name: DB_HOST
-    - key: websre/pastebin/env/database_name
-      name: DB_NAME
-    - key: websre/pastebin/env/database_password
-      name: DB_PASS
-    - key: websre/pastebin/env/database_port
-      name: DB_PORT
-    - key: websre/pastebin/env/database_user
-      name: DB_USER
-    - key: websre/pastebin/env/session_key
-      name: SESSION_KEY
+  secrets: []
+    # - key: /{env}/pastebin/envvar
+    #   name: ENV_VAR_NAME
+    #   property: envvar_json_key
 
 ingress:
   annotations:
@@ -61,7 +52,7 @@ ingress:
   image:
     pullPolicy: Always
     repository: 783633885093.dkr.ecr.us-west-2.amazonaws.com/pastebin
-    tag: v3.5.4
+    tag: "3.1.0"
   labels: {}
   name: pastebin
   tls:
