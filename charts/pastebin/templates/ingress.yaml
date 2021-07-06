@@ -6,10 +6,13 @@ apiVersion: networking.k8s.io/v1beta1
 kind: Ingress
 metadata:
   name: {{ .Values.ingress.name }}
-  {{- with .Values.ingress.annotations }}
   annotations:
-    {{- toYaml . | nindent 4 }}
-  {{- end }}
+    cert-manager.io/issuer: letsencrypt
+    nginx.ingress.kubernetes.io/rewrite-target: /
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/configuration-snippet: |
+      more_set_headers "X-Frame-Options: SAMEORIGIN";
+      more_set_headers "Content-Security-Policy: frame-ancestors 'none'";
   labels:
     {{- include "pastebin.labels" . | nindent 4 }}
     {{- with .Values.ingress.labels }}
@@ -32,10 +35,10 @@ spec:
               service:
                 name: {{ .serviceName }}
                 port:
-                  name: http
+                  name: {{ .servicePort }}
               {{- else }}
-              serviceName: {{ .servicePort }}
-              servicePort: http
+              serviceName: {{ .serviceName }}
+              servicePort: {{ .servicePort }}
               {{- end }}
           {{- end }}
     {{- end }}
