@@ -16,3 +16,9 @@ sources:
 maintainers:
   - name: Christina Harlow
     email: charlow@mozilla.com
+
+dependencies:
+- name: cert-manager
+  version: v1.0.2
+  condition: cert-manager.install
+  repository: https://charts.jetstack.io

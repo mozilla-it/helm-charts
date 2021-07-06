@@ -5,7 +5,7 @@ metadata:
 spec:
   acme:
     email: it-se@mozilla.com
-    server: https://acme-v02.api.letsencrypt.org/directory
+    server: {{ if eq .Values.ingress.le.name "prod" }}{{ .Values.le.prod }}{{ else }}{{ .Values.le.stage }}{{ end }}
     privateKeySecretRef:
       name: letsencrypt
     solvers:

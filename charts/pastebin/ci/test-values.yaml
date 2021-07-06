@@ -1,0 +1,29 @@
+cert-manager:
+  install: true
+
+configMap:
+  data:
+    DB_PORT: "3306"
+    VAL: "5"
+
+deployment:
+  port: "5000"
+  replicaCount: 1
+
+ingress:
+  className: "nginx"
+  hosts:
+    - host: paste.allizom.com
+      paths:
+        - path: /
+          pathType: ImplementationSpecific
+          serviceName: pastebin
+          servicePort: 80
+  labels: {}
+  le:
+    name: stage
+  name: pastebin
+  tls:
+    - hosts:
+        - paste.allizom.com
+      secretName: chart-paste-allizom-org

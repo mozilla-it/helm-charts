@@ -1,3 +1,6 @@
+cert-manager:
+  install: false
+
 configMap:
   annotations: {}
   data:
@@ -59,11 +62,18 @@ ingress:
           serviceName: pastebin
           servicePort: 80
   labels: {}
+  le:
+    create: false
+    name: stage
   name: pastebin
   tls:
     - hosts:
         - paste.allizom.com
       secretName: chart-paste-allizom-org
+
+le:
+  prod: https://acme-v02.api.letsencrypt.org/directory
+  stage: https://acme-staging-v02.api.letsencrypt.org/directory
 
 job:
   annotations: {}
