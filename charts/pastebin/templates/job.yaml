@@ -29,8 +29,8 @@ spec:
                     name: {{ .Values.deployment.name }}
                 - secretRef:
                     name: {{ .Values.deployment.name }}
-              image: "{{ .Values.deployment.image.repository }}:{{ .Values.deployment.image.tag}}"
-              imagePullPolicy: {{ .Values.deployment.image.pullPolicy }}
+              image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+              imagePullPolicy: {{ .Values.image.pullPolicy }}
               {{- with .Values.job.resources }}
               resources:
                 {{- toYaml . | nindent 16 }}
