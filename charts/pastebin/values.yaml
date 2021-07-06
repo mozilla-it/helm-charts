@@ -7,14 +7,10 @@ configMap:
 
 deployment:
   annotations: {}
-  image:
-    pullPolicy: Always
-    repository: 783633885093.dkr.ecr.us-west-2.amazonaws.com/pastebin
-    tag: 3.1.0
   labels: {}
   name: pastebin
-  port: 5000
-  replicaCount: 2
+  port: "8000"
+  replicaCount: 1
   resources:
     requests:
       cpu: 500m
@@ -29,30 +25,39 @@ externalSecrets:
   labels: {}
   name: pastebin
   secrets: []
-    # - key: /{env}/pastebin/envvar
-    #   name: ENV_VAR_NAME
-    #   property: envvar_json_key
+  # - key: /{env}/pastebin/envvar
+  #   name: DB_HOST
+  #   property: database_host
+  # - key: /{env}/pastebin/envvar
+  #   name: DB_NAME
+  #   property: database_name
+  # - key: /{env}/pastebin/envvar
+  #   name: DB_PASS
+  #   property: database_password
+  # - key: /{env}/pastebin/envvar
+  #   name: DB_PORT
+  #   property: database_port
+  # - key: /{env}/pastebin/envvar
+  #   name: DB_USER
+  #   property: database_user
+  # - key: /{env}/pastebin/envvar
+  #   name: SESSION_KEY
+  #   property: session_key
+
+image:
+  pullPolicy: Always
+  repository: 783633885093.dkr.ecr.us-west-2.amazonaws.com/pastebin
+  tag: v3.5.5
 
 ingress:
-  annotations:
-    cert-manager.io/issuer: letsencrypt
-    nginx.ingress.kubernetes.io/rewrite-target: /
-    nginx.ingress.kubernetes.io/ssl-redirect: "true"
-    nginx.ingress.kubernetes.io/configuration-snippet: |
-      more_set_headers "X-Frame-Options: SAMEORIGIN";
-      more_set_headers "Content-Security-Policy: frame-ancestors 'none'";
   className: "nginx"
   hosts:
-    - host: my.domain.name
+    - host: paste.allizom.com
       paths:
         - path: /
           pathType: ImplementationSpecific
           serviceName: pastebin
-          servicePort: http
-  image:
-    pullPolicy: Always
-    repository: 783633885093.dkr.ecr.us-west-2.amazonaws.com/pastebin
-    tag: "3.1.0"
+          servicePort: 80
   labels: {}
   name: pastebin
   tls:
@@ -76,8 +81,3 @@ job:
 
 metrics:
   enabled: false
-
-service:
-  name: pastebin
-  port: 80
-  type: NodePort
