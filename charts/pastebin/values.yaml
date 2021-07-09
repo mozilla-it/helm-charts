@@ -27,6 +27,8 @@ externalSecrets:
   enabled: false
   labels: {}
   name: pastebin
+  # Values.externalSecrets.secrets are for external-secrets key, name, properties
+  # For local environments, don't enabled externalSecrets & use the configMap block
   secrets: []
   # - key: /{env}/pastebin/envvar
   #   name: DB_HOST
@@ -50,7 +52,9 @@ externalSecrets:
 image:
   pullPolicy: Always
   repository: 783633885093.dkr.ecr.us-west-2.amazonaws.com/pastebin
-  tag: v3.5.5
+  tag: v3.5.4
+
+imagePullSecrets: []
 
 ingress:
   className: "nginx"
@@ -64,16 +68,15 @@ ingress:
   labels: {}
   le:
     create: false
+    issuer_create: true
     name: stage
+    prod: https://acme-v02.api.letsencrypt.org/directory
+    stage: https://acme-staging-v02.api.letsencrypt.org/directory
   name: pastebin
   tls:
     - hosts:
         - paste.allizom.com
       secretName: chart-paste-allizom-org
-
-le:
-  prod: https://acme-v02.api.letsencrypt.org/directory
-  stage: https://acme-staging-v02.api.letsencrypt.org/directory
 
 job:
   annotations: {}
@@ -91,3 +94,8 @@ job:
 
 metrics:
   enabled: false
+
+mysql:
+  install: false
+  image:
+    tag: 5.7.33

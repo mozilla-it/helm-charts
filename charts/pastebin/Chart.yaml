@@ -19,6 +19,10 @@ maintainers:
 
 dependencies:
 - name: cert-manager
-  version: v1.0.2
+  version: v1.4.0
   condition: cert-manager.install
   repository: https://charts.jetstack.io
+- name: mysql
+  version: 8.7.1
+  condition: mysql.install
+  repository: https://charts.bitnami.com/bitnami
