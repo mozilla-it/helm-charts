@@ -1,4 +1,4 @@
-apiVersion: batch/v1beta1
+apiVersion: batch/v1
 kind: CronJob
 metadata:
   name: {{ .Values.job.name }}
@@ -27,12 +27,18 @@ spec:
               envFrom:
                 - configMapRef:
                     name: {{ .Values.deployment.name }}
+                {{- if .Values.externalSecrets.enabled -}}
                 - secretRef:
                     name: {{ .Values.deployment.name }}
+                {{- end }}
               image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
               imagePullPolicy: {{ .Values.image.pullPolicy }}
               {{- with .Values.job.resources }}
               resources:
                 {{- toYaml . | nindent 16 }}
               {{- end }}
+          {{- with .Values.imagePullSecrets }}
+          imagePullSecrets:
+            {{- toYaml . | nindent 12 }}
+          {{- end }}
           restartPolicy: Never
