@@ -1,0 +1,101 @@
+cert-manager:
+  install: false
+
+configMap:
+  annotations: {}
+  data:
+    VAL: "5"
+  labels: {}
+  name: pastebin
+
+deployment:
+  annotations: {}
+  labels: {}
+  name: pastebin
+  port: "8000"
+  replicaCount: 1
+  resources:
+    requests:
+      cpu: 500m
+      memory: 1Gi
+    limits:
+      cpu: 1
+      memory: 2Gi
+
+externalSecrets:
+  annotations: {}
+  enabled: false
+  labels: {}
+  name: pastebin
+  # Values.externalSecrets.secrets are for external-secrets key, name, properties
+  # For local environments, don't enabled externalSecrets & use the configMap block
+  secrets: []
+  # - key: /{env}/pastebin/envvar
+  #   name: DB_HOST
+  #   property: database_host
+  # - key: /{env}/pastebin/envvar
+  #   name: DB_NAME
+  #   property: database_name
+  # - key: /{env}/pastebin/envvar
+  #   name: DB_PASS
+  #   property: database_password
+  # - key: /{env}/pastebin/envvar
+  #   name: DB_PORT
+  #   property: database_port
+  # - key: /{env}/pastebin/envvar
+  #   name: DB_USER
+  #   property: database_user
+  # - key: /{env}/pastebin/envvar
+  #   name: SESSION_KEY
+  #   property: session_key
+
+image:
+  pullPolicy: Always
+  repository: 783633885093.dkr.ecr.us-west-2.amazonaws.com/pastebin
+  tag: v3.5.4
+
+imagePullSecrets: []
+
+ingress:
+  className: "nginx"
+  hosts:
+    - host: paste.allizom.com
+      paths:
+        - path: /
+          pathType: ImplementationSpecific
+          serviceName: pastebin
+          servicePort: 80
+  labels: {}
+  le:
+    create: false
+    issuer_create: true
+    name: stage
+    prod: https://acme-v02.api.letsencrypt.org/directory
+    stage: https://acme-staging-v02.api.letsencrypt.org/directory
+  name: pastebin
+  tls:
+    - hosts:
+        - paste.allizom.com
+      secretName: chart-paste-allizom-org
+
+job:
+  annotations: {}
+  labels: {}
+  name: pastebin-manager
+  resources:
+    requests:
+      cpu: 500m
+      memory: 1Gi
+    limits:
+      cpu: 1
+      memory: 2Gi
+  schedule: "*/5 * * * *"
+  successfulJobsHistoryLimit: 5
+
+metrics:
+  enabled: false
+
+mysql:
+  install: false
+  image:
+    tag: 5.7.33

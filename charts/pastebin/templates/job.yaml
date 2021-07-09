@@ -1,0 +1,44 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: {{ .Values.job.name }}
+  {{- with .Values.job.annotations }}
+  annotations:
+    {{- toYaml . | nindent 4 }}
+  {{- end }}
+  labels:
+    {{- include "pastebin.labels" . | nindent 4 }}
+    {{- with .Values.job.labels }}
+      {{- toYaml . | nindent 4 }}
+    {{- end }}
+spec:
+  schedule: "{{ .Values.job.schedule }}"
+  successfulJobsHistoryLimit: {{ .Values.job.successfulJobsHistoryLimit }}
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+            - name: {{ .Values.job.name }}
+              command:
+                - /bin/sh
+                - -c
+                - ./manage.py cleanup_snippets
+              envFrom:
+                - configMapRef:
+                    name: {{ .Values.deployment.name }}
+                {{- if .Values.externalSecrets.enabled -}}
+                - secretRef:
+                    name: {{ .Values.deployment.name }}
+                {{- end }}
+              image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+              imagePullPolicy: {{ .Values.image.pullPolicy }}
+              {{- with .Values.job.resources }}
+              resources:
+                {{- toYaml . | nindent 16 }}
+              {{- end }}
+          {{- with .Values.imagePullSecrets }}
+          imagePullSecrets:
+            {{- toYaml . | nindent 12 }}
+          {{- end }}
+          restartPolicy: Never

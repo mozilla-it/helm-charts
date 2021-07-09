@@ -1,0 +1,53 @@
+cert-manager:
+  install: true
+
+configMap:
+  data:
+    DB_HOST: "dpaste-headless"
+    DB_NAME: "dpaste"
+    DB_PASS: "default-non-secure-password"
+    DB_PORT: "3306"
+    DB_USER: "dpaste"
+    SESSION_KEY: "dpaste-session-key"
+    VAL: "5"
+
+deployment:
+  port: 5000
+  replicaCount: 1
+
+imagePullSecrets:
+  - name: ecr-registry
+
+ingress:
+  className: nginx
+  hosts:
+    - host: paste.allizom.com
+      paths:
+        - path: /
+          pathType: ImplementationSpecific
+          serviceName: pastebin
+          servicePort: 80
+  labels: {}
+  le:
+    name: stage
+    issuer_create: false
+  name: pastebin
+  tls:
+    - hosts:
+        - paste.allizom.com
+      secretName: chart-paste-allizom-org
+
+mysql:
+  fullnameOverride: dpaste
+  install: true
+  auth:
+    username: dpaste
+    database: dpaste
+    password: default-non-secure-password
+    rootPassword: default-non-secure-root-password
+  image:
+    tag: 5.7.33
+  primary:
+    fullname: dpaste
+    persistence:
+      enabled: false
