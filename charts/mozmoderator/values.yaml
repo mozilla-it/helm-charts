@@ -49,7 +49,7 @@ externalSecrets:
   # For local environments, don't enabled externalSecrets & use the configMap block
   secrets: []
   # - key: /{env}/moderator/envvar
-  #   name: AWS_ACCESS_KEY
+  #   name: AWS_ACCESS_KEY_ID
   #   property: aws_access_key
   # - key: /{env}/moderator/envvar
   #   name: AWS_SECRET_ACCESS_KEY
