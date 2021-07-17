@@ -16,11 +16,6 @@ configMap:
 deployment:
   replicaCount: 1
 
-image:
-  pullPolicy: IfNotPresent
-  repository: moderator-local
-  tag: latest
-
 imagePullSecrets:
   - name: ecr-registry
 
