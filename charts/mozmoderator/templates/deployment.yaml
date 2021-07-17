@@ -30,6 +30,7 @@ spec:
     spec:
       containers:
         - name: {{ .Values.deployment.name }}
+          args: ["./bin/run-dev.sh"]
           envFrom:
             - configMapRef:
                 name: {{ .Values.deployment.name }}
@@ -48,7 +49,9 @@ spec:
               - name: X-Health
                 value:  "Kubernetes-Health"
               - name: Host
-                value: "kube-internal.cluster.local"
+                {{- with (first .Values.ingress.hosts) }}
+                value: {{ .host }}
+                {{- end }}
           ports:
             - containerPort: 8000
               name: http
@@ -62,7 +65,9 @@ spec:
               - name: X-Health
                 value:  "Kubernetes-Health"
               - name: Host
-                value: "kube-internal.cluster.local"
+                {{- with (first .Values.ingress.hosts) }}
+                value: {{ .host }}
+                {{- end }}
           {{- with .Values.deployment.resources }}
           resources:
             {{- toYaml . | nindent 12 }}
