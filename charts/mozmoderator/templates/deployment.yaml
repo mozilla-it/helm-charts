@@ -1,37 +1,44 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "mozmoderator.fullname" . }}
+  name: {{ .Values.deployment.name }}
+  {{- with .Values.deployment.annotations }}
+  annotations:
+    {{- toYaml . | nindent 4 }}
+  {{- end }}
   labels:
     {{- include "mozmoderator.labels" . | nindent 4 }}
+    {{- with .Values.deployment.labels }}
+      {{- toYaml . | nindent 4 }}
+    {{- end }}
 spec:
 {{- if not .Values.autoscaling.enabled }}
-  replicas: {{ .Values.replicaCount }}
+  replicas: {{ .Values.deployment.replicaCount }}
 {{- end }}
   selector:
     matchLabels:
       {{- include "mozmoderator.selectorLabels" . | nindent 6 }}
   template:
     metadata:
+      {{- if .Values.metrics.enabled }}
+      annotations:
+        prometheus.io/port: {{ .Values.metrics.port | quote }}
+        prometheus.io/scrape: "true"
+      {{- end }}
       labels:
         {{- include "mozmoderator.selectorLabels" . | nindent 8 }}
     spec:
-      {{- with .Values.imagePullSecrets }}
-      imagePullSecrets:
-        {{- toYaml . | nindent 8 }}
-      {{- end }}
-      securityContext:
-        {{- toYaml .Values.podSecurityContext | nindent 8 }}
       containers:
-        - name: {{ .Chart.Name }}
-          securityContext:
-            {{- toYaml .Values.securityContext | nindent 12 }}
+        - name: {{ .Values.deployment.name }}
+          envFrom:
+            - configMapRef:
+                name: {{ .Values.deployment.name }}
+          {{- if .Values.externalSecrets.enabled }}
+            - secretRef:
+                name: {{ .Values.deployment.name }}
+          {{- end }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
-          ports:
-            - name: http
-              containerPort: 8000
-              protocol: TCP
           livenessProbe:
             httpGet:
               path: /
@@ -42,6 +49,10 @@ spec:
                 value:  "Kubernetes-Health"
               - name: Host
                 value: "kube-internal.cluster.local"
+          ports:
+            - containerPort: 8000
+              name: http
+              protocol: TCP
           readinessProbe:
             httpGet:
               path: /
@@ -52,10 +63,35 @@ spec:
                 value:  "Kubernetes-Health"
               - name: Host
                 value: "kube-internal.cluster.local"
+          {{- with .Values.deployment.resources }}
           resources:
-            {{- toYaml .Values.resources | nindent 12 }}
-          envFrom:
-          - configMapRef:
-              name: {{ include "mozmoderator.fullname" . }}
-          - secretRef:
-              name: {{ include "mozmoderator.fullname" . }}
+            {{- toYaml . | nindent 12 }}
+          {{- end }}
+        {{- if .Values.metrics.enabled }}
+        - name: metrics
+          image: {{ template "nginx.metrics.image" . }}
+          imagePullPolicy: {{ .Values.metrics.image.pullPolicy | quote }}
+          command: ['/usr/bin/exporter', '-nginx.scrape-uri', 'http://127.0.0.1:80/status']
+          ports:
+            - name: metrics
+              containerPort: {{ .Values.metrics.port }}
+          livenessProbe:
+            httpGet:
+              path: /metrics
+              port: metrics
+            initialDelaySeconds: 15
+            timeoutSeconds: 5
+          readinessProbe:
+            httpGet:
+              path: /metrics
+              port: metrics
+            initialDelaySeconds: 5
+            timeoutSeconds: 1
+          {{- if .Values.metrics.resources }}
+          resources: {{- toYaml .Values.metrics.resources | nindent 12 }}
+          {{- end }}
+        {{- end }}
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
