@@ -3,6 +3,7 @@ cert-manager:
 
 configMap:
   data:
+    ALLOWED_HOSTS: moderator.allizom.org,localhost
     AWS_ACCESS_KEY: testkey
     AWS_SECRET_ACCESS_KEY: testkey
     DATABASE_URL: mysql://moderator:default-non-secure-password@moderator-db-headless:3306/moderator
@@ -10,7 +11,6 @@ configMap:
     OIDC_RP_CLIENT_ID: testid
     OIDC_RP_CLIENT_SECRET: testkey
     SECRET_KEY: mymoderatorsecretkey
-    SENTRY_DSN: http://localhost/something
     SITE_URL: http://localhost
 
 deployment:

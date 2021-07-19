@@ -13,7 +13,6 @@ configMap:
     ANON_ALWAYS: true
     AWS_DEFAULT_REGION: us-west-2
     FROM_NOREPLY: Mozilla Moderator <no-reply@localhost>
-    MOZILLIANS_API_APPNAME: moderator
     MOZILLIANS_API_BASE: https://mozillians.org/api/v1/users/
     MOZILLIANS_API_URL: https://mozillians.org/api/v2/
     OIDC_OP_AUTHORIZATION_ENDPOINT: https://auth.mozilla.auth0.com/authorize
@@ -63,6 +62,9 @@ externalSecrets:
   # - key: /{env}/moderator/envvar
   #   name: MOZILLIANS_API_KEY
   #   property: mozillians_api_key
+  # - key: /{env}/moderator/envvar
+  #   name: MOZILLIANS_API_APPNAME
+  #   property: mozillians_api_appname
   # - key: /{env}/moderator/envvar
   #   name: OIDC_RP_CLIENT_ID
   #   property: oidc_rp_client_id
