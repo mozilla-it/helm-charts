@@ -1,2 +1,54 @@
+cert-manager:
+  install: true
+
+configMap:
+  data:
+    ALLOWED_HOSTS: moderator.allizom.org,localhost
+    AWS_ACCESS_KEY: testkey
+    AWS_SECRET_ACCESS_KEY: testkey
+    DATABASE_URL: mysql://moderator:default-non-secure-password@moderator-db-headless:3306/moderator
+    MOZILLIANS_API_KEY: testkey
+    OIDC_RP_CLIENT_ID: testid
+    OIDC_RP_CLIENT_SECRET: testkey
+    SECRET_KEY: mymoderatorsecretkey
+    SITE_URL: http://localhost
+
+deployment:
+  replicaCount: 1
+
 imagePullSecrets:
   - name: ecr-registry
+
+ingress:
+  className: nginx
+  hosts:
+    - host: moderator.allizom.org
+      paths:
+        - path: /
+          pathType: ImplementationSpecific
+          serviceName: moderator
+          servicePort: 80
+  labels: {}
+  le:
+    name: stage
+    issuer_create: false
+  name: moderator
+  tls:
+    - hosts:
+        - moderator.allizom.org
+      secretName: chart-moderator-allizom-org
+
+mysql:
+  fullnameOverride: moderator-db
+  install: true
+  auth:
+    username: moderator
+    database: moderator
+    password: default-non-secure-password
+    rootPassword: default-non-secure-root-password
+  image:
+    tag: 5.7.33
+  primary:
+    fullname: moderator
+    persistence:
+      enabled: false

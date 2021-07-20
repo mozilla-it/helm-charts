@@ -1,62 +1,116 @@
-replicaCount: 1
 autoscaling:
   enabled: false
   minReplicas: 1
   maxReplicas: 5
 
-environment: stage
-
-image:
-  repository: 783633885093.dkr.ecr.us-west-2.amazonaws.com/moderator
-  tag: c285426edacb3a1791bab84f64c16d00e6d865eb
-  pullPolicy: IfNotPresent
-
-nameOverride: ""
-fullnameOverride: "moderator"
-
-podSecurityContext: {}
-
-securityContext: {}
-  # runAsNonRoot: true
-  # runAsUser: 1000
-
-service:
-  type: ClusterIP
-  port: 80
-
-ingress:
-  enabled: true
-  annotations:
-    kubernetes.io/ingress.class: nginx-moderator
-  hosts:
-    - host: moderator.mozilla.org
-      paths:
-        - /
-      backend:
-        serviceName: moderator
-        servicePort: 80
-
-resources:
-  limits:
-    cpu: 500m
-    memory: 512Mi
-  requests:
-    cpu: 20m
-    memory: 64Mi
+cert-manager:
+  install: false
 
 configMap:
-  allowedHosts: "kube-internal.cluster.local,cluster.local"
-  siteUrl: "https://moderator.mozilla.org"
+  annotations: {}
+  data:
+    ALLOWED_HOSTS: kube-internal.cluster.local,cluster.local,localhost
+    ANON_ALWAYS: true
+    AWS_DEFAULT_REGION: us-west-2
+    FROM_NOREPLY: Mozilla Moderator <no-reply@localhost>
+    MOZILLIANS_API_BASE: https://mozillians.org/api/v1/users/
+    MOZILLIANS_API_URL: https://mozillians.org/api/v2/
+    OIDC_OP_AUTHORIZATION_ENDPOINT: https://auth.mozilla.auth0.com/authorize
+    OIDC_OP_DOMAIN: auth.mozilla.auth0.com
+    OIDC_OP_JWKS_ENDPOINT: https://auth.mozilla.auth0.com/.well-known/jwks.json
+    OIDC_OP_TOKEN_ENDPOINT: https://auth.mozilla.auth0.com/oauth/token
+    OIDC_OP_USER_ENDPOINT: https://auth.mozilla.auth0.com/userinfo
+    OIDC_RP_SIGN_ALGO: RS256
+    SESSION_COOKIE_SECURE: true
+    SITE_URL: https://moderator.allizom.org
+  labels: {}
+  name: moderator
 
-externalSecret:
-  create: false
+deployment:
+  annotations: {}
+  labels: {}
+  name: moderator
+  replicaCount: 1
+  resources:
+    limits:
+      cpu: 500m
+      memory: 512Mi
+    requests:
+      cpu: 20m
+      memory: 64Mi
+
+externalSecrets:
+  annotations: {}
+  enabled: false
+  labels: {}
+  name: moderator
+  # Values.externalSecrets.secrets are for external-secrets key, name, properties
+  # For local environments, don't enabled externalSecrets & use the configMap block
+  secrets: []
+  # - key: /{env}/moderator/envvar
+  #   name: AWS_ACCESS_KEY_ID
+  #   property: aws_access_key
+  # - key: /{env}/moderator/envvar
+  #   name: AWS_SECRET_ACCESS_KEY
+  #   property: aws_secret_access_key
+  # - key: /{env}/moderator/envvar
+  #   name: DATABASE_URL
+  #   property: database_url
+  # - key: /{env}/moderator/envvar
+  #   name: MOZILLIANS_API_APPNAME
+  #   property: mozillians_api_appname
+  # - key: /{env}/moderator/envvar
+  #   name: MOZILLIANS_API_KEY
+  #   property: mozillians_api_key
+  # - key: /{env}/moderator/envvar
+  #   name: MOZILLIANS_API_APPNAME
+  #   property: mozillians_api_appname
+  # - key: /{env}/moderator/envvar
+  #   name: OIDC_RP_CLIENT_ID
+  #   property: oidc_rp_client_id
+  # - key: /{env}/moderator/envvar
+  #   name: OIDC_RP_CLIENT_SECRET
+  #   property: oidc_rp_client_secret
+  # - key: /{env}/moderator/envvar
+  #   name: SECRET_KEY
+  #   property: secret_key
+  # - key: /{env}/moderator/envvar
+  #   name: SENTRY_DSN
+  #   property: sentry_dsn
+
+image:
+  pullPolicy: IfNotPresent
+  repository: 783633885093.dkr.ecr.us-west-2.amazonaws.com/moderator
+  tag: c285426edacb3a1791bab84f64c16d00e6d865eb
 
 imagePullSecrets: []
 
+ingress:
+  className: "nginx"
+  hosts:
+    - host: moderator.allizom.org
+      paths:
+        - path: /
+          pathType: ImplementationSpecific
+          serviceName: moderator
+          servicePort: 80
+  labels: {}
+  le:
+    create: false
+    issuer_create: true
+    name: stage
+    prod: https://acme-v02.api.letsencrypt.org/directory
+    stage: https://acme-staging-v02.api.letsencrypt.org/directory
+  name: moderator
+  tls:
+    - hosts:
+        - moderator.allizom.org
+      secretName: chart-moderator-allizom-org
+
+metrics:
+  enabled: false
+
 mysql:
-  enabled: true
-  fullnameOverride: mysql
-  mysqlUser: moderator
-  mysqlDatabase: moderator
-  mysqlPassword: defaultpassword
-  imageTag: 5.7.14
+  install: false
+  image:
+    tag: 5.7.33

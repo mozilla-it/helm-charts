@@ -2,7 +2,7 @@ apiVersion: v2
 name: mozmoderator
 description: A Helm Chart for Mozilla's Moderator application
 type: application
-version: 0.1.2
+version: 0.2.0
 appVersion: c285426edacb3a1791bab84f64c16d00e6d865eb
 keywords:
   - Mozilla
@@ -10,11 +10,15 @@ keywords:
 sources:
   - https://github.com/mozilla/mozmoderator
 maintainers:
-  - name: Alberto del Barrio
-    email: alberto@mozilla.com
+  - name: Christina Harlow
+    email: charlow@mozilla.com
 
 dependencies:
+- name: cert-manager
+  version: v1.4.0
+  condition: cert-manager.install
+  repository: https://charts.jetstack.io
 - name: mysql
-  version: 8.4.2
-  condition: mysql.enabled
+  version: 8.7.1
+  condition: mysql.install
   repository: https://charts.bitnami.com/bitnami
