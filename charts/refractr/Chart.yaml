@@ -16,8 +16,8 @@ sources:
   - https://github.com/mozilla-it/refractr
 
 maintainers:
-  - name: Alberto del Barrio
-    email: alberto@mozilla.com
+  - name: Web SRE Team
+    email: it-sre@mozilla.com
 
 dependencies:
 - name: cert-manager

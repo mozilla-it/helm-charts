@@ -16,5 +16,5 @@ sources:
   - https://github.com/fluent/fluentd
 
 maintainers:
-  - name: limed
-    email: limed@mozilla.com
+  - name: Web SRE Team
+    email: it-sre@mozilla.com

@@ -9,5 +9,5 @@ home: "https://github.com/mozilla-it/data-alert-sender"
 sources:
   - "https://github.com/mozilla-it/data-alert-sender"
 maintainers:
-  - name: mozafrank
-    email: afrank@mozilla.com
+  - name: Web SRE Team
+    email: it-sre@mozilla.com

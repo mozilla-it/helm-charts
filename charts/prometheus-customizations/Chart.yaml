@@ -5,3 +5,7 @@ description: An opinionated helm chart to setup our prometheus instances. Requir
 type: application
 
 version: 0.0.2
+
+maintainers:
+  - name: Web SRE Team
+    email: it-sre@mozilla.com

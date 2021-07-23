@@ -5,3 +5,7 @@ description: A Helm chart for https://github.com/machinezone/configmapsecrets
 type: application
 
 version: 0.0.1
+
+maintainers:
+  - name: Web SRE Team
+    email: it-sre@mozilla.com
