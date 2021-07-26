@@ -1,7 +1,7 @@
 apiVersion: v2
 name: mozilla-common-voice
 icon: https://voice.mozilla.org/dist/f01895c77138837851f87c2e40acbd58.svg
-version: 0.4.3
+version: 0.4.4
 description: Deploy Mozilla Common Voice web application
 type: application
 keywords:
@@ -13,8 +13,8 @@ home: https://voice.mozilla.org
 sources:
   - https://github.com/mozilla/voice-web
 maintainers:
-  - name: Alberto del Barrio
-    email: alberto@mozilla.com
+  - name: Web SRE Team
+    email: it-sre@mozilla.com
 dependencies:
 - name: mysql
   version: 8.4.2
