@@ -2,7 +2,7 @@ apiVersion: v2
 name: sentence-collector
 description: A Helm chart for Common Voice's Sentence Collector
 type: application
-version: 0.1.1
+version: 0.1.2
 keywords:
   - Mozilla
   - common-voice
@@ -12,8 +12,8 @@ home: https://commonvoice.mozilla.org/sentence-collector
 sources:
   - https://github.com/Common-Voice/sentence-collector
 maintainers:
-  - name: Alberto del Barrio
-    email: alberto@mozilla.com
+  - name: Web SRE Team
+    email: it-sre@mozilla.com
 
 dependencies:
 - name: mysql
