@@ -2,7 +2,7 @@ apiVersion: v2
 name: pastebin
 description: A Helm chart for the Mozilla Pastebin (dpaste) application
 type: application
-version: 0.1.1
+version: 0.1.2
 
 keywords:
   - Mozilla
@@ -14,8 +14,8 @@ sources:
   - https://github.com/mozilla-it/pastebin
 
 maintainers:
-  - name: Christina Harlow
-    email: charlow@mozilla.com
+  - name: Web SRE Team
+    email: it-sre@mozilla.com
 
 dependencies:
 - name: cert-manager
