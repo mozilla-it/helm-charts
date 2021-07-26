@@ -2,7 +2,7 @@ apiVersion: v2
 name: sentence-collector
 description: A Helm chart for Common Voice's Sentence Collector
 type: application
-version: 0.1.1
+version: 0.1.2
 keywords:
   - Mozilla
   - common-voice
