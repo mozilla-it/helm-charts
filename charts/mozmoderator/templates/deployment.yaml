@@ -30,7 +30,6 @@ spec:
     spec:
       containers:
         - name: {{ .Values.deployment.name }}
-          args: ["./bin/run-dev.sh"]
           envFrom:
             - configMapRef:
                 name: {{ .Values.deployment.name }}
