@@ -10,7 +10,8 @@ Current chart version is `0.2.0`
 
 | Repository | Name | Version |
 |------------|------|---------|
-| https://kubernetes-charts.storage.googleapis.com | mysql | 1.6.4 |
+| https://charts.jetstack.io | cert-manager | v1.4.0 |
+| https://charts.bitnami.com/bitnami | mysql | 8.7.1 |
 
 ## Chart Values
 
