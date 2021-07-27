@@ -70,7 +70,7 @@ externalSecrets:
 image:
   pullPolicy: IfNotPresent
   repository: 783633885093.dkr.ecr.us-west-2.amazonaws.com/moderator
-  tag: c285426edacb3a1791bab84f64c16d00e6d865eb
+  tag: bbae8c1be8431ace923c58caac928917fc2aa31e
 
 imagePullSecrets: []
 
