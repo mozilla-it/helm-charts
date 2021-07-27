@@ -55,15 +55,6 @@ externalSecrets:
   #   name: DATABASE_URL
   #   property: database_url
   # - key: /{env}/moderator/envvar
-  #   name: MOZILLIANS_API_APPNAME
-  #   property: mozillians_api_appname
-  # - key: /{env}/moderator/envvar
-  #   name: MOZILLIANS_API_KEY
-  #   property: mozillians_api_key
-  # - key: /{env}/moderator/envvar
-  #   name: MOZILLIANS_API_APPNAME
-  #   property: mozillians_api_appname
-  # - key: /{env}/moderator/envvar
   #   name: OIDC_RP_CLIENT_ID
   #   property: oidc_rp_client_id
   # - key: /{env}/moderator/envvar

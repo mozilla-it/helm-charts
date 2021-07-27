@@ -7,7 +7,6 @@ configMap:
     AWS_ACCESS_KEY: testkey
     AWS_SECRET_ACCESS_KEY: testkey
     DATABASE_URL: mysql://moderator:default-non-secure-password@moderator-db-headless:3306/moderator
-    MOZILLIANS_API_KEY: testkey
     OIDC_RP_CLIENT_ID: testid
     OIDC_RP_CLIENT_SECRET: testkey
     SECRET_KEY: mymoderatorsecretkey
