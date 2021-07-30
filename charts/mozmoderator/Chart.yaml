@@ -2,7 +2,7 @@ apiVersion: v2
 name: mozmoderator
 description: A Helm Chart for Mozilla's Moderator application
 type: application
-version: 0.2.1
+version: 0.2.2
 appVersion: c285426edacb3a1791bab84f64c16d00e6d865eb
 keywords:
   - Mozilla

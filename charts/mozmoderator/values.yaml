@@ -55,15 +55,6 @@ externalSecrets:
   #   name: DATABASE_URL
   #   property: database_url
   # - key: /{env}/moderator/envvar
-  #   name: MOZILLIANS_API_APPNAME
-  #   property: mozillians_api_appname
-  # - key: /{env}/moderator/envvar
-  #   name: MOZILLIANS_API_KEY
-  #   property: mozillians_api_key
-  # - key: /{env}/moderator/envvar
-  #   name: MOZILLIANS_API_APPNAME
-  #   property: mozillians_api_appname
-  # - key: /{env}/moderator/envvar
   #   name: OIDC_RP_CLIENT_ID
   #   property: oidc_rp_client_id
   # - key: /{env}/moderator/envvar
@@ -79,7 +70,7 @@ externalSecrets:
 image:
   pullPolicy: IfNotPresent
   repository: 783633885093.dkr.ecr.us-west-2.amazonaws.com/moderator
-  tag: c285426edacb3a1791bab84f64c16d00e6d865eb
+  tag: bbae8c1be8431ace923c58caac928917fc2aa31e
 
 imagePullSecrets: []
 
