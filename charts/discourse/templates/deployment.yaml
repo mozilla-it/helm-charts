@@ -1,0 +1,129 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.deployment.name }}
+  {{- with .Values.deployment.annotations }}
+  annotations:
+    {{- toYaml . | nindent 4 }}
+  {{- end }}
+  labels:
+    {{- include "discourse.labels" . | nindent 4 }}
+    {{- with .Values.deployment.labels }}
+      {{- toYaml . | nindent 4 }}
+    {{- end }}
+spec:
+{{- if not .Values.autoscaling.enabled }}
+  replicas: {{ .Values.deployment.replicaCount }}
+{{- end }}
+  selector:
+    matchLabels:
+      {{- include "discourse.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      annotations:
+      {{- if .Values.metrics.enabled }}
+        prometheus.io/port: {{ .Values.metrics.port | quote }}
+        prometheus.io/scrape: "true"
+      {{- end }}
+        iam.amazonaws.com/role: {{ .Values.deployment.arn_role }}
+      labels:
+        {{- include "discourse.selectorLabels" . | nindent 8 }}
+    spec:
+      containers:
+      - name: {{ .Values.deployment.name }}
+        command: ['/sbin/boot']
+        envFrom:
+        - configMapRef:
+            name: {{ .Values.deployment.name }}
+        {{- if .Values.externalSecrets.enabled }}
+        - secretRef:
+            name: {{ .Values.deployment.name }}
+        {{- end }}
+        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+        imagePullPolicy: Always
+        livenessProbe:
+          httpGet:
+            path: /srv/status
+            port: 80
+          initialDelaySeconds: 30
+          periodSeconds: 5
+        ports:
+        - containerPort: 80
+          name: http
+          protocol: TCP
+        readinessProbe:
+          httpGet:
+            path: /srv/status
+            port: 80
+        {{- with .Values.deployment.resources }}
+        resources:
+          {{- toYaml . | nindent 12 }}
+        {{- end }}
+        volumeMounts:
+        - mountPath: /shared/log
+          name: logs
+      {{- if .Values.metrics.enabled }}
+      - name: metrics
+        image: {{ template "nginx.metrics.image" . }}
+        imagePullPolicy: {{ .Values.metrics.image.pullPolicy | quote }}
+        command: ['/usr/bin/exporter', '-nginx.scrape-uri', 'http://127.0.0.1:80/status']
+        ports:
+        - name: metrics
+          containerPort: {{ .Values.metrics.port }}
+        livenessProbe:
+          httpGet:
+            path: /metrics
+            port: metrics
+          initialDelaySeconds: 15
+          timeoutSeconds: 5
+        readinessProbe:
+          httpGet:
+            path: /metrics
+            port: metrics
+          initialDelaySeconds: 5
+          timeoutSeconds: 1
+        {{- if .Values.metrics.resources }}
+        resources: {{- toYaml .Values.metrics.resources | nindent 12 }}
+        {{- end }}
+      {{- end }}
+      - name: logger
+        image: alpine:latest
+        command:
+        - /bin/sh
+        - -c
+        args:
+        - sleep 60 && tail -f /logs/rails/production.log
+        resources:
+          limits:
+            memory: 128Mi
+            cpu: 200m
+          requests:
+            memory: 64Mi
+            cpu: 50m
+        volumeMounts:
+        - mountPath: /logs
+          name: logs
+      - name: remote-logger
+        image: 783633885093.dkr.ecr.us-west-2.amazonaws.com/remote_syslog2:0.2
+        resources:
+          limits:
+            cpu: 200m
+            memory: 128Mi
+          requests:
+            cpu: 50m
+            memory: 64Mi
+        volumeMounts:
+        - name: logs
+          mountPath: /logs
+        - name: remote-logger
+          mountPath: /etc/rs2
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      volumes:
+      - name: logs
+        emptyDir: {}
+      - name: remote-logger
+        configMap:
+          name: logger-config

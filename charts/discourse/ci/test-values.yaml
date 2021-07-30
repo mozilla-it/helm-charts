@@ -1,0 +1,36 @@
+cert-manager:
+  install: true
+
+configMap:
+  data:
+    DISCOURSE_AKISMET_API_KEY: ""
+    DISCOURSE_AUTH0_CLIENT_ID: ""
+    DISCOURSE_AUTH0_CLIENT_SECRET: ""
+    DISCOURSE_DB_HOST: "discourse-psql-headless"
+    DISCOURSE_DB_NAME: "discourse"
+    DISCOURSE_DB_PASSWORD: "discourse-psql-password"
+    DISCOURSE_DB_USERNAME: "postgres"
+    DISCOURSE_REDIS_HOST: "discourse-redis-master"
+    DISCOURSE_REDIS_PASSWORD: "discourse-redis-password"
+    DISCOURSE_S3_UPLOAD_BUCKET: ""
+    DISCOURSE_ENABLE_S3_UPLOADS: false
+    DISCOURSE_SMTP_ADDRESS: "email-smtp.us-west-2.amazonaws.com"
+    DISCOURSE_SMTP_PASSWORD: "smtp-password"
+    DISCOURSE_SMTP_USER_NAME: "smtp-username"
+
+db:
+  migrate:
+    enabled: true
+  init:
+    enabled: true
+
+deployment:
+  replicaCount: 1
+
+imagePullSecrets:
+  - name: ecr-registry
+
+ingress:
+  le:
+    name: stage
+    issuer_create: false

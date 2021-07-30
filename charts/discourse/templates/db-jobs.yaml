@@ -1,0 +1,43 @@
+{{- if .Values.db.migrate.enabled -}}
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: {{ .Values.deployment.name }}-db-migrate
+  annotations:
+    "helm.sh/hook": pre-install,pre-upgrade
+    "helm.sh/hook-weight": "-7"
+    "helm.sh/hook-delete-policy": before-hook-creation,hook-succeeded
+  {{- with .Values.deployment.annotations }}
+    {{- toYaml . | nindent 4 }}
+  {{- end }}
+  labels:
+    {{- include "discourse.labels" . | nindent 4 }}
+    {{- with .Values.deployment.labels }}
+      {{- toYaml . | nindent 4 }}
+    {{- end }}
+spec:
+  template:
+    metadata:
+      name: {{ .Values.deployment.name }}-db-migrate
+    spec:
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      restartPolicy: Never
+      containers:
+      - name: {{ .Values.deployment.name }}-db-migrate
+        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+        imagePullPolicy: Always
+        command:
+        - "/bin/bash"
+        - "-c"
+        - "cd /var/www/discourse && bundle exec rake db:prepare"
+        envFrom:
+        - configMapRef:
+            name: {{ .Values.deployment.name }}
+        {{- if .Values.externalSecrets.enabled }}
+        - secretRef:
+            name: {{ .Values.deployment.name }}
+        {{- end }}
+{{- end }}
