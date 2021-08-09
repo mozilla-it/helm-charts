@@ -25,6 +25,8 @@ voice_web:
 
   image: "mozilla/commonvoice:stage-latest"
 
+  imagePullSecrets: []
+
   service_account:
     annotations: {}
 
