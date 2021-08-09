@@ -3,10 +3,10 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: {{ .Values.voice_web.deployment_name }}
-{{- if .Values.voice_web.extra_annotations }}
+  {{- if .Values.voice_web.extra_annotations }}
   annotations:
-  {{ toYaml .Values.voice_web.extra_annotations | nindent 4 }}
-{{- end }}
+    {{ toYaml .Values.voice_web.extra_annotations | nindent 4 }}
+  {{- end }}
 spec:
   selector:
     matchLabels:
@@ -66,6 +66,10 @@ spec:
 {{- if .Values.voice_web.extra_containers }}
       {{- toYaml .Values.voice_web.extra_containers | nindent 6 }}
 {{- end }}
+      {{- with .Values.voice_web.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
       volumes:
       - name: logs
         emptyDir: {}
