@@ -25,7 +25,6 @@ spec:
         prometheus.io/port: {{ .Values.metrics.port | quote }}
         prometheus.io/scrape: "true"
       {{- end }}
-        iam.amazonaws.com/role: {{ .Values.deployment.arn_role }}
       labels:
         {{- include "discourse.selectorLabels" . | nindent 8 }}
     spec:

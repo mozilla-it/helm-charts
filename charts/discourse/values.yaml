@@ -40,11 +40,6 @@ db:
 
 deployment:
   annotations: {}
-  # # stage
-  # arn_role: arn:aws:iam::783633885093:role/discourse/discourse-stage
-  # # prod
-  # arn_role: arn:aws:iam::783633885093:role/discourse/discourse-prod
-  arn_role: arn:aws:iam::783633885093:role/discourse/discourse-dev
   labels: {}
   name: discourse
   replicaCount: 1

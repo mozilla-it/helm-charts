@@ -2,7 +2,7 @@ apiVersion: v2
 name: discourse
 description: A Helm Chart for Mozilla's Discourse application
 type: application
-version: 0.0.1
+version: 1.0.0
 appVersion: f58ded6
 keywords:
   - Mozilla
