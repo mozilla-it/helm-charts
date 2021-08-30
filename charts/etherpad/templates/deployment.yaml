@@ -1,0 +1,82 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.deployment.name }}
+  {{- with .Values.deployment.annotations }}
+  annotations:
+    {{- toYaml . | nindent 4 }}
+  {{- end }}
+  labels:
+    {{- include "etherpad.labels" . | nindent 4 }}
+    {{- with .Values.deployment.labels }}
+      {{- toYaml . | nindent 4 }}
+    {{- end }}
+spec:
+  replicas: {{ .Values.deployment.replicaCount }}
+  selector:
+    matchLabels:
+      {{- include "etherpad.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      labels:
+        {{- include "etherpad.selectorLabels" . | nindent 8 }}
+    spec:
+      containers:
+        - name: {{ .Values.deployment.name }}
+          envFrom:
+            - configMapRef:
+                name: {{ .Values.deployment.name }}
+          {{- if .Values.externalSecrets.enabled }}
+            - secretRef:
+                name: {{ .Values.deployment.name }}
+          {{- end }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          livenessProbe:
+            httpGet:
+              path: /
+              port: http
+          ports:
+            - containerPort: {{ .Values.deployment.port }}
+              name: http
+              protocol: TCP
+          readinessProbe:
+            initialDelaySeconds: 5
+            successThreshold: 3
+            httpGet:
+              path: /
+              port: http
+          {{- with .Values.deployment.resources }}
+          resources:
+            {{- toYaml . | nindent 12 }}
+          {{- end }}
+          {{- if .Values.externalSecrets.enabled }}
+          volumeMounts:
+            - mountPath: /opt/etherpad-lite/APIKEY.txt
+              subPath: APIKEY.txt
+              name: apikey
+              readOnly: true
+            - mountPath: /opt/etherpad-lite/SESSIONKEY.txt
+              subPath: SESSIONKEY.txt
+              name: sessionkey
+              readOnly: true
+          {{- end }}
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- if .Values.externalSecrets.enabled }}
+      volumes:
+        - name: apikey
+          secret:
+            secretName: {{ .Values.deployment.name }}
+            items:
+              - key: ETHERPAD_API_KEY
+                path: APIKEY.txt
+        - name: sessionkey
+          secret:
+            secretName: {{ .Values.deployment.name }}
+            items:
+              - key: ETHERPAD_SESSION_KEY
+                path: SESSIONKEY.txt
+      {{- end }}

@@ -1,0 +1,108 @@
+cert-manager:
+  install: false
+
+configMap:
+  annotations: {}
+  data:
+    DB_CHARSET: utf8mb4
+    DB_PORT: "3306"
+    DB_TYPE: mysql
+    PORT: "9000"
+    TITLE: Etherpad
+  labels: {}
+  name: etherpad
+
+deployment:
+  annotations: {}
+  labels: {}
+  name: etherpad
+  port: "9000"
+  replicaCount: 1
+  resources:
+    requests:
+      cpu: 500m
+      memory: 1Gi
+    limits:
+      cpu: 1
+      memory: 2Gi
+
+externalSecrets:
+  annotations: {}
+  enabled: false
+  labels: {}
+  name: etherpad
+  # Values.externalSecrets.secrets are for external-secrets key, name, properties
+  # For local environments, don't enabled externalSecrets & use the configMap block
+  secrets: []
+  # - key: /{env}/etherpad/envvar
+  #   name: ADMIN_PASSWORD
+  #   property: ADMIN_PASSWORD
+  # - key: /{env}/etherpad/envvar
+  #   name: DB_HOST
+  #   property: DB_HOST
+  # - key: /{env}/etherpad/envvar
+  #   name: DB_NAME
+  #   property: DB_NAME
+  # - key: /{env}/etherpad/envvar
+  #   name: DB_PASS
+  #   property: DB_PASS
+  # - key: /{env}/etherpad/envvar
+  #   name: DB_USER
+  #   property: DB_USER
+  # - key: /{env}/etherpad/envvar
+  #   name: ETHERPAD_API_KEY
+  #   property: ETHERPAD_API_KEY
+  # - key: /{env}/etherpad/envvar
+  #   name: ETHERPAD_SESSION_KEY
+  #   property: ETHERPAD_SESSION_KEY
+
+image:
+  pullPolicy: Always
+  repository: 783633885093.dkr.ecr.us-west-2.amazonaws.com/etherpad
+  tag: v0.0.1
+
+imagePullSecrets: []
+
+ingress:
+  className: "nginx"
+  hosts:
+    - host: pad.allizom.org
+      paths:
+        - path: /
+          pathType: ImplementationSpecific
+          serviceName: oidc-gateway  # service created by oidc-gateway helm dependency
+          servicePort: 80
+  labels: {}
+  le:
+    create: false
+    issuer_create: true
+    name: stage
+    prod: https://acme-v02.api.letsencrypt.org/directory
+    stage: https://acme-staging-v02.api.letsencrypt.org/directory
+  name: etherpad
+  tls:
+    - hosts:
+        - pad.allizom.org
+      secretName: chart-pad-allizom-org
+
+job:
+  annotations: {}
+  labels: {}
+  name: etherpad-manager
+  resources:
+    requests:
+      cpu: 500m
+      memory: 1Gi
+    limits:
+      cpu: 1
+      memory: 2Gi
+  schedule: "@hourly"
+  successfulJobsHistoryLimit: 3
+
+metrics:
+  enabled: false
+
+mysql:
+  install: false
+  image:
+    tag: 5.7.33
