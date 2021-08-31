@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: oidc-gateway
+  labels:
+    {{- include "oidc-gateway.labels" . | nindent 4 }}
+spec:
+  ports:
+    - name: http
+      port: {{ .Values.service.port }}
+      protocol: TCP
+      targetPort: http
+  selector:
+    {{- include "oidc-gateway.selectorLabels" . | nindent 4 }}
+  type: {{ .Values.service.type }}

@@ -1,0 +1,8 @@
+configMap:
+  data:
+    oidc:
+      client_id: sample_client_id
+      client_secret: secret_value_if_not_using_externalSecrets
+      discovery: 'https://auth.mozilla.auth0.com/.well-known/openid-configuration'
+    session_secret: secret_value_if_not_using_externalSecrets
+    upstream: oidc-gateway
