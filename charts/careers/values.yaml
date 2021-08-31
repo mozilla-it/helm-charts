@@ -5,7 +5,7 @@ replicaCount: 1
 image:
   repository: 783633885093.dkr.ecr.us-west-2.amazonaws.com/careers
   pullPolicy: IfNotPresent
-  tag: "v2.0.0"
+  tag: "stg-91980d9b"
 
 fullnameOverride: "careers"
 

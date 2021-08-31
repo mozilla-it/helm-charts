@@ -15,5 +15,5 @@ helm upgrade --install \
   --set postgresqlPassword=defaultpassword \
   --set postgresqlUsername=careers \
   --set postgresqlDatabase=careers \
-  --set fullnameOverride=postgres \
-  postgresql bitnami/postgresql
+  --set fullnameOverride=careers-psql \
+  careers-psql bitnami/postgresql
