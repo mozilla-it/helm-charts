@@ -1,0 +1,7 @@
+apiVersion: v2
+name: careers
+description: A Helm chart for Mozilla's careers page, careers.mozilla.org
+
+type: application
+
+version: 0.0.1
