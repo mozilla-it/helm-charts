@@ -1,0 +1,16 @@
+{{- if .Values.ingress.le.issuer_create }}
+apiVersion: cert-manager.io/v1alpha2
+kind: Issuer
+metadata:
+  name: letsencrypt
+spec:
+  acme:
+    email: it-se@mozilla.com
+    server: {{ if eq .Values.ingress.le.name "prod" }}{{ .Values.ingress.le.prod }}{{ else }}{{ .Values.ingress.le.stage }}{{ end }}
+    privateKeySecretRef:
+      name: letsencrypt
+    solvers:
+      - http01:
+          ingress:
+            class: nginx
+{{- end }}
