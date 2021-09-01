@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Values.configMap.name }}
+  {{- with .Values.configMap.annotations }}
+  annotations:
+    {{- toYaml . | nindent 4 }}
+  {{- end }}
+  labels:
+    {{- include "etherpad.labels" . | nindent 4 }}
+    {{- with .Values.configMap.labels }}
+      {{- toYaml . | nindent 4 }}
+    {{- end }}
+data:
+  {{- with .Values.configMap.data }}
+    {{- toYaml . | nindent 4 }}
+  {{- end }}
