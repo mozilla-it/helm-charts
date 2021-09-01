@@ -17,6 +17,8 @@ service:
   port: 80
 
 ingress:
+  le:
+    issuer_create: false
   enabled: true
   annotations:
     kubernetes.io/ingress.class: careers-nginx
