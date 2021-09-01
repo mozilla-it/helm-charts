@@ -1,0 +1,25 @@
+---
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: {{ include "careers.fullname" . }}
+  labels:
+    {{- include "careers.labels" . | nindent 4 }}
+spec:
+  schedule: "*/15 * * * *"
+  jobTemplate:
+    spec:
+      backoffLimit: 1
+      template:
+        spec:
+          restartPolicy: Never
+          containers:
+          - name: "{{ .Chart.Name }}-periodic"
+            image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+            imagePullPolicy: IfNotPresent
+            envFrom:
+            - configMapRef:
+                name: {{ include "careers.fullname" . }}
+            - secretRef:
+                name: {{ include "careers.fullname" . }}
+            command: ["/app/scripts/sync.sh"]
