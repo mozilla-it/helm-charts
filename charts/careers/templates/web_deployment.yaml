@@ -37,18 +37,17 @@ spec:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
-          command: ["python", "manage.py", "runserver", "0.0.0.0:8000"]
           ports:
             - name: http
               containerPort: 8000
               protocol: TCP
           livenessProbe:
             httpGet:
-              path: /__lbheartbeat__
+              path: __lbheartbeat__/
               port: http
           readinessProbe:
             httpGet:
-              path: /__lbheartbeat__
+              path: __lbheartbeat__/
               port: http
           resources:
             {{- toYaml .Values.resources | nindent 12 }}

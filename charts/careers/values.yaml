@@ -21,7 +21,7 @@ ingress:
     issuer_create: false
   enabled: true
   annotations:
-    kubernetes.io/ingress.class: careers-nginx
+    kubernetes.io/ingress.class: nginx
     cert-manager.io/issuer: letsencrypt
     nginx.ingress.kubernetes.io/rewrite-target: /
     nginx.ingress.kubernetes.io/ssl-redirect: "true"
