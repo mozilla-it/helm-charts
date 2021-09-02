@@ -3,4 +3,4 @@ imagePullSecrets:
 
 image:
   repository: 783633885093.dkr.ecr.us-west-2.amazonaws.com/careers
-  tag: "stg-91980d9b"
+  tag: "stg-23f503cb"
