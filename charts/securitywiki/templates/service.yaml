@@ -1,0 +1,18 @@
+{{- if .Values.ingress.enabled }}
+apiVersion: v1
+kind: Service
+metadata:
+  name: securitywiki
+  labels:
+    {{- include "securitywiki.labels" . | nindent 4 }}
+spec:
+  externalTrafficPolicy: Cluster
+  ports:
+    - port: 80
+      name: http
+      targetPort: 80
+      protocol: TCP
+  selector:
+    {{- include "securitywiki.selectorLabels" . | nindent 4 }}
+  type: LoadBalancer
+{{- end }}
