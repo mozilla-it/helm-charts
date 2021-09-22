@@ -81,7 +81,7 @@ spec:
         {{- toYaml . | nindent 8 }}
       {{- end }}
       volumes:
-      {{- if .Values.volume.create }}
+      {{- if .Values.volume.enabled }}
         - name: securitywiki-fs
           persistentVolumeClaim:
             claimName: securitywiki-shared
