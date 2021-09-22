@@ -2,7 +2,7 @@ apiVersion: v2
 name: securitywiki
 description: A Helm chart for the Mozilla Security Wiki (mediawiki) application
 type: application
-version: 0.0.1
+version: 1.0.0
 
 keywords:
   - Mozilla
