@@ -1,0 +1,54 @@
+cert-manager:
+  install: false
+
+configMap:
+  data:
+    ENVIRONMENT: local
+    MEMCACHED_HOST: memcached
+    MEMCACHED_PORT: "11211"
+    MYSQL_HOST: securitywiki-db-headless
+    MYSQL_DATABASE: securitywiki
+    MYSQL_PASSWORD: default-non-secure-password
+    MYSQL_PORT: "3306"
+    MYSQL_USER: securitywiki
+    SITE_URL: http://localhost
+
+deployment:
+  replicaCount: 1
+  healthchecks:
+    path: /
+
+hpa:
+  enabled: false
+
+image:
+  pullPolicy: Always
+  repository: mediawiki
+  tag: 1.31.5
+
+ingress:
+  enabled: false
+  le:
+    issuer_create: false
+
+memcached:
+  fullnameOverride: memcached
+  install: true
+
+mysql:
+  fullnameOverride: securitywiki-db
+  install: true
+  auth:
+    username: securitywiki
+    database: securitywiki
+    password: default-non-secure-password
+    rootPassword: default-non-secure-root-password
+  image:
+    tag: 5.7.33
+  primary:
+    fullname: securitywiki
+    persistence:
+      enabled: false
+
+volume:
+  enabled: false

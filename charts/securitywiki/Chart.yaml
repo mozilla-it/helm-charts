@@ -1,0 +1,32 @@
+apiVersion: v2
+name: securitywiki
+description: A Helm chart for the Mozilla Security Wiki (mediawiki) application
+type: application
+version: 1.0.0
+
+keywords:
+  - Mozilla
+  - mediawiki
+  - securitywiki
+
+home: https://github.com/mozilla-it/helm-charts
+sources:
+  - https://github.com/mozilla-it/securitywiki-docker
+
+maintainers:
+  - name: Web SRE Team
+    email: it-sre@mozilla.com
+
+dependencies:
+- name: cert-manager
+  version: v1.4.0
+  condition: cert-manager.install
+  repository: https://charts.jetstack.io
+- name: memcached
+  version: 5.14.2
+  condition: memcached.install
+  repository: https://charts.bitnami.com/bitnami
+- name: mysql
+  version: 8.7.1
+  condition: mysql.install
+  repository: https://charts.bitnami.com/bitnami

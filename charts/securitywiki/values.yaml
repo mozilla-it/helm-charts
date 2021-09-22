@@ -1,0 +1,114 @@
+cert-manager:
+  install: false
+
+configMap:
+  annotations: {}
+  data:
+    ENVIRONMENT: stage
+    SITE_URL: https://securitywiki.allizom.org
+  labels: {}
+  name: securitywiki
+
+deployment:
+  annotations: {}
+  healthchecks:
+    path: /health.php
+  labels: {}
+  name: securitywiki
+  replicaCount: 2
+  resources:
+    requests:
+      cpu: 256m
+      memory: 256Mi
+    limits:
+      cpu: 512m
+      memory: 512Mi
+
+externalSecrets:
+  annotations: {}
+  enabled: false
+  labels: {}
+  name: securitywiki
+  # Values.externalSecrets.secrets are for external-secrets key, name, properties
+  # For local environments, don't enabled externalSecrets & use the configMap block
+  secrets: []
+  # - key: /{env}/securitywiki/envvar
+  #   name: MEMCACHED_HOST
+  #   property: MEMCACHED_HOST
+  # - key: /{env}/securitywiki/envvar
+  #   name: MEMCACHED_PORT
+  #   property: MEMCACHED_PORT
+  # - key: /{env}/securitywiki/envvar
+  #   name: MYSQL_DATABASE
+  #   property: MYSQL_DATABASE
+  # - key: /{env}/securitywiki/envvar
+  #   name: MYSQL_HOST
+  #   property: MYSQL_HOST
+  # - key: /{env}/securitywiki/envvar
+  #   name: MYSQL_PASSWORD
+  #   property: MYSQL_PASSWORD
+  # - key: /{env}/securitywiki/envvar
+  #   name: MYSQL_USER
+  #   property: MYSQL_USER
+  # - key: /{env}/securitywiki/envvar
+  #   name: OIDC_CLIENT_ID
+  #   property: OIDC_CLIENT_ID
+  # - key: /{env}/securitywiki/envvar
+  #   name: OIDC_CLIENT_SECRET
+  #   property: OIDC_CLIENT_SECRET
+  # - key: /{env}/securitywiki/envvar
+  #   name: OIDC_CRYPTO_PASSPHRASE
+  #   property: OIDC_CRYPTO_PASSPHRASE
+
+hpa:
+  enabled: true
+  maxReplicas: 4
+  minReplicas: 2
+
+image:
+  pullPolicy: Always
+  repository: 783633885093.dkr.ecr.us-west-2.amazonaws.com/securitywiki
+  tag: master-cccd24f1c4e62fef09ff2d0625f29ee91277a270
+
+imagePullSecrets: []
+
+ingress:
+  className: "nginx"
+  enabled: true
+  hosts:
+    - host: securitywiki.allizom.com
+      paths:
+        - path: /
+          pathType: ImplementationSpecific
+          serviceName: securitywiki
+          servicePort: 80
+  labels: {}
+  le:
+    create: false
+    issuer_create: true
+    name: stage
+    prod: https://acme-v02.api.letsencrypt.org/directory
+    stage: https://acme-staging-v02.api.letsencrypt.org/directory
+  name: securitywiki
+  tls:
+    - hosts:
+        - securitywiki.allizom.com
+      secretName: chart-securitywiki-allizom-org
+
+memcached:
+  install: false
+
+mysql:
+  image:
+    tag: 5.7.33
+  install: false
+
+volume:
+  accessModes: ReadWriteMany
+  annotations: {}
+  capacityStorage: 100Gi
+  create: true
+  name: securitywiki-stage
+  nfsServer: "fs-d763987d.efs.us-west-2.amazonaws.com"
+  storageClassName: efs
+  storageRequest: 20Gi

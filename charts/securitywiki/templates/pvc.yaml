@@ -1,0 +1,23 @@
+{{- if .Values.volume.enabled }}
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: securitywiki-shared
+  {{- with .Values.volume.annotations }}
+  annotations:
+    {{- toYaml . | nindent 4 }}
+  {{- end }}
+  labels:
+    {{- include "securitywiki.labels" . | nindent 4 }}
+    {{- with .Values.volume.labels }}
+      {{- toYaml . | nindent 4 }}
+    {{- end }}
+spec:
+  accessModes:
+    - {{ .Values.volume.accessModes }}
+  resources:
+    requests:
+      storage: {{ .Values.volume.storageRequest }}
+  volumeName: {{ .Values.volume.name }}
+  storageClassName: {{ .Values.volume.storageClassName }}
+{{- end }}
