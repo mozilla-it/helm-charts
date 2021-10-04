@@ -123,6 +123,12 @@ spec:
       volumes:
       - name: logs
         emptyDir: {}
+      {{- if .Values.externalSecrets.enabled }}
+      - name: remote-logger
+        secret:
+          secretName: logger-config
+      {{- else }}
       - name: remote-logger
         configMap:
           name: logger-config
+      {{- end }}

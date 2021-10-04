@@ -17,21 +17,3 @@ data:
   {{- range $k, $v := .Values.configMap.data }}
   {{ $k | quote }}: {{ $v | quote }}
   {{- end }}
-
----
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: logger-config
-  {{- with .Values.configMap.annotations }}
-  annotations:
-    {{- toYaml . | nindent 4 }}
-  {{- end }}
-data:
-  log_files.yml: |
-    files:
-      - /logs/rails/*.log
-    destination:
-      host: logs.papertrailapp.com
-      port: 45075
-      protocol: tls
