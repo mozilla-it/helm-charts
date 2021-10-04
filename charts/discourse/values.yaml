@@ -55,6 +55,19 @@ externalSecrets:
   annotations: {}
   enabled: false
   labels: {}
+  loggerSecretKey: ""
+  # /{env}/discourse/logger
+  # AWS Secret Manager value (JSON object is 1 AWS SSM value) looks like:
+  # {
+  #   "files": [
+  #     "/logs/rails/*.log"
+  #   ],
+  #   "destination": {
+  #     "host": "logs.papertrailapp.com",
+  #     "port": 123456,
+  #     "protocol": "tls"
+  #   }
+  # }
   name: discourse
   # Values.externalSecrets.secrets are for external-secrets key, name, properties
   # For local environments, don't enabled externalSecrets & use the configMap block
