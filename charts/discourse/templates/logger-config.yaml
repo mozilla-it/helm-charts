@@ -17,8 +17,8 @@ metadata:
 spec:
   backendType: secretsManager
   data:
-  - key: loggerSecret
-    name: {{ .Values.externalSecrets.loggerSecretKey }}
+  - key: {{ .Values.externalSecrets.loggerSecretKey }}
+    name: loggerSecret
   template:
     metadata:
       {{- with .Values.externalSecrets.annotations }}
