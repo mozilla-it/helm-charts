@@ -13,6 +13,9 @@ metadata:
     nginx.ingress.kubernetes.io/configuration-snippet: |
       more_set_headers "X-Frame-Options: SAMEORIGIN";
       more_set_headers "Content-Security-Policy: frame-ancestors 'none'";
+    {{- with .Values.ingress.annotations }}
+      {{- toYaml . | nindent 4 }}
+    {{- end }}    
   labels:
     {{- include "discourse.labels" . | nindent 4 }}
     {{- with .Values.ingress.labels }}
