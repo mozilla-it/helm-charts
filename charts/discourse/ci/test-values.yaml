@@ -31,6 +31,11 @@ imagePullSecrets:
   - name: ecr-registry
 
 ingress:
+  annotations:
+    nginx.ingress.kubernetes.io/server-snippet: |
+          location /webhooks/aws {
+            deny all;
+          }
   le:
     name: stage
     issuer_create: false
