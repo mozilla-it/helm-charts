@@ -1,0 +1,112 @@
+name: Lint & Test Charts
+
+on: [ push, pull_request ]
+
+jobs:
+  lint-test:
+    env:
+      NAMESPACE: "chart-ci-e2e"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Set up Helm
+        uses: azure/setup-helm@v1
+        with:
+          version: v3.4.0
+
+      # helm/chart-testing-action requires python version 3.7
+      # see: https://github.com/helm/chart-testing-action/issues/65
+      - uses: actions/setup-python@v2
+        with:
+          python-version: 3.7
+
+      - name: Set up chart-testing
+        uses: helm/chart-testing-action@b0d4458c71155b54fcf33e11dd465dc923550009
+
+      - name: Run chart-testing (list-changed)
+        id: list-changed
+        run: |
+          changed=$(ct list-changed --config .github/ct.yaml)
+          if [[ -n "$changed" ]]; then
+            echo "::set-output name=changed::true"
+          fi
+      - name: Run chart-testing (lint)
+        run: ct lint --config .github/ct.yaml
+
+      - name: Create kind cluster
+        uses: helm/kind-action@v1.2.0
+        if: steps.list-changed.outputs.changed == 'true'
+
+      - name: Install Dependencies
+        if: steps.list-changed.outputs.changed == 'true'
+        run: |
+          set -e
+
+          helm repo add bitnami https://charts.bitnami.com/bitnami
+          helm repo update
+
+          #### CAREERS POSTGRES ####
+          helm upgrade --install \
+            --version 10.4.2 \
+            --namespace ${{ env.NAMESPACE }} \
+            --set postgresqlPassword=defaultpassword \
+            --set postgresqlUsername=careers \
+            --set postgresqlDatabase=careers \
+            --set fullnameOverride=careers-psql \
+            careers-psql bitnami/postgresql
+          
+          #### CTMS POSTGRES ####
+          helm upgrade --install \
+            --version 10.4.2 \
+            --namespace ${{ env.NAMESPACE }} \
+            --set postgresqlPassword=defaultpassword \
+            --set postgresqlUsername=ctms \
+            --set postgresqlDatabase=ctms \
+            --set fullnameOverride=postgres \
+            postgresql bitnami/postgresql
+
+          #### DISCOURSE MYSQL, REDIS ####
+          helm upgrade --install \
+            --version 10.8.0 \
+            --namespace ${{ env.NAMESPACE }} \
+            --set fullnameOverride=discourse-psql \
+            --set persistence.enabled=false \
+            --set postgresqlDatabase=discourse \
+            --set postgresqlPassword=discourse-psql-password \
+            --set postgresqlUsername=postgres \
+            postgresql-discourse bitnami/postgresql
+          helm upgrade --install \
+            --version 14.8.6 \
+            --namespace ${{ env.NAMESPACE }} \
+            --set auth.enabled=true \
+            --set auth.password=discourse-redis-password \
+            --set fullnameOverride=discourse-redis \
+            --set persistence.enabled=false \
+            redis-discourse bitnami/redis
+
+      - name: Install ECR Secret
+        if: steps.list-changed.outputs.changed == 'true'
+        run: |
+          # Gets a valid token to pull from ECR and creates a secret with it
+          ACCOUNT=$(aws sts get-caller-identity --output text --query Account)
+          REGION=us-west-2
+          SECRET_NAME=ecr-registry
+          EMAIL=itse@mozilla.com
+
+          # Fetch token (which will expire in 12 hours)
+          TOKEN=$(aws ecr --region=$REGION get-authorization-token --output text --query authorizationData[].authorizationToken | base64 -d | cut -d: -f2)
+
+          # Create or replace secret
+          kubectl delete secret -n $NAMESPACE --ignore-not-found "$SECRET_NAME"
+          kubectl create secret -n $NAMESPACE docker-registry "$SECRET_NAME" \
+          --docker-server="https://${ACCOUNT}.dkr.ecr.${REGION}.amazonaws.com" \
+          --docker-username=AWS \
+          --docker-password="${TOKEN}" \
+          --docker-email="${EMAIL}"
+           
+      - name: Run chart-testing (install)
+        run: ct install --config .github/ct.yaml
