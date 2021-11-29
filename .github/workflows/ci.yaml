@@ -93,6 +93,11 @@ jobs:
             --set persistence.enabled=false \
             redis-discourse bitnami/redis
 
+          #### PROMETHEUS-CUSTOMIZATIONS CONFIGMAPSECRETS ####
+          helm upgrade --install \
+          --namespace ${{ env.NAMESPACE }} \
+          configmapsecrets charts/configmapsecrets
+
       - name: Configure AWS credentials
         if: steps.list-changed.outputs.changed == 'true'
         uses: aws-actions/configure-aws-credentials@v1

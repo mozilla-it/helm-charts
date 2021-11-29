@@ -1,6 +1,6 @@
 prom:
   clustername: prom
-
+  recording_rules: {}
 
 # Should we send the data to influxdb, our saas for monitoring?
 influxdb:
