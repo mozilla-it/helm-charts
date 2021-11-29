@@ -6,6 +6,9 @@ jobs:
   lint-test:
     env:
       NAMESPACE: "chart-ci-e2e"
+    permissions:
+      id-token: write
+      contents: read
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -45,6 +48,8 @@ jobs:
         if: steps.list-changed.outputs.changed == 'true'
         run: |
           set -e
+
+          kubectl create ns ${{ env.NAMESPACE }}
 
           helm repo add bitnami https://charts.bitnami.com/bitnami
           helm repo update
@@ -88,25 +93,31 @@ jobs:
             --set persistence.enabled=false \
             redis-discourse bitnami/redis
 
+      - name: Configure AWS credentials
+        if: steps.list-changed.outputs.changed == 'true'
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          role-to-assume: arn:aws:iam::783633885093:role/ecr-readonly-iam
+          aws-region: us-west-2
+
       - name: Install ECR Secret
         if: steps.list-changed.outputs.changed == 'true'
         run: |
           # Gets a valid token to pull from ECR and creates a secret with it
-          ACCOUNT=$(aws sts get-caller-identity --output text --query Account)
           REGION=us-west-2
           SECRET_NAME=ecr-registry
           EMAIL=itse@mozilla.com
 
           # Fetch token (which will expire in 12 hours)
-          TOKEN=$(aws ecr --region=$REGION get-authorization-token --output text --query authorizationData[].authorizationToken | base64 -d | cut -d: -f2)
+          TOKEN=$(aws ecr --region=${REGION} get-authorization-token --output text --query authorizationData[].authorizationToken | base64 -d | cut -d: -f2)
 
           # Create or replace secret
-          kubectl delete secret -n $NAMESPACE --ignore-not-found "$SECRET_NAME"
-          kubectl create secret -n $NAMESPACE docker-registry "$SECRET_NAME" \
-          --docker-server="https://${ACCOUNT}.dkr.ecr.${REGION}.amazonaws.com" \
+          kubectl delete secret -n ${{ env.NAMESPACE }} --ignore-not-found "$SECRET_NAME"
+          kubectl create secret -n ${{ env.NAMESPACE }} docker-registry "$SECRET_NAME" \
+          --docker-server="https://783633885093.dkr.ecr.${REGION}.amazonaws.com" \
           --docker-username=AWS \
           --docker-password="${TOKEN}" \
           --docker-email="${EMAIL}"
            
       - name: Run chart-testing (install)
-        run: ct install --config .github/ct.yaml
+        run: ct install --config .github/ct.yaml --namespace=${{ env.NAMESPACE }}

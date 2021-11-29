@@ -11,6 +11,15 @@ configMap:
     ETHERPAD_API_KEY: dumberetherpadapikey
     ETHERPAD_SESSION_KEY: dumbetherpadsecretkey
 
+deployment:
+  resources:
+    requests:
+      cpu: 250m
+      memory: 1Gi
+    limits:
+      cpu: 1
+      memory: 2Gi
+
 image:
   tag: stg-9922b5f
 
