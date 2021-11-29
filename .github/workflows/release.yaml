@@ -1,0 +1,40 @@
+name: Release Charts
+
+on: 
+  push:
+    branches:
+      - main
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Configure Git
+        run: |
+          git config user.name "itse-automation"
+          git config user.email "itse-automation@users.noreply.github.com"
+
+      - name: Install Helm
+        uses: azure/setup-helm@v1
+        with:
+          version: v3.4.0
+
+      # https://github.com/helm/chart-releaser/issues/114
+      - name: Add Helm Repos for Dependencies
+        run: |
+          helm repo add elastic https://helm.elastic.co
+          helm repo add jetstack https://charts.jetstack.io
+          helm repo add bitnami https://charts.bitnami.com/bitnami
+
+      - name: Run chart-releaser
+        uses: helm/chart-releaser-action@v1.2.1
+        with:
+          charts_dir: charts
+          charts_repo_url: https://mozilla-it.github.io/helm-charts/
+        env:
+          CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"

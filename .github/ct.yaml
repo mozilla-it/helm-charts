@@ -2,7 +2,7 @@ remote: origin
 helm-extra-args: --timeout 600s
 check-version-increment: true
 validate-yaml: true
-validate-chart-schema: false
+validate-chart-schema: true
 validate-maintainers: false
 target-branch: main
 
