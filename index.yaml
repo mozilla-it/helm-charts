@@ -374,6 +374,34 @@ entries:
     version: 0.0.1
   etherpad:
   - apiVersion: v2
+    created: "2021-11-29T22:57:42.312053231Z"
+    dependencies:
+    - condition: cert-manager.install
+      name: cert-manager
+      repository: https://charts.jetstack.io
+      version: v1.4.0
+    - condition: mysql.install
+      name: mysql
+      repository: https://charts.bitnami.com/bitnami
+      version: 8.7.1
+    description: A Helm chart for the Mozilla Etherpad application
+    digest: df83535307d73ae7d156c0b212e6372e60855a169ab0652f98f9920fc51258db
+    home: https://github.com/mozilla-it/etherpad-docker
+    keywords:
+    - Mozilla
+    - etherpad
+    - pad
+    maintainers:
+    - email: it-sre@mozilla.com
+      name: Web SRE Team
+    name: etherpad
+    sources:
+    - https://github.com/mozilla-it/etherpad-docker
+    type: application
+    urls:
+    - https://github.com/mozilla-it/helm-charts/releases/download/etherpad-1.0.1/etherpad-1.0.1.tgz
+    version: 1.0.1
+  - apiVersion: v2
     created: "2021-10-22T21:33:36.252223224Z"
     dependencies:
     - condition: cert-manager.install
@@ -4406,4 +4434,4 @@ entries:
     urls:
     - https://mozilla-it.github.io/helm-charts/sentence-collector-0.1.0.tgz
     version: 0.1.0
-generated: "2021-10-22T21:33:36.185464787Z"
+generated: "2021-11-29T22:57:43.871915988Z"
