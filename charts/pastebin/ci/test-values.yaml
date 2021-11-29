@@ -21,7 +21,7 @@ imagePullSecrets:
 ingress:
   className: nginx
   hosts:
-    - host: paste.allizom.com
+    - host: paste.allizom.org
       paths:
         - path: /
           pathType: ImplementationSpecific
@@ -34,7 +34,7 @@ ingress:
   name: pastebin
   tls:
     - hosts:
-        - paste.allizom.com
+        - paste.allizom.org
       secretName: chart-paste-allizom-org
 
 mysql:

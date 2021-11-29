@@ -76,7 +76,7 @@ ingress:
   className: "nginx"
   enabled: true
   hosts:
-    - host: securitywiki.allizom.com
+    - host: securitywiki.allizom.org
       paths:
         - path: /
           pathType: ImplementationSpecific
@@ -92,7 +92,7 @@ ingress:
   name: securitywiki
   tls:
     - hosts:
-        - securitywiki.allizom.com
+        - securitywiki.allizom.org
       secretName: chart-securitywiki-allizom-org
 
 memcached:
