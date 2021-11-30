@@ -1,0 +1,15 @@
+configMap:
+  data:
+    RUNNER_TOKEN: test
+
+deployment:
+  command:
+    - "bash"
+    - "-c"
+  args:
+    - "sleep 60"
+  readinessCheck: false
+
+image:
+  repository: quay.io/redhat-github-actions/runner
+  tag: latest
