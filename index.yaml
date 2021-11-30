@@ -566,6 +566,17 @@ entries:
     urls:
     - https://mozilla-it.github.io/helm-charts/fluentd-papertrail-0.1.0.tgz
     version: 0.1.0
+  github-actions-runner:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2021-11-30T22:17:04.421734983Z"
+    description: A Helm chart for Kubernetes
+    digest: 47a7cbdbb55ba01ee2e4db3e3031b75ec59b7a155f85893d80914c2d6892dbd3
+    name: github-actions-runner
+    type: application
+    urls:
+    - https://github.com/mozilla-it/helm-charts/releases/download/github-actions-runner-0.1.0/github-actions-runner-0.1.0.tgz
+    version: 0.1.0
   mentoring:
   - apiVersion: v2
     created: "2021-10-22T21:33:36.275104331Z"
@@ -4444,4 +4455,4 @@ entries:
     urls:
     - https://mozilla-it.github.io/helm-charts/sentence-collector-0.1.0.tgz
     version: 0.1.0
-generated: "2021-11-30T15:48:38.795202539Z"
+generated: "2021-11-30T22:17:04.422937499Z"
