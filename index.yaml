@@ -3079,6 +3079,34 @@ entries:
     version: 1.0.0
   pastebin:
   - apiVersion: v2
+    created: "2021-11-30T23:06:50.209372779Z"
+    dependencies:
+    - condition: cert-manager.install
+      name: cert-manager
+      repository: https://charts.jetstack.io
+      version: v1.4.0
+    - condition: mysql.install
+      name: mysql
+      repository: https://charts.bitnami.com/bitnami
+      version: 8.7.1
+    description: A Helm chart for the Mozilla Pastebin (dpaste) application
+    digest: b566215c02f2286e715c7a3eddd0d739c61bede316c8b24ab4a7c814f77e5779
+    home: https://github.com/mozilla-it/pastebin
+    keywords:
+    - Mozilla
+    - dpaste
+    - pastebin
+    maintainers:
+    - email: it-sre@mozilla.com
+      name: Web SRE Team
+    name: pastebin
+    sources:
+    - https://github.com/mozilla-it/pastebin
+    type: application
+    urls:
+    - https://github.com/mozilla-it/helm-charts/releases/download/pastebin-0.1.3/pastebin-0.1.3.tgz
+    version: 0.1.3
+  - apiVersion: v2
     created: "2021-10-22T21:33:36.74841316Z"
     dependencies:
     - condition: cert-manager.install
@@ -4348,6 +4376,38 @@ entries:
     version: 0.1.1
   securitywiki:
   - apiVersion: v2
+    created: "2021-11-30T23:06:50.406968084Z"
+    dependencies:
+    - condition: cert-manager.install
+      name: cert-manager
+      repository: https://charts.jetstack.io
+      version: v1.4.0
+    - condition: memcached.install
+      name: memcached
+      repository: https://charts.bitnami.com/bitnami
+      version: 5.14.2
+    - condition: mysql.install
+      name: mysql
+      repository: https://charts.bitnami.com/bitnami
+      version: 8.7.1
+    description: A Helm chart for the Mozilla Security Wiki (mediawiki) application
+    digest: 412328da26ba01047a96cf843c705c06239341fca05660560a19760e9287a143
+    home: https://github.com/mozilla-it/helm-charts
+    keywords:
+    - Mozilla
+    - mediawiki
+    - securitywiki
+    maintainers:
+    - email: it-sre@mozilla.com
+      name: Web SRE Team
+    name: securitywiki
+    sources:
+    - https://github.com/mozilla-it/securitywiki-docker
+    type: application
+    urls:
+    - https://github.com/mozilla-it/helm-charts/releases/download/securitywiki-1.0.1/securitywiki-1.0.1.tgz
+    version: 1.0.1
+  - apiVersion: v2
     created: "2021-10-22T21:33:36.917879524Z"
     dependencies:
     - condition: cert-manager.install
@@ -4455,4 +4515,4 @@ entries:
     urls:
     - https://mozilla-it.github.io/helm-charts/sentence-collector-0.1.0.tgz
     version: 0.1.0
-generated: "2021-11-30T22:17:04.422937499Z"
+generated: "2021-11-30T23:06:50.410091679Z"
