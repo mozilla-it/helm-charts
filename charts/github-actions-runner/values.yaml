@@ -1,0 +1,50 @@
+# Default values for github-actions-runner.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+configMap:
+  annotations: {}
+  data:
+    EPHEMERAL: true
+    GITHUB_DOMAIN: ""
+    GITHUB_OWNER: mozilla
+    GITHUB_REPOSITORY: ""
+    RUNNER_GROUP: ""
+    RUNNER_LABELS: ubuntu,default
+  labels: {}
+
+deployment:
+  annotations: {}
+  args: []
+  command: []
+  labels: {}
+  name: gha-runner
+  readinessCheck: true
+  replicaCount: 1
+  resources: {}
+    # limits:
+    #   cpu: 100m
+    #   memory: 128Mi
+    # requests:
+    #   cpu: 100m
+    #   memory: 128Mi
+  serviceAccount:
+    name: default
+
+image:
+  pullPolicy: IfNotPresent
+  repository: us-west1-docker.pkg.dev/moz-fx-platform-mgmt-global/gha-runners/default
+  tag: v0.0.1
+
+imagePullSecrets: []
+
+pod:
+  annotations: {}
+
+secrets:
+  enabled: false
+  # GITHUB_APP_ID: githubappid
+  # GITHUB_APP_INSTALL_ID: installID
+  # GITHUB_APP_PEM: PEM
+  # GITHUB_PAT: PAT
+  # RUNNER_TOKEN: token

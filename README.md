@@ -1,6 +1,6 @@
 # helm-charts
 
-[![Build Status](https://travis-ci.com/mozilla-it/helm-charts.svg?branch=main)](https://travis-ci.com/mozilla-it/helm-charts)
+[![Lint & Test Charts](https://github.com/mozilla-it/helm-charts/actions/workflows/ci.yaml/badge.svg)](https://github.com/mozilla-it/helm-charts/actions/workflows/ci.yaml)
 
 This repository contains a collection of Helm charts curated by Mozilla's Service Engineering team
 

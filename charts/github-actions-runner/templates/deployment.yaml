@@ -1,0 +1,67 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.deployment.name }}
+  {{- with .Values.deployment.annotations }}
+  annotations:
+    {{- toYaml . | nindent 4 }}
+  {{- end }}
+  labels:
+    {{- include "github-actions-runner.labels" . | nindent 4 }}
+    {{- with .Values.deployment.labels }}
+      {{- toYaml . | nindent 4 }}
+    {{- end }}
+spec:
+  replicas: {{ .Values.deployment.replicaCount }}
+  selector:
+    matchLabels:
+      {{- include "github-actions-runner.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      {{- with .Values.pod.annotations }}
+      annotations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      labels:
+        {{- include "github-actions-runner.selectorLabels" . | nindent 8 }}
+    spec:
+      containers:
+        - name: {{ .Values.deployment.name }}
+          {{- with .Values.deployment.args }}
+          args:
+            {{- toYaml . | nindent 12 }}
+          {{- end }}
+          {{- with .Values.deployment.command }}
+          command:
+            {{- toYaml . | nindent 12 }}
+          {{- end }}        
+          envFrom:
+            - configMapRef:
+                name: {{ .Values.deployment.name }}
+          {{- if .Values.secrets.enabled }}
+            - secretRef:
+                name: {{ .Values.deployment.name }}
+          {{- end }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          {{- if .Values.deployment.readinessProbe }}
+          readinessProbe:
+            initialDelaySeconds: 5
+            periodSeconds: 5
+            failureThreshold: 1
+            exec:
+              command:
+                - pgrep
+                - Runner.Listener
+          {{- end }}
+          {{- with .Values.deployment.resources }}
+          resources:
+            {{- toYaml . | nindent 12 }}
+          {{- end }}
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      serviceAccountName: {{ .Values.deployment.serviceAccount.name }}
+      securityContext:
+        runAsNonRoot: true
