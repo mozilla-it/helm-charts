@@ -28,6 +28,8 @@ deployment:
     # requests:
     #   cpu: 100m
     #   memory: 128Mi
+  securityContext:
+    runAsNonRoot: true
   serviceAccount:
     name: default
 
