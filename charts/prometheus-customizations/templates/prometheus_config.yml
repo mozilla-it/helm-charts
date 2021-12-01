@@ -45,15 +45,6 @@ spec:
         - /etc/config/alerting_rules.yml
         - /etc/config/rules
         - /etc/config/alerts
-        {{- if .Values.prom.recording_rules }}
-        groups:
-        - name: recording_rules
-          rules:
-          {{- range $k, $v := .Values.prom.recording_rules }}
-          - record: {{ $k }}
-            expr: {{ $v }}
-          {{- end }}
-        {{- end }}
         scrape_configs:
         - job_name: prometheus
           static_configs:
