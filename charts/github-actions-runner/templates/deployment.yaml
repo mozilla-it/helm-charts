@@ -63,5 +63,7 @@ spec:
         {{- toYaml . | nindent 8 }}
       {{- end }}
       serviceAccountName: {{ .Values.deployment.serviceAccount.name }}
+      {{- with .Values.deployment.securityContext }}
       securityContext:
-        runAsNonRoot: true
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
