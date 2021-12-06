@@ -40,6 +40,15 @@ entries:
     version: 0.0.1
   ctms:
   - apiVersion: v2
+    created: "2021-12-06T23:46:29.052914123Z"
+    description: A Helm chart for Mozilla's CTMS-API app
+    digest: bf8019e4ade9d57cffc56d4923e677227fda64124e0ffb5fb093c726ebc62dcf
+    name: ctms
+    type: application
+    urls:
+    - https://github.com/mozilla-it/helm-charts/releases/download/ctms-0.0.17/ctms-0.0.17.tgz
+    version: 0.0.17
+  - apiVersion: v2
     created: "2021-10-22T21:33:36.192128652Z"
     description: A Helm chart for Mozilla's CTMS-API app
     digest: 4fef0545a1ce886b2898b60d417e986a89ceb7c48c37ced68072dcecb2b6127a
@@ -4535,4 +4544,4 @@ entries:
     urls:
     - https://mozilla-it.github.io/helm-charts/sentence-collector-0.1.0.tgz
     version: 0.1.0
-generated: "2021-12-01T16:04:24.167247978Z"
+generated: "2021-12-06T23:46:29.055314328Z"
