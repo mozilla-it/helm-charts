@@ -36,6 +36,13 @@ spec:
           command: ["python"]
           args:
             - "ctms/bin/acoustic_sync.py"
+          livenessProbe:
+            exec:
+              command:
+              - python3
+              - /app/ctms/bin/healthcheck_sync.py
+            initialDelaySeconds: 60
+            periodSeconds: 30
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
