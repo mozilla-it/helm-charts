@@ -2,7 +2,7 @@ mozmoderator
 ============
 A Helm Chart for Mozilla's Moderator application
 
-Current chart version is `0.2.0`
+Current chart version is `0.2.3`
 
 
 
@@ -10,8 +10,8 @@ Current chart version is `0.2.0`
 
 | Repository | Name | Version |
 |------------|------|---------|
-| https://charts.jetstack.io | cert-manager | v1.4.0 |
-| https://charts.bitnami.com/bitnami | mysql | 8.7.1 |
+| https://charts.jetstack.io | cert-manager | 1.4.4 |
+| https://charts.bitnami.com/bitnami | mysql | 9.2.0 |
 
 ## Chart Values
 
