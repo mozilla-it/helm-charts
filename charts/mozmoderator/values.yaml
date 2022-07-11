@@ -103,3 +103,10 @@ mysql:
   install: false
   image:
     tag: 5.7.33
+
+podDisruptionBudget:
+  enabled: true
+  name: moderator
+  labels: {}
+  minAvailable: 1
+  # maxUnavailable: 1
