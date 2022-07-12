@@ -52,7 +52,7 @@ externalSecrets:
 image:
   pullPolicy: Always
   repository: 783633885093.dkr.ecr.us-west-2.amazonaws.com/pastebin
-  tag: v3.5.4
+  tag: v3.5.8
 
 imagePullSecrets: []
 
@@ -99,3 +99,9 @@ mysql:
   install: false
   image:
     tag: 5.7.33
+
+podDisruptionBudget:
+  enabled: true
+  name: pastebin
+  labels: {}
+  minAvailable: 1
