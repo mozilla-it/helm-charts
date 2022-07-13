@@ -39,3 +39,24 @@ ingress:
   le:
     name: stage
     issuer_create: false
+
+postgresql:
+  install: true
+  fullnameOverride: discourse-psql
+  auth:
+    username: postgres
+    database: discourse
+    password: discourse-psql-password
+  primary:
+    persistence:
+      enabled: false
+
+redis:
+  install: true
+  fullnameOverride: discourse-redis
+  auth:
+    enabled: true
+    password: discourse-redis-password
+  master:
+    persistence:
+      enabled: false

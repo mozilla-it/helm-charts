@@ -188,6 +188,12 @@ metrics:
   enabled: false
   resources: {}
 
+postgresql:
+  install: false
+
+redis:
+  install: false
+
 podDisruptionBudget:
   enabled: true
   name: discourse
