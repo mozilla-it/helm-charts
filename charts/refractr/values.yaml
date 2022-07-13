@@ -145,3 +145,9 @@ metrics:
     ##
     # selector:
     #   prometheus: my-prometheus
+
+podDisruptionBudget:
+  enabled: true
+  name: refractr
+  labels: {}
+  minAvailable: 1
