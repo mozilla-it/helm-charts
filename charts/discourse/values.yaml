@@ -108,7 +108,7 @@ externalSecrets:
 
 image:
   repository: 783633885093.dkr.ecr.us-west-2.amazonaws.com/discourse
-  tag: dev-f58ded6-1605645320
+  tag: prod-v1.0.0
 
 imagePullSecrets: []
 

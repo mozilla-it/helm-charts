@@ -6,7 +6,7 @@ configMap:
     DISCOURSE_AKISMET_API_KEY: ""
     DISCOURSE_AUTH0_CLIENT_ID: ""
     DISCOURSE_AUTH0_CLIENT_SECRET: ""
-    DISCOURSE_DB_HOST: "discourse-psql-headless"
+    DISCOURSE_DB_HOST: "discourse-psqls-hl"
     DISCOURSE_DB_NAME: "discourse"
     DISCOURSE_DB_PASSWORD: "discourse-psql-password"
     DISCOURSE_DB_USERNAME: "postgres"
@@ -47,6 +47,7 @@ postgresql:
     username: postgres
     database: discourse
     password: discourse-psql-password
+    postgresPassword: discourse-psql-password
   primary:
     persistence:
       enabled: false
