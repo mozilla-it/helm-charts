@@ -3335,6 +3335,30 @@ entries:
     version: 0.0.1
   refractr:
   - apiVersion: v2
+    created: "2022-07-13T15:30:07.940601037Z"
+    dependencies:
+    - condition: cert-manager.install
+      name: cert-manager
+      repository: https://charts.jetstack.io
+      version: 0.15.2
+    description: A Helm chart for the refractr redirect application
+    digest: 966c8165212718432e519136a237cd6d0ada51491e4e3581bcbf6eb30c39d862
+    home: https://github.com/mozilla-it/refractr
+    keywords:
+    - Mozilla
+    - refractr
+    - redirects
+    maintainers:
+    - email: it-sre@mozilla.com
+      name: Web SRE Team
+    name: refractr
+    sources:
+    - https://github.com/mozilla-it/refractr
+    type: application
+    urls:
+    - https://github.com/mozilla-it/helm-charts/releases/download/refractr-1.1.1/refractr-1.1.1.tgz
+    version: 1.1.1
+  - apiVersion: v2
     created: "2021-10-22T21:33:36.904238341Z"
     dependencies:
     - condition: cert-manager.install
@@ -4627,4 +4651,4 @@ entries:
     urls:
     - https://mozilla-it.github.io/helm-charts/sentence-collector-0.1.0.tgz
     version: 0.1.0
-generated: "2022-07-13T15:19:28.293348772Z"
+generated: "2022-07-13T15:30:07.941749764Z"
