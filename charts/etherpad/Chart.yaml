@@ -19,7 +19,7 @@ maintainers:
 
 dependencies:
 - name: cert-manager
-  version: 1.4.4
+  version: 1.8.2
   condition: cert-manager.install
   repository: https://charts.jetstack.io
 - name: mysql
