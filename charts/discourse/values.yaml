@@ -187,3 +187,9 @@ ingress:
 metrics:
   enabled: false
   resources: {}
+
+podDisruptionBudget:
+  enabled: true
+  name: discourse
+  labels: {}
+  minAvailable: 1
