@@ -18,3 +18,11 @@ dependencies:
   version: 1.4.4
   condition: cert-manager.install
   repository: https://charts.jetstack.io
+- name: postgresql
+  version: 11.6.16
+  condition: postgresql.install
+  repository: https://charts.bitnami.com/bitnami
+- name: redis
+  version: 16.13.2
+  condition: redis.install
+  repository: https://charts.bitnami.com/bitnami

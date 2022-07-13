@@ -91,47 +91,47 @@ jobs:
 
           kubectl create ns ${{ env.NAMESPACE }}
 
-          helm repo add bitnami https://charts.bitnami.com/bitnami
-          helm repo update
+          #helm repo add bitnami https://charts.bitnami.com/bitnami
+          #helm repo update
 
           #### CAREERS POSTGRES ####
-          helm upgrade --install \
-            --version 11.6.15 \
-            --namespace ${{ env.NAMESPACE }} \
-            --set postgresqlPassword=defaultpassword \
-            --set postgresqlUsername=careers \
-            --set postgresqlDatabase=careers \
-            --set fullnameOverride=careers-psql \
-            careers-psql bitnami/postgresql
+          #helm upgrade --install \
+          #  --version 11.6.15 \
+          #  --namespace ${{ env.NAMESPACE }} \
+          #  --set postgresqlPassword=defaultpassword \
+          #  --set postgresqlUsername=careers \
+          #  --set postgresqlDatabase=careers \
+          #  --set fullnameOverride=careers-psql \
+          #  careers-psql bitnami/postgresql
 
           #### CTMS POSTGRES ####
-          helm upgrade --install \
-            --version 11.6.15 \
-            --namespace ${{ env.NAMESPACE }} \
-            --set postgresqlPassword=defaultpassword \
-            --set postgresqlUsername=ctms \
-            --set postgresqlDatabase=ctms \
-            --set fullnameOverride=postgres \
-            postgresql bitnami/postgresql
+          #helm upgrade --install \
+          #  --version 11.6.15 \
+          #  --namespace ${{ env.NAMESPACE }} \
+          #  --set postgresqlPassword=defaultpassword \
+          #  --set postgresqlUsername=ctms \
+          #  --set postgresqlDatabase=ctms \
+          #  --set fullnameOverride=postgres \
+          #  postgresql bitnami/postgresql
 
           #### DISCOURSE POSTGRES, REDIS ####
-          helm upgrade --install \
-            --version 11.6.15 \
-            --namespace ${{ env.NAMESPACE }} \
-            --set fullnameOverride=discourse-psql \
-            --set persistence.enabled=false \
-            --set postgresqlDatabase=discourse \
-            --set postgresqlPassword=discourse-psql-password \
-            --set postgresqlUsername=postgres \
-            postgresql-discourse bitnami/postgresql
-          helm upgrade --install \
-            --version 16.13.2 \
-            --namespace ${{ env.NAMESPACE }} \
-            --set auth.enabled=true \
-            --set auth.password=discourse-redis-password \
-            --set fullnameOverride=discourse-redis \
-            --set persistence.enabled=false \
-            redis-discourse bitnami/redis
+          #helm upgrade --install \
+          #  --version 11.6.15 \
+          #  --namespace ${{ env.NAMESPACE }} \
+          #  --set fullnameOverride=discourse-psql \
+          #  --set persistence.enabled=false \
+          #  --set postgresqlDatabase=discourse \
+          #  --set postgresqlPassword=discourse-psql-password \
+          #  --set postgresqlUsername=postgres \
+          #  postgresql-discourse bitnami/postgresql
+          #helm upgrade --install \
+          #  --version 16.13.2 \
+          #  --namespace ${{ env.NAMESPACE }} \
+          #  --set auth.enabled=true \
+          #  --set auth.password=discourse-redis-password \
+          #  --set fullnameOverride=discourse-redis \
+          #  --set persistence.enabled=false \
+          #  redis-discourse bitnami/redis
 
           #### PROMETHEUS-CUSTOMIZATIONS CONFIGMAPSECRETS ####
           helm upgrade --install \
