@@ -40,12 +40,20 @@ spec:
         {{- end }}
         image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
         imagePullPolicy: Always
+        lifecycle:
+          postStart:
+            exec:
+              command:
+                - sh
+                - -c
+                - sed -i '/imklog/s/^/#/' /etc/rsyslog.conf
         livenessProbe:
           httpGet:
             path: /srv/status
             port: 80
           initialDelaySeconds: 30
-          periodSeconds: 5
+          periodSeconds: 30
+          timeoutSeconds: 5
         ports:
         - containerPort: 80
           name: http
