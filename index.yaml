@@ -268,6 +268,29 @@ entries:
   discourse:
   - apiVersion: v2
     appVersion: f58ded6
+    created: "2022-07-18T16:38:22.196676824Z"
+    dependencies:
+    - condition: cert-manager.install
+      name: cert-manager
+      repository: https://charts.jetstack.io
+      version: 1.4.4
+    description: A Helm Chart for Mozilla's Discourse application
+    digest: 081a5fbe6f98c0db686c0cc4de38fe5172a40bae1e54bff31f6014c7865b09d6
+    keywords:
+    - Mozilla
+    - discourse
+    maintainers:
+    - email: it-sre@mozilla.com
+      name: Web SRE Team
+    name: discourse
+    sources:
+    - https://github.com/mozilla/discourse.mozilla.org
+    type: application
+    urls:
+    - https://github.com/mozilla-it/helm-charts/releases/download/discourse-2.0.5/discourse-2.0.5.tgz
+    version: 2.0.5
+  - apiVersion: v2
+    appVersion: f58ded6
     created: "2022-07-18T15:46:02.450310665Z"
     dependencies:
     - condition: cert-manager.install
@@ -428,6 +451,34 @@ entries:
     - https://mozilla-it.github.io/helm-charts/discourse-0.0.1.tgz
     version: 0.0.1
   etherpad:
+  - apiVersion: v2
+    created: "2022-07-18T16:38:22.494133462Z"
+    dependencies:
+    - condition: cert-manager.install
+      name: cert-manager
+      repository: https://charts.jetstack.io
+      version: 1.8.2
+    - condition: mysql.install
+      name: mysql
+      repository: https://charts.bitnami.com/bitnami
+      version: 9.2.0
+    description: A Helm chart for the Mozilla Etherpad application
+    digest: c26a4de128b9819bf2542094c7cd2e691e1cacf6a81775b6b413b4b2fe6e4e25
+    home: https://github.com/mozilla-it/etherpad-docker
+    keywords:
+    - Mozilla
+    - etherpad
+    - pad
+    maintainers:
+    - email: it-sre@mozilla.com
+      name: Web SRE Team
+    name: etherpad
+    sources:
+    - https://github.com/mozilla-it/etherpad-docker
+    type: application
+    urls:
+    - https://github.com/mozilla-it/helm-charts/releases/download/etherpad-1.0.3/etherpad-1.0.3.tgz
+    version: 1.0.3
   - apiVersion: v2
     created: "2022-07-13T15:19:28.292330669Z"
     dependencies:
@@ -3004,6 +3055,33 @@ entries:
   mozmoderator:
   - apiVersion: v2
     appVersion: c285426edacb3a1791bab84f64c16d00e6d865eb
+    created: "2022-07-18T16:38:22.806415941Z"
+    dependencies:
+    - condition: cert-manager.install
+      name: cert-manager
+      repository: https://charts.jetstack.io
+      version: 1.4.4
+    - condition: mysql.install
+      name: mysql
+      repository: https://charts.bitnami.com/bitnami
+      version: 9.2.0
+    description: A Helm Chart for Mozilla's Moderator application
+    digest: 823fe52ab76e6f051d42a6db1b0b32e236a11a9a71046d596a2b534745a97b5e
+    keywords:
+    - Mozilla
+    - moderator
+    maintainers:
+    - email: it-sre@mozilla.com
+      name: Web SRE Team
+    name: mozmoderator
+    sources:
+    - https://github.com/mozilla/mozmoderator
+    type: application
+    urls:
+    - https://github.com/mozilla-it/helm-charts/releases/download/mozmoderator-0.2.4/mozmoderator-0.2.4.tgz
+    version: 0.2.4
+  - apiVersion: v2
+    appVersion: c285426edacb3a1791bab84f64c16d00e6d865eb
     created: "2022-07-12T15:54:01.920278477Z"
     dependencies:
     - condition: cert-manager.install
@@ -3199,6 +3277,34 @@ entries:
     version: 1.0.0
   pastebin:
   - apiVersion: v2
+    created: "2022-07-18T16:38:23.102174217Z"
+    dependencies:
+    - condition: cert-manager.install
+      name: cert-manager
+      repository: https://charts.jetstack.io
+      version: 1.4.4
+    - condition: mysql.install
+      name: mysql
+      repository: https://charts.bitnami.com/bitnami
+      version: 9.2.0
+    description: A Helm chart for the Mozilla Pastebin (dpaste) application
+    digest: 3f714cb866e8a6b4746e090a547cdddbb674d893ca6997cce1b53e225d18c090
+    home: https://github.com/mozilla-it/pastebin
+    keywords:
+    - Mozilla
+    - dpaste
+    - pastebin
+    maintainers:
+    - email: it-sre@mozilla.com
+      name: Web SRE Team
+    name: pastebin
+    sources:
+    - https://github.com/mozilla-it/pastebin
+    type: application
+    urls:
+    - https://github.com/mozilla-it/helm-charts/releases/download/pastebin-0.1.5/pastebin-0.1.5.tgz
+    version: 0.1.5
+  - apiVersion: v2
     created: "2022-07-13T09:30:54.640621621Z"
     dependencies:
     - condition: cert-manager.install
@@ -3380,6 +3486,30 @@ entries:
     - https://mozilla-it.github.io/helm-charts/prometheus-customizations-0.0.1.tgz
     version: 0.0.1
   refractr:
+  - apiVersion: v2
+    created: "2022-07-18T16:38:23.409166803Z"
+    dependencies:
+    - condition: cert-manager.install
+      name: cert-manager
+      repository: https://charts.jetstack.io
+      version: 0.15.2
+    description: A Helm chart for the refractr redirect application
+    digest: d8cb9704a3b38d759440f4b81cd04247fd980b5c02a9edb4e50cad5a252720e1
+    home: https://github.com/mozilla-it/refractr
+    keywords:
+    - Mozilla
+    - refractr
+    - redirects
+    maintainers:
+    - email: it-sre@mozilla.com
+      name: Web SRE Team
+    name: refractr
+    sources:
+    - https://github.com/mozilla-it/refractr
+    type: application
+    urls:
+    - https://github.com/mozilla-it/helm-charts/releases/download/refractr-1.1.2/refractr-1.1.2.tgz
+    version: 1.1.2
   - apiVersion: v2
     created: "2022-07-13T15:30:07.940601037Z"
     dependencies:
@@ -4697,4 +4827,4 @@ entries:
     urls:
     - https://mozilla-it.github.io/helm-charts/sentence-collector-0.1.0.tgz
     version: 0.1.0
-generated: "2022-07-18T15:46:02.452002339Z"
+generated: "2022-07-18T16:38:23.410887065Z"
