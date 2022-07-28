@@ -47,6 +47,8 @@ spec:
             {{- end }}
             - name: FLUENT_HOSTNAME
               value: {{ template "fluentd-papertrail.clusterName" . }}
+            - name: FLUENT_UID
+              value: "0"
             - name: K8S_NODE_NAME
               valueFrom:
                 fieldRef:
