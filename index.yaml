@@ -40,6 +40,15 @@ entries:
     version: 0.0.1
   ctms:
   - apiVersion: v2
+    created: "2022-07-29T14:51:30.624802589Z"
+    description: A Helm chart for Mozilla's CTMS-API app
+    digest: 0b3edd56b0b92cf790a62794d7c3db02d8f36d1d357b0f6f5c220de2047b21c5
+    name: ctms
+    type: application
+    urls:
+    - https://github.com/mozilla-it/helm-charts/releases/download/ctms-0.0.18/ctms-0.0.18.tgz
+    version: 0.0.18
+  - apiVersion: v2
     created: "2021-12-06T23:46:29.052914123Z"
     description: A Helm chart for Mozilla's CTMS-API app
     digest: bf8019e4ade9d57cffc56d4923e677227fda64124e0ffb5fb093c726ebc62dcf
@@ -564,6 +573,26 @@ entries:
     - https://mozilla-it.github.io/helm-charts/etherpad-1.0.0.tgz
     version: 1.0.0
   fluentd-papertrail:
+  - apiVersion: v2
+    appVersion: "1.3"
+    created: "2022-07-29T14:51:30.803228576Z"
+    description: A Helm chart to deploy fluentd to send to papertrail
+    digest: 947c64e3d608a45b13eba4e8c8de117b8a9581863aa1a1736cf9ddb14e7111d6
+    home: https://github.com/mozilla-it/helm-charts
+    keywords:
+    - fluentd
+    - papertrail
+    maintainers:
+    - email: it-sre@mozilla.com
+      name: Web SRE Team
+    name: fluentd-papertrail
+    sources:
+    - https://github.com/papertrail
+    - https://github.com/fluent/fluentd
+    type: application
+    urls:
+    - https://github.com/mozilla-it/helm-charts/releases/download/fluentd-papertrail-0.2.2/fluentd-papertrail-0.2.2.tgz
+    version: 0.2.2
   - apiVersion: v2
     appVersion: "1.2"
     created: "2021-10-22T21:33:36.257707674Z"
@@ -4827,4 +4856,4 @@ entries:
     urls:
     - https://mozilla-it.github.io/helm-charts/sentence-collector-0.1.0.tgz
     version: 0.1.0
-generated: "2022-07-18T16:38:23.410887065Z"
+generated: "2022-07-29T14:51:30.8045556Z"
