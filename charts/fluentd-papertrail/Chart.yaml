@@ -2,7 +2,7 @@ apiVersion: v2
 name: fluentd-papertrail
 description: A Helm chart to deploy fluentd to send to papertrail
 type: application
-version: 0.2.1
+version: 0.2.2
 appVersion: "1.3"
 
 keywords:
