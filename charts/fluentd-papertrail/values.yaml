@@ -6,8 +6,8 @@ fullnameOverride: ""
 clusterName: ""
 
 image:
-  repository: quay.io/solarwinds/fluentd-kubernetes
-  tag: v1.2-debian-papertrail-0.2.7-bugfix
+  repository: fluent/fluentd-kubernetes-daemonset
+  tag: papertrail
   pullPolicy: IfNotPresent
 
 updateStrategy:
