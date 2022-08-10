@@ -48,6 +48,8 @@ externalSecrets:
   # - key: /{env}/pastebin/envvar
   #   name: SESSION_KEY
   #   property: session_key
+  store: secretsmanager-secretstore
+  target: pastebin
 
 image:
   pullPolicy: Always
