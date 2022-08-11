@@ -3140,6 +3140,33 @@ entries:
   mozmoderator:
   - apiVersion: v2
     appVersion: c285426edacb3a1791bab84f64c16d00e6d865eb
+    created: "2022-08-11T20:51:19.404605675Z"
+    dependencies:
+    - condition: cert-manager.install
+      name: cert-manager
+      repository: https://charts.jetstack.io
+      version: 1.4.4
+    - condition: mysql.install
+      name: mysql
+      repository: https://charts.bitnami.com/bitnami
+      version: 9.2.0
+    description: A Helm Chart for Mozilla's Moderator application
+    digest: 025f1344ca099d0942218e359fa4863c2ff3f20adb16a8e35ab38667e556fca0
+    keywords:
+    - Mozilla
+    - moderator
+    maintainers:
+    - email: it-sre@mozilla.com
+      name: Web SRE Team
+    name: mozmoderator
+    sources:
+    - https://github.com/mozilla/mozmoderator
+    type: application
+    urls:
+    - https://github.com/mozilla-it/helm-charts/releases/download/mozmoderator-0.3.0/mozmoderator-0.3.0.tgz
+    version: 0.3.0
+  - apiVersion: v2
+    appVersion: c285426edacb3a1791bab84f64c16d00e6d865eb
     created: "2022-07-18T16:38:22.806415941Z"
     dependencies:
     - condition: cert-manager.install
@@ -4996,4 +5023,4 @@ entries:
     urls:
     - https://mozilla-it.github.io/helm-charts/sentence-collector-0.1.0.tgz
     version: 0.1.0
-generated: "2022-08-11T20:34:40.110728392Z"
+generated: "2022-08-11T20:51:19.406079812Z"
