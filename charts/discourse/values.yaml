@@ -105,6 +105,9 @@ externalSecrets:
   # - key: /{env}/discourse/envvar
   #   name: DISCOURSE_SMTP_USER_NAME
   #   property: DISCOURSE_SMTP_USER_NAME
+  store: secrectsmanager-secretstore
+  target: discourse
+
 
 image:
   repository: 783633885093.dkr.ecr.us-west-2.amazonaws.com/discourse
