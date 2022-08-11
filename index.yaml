@@ -3306,6 +3306,34 @@ entries:
     version: 1.0.0
   pastebin:
   - apiVersion: v2
+    created: "2022-08-11T16:00:41.460176835Z"
+    dependencies:
+    - condition: cert-manager.install
+      name: cert-manager
+      repository: https://charts.jetstack.io
+      version: 1.4.4
+    - condition: mysql.install
+      name: mysql
+      repository: https://charts.bitnami.com/bitnami
+      version: 9.2.0
+    description: A Helm chart for the Mozilla Pastebin (dpaste) application
+    digest: b2de5be233563e60df2ccac0105adf9667ca97a958ddb5bc740aee298f9451c0
+    home: https://github.com/mozilla-it/pastebin
+    keywords:
+    - Mozilla
+    - dpaste
+    - pastebin
+    maintainers:
+    - email: it-sre@mozilla.com
+      name: Web SRE Team
+    name: pastebin
+    sources:
+    - https://github.com/mozilla-it/pastebin
+    type: application
+    urls:
+    - https://github.com/mozilla-it/helm-charts/releases/download/pastebin-0.2.0/pastebin-0.2.0.tgz
+    version: 0.2.0
+  - apiVersion: v2
     created: "2022-07-18T16:38:23.102174217Z"
     dependencies:
     - condition: cert-manager.install
@@ -4856,4 +4884,4 @@ entries:
     urls:
     - https://mozilla-it.github.io/helm-charts/sentence-collector-0.1.0.tgz
     version: 0.1.0
-generated: "2022-07-29T14:51:30.8045556Z"
+generated: "2022-08-11T16:00:41.461532446Z"
