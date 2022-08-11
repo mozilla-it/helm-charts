@@ -55,7 +55,7 @@ externalSecrets:
   # - key: /{env}/etherpad/envvar
   #   name: ETHERPAD_SESSION_KEY
   #   property: ETHERPAD_SESSION_KEY
-  storage: secrectsmanager-secretstore
+  store: secrectsmanager-secretstore
   target: etherpad
 
 image:
