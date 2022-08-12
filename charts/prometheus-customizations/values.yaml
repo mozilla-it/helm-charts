@@ -8,3 +8,6 @@ influxdb:
   secret_key: "/prometheus/influx"
   secret_name: "influxurl"
   property: "influxurl"
+
+externalSecrets:
+  store: secretsmanager-secretstore
