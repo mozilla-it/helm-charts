@@ -277,6 +277,29 @@ entries:
   discourse:
   - apiVersion: v2
     appVersion: f58ded6
+    created: "2022-08-12T14:10:05.273388515Z"
+    dependencies:
+    - condition: cert-manager.install
+      name: cert-manager
+      repository: https://charts.jetstack.io
+      version: 1.4.4
+    description: A Helm Chart for Mozilla's Discourse application
+    digest: 8ac577314096ffe234b90403e4ee1dadbd6d597e60292d4db1377cba4c4c0965
+    keywords:
+    - Mozilla
+    - discourse
+    maintainers:
+    - email: it-sre@mozilla.com
+      name: Web SRE Team
+    name: discourse
+    sources:
+    - https://github.com/mozilla/discourse.mozilla.org
+    type: application
+    urls:
+    - https://github.com/mozilla-it/helm-charts/releases/download/discourse-3.0.1/discourse-3.0.1.tgz
+    version: 3.0.1
+  - apiVersion: v2
+    appVersion: f58ded6
     created: "2022-08-11T21:15:30.91333543Z"
     dependencies:
     - condition: cert-manager.install
@@ -483,6 +506,34 @@ entries:
     - https://mozilla-it.github.io/helm-charts/discourse-0.0.1.tgz
     version: 0.0.1
   etherpad:
+  - apiVersion: v2
+    created: "2022-08-12T14:10:05.490395024Z"
+    dependencies:
+    - condition: cert-manager.install
+      name: cert-manager
+      repository: https://charts.jetstack.io
+      version: 1.8.2
+    - condition: mysql.install
+      name: mysql
+      repository: https://charts.bitnami.com/bitnami
+      version: 9.2.0
+    description: A Helm chart for the Mozilla Etherpad application
+    digest: 2d48f769bdac9eb61a7bac30b1310254413e24d6f74717e7c270551fc285a97e
+    home: https://github.com/mozilla-it/etherpad-docker
+    keywords:
+    - Mozilla
+    - etherpad
+    - pad
+    maintainers:
+    - email: it-sre@mozilla.com
+      name: Web SRE Team
+    name: etherpad
+    sources:
+    - https://github.com/mozilla-it/etherpad-docker
+    type: application
+    urls:
+    - https://github.com/mozilla-it/helm-charts/releases/download/etherpad-2.0.2/etherpad-2.0.2.tgz
+    version: 2.0.2
   - apiVersion: v2
     created: "2022-08-11T20:34:40.10951939Z"
     dependencies:
@@ -3163,6 +3214,33 @@ entries:
   mozmoderator:
   - apiVersion: v2
     appVersion: c285426edacb3a1791bab84f64c16d00e6d865eb
+    created: "2022-08-12T14:10:05.722777109Z"
+    dependencies:
+    - condition: cert-manager.install
+      name: cert-manager
+      repository: https://charts.jetstack.io
+      version: 1.4.4
+    - condition: mysql.install
+      name: mysql
+      repository: https://charts.bitnami.com/bitnami
+      version: 9.2.0
+    description: A Helm Chart for Mozilla's Moderator application
+    digest: 75663459bf1ea040ddaef82cdcfc70e373d9d3f217ed1f535ebcee56dbfc1747
+    keywords:
+    - Mozilla
+    - moderator
+    maintainers:
+    - email: it-sre@mozilla.com
+      name: Web SRE Team
+    name: mozmoderator
+    sources:
+    - https://github.com/mozilla/mozmoderator
+    type: application
+    urls:
+    - https://github.com/mozilla-it/helm-charts/releases/download/mozmoderator-0.3.1/mozmoderator-0.3.1.tgz
+    version: 0.3.1
+  - apiVersion: v2
+    appVersion: c285426edacb3a1791bab84f64c16d00e6d865eb
     created: "2022-08-11T20:51:19.404605675Z"
     dependencies:
     - condition: cert-manager.install
@@ -5046,4 +5124,4 @@ entries:
     urls:
     - https://mozilla-it.github.io/helm-charts/sentence-collector-0.1.0.tgz
     version: 0.1.0
-generated: "2022-08-11T21:15:30.914333286Z"
+generated: "2022-08-12T14:10:05.724207235Z"
