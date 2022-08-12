@@ -3852,6 +3852,16 @@ entries:
     version: 0.1.0
   prometheus-customizations:
   - apiVersion: v2
+    created: "2022-08-12T18:16:12.323283648Z"
+    description: An opinionated helm chart to setup our prometheus instances. Requires
+      externalsecrets, configmapsecrets, sets the prom config to a particular value.
+    digest: 4a4869bc5a3a2d85294aff3255aa0527b15a3d1c09362e01daac2cc712caca71
+    name: prometheus-customizations
+    type: application
+    urls:
+    - https://github.com/mozilla-it/helm-charts/releases/download/prometheus-customizations-0.1.0/prometheus-customizations-0.1.0.tgz
+    version: 0.1.0
+  - apiVersion: v2
     created: "2021-12-01T00:06:40.948397633Z"
     description: An opinionated helm chart to setup our prometheus instances. Requires
       externalsecrets, configmapsecrets, sets the prom config to a particular value.
@@ -5233,4 +5243,4 @@ entries:
     urls:
     - https://mozilla-it.github.io/helm-charts/sentence-collector-0.1.0.tgz
     version: 0.1.0
-generated: "2022-08-12T17:54:01.571600009Z"
+generated: "2022-08-12T18:16:12.325630376Z"
