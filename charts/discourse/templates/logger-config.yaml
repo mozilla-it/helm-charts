@@ -18,13 +18,12 @@ spec:
   data:
     - remoteRef:
         key: {{ .Values.externalSecrets.loggerSecretKey }}
-        property: loggerSecret
       secretKey: loggerSecret
   secretStoreRef:
     kind: ClusterSecretStore
     name: {{ .Values.externalSecrets.store }}
   target:
-    name: loggerSecret
+    name: logger-config
     template:
       metadata:
         {{- with .Values.externalSecrets.annotations }}
@@ -38,7 +37,7 @@ spec:
           {{- end }}
       data:
         log_files.yml: |
-          <%= Buffer.from(yaml.dump(JSON.parse(data.loggerSecret))).toString("base64") %>
+          {{ `{{ loggerSecret | fromJson | toYaml }}` }}
 {{- else }}
 apiVersion: v1
 kind: ConfigMap
