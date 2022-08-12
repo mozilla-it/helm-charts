@@ -1,5 +1,5 @@
 {{- if .Values.externalSecrets.enabled -}}
-apiVersion: kubernetes-client.io/v1
+apiVersion: external-secrets.io/v1beta1
 kind: ExternalSecret
 metadata:
   name: logger-config
@@ -15,24 +15,27 @@ metadata:
       {{- toYaml . | nindent 4 }}
     {{- end }}
 spec:
-  backendType: secretsManager
   data:
-  - key: {{ .Values.externalSecrets.loggerSecretKey }}
+  - remoteRef:
+      key: {{ .Values.externalSecrets.loggerSecretKey }}
+      property: loggerSecret
+    secretKey: loggerSecret
+  target:
     name: loggerSecret
-  template:
-    metadata:
-      {{- with .Values.externalSecrets.annotations }}
-      annotations:
-        {{- toYaml . | nindent 8 }}
-      {{- end }}
-      labels:
-        {{- include "discourse.labels" . | nindent 8 }}
-        {{- with .Values.externalSecrets.labels }}
+    template:
+      metadata:
+        {{- with .Values.externalSecrets.annotations }}
+        annotations:
           {{- toYaml . | nindent 10 }}
         {{- end }}
-    data:
-      log_files.yml: |
-        <%= Buffer.from(yaml.dump(JSON.parse(data.loggerSecret))).toString("base64") %>
+        labels:
+          {{- include "discourse.labels" . | nindent 10 }}
+          {{- with .Values.externalSecrets.labels }}
+            {{- toYaml . | nindent 12 }}
+          {{- end }}
+      data:
+        log_files.yml: |
+          <%= Buffer.from(yaml.dump(JSON.parse(data.loggerSecret))).toString("base64") %>
 {{- else }}
 apiVersion: v1
 kind: ConfigMap
