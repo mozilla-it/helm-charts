@@ -105,7 +105,7 @@ externalSecrets:
   # - key: /{env}/discourse/envvar
   #   name: DISCOURSE_SMTP_USER_NAME
   #   property: DISCOURSE_SMTP_USER_NAME
-  store: secrectsmanager-secretstore
+  store: secretsmanager-secretstore
   target: discourse
 
 

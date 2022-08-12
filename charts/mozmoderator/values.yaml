@@ -66,7 +66,7 @@ externalSecrets:
   # - key: /{env}/moderator/envvar
   #   name: SENTRY_DSN
   #   property: sentry_dsn
-  store: secrectsmanager-secretstore
+  store: secretsmanager-secretstore
   target: moderator
 
 
