@@ -20,6 +20,9 @@ spec:
       key: {{ .Values.externalSecrets.loggerSecretKey }}
       property: loggerSecret
     secretKey: loggerSecret
+  secretStoreRef:
+    kind: ClusterSecretStore
+    name: {{ .Values.externalSecrets.store }}
   target:
     name: loggerSecret
     template:
