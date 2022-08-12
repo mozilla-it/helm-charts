@@ -3564,6 +3564,23 @@ entries:
     version: 0.1.0
   oidc-gateway:
   - apiVersion: v2
+    created: "2022-08-12T17:54:01.569718505Z"
+    description: A Helm chart for OIDC Gateway workload to put in front of workloads
+      that require an authentication layer.
+    digest: fd47789d19add6c9ab4bfa78b1185eb23870247734d52fc4e257ecfe71d5bd0b
+    keywords:
+    - Mozilla
+    - oidc
+    maintainers:
+    - email: it-sre@mozilla.com
+      name: Web SRE Team
+    name: oidc-gateway
+    sources:
+    - https://github.com/mozilla-services/oidc-gateway
+    urls:
+    - https://github.com/mozilla-it/helm-charts/releases/download/oidc-gateway-2.0.0/oidc-gateway-2.0.0.tgz
+    version: 2.0.0
+  - apiVersion: v2
     created: "2021-10-22T21:33:36.712437193Z"
     description: A Helm chart for OIDC Gateway workload to put in front of workloads
       that require an authentication layer.
@@ -5216,4 +5233,4 @@ entries:
     urls:
     - https://mozilla-it.github.io/helm-charts/sentence-collector-0.1.0.tgz
     version: 0.1.0
-generated: "2022-08-12T17:31:34.117731427Z"
+generated: "2022-08-12T17:54:01.571600009Z"
