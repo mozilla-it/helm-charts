@@ -1,7 +1,7 @@
 apiVersion: v2
 description: A Helm chart for OIDC Gateway workload to put in front of workloads that require an authentication layer.
 name: oidc-gateway
-version: 1.0.0
+version: 2.0.0
 
 keywords:
   - Mozilla

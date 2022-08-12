@@ -36,6 +36,8 @@ externalSecrets:
   labels: {}
   name: oidc-gateway
   # structure: { "oidc": { "client_secret": "secret key for oidc client"}, "session_secret": "oidc session secret" }
+  target: oidc-gateway
+  store: secretsmanager-secretstore
 
 image:
   pullPolicy: IfNotPresent
