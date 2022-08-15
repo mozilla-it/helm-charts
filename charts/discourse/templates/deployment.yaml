@@ -62,6 +62,10 @@ spec:
           httpGet:
             path: /srv/status
             port: 80
+          periodSeconds: {{ .Values.deployment.readinessProbePeriodSeconds }}
+          successThreshold: 1
+          timeoutSeconds: 1
+
         {{- with .Values.deployment.resources }}
         resources:
           {{- toYaml . | nindent 12 }}
@@ -81,7 +85,7 @@ spec:
           httpGet:
             path: /metrics
             port: metrics
-          initialDelaySeconds: 15
+          initialDelaySeconds: {{ .Values.deployment.livenessProbeInitialDelaySeconds }}
           timeoutSeconds: 5
         readinessProbe:
           httpGet:
