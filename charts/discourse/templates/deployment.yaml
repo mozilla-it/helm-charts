@@ -51,21 +51,23 @@ spec:
           httpGet:
             path: /srv/status
             port: 80
-          initialDelaySeconds: 30
-          periodSeconds: 30
+          initialDelaySeconds: {{ .Values.deployment.livenessProbeInitialDelaySeconds }}
+          periodSeconds: 10
           timeoutSeconds: 5
+          failureThreshold: 6
         ports:
         - containerPort: 80
           name: http
           protocol: TCP
         readinessProbe:
+          initialDelaySeconds: 30
+          failureThreshold: 6
           httpGet:
             path: /srv/status
             port: 80
           periodSeconds: {{ .Values.deployment.readinessProbePeriodSeconds }}
           successThreshold: 1
-          timeoutSeconds: 1
-
+          timeoutSeconds: 5
         {{- with .Values.deployment.resources }}
         resources:
           {{- toYaml . | nindent 12 }}
@@ -85,7 +87,6 @@ spec:
           httpGet:
             path: /metrics
             port: metrics
-          initialDelaySeconds: {{ .Values.deployment.livenessProbeInitialDelaySeconds }}
           timeoutSeconds: 5
         readinessProbe:
           httpGet:

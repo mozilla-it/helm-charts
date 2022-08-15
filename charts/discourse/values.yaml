@@ -50,8 +50,8 @@ deployment:
     requests:
       cpu: 500m
       memory: 512Mi
-  readinessProbePeriodSeconds: 90
-  livenessProbeInitialDelaySeconds: 600
+  readinessProbePeriodSeconds: 10
+  livenessProbeInitialDelaySeconds: 500
 
 externalSecrets:
   annotations: {}
