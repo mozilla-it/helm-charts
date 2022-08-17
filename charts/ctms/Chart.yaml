@@ -4,4 +4,4 @@ description: A Helm chart for Mozilla's CTMS-API app
 
 type: application
 
-version: 0.0.18
+version: 0.1.0
