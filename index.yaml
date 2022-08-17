@@ -277,6 +277,29 @@ entries:
   discourse:
   - apiVersion: v2
     appVersion: f58ded6
+    created: "2022-08-17T14:31:49.542967595Z"
+    dependencies:
+    - condition: cert-manager.install
+      name: cert-manager
+      repository: https://charts.jetstack.io
+      version: 1.4.4
+    description: A Helm Chart for Mozilla's Discourse application
+    digest: 52a96ad04c14fd0979e5864f66864cc0aa30f8ded157b67fde081a9f3b59d5f4
+    keywords:
+    - Mozilla
+    - discourse
+    maintainers:
+    - email: it-sre@mozilla.com
+      name: Web SRE Team
+    name: discourse
+    sources:
+    - https://github.com/mozilla/discourse.mozilla.org
+    type: application
+    urls:
+    - https://github.com/mozilla-it/helm-charts/releases/download/discourse-3.0.6/discourse-3.0.6.tgz
+    version: 3.0.6
+  - apiVersion: v2
+    appVersion: f58ded6
     created: "2022-08-12T17:31:34.11614093Z"
     dependencies:
     - condition: cert-manager.install
@@ -5243,4 +5266,4 @@ entries:
     urls:
     - https://mozilla-it.github.io/helm-charts/sentence-collector-0.1.0.tgz
     version: 0.1.0
-generated: "2022-08-12T18:16:12.325630376Z"
+generated: "2022-08-17T14:31:49.544429335Z"
