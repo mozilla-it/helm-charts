@@ -43,6 +43,7 @@ spec:
               - /app/ctms/bin/healthcheck_sync.py
             initialDelaySeconds: 60
             periodSeconds: 30
+            timeoutSeconds: 10
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
