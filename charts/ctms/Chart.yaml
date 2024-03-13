@@ -1,7 +1,0 @@
-apiVersion: v2
-name: ctms
-description: A Helm chart for Mozilla's CTMS-API app
-
-type: application
-
-version: 0.1.7

@@ -1,6 +1,0 @@
-imagePullSecrets:
-  - name: ecr-registry
-
-image:
-  repository: 783633885093.dkr.ecr.us-west-2.amazonaws.com/ctms-api
-  tag: "v1.0.0"
