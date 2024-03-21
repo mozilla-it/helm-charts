@@ -13,6 +13,7 @@ spec:
       backoffLimit: 0
       template:
         spec:
+          restartPolicy: Never
           containers:
             - name: {{ $cronjob_name }}
               image: {{ $.Values.image.repository }}:{{ $.Values.image.tag }}
