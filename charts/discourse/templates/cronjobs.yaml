@@ -1,0 +1,31 @@
+{{- range $cronjob_name, $cronjob := .Values.cronjobs }}
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: {{ $cronjob_name }}
+
+spec:
+  suspend: {{ $cronjob.suspend }}
+  schedule: {{ $cronjob.schedule |quote }}
+  jobTemplate:
+    spec:
+      backoffLimit: 0
+      template:
+        spec:
+          restartPolicy: Never
+          containers:
+            - name: {{ $cronjob_name }}
+              image: {{ $.Values.image.repository }}:{{ $.Values.image.tag }}
+              command:
+                {{- toYaml $cronjob.command | nindent 16 }}
+
+              envFrom:
+                - configMapRef:
+                    name: {{ $.Values.deployment.name }}
+                {{- if $.Values.externalSecrets.enabled }}
+
+                - secretRef:
+                    name: {{ $.Values.deployment.name }}
+                {{- end }}
+{{- end }}
